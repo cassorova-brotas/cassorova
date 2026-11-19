@@ -1,0 +1,587 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&amp;family=Trirong:ital,wght@0,300;0,400;1,400;1,700&amp;display=swap">
+<style>
+/* ---------- Ajustes do Divi, aplicados só onde existe #cpk ---------- */
+.et_pb_section:has(#cpk){padding:0!important;margin:0!important;background:transparent!important;height:auto!important;min-height:0!important;max-height:none!important}
+.et_pb_row:has(#cpk){width:100%!important;max-width:none!important;padding:0!important;margin:0!important;height:auto!important;max-height:none!important}
+.et_pb_column:has(#cpk){width:100%!important;margin:0!important;padding:0!important;height:auto!important;max-height:none!important}
+.et_pb_code:has(#cpk),.et_pb_code_inner:has(#cpk),.et_pb_fullwidth_code:has(#cpk){margin:0!important;padding:0!important;max-width:none!important;width:100%!important;height:auto!important;max-height:none!important}
+/* ---------- Base com os tokens do site ---------- */
+#cpk{--mata:#303323;--musgo:#858666;--musgo-esc:#6b6c50;--musgo-hover:#5c5d44;--cinza:#c5c5b9;--nevoa:#cfd0c3;--linho:#f3f2ee;--pedra:#564944;--oliva:#756a48;--oliva-hover:#635a3c;--cobre-claro:#d4957a;--terracota:#a65635;--terracota-hover:#8f4a2d;--branco:#fff;--gilda:"Gilda Display",Georgia,"Times New Roman",serif;--trirong:"Trirong",Georgia,"Times New Roman",serif;--albert:"Albert Sans",Helvetica,Arial,sans-serif;--marcellus:"Marcellus",Georgia,"Times New Roman",serif;--linha:80%;--max:1200px;--foco:var(--terracota);position:relative;background:var(--branco);color:var(--pedra);font-family:var(--albert);font-size:18px;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+@media (max-width:980px){#cpk{--linha:86%}}
+#cpk *,#cpk *::before,#cpk *::after{box-sizing:border-box}
+#cpk h1,#cpk h2,#cpk h3,#cpk h4,#cpk p,#cpk ul,#cpk ol,#cpk figure,#cpk blockquote{margin:0;padding:0;font-style:normal}
+#cpk ul,#cpk ol{list-style:none}
+#cpk blockquote{border:0;quotes:none}
+#cpk blockquote::before,#cpk blockquote::after{content:none}
+#cpk li{padding:0;margin:0;line-height:inherit}
+#cpk h1,#cpk h2,#cpk h3,#cpk h4{color:var(--mata);font-weight:400;letter-spacing:normal;text-transform:none;text-wrap:balance}
+#cpk p{text-wrap:pretty}
+#cpk a{color:inherit;text-decoration:none}
+#cpk img{display:block;max-width:100%;height:auto;border:0}
+/* O WordPress insere quebras de linha automáticas no Módulo de Código: ficam ocultas */
+#cpk br{display:none}
+#cpk strong,#cpk b{font-weight:700}
+#cpk button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;text-transform:none;letter-spacing:inherit}
+#cpk :focus-visible{outline:2px solid var(--foco);outline-offset:3px}
+#cpk [id]{scroll-margin-top:16px}
+#cpk .cpk-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#cpk .cpk-linha{width:var(--linha);max-width:var(--max);margin-inline:auto}
+#cpk .cpk-sec{padding-block:clamp(64px,7vw,104px)}
+#cpk .cpk-sec--linho{background:var(--linho)}
+#cpk .cpk-sec--nevoa{background:var(--nevoa)}
+#cpk .cpk-sec--mata{background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+/* ---------- Títulos no padrão do site ---------- */
+#cpk .cpk-titulo{font-family:var(--gilda);font-weight:400;font-size:clamp(33px,1.9vw + 22px,50px);line-height:1.05;color:var(--mata)}
+#cpk .cpk-titulo--trirong{font-family:var(--trirong);font-weight:300;font-size:clamp(33px,1.4vw + 24px,45px);line-height:1.05}
+#cpk .cpk-sec--mata .cpk-titulo{color:#fff}
+#cpk .cpk-chamada{margin-top:14px;max-width:62ch;font-family:var(--albert);font-weight:300;font-size:clamp(17px,.4vw + 15px,20px);line-height:1.55;color:var(--pedra)}
+#cpk .cpk-sec--mata .cpk-chamada{color:#fff}
+#cpk .cpk-cabeca{margin-bottom:clamp(36px,4vw,52px)}
+@media (min-width:1024px){#cpk .cpk-cabeca--lado{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:end}#cpk .cpk-cabeca--lado .cpk-chamada{margin-top:0}}
+/* ---------- Botões no padrão do site (Marcellus, quadrados, com seta) ---------- */
+#cpk .cpk-btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;padding:8px 22px 8px 18px;border:0;border-radius:0;font-family:var(--marcellus);font-size:clamp(18px,.4vw + 16px,21px);font-weight:400;line-height:1.3;text-align:left;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+#cpk .cpk-btn::after{content:"";flex:none;width:8px;height:8px;margin-left:2px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
+#cpk .cpk-btn--branco{background:#fff;color:var(--mata)}
+#cpk .cpk-btn--branco:hover{background:var(--linho)}
+#cpk .cpk-btn--terracota{background:var(--terracota);color:#fff}
+#cpk .cpk-btn--terracota:hover{background:var(--terracota-hover)}
+#cpk .cpk-btn--oliva{background:var(--oliva);color:#fff}
+#cpk .cpk-btn--oliva:hover{background:var(--oliva-hover)}
+#cpk .cpk-btn--musgo{background:var(--musgo-esc);color:#fff}
+#cpk .cpk-btn--musgo:hover{background:var(--musgo-hover)}
+#cpk .cpk-btn--contorno{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.75)}
+#cpk .cpk-btn--contorno:hover{background:rgba(255,255,255,.1)}
+#cpk .cpk-btn--texto{min-height:0;padding:8px 0;background:none;color:inherit}
+#cpk .cpk-btn--texto:hover{text-decoration:underline;text-underline-offset:5px}
+/* ---------- Topo: foto e texto empilhados no celular, no tablet em pé e em telas estreitas; nas telas largas e deitadas, foto de fundo com o texto à esquerda e o casal inteiro à direita ---------- */
+#cpk .cpk-topo{position:relative;isolation:isolate;background:var(--mata);color:#fff}
+#cpk .cpk-topo__midia{position:relative;aspect-ratio:16 / 10;overflow:hidden;background:var(--musgo-esc)}
+#cpk .cpk-topo__midia picture,#cpk .cpk-topo__foto{display:block;width:100%;height:100%}
+#cpk .cpk-topo__foto--espelho{transform:scaleX(-1)}
+#cpk .cpk-topo__foto{object-fit:cover;object-position:70% 55%;max-width:none}
+#cpk .cpk-topo__sombra{display:none}
+#cpk .cpk-topo__conteudo{position:relative;z-index:2;width:var(--linha);max-width:var(--max);margin-inline:auto;padding:28px 0 40px}
+#cpk .cpk-topo__sobre{display:flex;align-items:center;gap:12px;font-family:var(--trirong);font-size:clamp(18px,.3vw + 16px,22px);line-height:1.1;color:#fff}
+#cpk .cpk-topo__sobre::before{content:"";flex:none;width:34px;height:1px;background:currentColor}
+#cpk .cpk-topo__titulo{margin-top:14px;max-width:14ch;font-family:var(--gilda);font-weight:400;font-size:clamp(40px,3.4vw + 20px,74px);line-height:1.02;color:#fff}
+#cpk .cpk-topo__frase{margin-top:16px;max-width:46ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(19px,.5vw + 16px,25px);line-height:1.25;color:#fff}
+#cpk .cpk-topo__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:26px}
+#cpk .cpk-topo__prova{display:inline-flex;align-items:center;gap:14px;margin-top:26px;padding:12px 18px 12px 12px;background:#fff;color:var(--mata);box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
+#cpk .cpk-topo__prova img{width:60px;height:auto;flex:none}
+#cpk .cpk-topo__prova-txt{display:grid;gap:3px;line-height:1.25}
+#cpk .cpk-topo__prova-premio{font-family:var(--marcellus);font-size:17px;color:var(--mata)}
+#cpk .cpk-topo__prova-nota{font-size:15px;color:var(--pedra)}
+#cpk .cpk-topo__prova-nota strong{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:27px;line-height:1;color:var(--mata)}
+#cpk .cpk-topo__prova-qtd{font-size:14px;color:var(--pedra)}
+#cpk .cpk-topo__prova:hover .cpk-topo__prova-premio{text-decoration:underline;text-underline-offset:4px}
+@media (max-width:600px){#cpk .cpk-topo__acoes .cpk-btn--branco{flex:1 1 100%}}
+@media (min-width:981px){#cpk .cpk-topo{display:flex;align-items:flex-end;min-height:clamp(560px,calc(100vh - var(--cpk-top,0px)),900px);min-height:clamp(560px,calc(100svh - var(--cpk-top,0px)),900px);overflow:hidden}#cpk .cpk-topo__midia{position:absolute;inset:0;aspect-ratio:auto}#cpk .cpk-topo__foto{object-position:58% 75%}#cpk .cpk-topo__sombra{display:block;position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(48,51,35,.82) 0%,rgba(48,51,35,.6) 30%,rgba(48,51,35,.22) 44%,rgba(48,51,35,0) 52%),linear-gradient(180deg,rgba(48,51,35,.3) 0%,rgba(48,51,35,0) 24%,rgba(48,51,35,0) 70%,rgba(48,51,35,.62) 100%)}#cpk .cpk-topo__conteudo{padding:48px 0 clamp(40px,6vh,64px)}#cpk .cpk-topo__titulo{max-width:min(14ch,calc(50% - 4vw))}#cpk .cpk-topo__frase,#cpk .cpk-topo__acoes{max-width:min(46ch,calc(50% - 4vw))}#cpk .cpk-topo__sobre,#cpk .cpk-topo__titulo,#cpk .cpk-topo__frase{text-shadow:0 1px 14px rgba(0,0,0,.3)}}
+@media (min-width:981px){#cpk .cpk-topo__conteudo{padding:48px 0 calc(clamp(40px,6vh,72px) + 64px)}#cpk .cpk-topo__prova{position:absolute;right:0;bottom:calc(clamp(40px,6vh,72px) + 64px);margin:0;gap:18px;padding:14px 24px 14px 14px}#cpk .cpk-topo__prova img{width:80px}#cpk .cpk-topo__prova-premio{font-size:19px}#cpk .cpk-topo__prova-nota strong{font-size:32px}}
+/* ---------- Buscador de hospedagem ---------- */
+#cpk .cpk-reserva{position:relative;z-index:3;padding-bottom:clamp(40px,5vw,64px)}
+#cpk .cpk-reserva__caixa{width:var(--linha);max-width:var(--max);margin-inline:auto;padding:28px 32px 30px;background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+@media (min-width:981px){#cpk .cpk-reserva__caixa{margin-top:-64px;box-shadow:0 22px 44px -26px rgba(0,0,0,.65)}}
+@media (max-width:980px){#cpk .cpk-reserva__caixa{width:100%;padding:28px 7% 32px}}
+#cpk .cpk-reserva__topo{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 24px}
+#cpk .cpk-reserva__titulo{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(27px,.8vw + 21px,34px);line-height:1.1;color:#fff}
+#cpk .cpk-reserva__sub{font-family:var(--marcellus);font-size:16px;line-height:1.3;color:var(--cobre-claro)}
+#cpk .cpk-reserva__campos{display:grid;grid-template-columns:minmax(0,1.35fr) repeat(4,minmax(0,1fr));gap:14px;margin-top:20px}
+#cpk .cpk-campo label{display:block;margin-bottom:6px;font-family:var(--marcellus);font-size:15px;line-height:1.2;color:#fff}
+#cpk .cpk-campo input,#cpk .cpk-campo select{display:block;width:100%;height:50px;min-height:50px;padding:0 12px;border:0;border-radius:0;background:#fff;color:var(--mata);font-family:var(--albert);font-size:17px;font-weight:400;line-height:50px;text-align:left;-webkit-appearance:none;appearance:none}
+#cpk .cpk-campo input::-webkit-date-and-time-value{text-align:left}
+#cpk .cpk-campo select{padding-right:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23303323' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px}
+#cpk .cpk-reserva__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin-top:18px}
+#cpk .cpk-reserva__nota{flex:1 1 260px;font-size:15px;line-height:1.45;color:#fff}
+#cpk .cpk-reserva__aviso{margin-top:14px;font-size:15px;line-height:1.45;color:var(--cobre-claro)}
+#cpk .cpk-reserva__aviso[hidden]{display:none}
+@media (max-width:980px){#cpk .cpk-reserva__campos{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}#cpk .cpk-campo--bangalo{grid-column:1 / -1}}
+@media (max-width:719px){#cpk .cpk-reserva__acoes .cpk-btn{flex:1 1 100%;justify-content:space-between}}
+/* ---------- Avaliações ---------- */
+#cpk .cpk-aval{display:grid;gap:36px}
+@media (min-width:1024px){#cpk .cpk-aval{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:72px;align-items:center}}
+#cpk .cpk-aval__citacao blockquote{margin-top:28px}
+#cpk .cpk-aval__citacao blockquote p{max-width:30ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(26px,1.3vw + 20px,40px);line-height:1.28;color:var(--pedra)}
+#cpk .cpk-aval__quem{margin-top:18px;font-family:var(--marcellus);font-size:16px;color:var(--oliva)}
+#cpk .cpk-aval__trip{display:grid;justify-items:start;gap:12px;padding:30px 30px 28px;background:var(--linho)}
+#cpk .cpk-aval__trip img{width:64px;height:auto}
+#cpk .cpk-aval__nota{font-family:var(--trirong);font-style:italic;font-weight:300;font-size:22px;line-height:1.1;color:var(--mata)}
+#cpk .cpk-aval__nota strong{font-weight:300;font-size:clamp(50px,2vw + 36px,64px);line-height:.9}
+#cpk .cpk-aval__fonte{font-size:15px;line-height:1.5;color:var(--pedra)}
+#cpk .cpk-aval__trip .cpk-btn{margin-top:6px}
+/* ---------- Perguntas frequentes ---------- */
+#cpk .cpk-faq__grade{display:grid;gap:40px}
+@media (min-width:1024px){#cpk .cpk-faq__grade{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:80px;align-items:start}#cpk .cpk-faq__lado{position:sticky;top:32px}}
+#cpk .cpk-faq__lado .cpk-btn{margin-top:26px}
+#cpk .cpk-qa{border-top:1px solid rgba(48,51,35,.22)}
+#cpk .cpk-qa:last-child{border-bottom:1px solid rgba(48,51,35,.22)}
+#cpk .cpk-qa summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;list-style:none;cursor:pointer}
+#cpk .cpk-qa summary::-webkit-details-marker{display:none}
+#cpk .cpk-qa__q{font-family:var(--trirong);font-weight:400;font-size:clamp(20px,.4vw + 17px,23px);line-height:1.25;color:var(--mata)}
+#cpk .cpk-qa__icon{position:relative;flex:none;width:28px;height:28px;border:1px solid var(--musgo);border-radius:50%}
+#cpk .cpk-qa__icon::before,#cpk .cpk-qa__icon::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--mata);transform:translate(-50%,-50%)}
+#cpk .cpk-qa__icon::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .25s ease}
+#cpk .cpk-qa[open] .cpk-qa__icon::after{transform:translate(-50%,-50%) rotate(0deg)}
+#cpk .cpk-qa__a{max-width:66ch;padding:0 48px 26px 0;font-size:18px;line-height:1.6;color:var(--pedra)}
+@media (max-width:600px){#cpk .cpk-qa__a{padding-right:0}}
+#cpk .cpk-qa__a a{color:var(--terracota);text-decoration:underline;text-underline-offset:3px}
+/* ---------- Chamada final ---------- */
+#cpk .cpk-final{background:var(--nevoa) url("/images/2025/03/cassorova-folha-bg.png") right 6% center / min(520px,45%) no-repeat}
+#cpk .cpk-final__grade{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){#cpk .cpk-final__grade{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px}}
+#cpk .cpk-final__foto{overflow:hidden;aspect-ratio:3 / 2}
+#cpk .cpk-final__foto img{width:100%;height:100%;object-fit:cover}
+#cpk .cpk-final__frase{margin-top:16px;max-width:34ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(21px,.6vw + 17px,28px);line-height:1.15;color:var(--pedra)}
+#cpk .cpk-final .cpk-chamada{max-width:42ch}
+#cpk .cpk-final__botoes{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:28px}
+#cpk .cpk-final .cpk-btn--texto{color:var(--mata)}
+/* ---------- Barra fixa ---------- */
+#cpk .cpk-fixa{position:fixed;z-index:9990;left:12px;right:96px;bottom:16px;display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:6px;background:var(--mata);color:#fff;box-shadow:0 12px 30px -12px rgba(0,0,0,.55);opacity:0;visibility:hidden;transform:translateY(130%);transition:transform .35s ease,opacity .35s ease,visibility 0s linear .35s;--foco:var(--cobre-claro)}
+#cpk .cpk-fixa.is-on{opacity:1;visibility:visible;transform:none;transition:transform .35s ease,opacity .35s ease}
+#cpk .cpk-fixa__txt{margin-right:auto;padding-left:10px;font-family:var(--marcellus);font-size:15px;line-height:1.2}
+#cpk .cpk-fixa .cpk-btn{min-height:44px;padding:8px 14px;font-size:17px;white-space:nowrap}
+#cpk .cpk-fixa .cpk-btn::after{display:none}
+@media (max-width:719px){#cpk .cpk-fixa__txt{display:none}#cpk .cpk-fixa .cpk-btn{flex:1 1 auto;padding:8px 10px;font-size:16px}}
+@media (min-width:720px){#cpk .cpk-fixa{right:auto;left:24px;bottom:24px;max-width:560px;gap:10px}}
+#cpk .cpk-fim{display:block;height:1px}
+/* ---------- Movimento reduzido ---------- */
+@media (prefers-reduced-motion:reduce){#cpk .cpk-fixa,#cpk .cpk-qa__icon::after,#cpk .cpk-btn,#cpk .cpk-reserva__caixa{transition:none}}
+/* ---------- Vantagens de quem se hospeda ---------- */
+#cpk .cpk-vant{display:grid;gap:36px}
+@media (min-width:900px){#cpk .cpk-vant{grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}}
+#cpk .cpk-vant__item{padding-top:22px;border-top:1px solid rgba(255,255,255,.26)}
+#cpk .cpk-vant__titulo{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(25px,.7vw + 21px,31px);line-height:1.15;color:var(--cobre-claro)}
+#cpk .cpk-vant__texto{margin-top:10px;max-width:40ch;font-size:17px;line-height:1.6;color:#fff}
+#cpk .cpk-vant__botoes{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:clamp(36px,4vw,52px)}
+@media (max-width:600px){#cpk .cpk-vant__botoes .cpk-btn{width:100%;justify-content:space-between}}
+#cpk .cpk-vant__nota{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);font-size:15px;line-height:1.5;color:#fff}
+#cpk .cpk-sec--nevoa .cpk-btn--texto{color:var(--mata)}
+/* ---------- Lista com marcas ---------- */
+#cpk .cpk-lista{display:grid;gap:8px;margin-top:16px;font-family:var(--marcellus);font-size:16px;line-height:1.5;color:var(--oliva)}
+#cpk .cpk-lista li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px}
+#cpk .cpk-lista li::before{content:"";width:18px;height:18px;margin-top:3px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23756a48' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l4.5 4.5L19.5 7'/%3E%3C/svg%3E") center / 18px 18px no-repeat}
+#cpk .cpk-etiqueta{display:inline-block;padding:6px 12px;background:var(--terracota);color:#fff;font-family:var(--marcellus);font-size:15px;line-height:1.2}
+/* ---------- Destaque do mês ---------- */
+#cpk .cpk-destaque{display:grid;gap:32px}
+@media (min-width:900px){#cpk .cpk-destaque{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px;align-items:stretch}}
+#cpk .cpk-destaque__foto{position:relative;overflow:hidden;aspect-ratio:4 / 3;background:var(--cinza)}
+@media (min-width:900px){#cpk .cpk-destaque__foto{aspect-ratio:auto;min-height:560px}}
+#cpk .cpk-destaque__foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#cpk .cpk-destaque__foto::after{content:"";position:absolute;inset:auto 0 0 0;height:34%;background:linear-gradient(180deg,rgba(48,51,35,0) 0%,rgba(48,51,35,.55) 100%);pointer-events:none}
+#cpk .cpk-destaque__foto .cpk-etiqueta{position:absolute;z-index:1;left:0;top:0}
+#cpk .cpk-destaque__txt{align-self:center}
+#cpk .cpk-destaque .cpk-titulo{margin-top:0}
+#cpk .cpk-datas{display:grid;gap:12px;margin-top:28px}
+#cpk .cpk-data{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:center;padding:12px 14px 12px 12px;background:var(--mata);color:#fff;box-shadow:0 18px 34px -24px rgba(0,0,0,.6);transition:background-color .2s ease,transform .2s ease}
+#cpk .cpk-data:hover{background:#3d412c;transform:translateY(-2px)}
+#cpk .cpk-data__chip{display:grid;place-content:center;gap:2px;min-width:84px;padding:10px 12px;background:var(--terracota);color:#fff;text-align:center}
+#cpk .cpk-data__num{font-family:var(--gilda);font-size:30px;line-height:1}
+#cpk .cpk-data__mes{font-family:var(--marcellus);font-size:15px;line-height:1.1}
+#cpk .cpk-data__quando{display:block;font-family:var(--marcellus);font-size:20px;line-height:1.25;color:#fff}
+#cpk .cpk-data__dias{display:block;margin-top:3px;font-size:15px;line-height:1.4;color:var(--cobre-claro)}
+#cpk .cpk-data__cta{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;background:#fff;color:var(--mata);font-family:var(--marcellus);font-size:18px;white-space:nowrap}
+#cpk .cpk-data__cta::after{content:"";width:8px;height:8px;border-top:1.5px solid var(--terracota);border-right:1.5px solid var(--terracota);transform:rotate(45deg)}
+@media (max-width:560px){#cpk .cpk-data{grid-template-columns:auto minmax(0,1fr)}#cpk .cpk-data__cta{grid-column:1 / -1;justify-content:space-between}}
+#cpk .cpk-destaque__mais{margin-top:22px}
+#cpk .cpk-destaque__mais .cpk-btn--texto{color:var(--mata)}
+/* ---------- Cartões das datas especiais ---------- */
+#cpk .cpk-pacotes{display:grid;gap:28px}
+@media (min-width:900px){#cpk .cpk-pacotes{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}}
+#cpk .cpk-pacote{display:flex;flex-direction:column;background:#fff;border-top:4px solid var(--terracota);box-shadow:0 26px 44px -30px rgba(48,51,35,.55)}
+#cpk .cpk-pacote--esgotado{border-top-color:var(--musgo)}
+#cpk .cpk-pacote__foto{position:relative;overflow:hidden;aspect-ratio:4 / 3;background:var(--cinza)}
+#cpk .cpk-pacote__foto img{width:100%;height:100%;object-fit:cover}
+#cpk .cpk-pacote__foto::after{content:"";position:absolute;inset:auto 0 0 0;height:58%;background:linear-gradient(180deg,rgba(48,51,35,0) 0%,rgba(48,51,35,.8) 100%);pointer-events:none}
+#cpk .cpk-pacote__leg{position:absolute;z-index:1;left:22px;right:22px;bottom:18px;display:grid;gap:3px;color:#fff}
+#cpk .cpk-pacote__leg strong{font-family:var(--gilda);font-weight:400;font-size:clamp(26px,1vw + 20px,34px);line-height:1.05}
+#cpk .cpk-pacote__leg span{font-family:var(--marcellus);font-size:16px;line-height:1.3;color:var(--cobre-claro)}
+#cpk .cpk-pacote__corpo{display:flex;flex-direction:column;flex:1;padding:26px 26px 30px}
+#cpk .cpk-pacote__nome{font-family:var(--gilda);font-weight:400;font-size:clamp(28px,1vw + 22px,36px);line-height:1.05;color:var(--mata)}
+#cpk .cpk-pacote__gancho{margin-top:12px;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(19px,.4vw + 16px,22px);line-height:1.3;color:var(--pedra)}
+#cpk .cpk-promo{display:grid;gap:2px;margin-top:20px;padding:14px 16px;background:#f7ece6;border-left:4px solid var(--terracota)}
+#cpk .cpk-promo strong{font-family:var(--marcellus);font-weight:400;font-size:15px;line-height:1.2;color:var(--terracota)}
+#cpk .cpk-promo span{font-family:var(--gilda);font-size:clamp(20px,.6vw + 16px,24px);line-height:1.2;color:var(--mata)}
+#cpk .cpk-pacote__botoes{display:flex;flex-direction:column;align-items:stretch;gap:14px;margin-top:auto;padding-top:26px}
+#cpk .cpk-pacote__botoes .cpk-btn--terracota{width:100%;justify-content:space-between}
+#cpk .cpk-pacote__botoes .cpk-btn--texto{color:var(--mata);align-self:flex-start}
+@media (max-width:600px){#cpk .cpk-pacote__corpo{padding:22px 20px 26px}#cpk .cpk-pacote__leg{left:18px;right:18px}}
+/* ---------- Inclusos em todos os pacotes ---------- */
+@media (min-width:1024px){#cpk .cpk-vant--4{grid-template-columns:repeat(4,minmax(0,1fr));gap:36px}}
+@media (min-width:600px) and (max-width:1023px){#cpk .cpk-vant--4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* ---------- Como reservar e bangalôs ---------- */
+#cpk .cpk-dois{display:grid;gap:48px}
+@media (min-width:1024px){#cpk .cpk-dois{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:80px;align-items:start}}
+#cpk .cpk-passos{display:grid;gap:26px;margin-top:30px;counter-reset:passo}
+#cpk .cpk-passo{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;counter-increment:passo}
+#cpk .cpk-passo::before{content:counter(passo);display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--mata);border-radius:50%;font-family:var(--trirong);font-style:italic;font-size:22px;line-height:1;color:var(--mata)}
+#cpk .cpk-passo__titulo{font-family:var(--trirong);font-weight:400;font-size:clamp(22px,.5vw + 19px,26px);line-height:1.2;color:var(--mata)}
+#cpk .cpk-passo__texto{margin-top:6px;max-width:48ch;font-size:17px;line-height:1.55;color:var(--pedra)}
+#cpk .cpk-bang{padding:32px 30px 34px;background:var(--linho)}
+#cpk .cpk-bang .cpk-lista{margin-top:18px}
+#cpk .cpk-bang .cpk-btn{margin-top:24px}
+/* ---------- Selo do Réveillon esgotado ---------- */
+#cpk .cpk-selo{position:absolute;right:18px;top:18px;display:grid;place-content:center;gap:2px;width:118px;height:118px;border:4px double var(--terracota);border-radius:50%;background:rgba(255,255,255,.93);color:var(--terracota);text-align:center;transform:rotate(-9deg);box-shadow:0 6px 18px rgba(48,51,35,.28)}
+#cpk .cpk-selo__ano{font-family:var(--marcellus);font-size:14px;line-height:1.1}
+#cpk .cpk-selo__txt{font-family:var(--gilda);font-size:25px;line-height:1}
+@media (max-width:600px){#cpk .cpk-selo{width:96px;height:96px;right:12px;top:12px}#cpk .cpk-selo__txt{font-size:20px}#cpk .cpk-selo__ano{font-size:12px}}
+#cpk .cpk-pacote--esgotado .cpk-pacote__foto img{filter:saturate(.4) brightness(.8)}
+@media (min-width:900px){#cpk .cpk-pacote:last-child:nth-child(odd){grid-column:1 / -1;flex-direction:row}#cpk .cpk-pacote:last-child:nth-child(odd) .cpk-pacote__foto{flex:0 0 50%;aspect-ratio:auto;min-height:320px}#cpk .cpk-pacote:last-child:nth-child(odd) .cpk-pacote__corpo{justify-content:center}}
+/* ---------- Carnaval ---------- */
+#cpk .cpk-carn{display:grid;gap:36px}
+@media (min-width:900px){#cpk .cpk-carn{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:start}}
+#cpk .cpk-carn__foto{position:relative;overflow:hidden;aspect-ratio:4 / 3;background:var(--cinza)}
+#cpk .cpk-carn__foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#cpk .cpk-carn__foto::after{content:"";position:absolute;inset:auto 0 0 0;height:55%;background:linear-gradient(180deg,rgba(48,51,35,0) 0%,rgba(48,51,35,.82) 100%);pointer-events:none}
+#cpk .cpk-carn__foto .cpk-etiqueta{position:absolute;z-index:1;left:0;top:0}
+#cpk .cpk-carn__leg{position:absolute;z-index:1;left:22px;right:22px;bottom:20px;display:grid;gap:4px;color:#fff}
+#cpk .cpk-carn__leg strong{font-family:var(--gilda);font-weight:400;font-size:clamp(28px,1.4vw + 22px,40px);line-height:1.05}
+#cpk .cpk-carn__leg span{font-family:var(--marcellus);font-size:17px;line-height:1.3;color:var(--cobre-claro)}
+@media (min-width:900px){#cpk .cpk-carn__foto{aspect-ratio:5 / 4;position:sticky;top:96px}}
+#cpk .cpk-carn .cpk-titulo{margin-top:0}
+#cpk .cpk-carn__preco{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;margin-top:22px;padding:16px 20px;background:var(--linho)}
+#cpk .cpk-carn__valor{font-family:var(--gilda);font-size:clamp(34px,1.5vw + 26px,46px);line-height:1;color:var(--mata)}
+#cpk .cpk-carn__cond{font-family:var(--marcellus);font-size:17px;line-height:1.35;color:var(--oliva)}
+#cpk .cpk-carn__nota{margin-top:8px;font-size:15px;line-height:1.45;color:var(--pedra)}
+#cpk .cpk-carn__sub{margin-top:28px;font-family:var(--trirong);font-weight:400;font-size:clamp(22px,.5vw + 19px,26px);line-height:1.2;color:var(--mata)}
+#cpk .cpk-carn__botoes{display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;margin-top:28px}
+#cpk .cpk-carn__botoes .cpk-btn--texto{color:var(--mata)}
+@media (max-width:600px){#cpk .cpk-carn__botoes .cpk-btn--terracota{width:100%;justify-content:space-between}}
+#cpk .cpk-prog{display:grid;gap:0;margin-top:14px;border-top:1px solid rgba(48,51,35,.22)}
+#cpk .cpk-prog__dia{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 18px;padding:14px 0;border-bottom:1px solid rgba(48,51,35,.22)}
+@media (max-width:600px){#cpk .cpk-prog__dia{grid-template-columns:minmax(0,1fr)}}
+#cpk .cpk-prog__quando{font-family:var(--marcellus);font-size:18px;line-height:1.3;color:var(--mata)}
+#cpk .cpk-prog__quando span{display:block;font-size:15px;color:var(--oliva)}
+#cpk .cpk-prog__txt{font-size:16.5px;line-height:1.5;color:var(--pedra)}
+#cpk .cpk-prog__txt strong{font-family:var(--marcellus);font-weight:400;font-size:18px;color:var(--mata)}
+#cpk .cpk-datas__ate{display:block;margin-top:4px;font-size:14px;line-height:1.4;color:var(--terracota)}
+</style>
+<div id="cpk" class="cpk">
+<!-- ================= 1. TOPO ================= -->
+<section class="cpk-topo" aria-labelledby="cpk-titulo">
+<div class="cpk-topo__midia">
+<img class="cpk-topo__foto cpk-topo__foto--espelho" src="/images/2026/11/cassorova-experiencias-banheira-de-petalas-de-rosa-03-scaled.jpg" srcset="/images/2026/11/cassorova-experiencias-banheira-de-petalas-de-rosa-03-scaled.jpg 768w, /images/2026/11/cassorova-experiencias-banheira-de-petalas-de-rosa-03-scaled.jpg 1024w, /images/2026/11/cassorova-experiencias-banheira-de-petalas-de-rosa-03-scaled.jpg 1536w, /images/2026/11/cassorova-experiencias-banheira-de-petalas-de-rosa-03-scaled.jpg 2048w, /images/2026/11/cassorova-experiencias-banheira-de-petalas-de-rosa-03-scaled.jpg 2560w" sizes="100vw" width="2560" height="1707" alt="Casal sorrindo em banheira de pétalas de rosa vermelhas, com champanhe e petiscos ao lado" loading="eager" fetchpriority="high" decoding="async" style="object-position:50% 0%">
+</div>
+<div class="cpk-topo__sombra" aria-hidden="true"></div>
+<div class="cpk-topo__conteudo">
+<p class="cpk-topo__sobre">Pacotes do Cassorova</p>
+<h1 id="cpk-titulo" class="cpk-topo__titulo">Pacotes em Brotas para feriados e datas especiais</h1>
+<p class="cpk-topo__frase">Fins de semana de novembro, férias de janeiro e Carnaval: escolha o pacote e abra o motor de reservas já com as datas.</p>
+<div class="cpk-topo__acoes">
+<a class="cpk-btn cpk-btn--branco" href="#cpk-reserva" data-cpk-cta="ver-datas" data-cpk-pos="topo">Ver Datas e Preços</a>
+<a class="cpk-btn cpk-btn--texto" href="#cpk-novembro" data-cpk-cta="ver-pacotes" data-cpk-pos="topo">Ver os Pacotes</a>
+</div>
+<a class="cpk-topo__prova" href="https://www.tripadvisor.com.br/Hotel_Review-g793338-d21389571-Reviews-Cassorova_Hotel_Boutique-Brotas_State_of_Sao_Paulo.html" target="_blank" rel="noopener" data-cpk-cta="avaliacoes-tripadvisor" data-cpk-pos="topo">
+<img src="/images/2026/07/cassorova-tripadvisor.png" width="200" height="262" alt="Selo Travelers' Choice 2026 do Tripadvisor" loading="eager" decoding="async">
+<span class="cpk-topo__prova-txt"><span class="cpk-topo__prova-premio">Travelers' Choice 2026</span><span class="cpk-topo__prova-nota"><strong>4,9</strong> de 5 em 275 avaliações</span><span class="cpk-topo__prova-qtd">no Tripadvisor</span></span>
+</a>
+</div>
+</section>
+<!-- ================= 2. BUSCADOR ================= -->
+<section class="cpk-reserva" id="cpk-reserva" aria-labelledby="cpk-reserva-t">
+<div class="cpk-reserva__caixa cpk-busca">
+<div class="cpk-reserva__topo">
+<h2 id="cpk-reserva-t" class="cpk-reserva__titulo">Escolha as datas e veja os preços</h2>
+<p class="cpk-reserva__sub">Diárias com café da manhã colonial e pagamento em até 10x no cartão</p>
+</div>
+<div class="cpk-reserva__campos">
+<div class="cpk-campo cpk-campo--bangalo"><label for="cpk-bangalo">Bangalô</label><select id="cpk-bangalo"><option value="" selected>Ainda não sei</option><option value="villa-romance">Villa Romance</option><option value="villa-aconchego">Villa Aconchego (casal)</option><option value="villa-aconchego-familia">Villa Aconchego Família</option></select></div>
+<div class="cpk-campo"><label for="cpk-entrada">Entrada</label><input type="date" id="cpk-entrada"></div>
+<div class="cpk-campo"><label for="cpk-saida">Saída</label><input type="date" id="cpk-saida"></div>
+<div class="cpk-campo"><label for="cpk-adultos">Adultos</label><select id="cpk-adultos"><option value="1">1 adulto</option><option value="2" selected>2 adultos</option><option value="3">3 adultos</option><option value="4">4 adultos</option><option value="5">5 adultos</option><option value="6">6 adultos</option><option value="7">7 adultos</option><option value="8">8 adultos</option></select></div>
+<div class="cpk-campo"><label for="cpk-criancas">Crianças</label><select id="cpk-criancas"><option value="0" selected>Nenhuma</option><option value="1">1 criança</option><option value="2">2 crianças</option><option value="3">3 crianças</option><option value="4">4 crianças</option></select></div>
+</div>
+<div class="cpk-reserva__acoes">
+<a class="cpk-btn cpk-btn--terracota" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee&amp;utm_source=site&amp;utm_medium=pagina-pacotes&amp;utm_campaign=pacotes-geral&amp;utm_content=link" data-cpk-busca="motor">Ver Preços e Reservar</a>
+<a class="cpk-btn cpk-btn--contorno" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20consultar%20datas%20e%20valores%20de%20pacotes%20no%20Cassorova" target="_blank" rel="noopener" data-cpk-busca="whatsapp">Reservar pelo WhatsApp</a>
+<p class="cpk-reserva__nota">Réveillon 2027 esgotado. Para as demais datas, o motor mostra os bangalôs livres. Check-in a partir das 16h e check-out até as 14h.</p>
+</div>
+<p class="cpk-reserva__aviso" hidden></p>
+</div>
+</section>
+<!-- ================= 3. DESTAQUE DO MÊS ================= -->
+<section class="cpk-sec" id="cpk-novembro" aria-labelledby="cpk-novembro-t">
+<div class="cpk-linha cpk-destaque">
+<div class="cpk-destaque__foto">
+<img src="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-6.jpg" srcset="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-6.jpg 480w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-6.jpg 768w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-6.jpg 1024w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-6.jpg 1536w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-6.jpg 1600w" sizes="(min-width: 900px) 1000px, 100vw" width="1600" height="640" alt="Casal de mãos dadas à beira do lago no pôr do sol, com o céu alaranjado refletido na água" loading="lazy" decoding="async" style="object-position:30% 50%">
+<span class="cpk-etiqueta">Sexta a domingo, 2 diárias</span>
+</div>
+<div class="cpk-destaque__txt">
+<h2 id="cpk-novembro-t" class="cpk-titulo">Fins de semana de novembro</h2>
+<p class="cpk-chamada">Duas diárias, de sexta a domingo, com cachoeiras, piscina de borda infinita e bangalô com lareira e ofurô externo.</p>
+<ul class="cpk-lista"><li>Café da manhã, estacionamento e as 2 cachoeiras do ecoparque incluídos</li><li>Pagamento em até 10x no cartão</li><li>Escolha entre os bangalôs Aconchego, Aconchego Família e Romance</li></ul>
+<div class="cpk-datas">
+<a class="cpk-data" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee&amp;checkin=27/11/2026&amp;checkout=29/11/2026&amp;adults=2&amp;utm_source=site&amp;utm_medium=pagina-pacotes&amp;utm_campaign=pacotes-novembro&amp;utm_content=fds-27-11" data-cpk-ate="2026-11-27" data-cpk-cta="ver-datas" data-cpk-pacote="novembro" data-cpk-utm="fds-27-11" data-cpk-pos="destaque"><span class="cpk-data__chip"><span class="cpk-data__num">27 a 29</span><span class="cpk-data__mes">nov</span></span><span><span class="cpk-data__quando">Último fim de semana de novembro</span><span class="cpk-data__dias">Sexta 27 a domingo 29, 2 diárias com café da manhã</span></span><span class="cpk-data__cta">Ver preços</span></a>
+</div>
+<div class="cpk-destaque__mais">
+<a class="cpk-btn cpk-btn--terracota" href="/ofertas-hospedagem-brotas/" data-cpk-cta="ver-pacote" data-cpk-pacote="novembro" data-cpk-pos="destaque">Ver o pacote de novembro</a>
+<a class="cpk-btn cpk-btn--texto" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee&amp;utm_source=site&amp;utm_medium=pagina-pacotes&amp;utm_campaign=pacotes-novembro&amp;utm_content=destaque-outras-datas" data-cpk-cta="ver-datas" data-cpk-pacote="novembro" data-cpk-pos="destaque-outras-datas">Ver outras datas no motor de reservas</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= 4. DATAS ESPECIAIS ================= -->
+<section class="cpk-sec cpk-sec--linho" id="cpk-datas" aria-labelledby="cpk-datas-t">
+<div class="cpk-linha">
+<div class="cpk-cabeca cpk-cabeca--lado">
+<h2 id="cpk-datas-t" class="cpk-titulo">Datas especiais até o Carnaval</h2>
+<p class="cpk-chamada">Feriados e temporadas têm poucas datas e estadia mínima. Os botões abrem o motor de reservas já com as datas do pacote e 2 adultos, e você pode trocá-las lá.</p>
+</div>
+<div class="cpk-pacotes">
+<article class="cpk-pacote" id="cpk-consciencia-negra" aria-labelledby="cpk-consciencia-negra-t" data-cpk-ate="2026-11-19"><div class="cpk-pacote__foto"><img src="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-1.jpg" srcset="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-1.jpg 400w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-1.jpg 1080w" sizes="(min-width: 1200px) 560px, (min-width: 900px) 42vw, 86vw" width="1080" height="675" alt="Cachoeira caindo entre a mata fechada" loading="lazy" decoding="async"><span class="cpk-pacote__leg"><strong>19 a 22 de novembro</strong><span>Quinta a domingo, 3 diárias</span></span></div><div class="cpk-pacote__corpo"><h3 id="cpk-consciencia-negra-t" class="cpk-pacote__nome">Feriado da Consciência Negra</h3><p class="cpk-pacote__gancho">Três diárias para descer até a Cachoeira Cassorova, ficar na borda infinita e acordar sem pressa.</p><p class="cpk-promo"><strong>Tarifa especial do feriado</strong><span>Reserve 2 diárias e pague só R$ 350 na terceira</span></p><ul class="cpk-lista"><li>Café da manhã, estacionamento e 2 cachoeiras incluídos</li><li>Em até 10x no cartão, com datas de feriado limitadas</li></ul><div class="cpk-pacote__botoes"><a class="cpk-btn cpk-btn--terracota" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee&amp;checkin=19/11/2026&amp;checkout=22/11/2026&amp;adults=2&amp;utm_source=site&amp;utm_medium=pagina-pacotes&amp;utm_campaign=pacotes-consciencia-negra&amp;utm_content=cartao" data-cpk-cta="ver-datas" data-cpk-pacote="consciencia-negra" data-cpk-pos="cartao">Ver 19 a 22 de novembro</a><a class="cpk-btn cpk-btn--texto" href="/pacotes/consciencia-negra/" data-cpk-cta="ver-pacote" data-cpk-pacote="consciencia-negra" data-cpk-pos="cartao">Ver o pacote</a><a class="cpk-btn cpk-btn--texto" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20reservar%20o%20feriado%20da%20Consci%C3%AAncia%20Negra%20no%20Cassorova" target="_blank" rel="noopener" data-cpk-cta="whatsapp" data-cpk-pacote="consciencia-negra" data-cpk-pos="cartao">Perguntar pelo WhatsApp</a></div></div></article>
+<article class="cpk-pacote cpk-pacote--esgotado" id="cpk-reveillon" aria-labelledby="cpk-reveillon-t"><div class="cpk-pacote__foto"><img src="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-17.jpg" srcset="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-17.jpg 480w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-17.jpg 768w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-17.jpg 1024w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-17.jpg 1536w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-17.jpg 1600w" sizes="(min-width: 1200px) 560px, (min-width: 900px) 42vw, 86vw" width="1600" height="640" alt="Piscina iluminada à noite, com palmeiras e a construção iluminada ao fundo" loading="lazy" decoding="async" style="object-position:50% 50%"><span class="cpk-pacote__leg"><strong>29 dez a 2 jan</strong><span>Réveillon 2027</span></span><span class="cpk-selo" role="img" aria-label="Réveillon esgotado"><span class="cpk-selo__ano">Réveillon</span><span class="cpk-selo__txt">esgotado</span></span></div><div class="cpk-pacote__corpo"><h3 id="cpk-reveillon-t" class="cpk-pacote__nome">Réveillon no Cassorova</h3><p class="cpk-pacote__gancho">A virada do ano na mata esgotou. Não deixe o próximo feriado para a última hora.</p><ul class="cpk-lista"><li>Todas as datas do Réveillon foram reservadas</li><li>Piscina iluminada, fogueira e duas cachoeiras: quem reservou cedo garantiu o lugar</li><li>O Carnaval e as férias de janeiro seguem abertos, reserve antes que esgotem</li></ul><div class="cpk-pacote__botoes"><a class="cpk-btn cpk-btn--terracota" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%2C%20o%20R%C3%A9veillon%20est%C3%A1%20esgotado%20e%20quero%20saber%20se%20h%C3%A1%20alguma%20desist%C3%AAncia" target="_blank" rel="noopener" data-cpk-cta="whatsapp-esgotado" data-cpk-pacote="reveillon" data-cpk-pos="cartao">Perguntar se há desistência</a><a class="cpk-btn cpk-btn--texto" href="/reveillon/" data-cpk-cta="ver-pacote" data-cpk-pacote="reveillon" data-cpk-pos="cartao">Ver o pacote</a><a class="cpk-btn cpk-btn--texto" href="/carnaval/" data-cpk-cta="ver-carnaval" data-cpk-pacote="reveillon" data-cpk-pos="cartao">Ver o Carnaval</a><a class="cpk-btn cpk-btn--texto" href="/pacotes/ferias-janeiro/" data-cpk-cta="ver-janeiro" data-cpk-pacote="reveillon" data-cpk-pos="cartao">Ver as férias de janeiro</a></div></div></article>
+<article class="cpk-pacote" id="cpk-janeiro" aria-labelledby="cpk-janeiro-t"><div class="cpk-pacote__foto"><img src="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-14.jpg" srcset="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-14.jpg 400w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-14.jpg 1080w" sizes="(min-width: 1200px) 560px, (min-width: 900px) 42vw, 86vw" width="1080" height="675" alt="Piscina natural com prainha de areia e espreguiçadeiras à sombra das árvores" loading="lazy" decoding="async"><span class="cpk-pacote__leg"><strong>Janeiro de 2027</strong><span>Férias de verão em família</span></span></div><div class="cpk-pacote__corpo"><h3 id="cpk-janeiro-t" class="cpk-pacote__nome">Férias de Janeiro</h3><p class="cpk-pacote__gancho">Piscina natural, caiaque, stand up paddle e cachoeiras: férias em família sem sair da propriedade.</p><ul class="cpk-lista"><li>Praia Resort com piscina natural, caiaque e stand up paddle</li><li>Café da manhã, estacionamento e 2 cachoeiras incluídos</li><li>Em até 10x no cartão</li></ul><div class="cpk-pacote__botoes"><a class="cpk-btn cpk-btn--terracota" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee&amp;utm_source=site&amp;utm_medium=pagina-pacotes&amp;utm_campaign=pacotes-janeiro&amp;utm_content=cartao" data-cpk-cta="ver-datas" data-cpk-pacote="janeiro" data-cpk-pos="cartao">Escolher as datas de janeiro</a><a class="cpk-btn cpk-btn--texto" href="/pacotes/ferias-janeiro/" data-cpk-cta="ver-pacote" data-cpk-pacote="janeiro" data-cpk-pos="cartao">Ver o pacote</a><a class="cpk-btn cpk-btn--texto" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20reservar%20as%20f%C3%A9rias%20de%20janeiro%20no%20Cassorova" target="_blank" rel="noopener" data-cpk-cta="whatsapp" data-cpk-pacote="janeiro" data-cpk-pos="cartao">Perguntar pelo WhatsApp</a></div></div></article>
+</div>
+</div>
+</section>
+<section class="cpk-sec" id="cpk-carnaval" aria-labelledby="cpk-carnaval-t"><div class="cpk-linha cpk-carn"><div class="cpk-carn__foto"><img src="/images/2025/05/gastronomia-cassorova-resort-ecoturismo-brotas-6.jpg" srcset="/images/2025/05/gastronomia-cassorova-resort-ecoturismo-brotas-6.jpg 480w, /images/2025/05/gastronomia-cassorova-resort-ecoturismo-brotas-6.jpg 768w, /images/2025/05/gastronomia-cassorova-resort-ecoturismo-brotas-6.jpg 1024w, /images/2025/05/gastronomia-cassorova-resort-ecoturismo-brotas-6.jpg 1536w, /images/2025/05/gastronomia-cassorova-resort-ecoturismo-brotas-6.jpg 1600w" sizes="(min-width: 900px) 980px, 100vw" width="1600" height="640" alt="Dois drinks coloridos à beira da piscina, com a água ao fundo" loading="lazy" decoding="async" style="object-position:70% 50%"><span class="cpk-etiqueta">Sexta 5 a quarta 10 de fevereiro</span><span class="cpk-carn__leg"><strong>5 a 10 de fevereiro</strong><span>Carnaval 2027 no Cassorova</span></span></div><div><h2 id="cpk-carnaval-t" class="cpk-titulo">Carnaval Essencial 2027</h2><p class="cpk-chamada">Cinco noites pelo valor de quatro. A diária de cortesia, de 9 a 10 de fevereiro, vale para reservas feitas até 31 de dezembro de 2026.</p><p class="cpk-carn__nota">Check-in a partir das 16h em 5 de fevereiro e check-out até as 14h na Quarta-feira de Cinzas, 10 de fevereiro.</p><h3 class="cpk-carn__sub">O que está incluído</h3><ul class="cpk-lista"><li>Hospedagem em bangalô com café da manhã</li><li>Welcome drink na chegada</li><li>Jantar na chegada, na sexta, 5 de fevereiro</li><li>Experiências de ecoturismo, com acesso à estrutura do resort</li><li>Drinks na Matinê Tropical: chope Brotas Beer, caipirinhas e caipiroskas</li><li>Manhãs de Pausa com yoga, alongamento e relaxamento, em 6, 7 e 10 de fevereiro</li></ul><h3 class="cpk-carn__sub">Programação</h3><div class="cpk-prog"><div class="cpk-prog__dia"><p class="cpk-prog__quando">Sex 5/2</p><p class="cpk-prog__txt"><strong>Chegada.</strong> Chegada sem pressa, welcome drink, tempo livre para o spa e o bangalô, e jantar.</p></div><div class="cpk-prog__dia"><p class="cpk-prog__quando">Sáb 6/2</p><p class="cpk-prog__txt"><strong>Corpo e Samba.</strong> Café, Manhã de Pausa, cachoeiras, trilhas e ecoturismo. No fim da tarde, Roda de Samba na Fogueira. Noite livre.</p></div><div class="cpk-prog__dia"><p class="cpk-prog__quando">Dom 7/2</p><p class="cpk-prog__txt"><strong>Carnaval à luz do dia.</strong> Café, Manhã de Pausa, Praia Resort, caiaques e stand up paddle. Das 16h às 18h, Matinê Tropical na piscina com drinks inclusos.</p></div><div class="cpk-prog__dia"><p class="cpk-prog__quando">Seg 8/2</p><p class="cpk-prog__txt"><strong>Aventura e natureza.</strong> Café, tirolesa sobre a Cachoeira Cassorova, arvorismo, trilhas e cachoeiras, Praia Resort, piscina de água natural, spa exclusivo para hóspedes e ofurô privativo.</p></div><div class="cpk-prog__dia"><p class="cpk-prog__quando">Ter 9/2</p><p class="cpk-prog__txt"><strong>Carnaval.</strong> Café, dia livre com cachoeiras, trilhas, piscinas, Praia Resort e spa.</p></div><div class="cpk-prog__dia"><p class="cpk-prog__quando">Qua 10/2</p><p class="cpk-prog__txt"><strong>Quarta-feira de Cinzas.</strong> Café, manhã livre e check-out até as 14h.</p></div></div><div class="cpk-carn__botoes"><a class="cpk-btn cpk-btn--terracota" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee&amp;checkin=05/02/2027&amp;checkout=10/02/2027&amp;adults=2&amp;utm_source=site&amp;utm_medium=pagina-pacotes&amp;utm_campaign=pacotes-carnaval&amp;utm_content=carnaval" data-cpk-cta="ver-datas" data-cpk-pacote="carnaval" data-cpk-pos="carnaval">Reservar de 5 a 10 de fevereiro</a><a class="cpk-btn cpk-btn--texto" href="/carnaval/" data-cpk-cta="ver-pacote" data-cpk-pacote="carnaval" data-cpk-pos="carnaval">Ver o pacote</a><a class="cpk-btn cpk-btn--texto" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20reservar%20o%20Carnaval%20Essencial%20no%20Cassorova" target="_blank" rel="noopener" data-cpk-cta="whatsapp" data-cpk-pacote="carnaval" data-cpk-pos="carnaval">Reservar pelo WhatsApp</a></div></div></div></section>
+<!-- ================= 5. O QUE ESTÁ INCLUSO ================= -->
+<section class="cpk-sec cpk-sec--mata" id="cpk-incluso" aria-labelledby="cpk-incluso-t">
+<div class="cpk-linha">
+<div class="cpk-cabeca cpk-cabeca--lado">
+<h2 id="cpk-incluso-t" class="cpk-titulo cpk-titulo--trirong">Em todas as datas, a diária já traz o essencial</h2>
+<p class="cpk-chamada">A tarifa mostrada no motor de reservas inclui o que torna a estadia no Cassorova completa.</p>
+</div>
+<ul class="cpk-vant cpk-vant--4">
+<li class="cpk-vant__item"><h3 class="cpk-vant__titulo">Café da manhã</h3><p class="cpk-vant__texto">Buffet colonial com pães, bolos, frutas e itens quentes do fogão a lenha.</p></li>
+<li class="cpk-vant__item"><h3 class="cpk-vant__titulo">2 cachoeiras</h3><p class="cpk-vant__texto">A Cassorova, apontada pela revista Viagem entre as mais bonitas do Brasil, e a dos Quatis, sem custo extra para hóspedes.</p></li>
+<li class="cpk-vant__item"><h3 class="cpk-vant__titulo">Sem day use</h3><p class="cpk-vant__texto">Quem se hospeda economiza as taxas de day use da família e aproveita toda a estrutura do resort.</p></li>
+<li class="cpk-vant__item"><h3 class="cpk-vant__titulo">Até 10x no cartão</h3><p class="cpk-vant__texto">Estacionamento incluso e parcelamento em até 10 vezes no cartão de crédito.</p></li>
+</ul>
+<div class="cpk-vant__botoes">
+<a class="cpk-btn cpk-btn--branco" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee&amp;utm_source=site&amp;utm_medium=pagina-pacotes&amp;utm_campaign=pacotes-geral&amp;utm_content=incluso" data-cpk-cta="ver-datas" data-cpk-pos="incluso">Ver Datas e Preços</a>
+<a class="cpk-btn cpk-btn--contorno" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20pacotes%20do%20Cassorova" target="_blank" rel="noopener" data-cpk-cta="whatsapp" data-cpk-pos="incluso">Reservar pelo WhatsApp</a>
+</div>
+<p class="cpk-vant__nota">Check-in a partir das 16h e check-out até as 14h.</p>
+</div>
+</section>
+<!-- ================= 6. COMO RESERVAR E BANGALÔS ================= -->
+<section class="cpk-sec" id="cpk-como" aria-labelledby="cpk-como-t">
+<div class="cpk-linha cpk-dois">
+<div>
+<h2 id="cpk-como-t" class="cpk-titulo">Como reservar</h2>
+<p class="cpk-chamada">Em três passos, sem sair do celular.</p>
+<ol class="cpk-passos">
+<li class="cpk-passo"><div><h3 class="cpk-passo__titulo">Escolha a data</h3><p class="cpk-passo__texto">Toque em Ver Datas e Preços no pacote que combina com você.</p></div></li>
+<li class="cpk-passo"><div><h3 class="cpk-passo__titulo">Veja os bangalôs livres</h3><p class="cpk-passo__texto">O motor de reservas abre nas datas do pacote, com os bangalôs disponíveis e o valor da estadia.</p></div></li>
+<li class="cpk-passo"><div><h3 class="cpk-passo__titulo">Confirme online</h3><p class="cpk-passo__texto">Finalize a reserva no cartão, em até 10x, ou tire suas dúvidas antes pelo WhatsApp.</p></div></li>
+</ol>
+</div>
+<div class="cpk-bang">
+<h3 class="cpk-vant__titulo cpk-bang__titulo" style="color:var(--mata)">Todos os bangalôs têm</h3>
+<ul class="cpk-lista"><li>Cama king, ar-condicionado e smart TV</li><li>Ofurô externo e lareira</li><li>Ducha com aquecimento central, roupões e amenities</li><li>Frigobar, mesa de trabalho e estacionamento exclusivo</li></ul>
+<a class="cpk-btn cpk-btn--oliva" href="/bangalos/" data-cpk-cta="bangalos" data-cpk-pos="como-reservar">Conhecer os Bangalôs</a>
+</div>
+</div>
+</section>
+<!-- ================= 7. AVALIAÇÕES ================= -->
+<section class="cpk-sec cpk-sec--linho" id="cpk-avaliacoes" aria-labelledby="cpk-aval-t">
+<div class="cpk-linha cpk-aval">
+<div class="cpk-aval__citacao">
+<h2 id="cpk-aval-t" class="cpk-titulo">O que dizem os hóspedes</h2>
+<blockquote><p>Lindo local, excelente para relaxar com a pessoa amada ou a família toda.</p></blockquote>
+<p class="cpk-aval__quem">Digo F., avaliação no Google em junho de 2026</p>
+</div>
+<div class="cpk-aval__trip" style="background:#fff">
+<img src="/images/2026/07/cassorova-tripadvisor.png" width="200" height="262" alt="Selo Travelers' Choice 2026 do Tripadvisor" loading="lazy" decoding="async">
+<p class="cpk-aval__nota"><strong>4,9</strong> de 5</p>
+<p class="cpk-aval__fonte">Nota geral do Cassorova em 275 avaliações no Tripadvisor, com o Travelers' Choice 2026. Consulta em novembro de 2026.</p>
+<a class="cpk-btn cpk-btn--terracota" href="https://www.tripadvisor.com.br/Hotel_Review-g793338-d21389571-Reviews-Cassorova_Hotel_Boutique-Brotas_State_of_Sao_Paulo.html" target="_blank" rel="noopener" data-cpk-cta="avaliacoes-tripadvisor" data-cpk-pos="avaliacoes">Ler Avaliações no Tripadvisor</a>
+</div>
+</div>
+</section>
+<!-- ================= 8. PERGUNTAS FREQUENTES ================= -->
+<section class="cpk-sec" id="cpk-faq" aria-labelledby="cpk-faq-t">
+<div class="cpk-linha cpk-faq__grade">
+<div class="cpk-faq__lado">
+<h2 id="cpk-faq-t" class="cpk-titulo">Perguntas sobre os pacotes</h2>
+<p class="cpk-chamada">Não encontrou sua dúvida? A recepção responde pelo WhatsApp.</p>
+<a class="cpk-btn cpk-btn--musgo" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20pacotes%20do%20Cassorova" target="_blank" rel="noopener" data-cpk-cta="whatsapp" data-cpk-pos="faq">Falar no WhatsApp</a>
+</div>
+<div class="cpk-faq__lista">
+<details class="cpk-qa" name="cpk-faq" open><summary><h3 class="cpk-qa__q">Posso trocar as datas depois de abrir o motor de reservas?</h3><span class="cpk-qa__icon" aria-hidden="true"></span></summary><div class="cpk-qa__a"><p>Pode. Os botões abrem o motor de reservas já com as datas do pacote e 2 adultos, e você pode mudar as datas, o número de adultos e de crianças antes de reservar.</p></div></details>
+<details class="cpk-qa" name="cpk-faq"><summary><h3 class="cpk-qa__q">Por que os feriados têm estadia mínima?</h3><span class="cpk-qa__icon" aria-hidden="true"></span></summary><div class="cpk-qa__a"><p>Nos fins de semana comuns, de sexta a domingo, o mínimo é de 2 diárias. Em feriados e na temporada o mínimo pode ser maior, como no Carnaval. Se a busca pedir um período maior, é por causa desse mínimo.</p></div></details>
+<details class="cpk-qa" name="cpk-faq"><summary><h3 class="cpk-qa__q">O Réveillon está esgotado?</h3><span class="cpk-qa__icon" aria-hidden="true"></span></summary><div class="cpk-qa__a"><p>Sim. Todas as datas do Réveillon de 2027 foram reservadas. Se você quer saber de alguma desistência, fale com o atendimento pelo WhatsApp. O Carnaval e as férias de janeiro seguem abertos.</p></div></details>
+<details class="cpk-qa" name="cpk-faq"><summary><h3 class="cpk-qa__q">Como funciona a diária de cortesia do Carnaval Essencial?</h3><span class="cpk-qa__icon" aria-hidden="true"></span></summary><div class="cpk-qa__a"><p>O pacote tem 4 diárias pagas, de 5 a 9 de fevereiro, e a diária de 9 a 10 de fevereiro é cortesia para reservas feitas até 31 de dezembro de 2026. São cinco noites pelo valor de quatro.</p></div></details>
+<details class="cpk-qa" name="cpk-faq"><summary><h3 class="cpk-qa__q">O que está incluso na diária?</h3><span class="cpk-qa__icon" aria-hidden="true"></span></summary><div class="cpk-qa__a"><p>A tarifa mostrada no motor de reservas inclui café da manhã, estacionamento e o acesso às 2 cachoeiras do ecoparque Cassorova.</p></div></details>
+<details class="cpk-qa" name="cpk-faq"><summary><h3 class="cpk-qa__q">Posso parcelar a reserva?</h3><span class="cpk-qa__icon" aria-hidden="true"></span></summary><div class="cpk-qa__a"><p>Pode. O motor de reservas aceita cartão de crédito em até 10x, com parcela mínima de R$ 200.</p></div></details>
+<details class="cpk-qa" name="cpk-faq"><summary><h3 class="cpk-qa__q">Quais bangalôs posso reservar?</h3><span class="cpk-qa__icon" aria-hidden="true"></span></summary><div class="cpk-qa__a"><p>O Cassorova tem bangalôs Aconchego, Aconchego Família e Romance. O motor de reservas mostra quais estão livres nas datas que você escolher. Veja fotos e detalhes na página de <a href="/bangalos/">Bangalôs</a>.</p></div></details>
+<details class="cpk-qa" name="cpk-faq"><summary><h3 class="cpk-qa__q">Qual é a política de cancelamento?</h3><span class="cpk-qa__icon" aria-hidden="true"></span></summary><div class="cpk-qa__a"><p>Pedidos de cancelamento ou de troca de data são feitos por e-mail, para resort@cassorova.com.br, e não por telefone ou WhatsApp. Até 7 dias antes do check-in, o valor pago vira uma carta de crédito válida por 1 ano. Com menos de 7 dias, a reserva não pode ser cancelada nem alterada. As regras completas aparecem no motor de reservas.</p></div></details>
+<details class="cpk-qa" name="cpk-faq"><summary><h3 class="cpk-qa__q">Quem se hospeda paga o day use?</h3><span class="cpk-qa__icon" aria-hidden="true"></span></summary><div class="cpk-qa__a"><p>Não. Ao se hospedar no Cassorova, você economiza as taxas de day use da sua família e aproveita todo o conforto e a estrutura do resort.</p></div></details>
+<details class="cpk-qa" name="cpk-faq"><summary><h3 class="cpk-qa__q">Qual o horário de check-in e de check-out?</h3><span class="cpk-qa__icon" aria-hidden="true"></span></summary><div class="cpk-qa__a"><p>O check-in é a partir das 16h e o check-out vai até as 14h.</p></div></details>
+<details class="cpk-qa" name="cpk-faq"><summary><h3 class="cpk-qa__q">A que distância o Cassorova fica de São Paulo?</h3><span class="cpk-qa__icon" aria-hidden="true"></span></summary><div class="cpk-qa__a"><p>O Cassorova fica a 217 km de São Paulo, 173 km de Ribeirão Preto e 278 km de São José do Rio Preto.</p></div></details>
+</div>
+</div>
+</section>
+<!-- ================= 9. CHAMADA FINAL ================= -->
+<section class="cpk-sec cpk-final" aria-labelledby="cpk-final-t">
+<div class="cpk-linha cpk-final__grade">
+<figure class="cpk-final__foto"><img src="/images/2026/11/cassorova-experiencias-casal-de-roupao-com-lareira-01-scaled.jpg" srcset="/images/2026/11/cassorova-experiencias-casal-de-roupao-com-lareira-01-scaled.jpg 768w, /images/2026/11/cassorova-experiencias-casal-de-roupao-com-lareira-01-scaled.jpg 1024w, /images/2026/11/cassorova-experiencias-casal-de-roupao-com-lareira-01-scaled.jpg 1536w, /images/2026/11/cassorova-experiencias-casal-de-roupao-com-lareira-01-scaled.jpg 2048w, /images/2026/11/cassorova-experiencias-casal-de-roupao-com-lareira-01-scaled.jpg 2560w" sizes="(min-width: 900px) 560px, 86vw" width="2560" height="1707" alt="Casal de roupão brindando com vinho diante da lareira acesa, com petiscos e frutas sobre a manta" loading="lazy" decoding="async" style="object-position:40% 50%"></figure>
+<div>
+<h2 id="cpk-final-t" class="cpk-titulo">Escolha a data e garanta o seu bangalô</h2>
+<p class="cpk-final__frase">Feriados e temporadas têm poucas datas. Veja o que está livre agora.</p>
+<p class="cpk-chamada">Abra o motor de reservas ou fale com a recepção pelo WhatsApp.</p>
+<div class="cpk-final__botoes">
+<a class="cpk-btn cpk-btn--oliva" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee&amp;utm_source=site&amp;utm_medium=pagina-pacotes&amp;utm_campaign=pacotes-geral&amp;utm_content=chamada-final" data-cpk-cta="ver-datas" data-cpk-pos="chamada-final">Ver Datas e Preços</a>
+<a class="cpk-btn cpk-btn--texto" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20pacotes%20do%20Cassorova" target="_blank" rel="noopener" data-cpk-cta="whatsapp" data-cpk-pos="chamada-final">Reservar pelo WhatsApp</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= BARRA FIXA ================= -->
+<div class="cpk-fixa">
+<p class="cpk-fixa__txt">Pacotes do Cassorova</p>
+<a class="cpk-btn cpk-btn--branco" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee&amp;utm_source=site&amp;utm_medium=pagina-pacotes&amp;utm_campaign=pacotes-geral&amp;utm_content=barra-fixa" data-cpk-cta="ver-datas" data-cpk-pos="barra-fixa">Ver Datas</a>
+<a class="cpk-btn cpk-btn--terracota" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20pacotes%20do%20Cassorova" target="_blank" rel="noopener" data-cpk-cta="whatsapp" data-cpk-pos="barra-fixa">WhatsApp</a>
+</div>
+<span class="cpk-fim" aria-hidden="true"></span>
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Resort","@id":"https://cassorova.com.br/#resort","name":"Cassorova Resort e Ecoturismo","url":"https://cassorova.com.br/","amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Café da manhã incluso na diária","value":true},{"@type":"LocationFeatureSpecification","name":"Estacionamento gratuito","value":true},{"@type":"LocationFeatureSpecification","name":"Duas cachoeiras dentro do ecoparque","value":true},{"@type":"LocationFeatureSpecification","name":"Piscina de borda infinita com hidromassagens aquecidas","value":true},{"@type":"LocationFeatureSpecification","name":"Praia Resort com caiaque e stand up paddle","value":true},{"@type":"LocationFeatureSpecification","name":"Restaurante colonial","value":true},{"@type":"LocationFeatureSpecification","name":"Pagamento em até 10x no cartão","value":true}]},{"@type":"ItemList","@id":"https://cassorova.com.br/pacotes/#pacotes","name":"Pacotes do Cassorova","itemListElement":[{"@type":"ListItem","position":1,"name":"Fins de semana de novembro","url":"https://cassorova.com.br/ofertas-hospedagem-brotas/"},{"@type":"ListItem","position":2,"name":"Feriado da Consciência Negra","url":"https://cassorova.com.br/pacotes/consciencia-negra/"},{"@type":"ListItem","position":3,"name":"Réveillon no Cassorova","url":"https://cassorova.com.br/reveillon/"},{"@type":"ListItem","position":4,"name":"Férias de Janeiro","url":"https://cassorova.com.br/pacotes/ferias-janeiro/"},{"@type":"ListItem","position":5,"name":"Carnaval Essencial 2027","url":"https://cassorova.com.br/carnaval/"}]},{"@type":"FAQPage","@id":"https://cassorova.com.br/pacotes/#faq","mainEntity":[{"@type":"Question","name":"Posso trocar as datas depois de abrir o motor de reservas?","acceptedAnswer":{"@type":"Answer","text":"Pode. Os botões abrem o motor de reservas já com as datas do pacote e 2 adultos, e você pode mudar as datas, o número de adultos e de crianças antes de reservar."}},{"@type":"Question","name":"Por que os feriados têm estadia mínima?","acceptedAnswer":{"@type":"Answer","text":"Nos fins de semana comuns, de sexta a domingo, o mínimo é de 2 diárias. Em feriados e na temporada o mínimo pode ser maior, como no Carnaval. Se a busca pedir um período maior, é por causa desse mínimo."}},{"@type":"Question","name":"O Réveillon está esgotado?","acceptedAnswer":{"@type":"Answer","text":"Sim. Todas as datas do Réveillon de 2027 foram reservadas. Se você quer saber de alguma desistência, fale com o atendimento pelo WhatsApp. O Carnaval e as férias de janeiro seguem abertos."}},{"@type":"Question","name":"Como funciona a diária de cortesia do Carnaval Essencial?","acceptedAnswer":{"@type":"Answer","text":"O pacote tem 4 diárias pagas, de 5 a 9 de fevereiro, e a diária de 9 a 10 de fevereiro é cortesia para reservas feitas até 31 de dezembro de 2026. São cinco noites pelo valor de quatro."}},{"@type":"Question","name":"O que está incluso na diária?","acceptedAnswer":{"@type":"Answer","text":"A tarifa mostrada no motor de reservas inclui café da manhã, estacionamento e o acesso às 2 cachoeiras do ecoparque Cassorova."}},{"@type":"Question","name":"Posso parcelar a reserva?","acceptedAnswer":{"@type":"Answer","text":"Pode. O motor de reservas aceita cartão de crédito em até 10x, com parcela mínima de R$ 200."}},{"@type":"Question","name":"Quais bangalôs posso reservar?","acceptedAnswer":{"@type":"Answer","text":"O Cassorova tem bangalôs Aconchego, Aconchego Família e Romance. O motor de reservas mostra quais estão livres nas datas que você escolher. Veja fotos e detalhes na página de Bangalôs."}},{"@type":"Question","name":"Qual é a política de cancelamento?","acceptedAnswer":{"@type":"Answer","text":"Pedidos de cancelamento ou de troca de data são feitos por e-mail, para resort@cassorova.com.br, e não por telefone ou WhatsApp. Até 7 dias antes do check-in, o valor pago vira uma carta de crédito válida por 1 ano. Com menos de 7 dias, a reserva não pode ser cancelada nem alterada. As regras completas aparecem no motor de reservas."}},{"@type":"Question","name":"Quem se hospeda paga o day use?","acceptedAnswer":{"@type":"Answer","text":"Não. Ao se hospedar no Cassorova, você economiza as taxas de day use da sua família e aproveita todo o conforto e a estrutura do resort."}},{"@type":"Question","name":"Qual o horário de check-in e de check-out?","acceptedAnswer":{"@type":"Answer","text":"O check-in é a partir das 16h e o check-out vai até as 14h."}},{"@type":"Question","name":"A que distância o Cassorova fica de São Paulo?","acceptedAnswer":{"@type":"Answer","text":"O Cassorova fica a 217 km de São Paulo, 173 km de Ribeirão Preto e 278 km de São José do Rio Preto."}}]}]}
+</script>
+<script>
+(function () {
+var root = document.getElementById('cpk');
+if (!root) { return; }
+var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
+var push = function (data) { window.dataLayer = window.dataLayer || []; window.dataLayer.push(data); };
+/* Datas que saem do ar sozinhas: no dia do check-in (horário de Brasília) o item é removido */
+var hoje = '';
+try { hoje = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date()); } catch (e) { hoje = ''; }
+if (hoje.length !== 10) { var agora = new Date(); hoje = agora.getFullYear() + '-' + ('0' + (agora.getMonth() + 1)).slice(-2) + '-' + ('0' + agora.getDate()).slice(-2); }
+each(root.querySelectorAll('[data-cpk-ate]'), function (el) {
+if (hoje >= el.getAttribute('data-cpk-ate')) { el.parentNode.removeChild(el); }
+});
+var listaDatas = root.querySelector('.cpk-datas');
+if (listaDatas) {
+if (!listaDatas.querySelector('.cpk-data')) {
+var secNov = root.querySelector('#cpk-novembro');
+if (secNov) { secNov.parentNode.removeChild(secNov); }
+}
+}
+/* Passado o feriado, o cartão do Réveillon esgotado vai para o fim da lista */
+var cartoes = root.querySelector('.cpk-pacotes');
+var cartaoRev = root.querySelector('#cpk-reveillon');
+if (cartoes) {
+if (cartaoRev) {
+if (!root.querySelector('#cpk-consciencia-negra')) { cartoes.appendChild(cartaoRev); }
+}
+}
+var btnTopo = root.querySelector('a[data-cpk-cta="ver-pacotes"]');
+if (btnTopo) { if (!root.querySelector('#cpk-novembro')) { btnTopo.setAttribute('href', '#cpk-datas'); } }
+var topo = root.querySelector('.cpk-topo');
+var caixa = root.querySelector('.cpk-busca');
+/* O topo ocupa a altura da tela menos o menu do site acima dele */
+var setTop = function () {
+if (!topo) { return; }
+var y = topo.getBoundingClientRect().top + (window.pageYOffset || 0);
+if (y > 280) { y = 0; }
+if (0 > y) { y = 0; }
+root.style.setProperty('--cpk-top', Math.round(y) + 'px');
+};
+setTop();
+window.addEventListener('load', setTop);
+var rt = 0;
+window.addEventListener('resize', function () { window.clearTimeout(rt); rt = window.setTimeout(setTop, 150); });
+/* Buscador: monta o link do motor HBook com as datas e a mensagem do WhatsApp com o bangalô escolhido */
+var AMP = String.fromCharCode(38);
+var MOTOR = 'https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee';
+var FONE = '5514991068097';
+var NOITES_PADRAO = 2;
+var MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+var NOMES = { 'villa-romance': 'Villa Romance', 'villa-aconchego': 'Villa Aconchego', 'villa-aconchego-familia': 'Villa Aconchego Família' };
+var bang = root.querySelector('#cpk-bangalo');
+var ent = root.querySelector('#cpk-entrada');
+var sai = root.querySelector('#cpk-saida');
+var adu = root.querySelector('#cpk-adultos');
+var cri = root.querySelector('#cpk-criancas');
+var linkMotor = root.querySelector('[data-cpk-busca="motor"]');
+var linkWhats = root.querySelector('[data-cpk-busca="whatsapp"]');
+var aviso = root.querySelector('.cpk-reserva__aviso');
+var pad = function (n) { return (n > 9 ? '' : '0') + n; };
+var iso = function (d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); };
+var parse = function (s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2], 12); };
+var somaDias = function (s, n) { var d = parse(s); d.setDate(d.getDate() + n); return iso(d); };
+var extenso = function (s) { var d = parse(s); return d.getDate() + ' de ' + MESES[d.getMonth()] + ' de ' + d.getFullYear(); };
+var temDatas = function () { if (!ent.value) { return false; } return !!sai.value; };
+var noites = function () { if (!temDatas()) { return 0; } return Math.round((parse(sai.value) - parse(ent.value)) / 86400000); };
+var avisoTexto = function (b, a, c) {
+var total = (+a) + (+c);
+if (total > 2) { if (b === 'villa-romance') { return 'A Villa Romance recebe até 2 pessoas. Para 3 ou 4, escolha a Villa Aconchego Família.'; } }
+if (total > 4) { return 'Cada bangalô recebe até 4 pessoas. No motor de reservas, escolha a quantidade de bangalôs para o grupo.'; }
+if (c !== '0') { return 'Com crianças, o motor de reservas pede a idade de cada uma antes de mostrar os preços.'; }
+return '';
+};
+var atualizar = function () {
+var hoje = iso(new Date());
+ent.min = hoje;
+if (ent.value) {
+var minSaida = somaDias(ent.value, 1);
+sai.min = minSaida;
+if (!(sai.value >= minSaida)) { sai.value = somaDias(ent.value, NOITES_PADRAO); }
+} else {
+sai.min = somaDias(hoje, 1);
+}
+var b = bang ? bang.value : '';
+var a = adu.value || '2';
+var c = cri.value || '0';
+var txt = avisoTexto(b, a, c);
+if (aviso) { aviso.textContent = txt; aviso.hidden = !txt; }
+var partes = [MOTOR];
+if (temDatas()) { partes.push('checkin=' + ent.value, 'checkout=' + sai.value); }
+partes.push('adults=' + a, 'children=' + c, 'utm_source=site', 'utm_medium=pagina-pacotes', 'utm_campaign=pacotes-busca', 'utm_content=buscador');
+linkMotor.href = partes.join(AMP);
+var msg = 'Olá vim pelo site e quero consultar ' + (NOMES[b] ? 'a ' + NOMES[b] : 'um bangalô') + ' no Cassorova';
+if (temDatas()) { msg += ' com entrada em ' + extenso(ent.value) + ' e saída em ' + extenso(sai.value); }
+msg += ' para ' + a + (a === '1' ? ' adulto' : ' adultos');
+if (c !== '0') { msg += ' e ' + c + (c === '1' ? ' criança' : ' crianças'); }
+linkWhats.href = 'https://wa.me/' + FONE + '?text=' + encodeURIComponent(msg);
+};
+if (ent) { if (sai) { if (linkMotor) { if (linkWhats) {
+each([bang, ent, sai, adu, cri], function (el) { if (el) { el.addEventListener('change', atualizar); } });
+atualizar();
+each([linkMotor, linkWhats], function (link) {
+link.addEventListener('click', function () {
+atualizar();
+push({ event: 'cpk_busca_hospedagem', cpk_metodo: link.getAttribute('data-cpk-busca'), cpk_bangalo: bang ? bang.value : '', cpk_entrada: ent.value || '', cpk_saida: sai.value || '', cpk_noites: noites(), cpk_adultos: +(adu.value || 2), cpk_criancas: +(cri.value || 0), link_url: link.href });
+});
+});
+}}}}
+/* Barra fixa: aparece depois do topo e some no fim da página.
+A posição é medida a cada rolagem, então a barra acerta mesmo depois de um salto por link. */
+var fixa = root.querySelector('.cpk-fixa');
+var fim = root.querySelector('.cpk-fim');
+var calcBarra = function () {
+if (!fixa) { return; }
+var ih = window.innerHeight;
+var show = true;
+if (topo) { if (topo.getBoundingClientRect().bottom > ih * 0.3) { show = false; } }
+if (fim) { if (ih > fim.getBoundingClientRect().top) { show = false; } }
+if (caixa) { var rc = caixa.getBoundingClientRect(); if (ih > rc.top) { if (rc.bottom > 0) { show = false; } } }
+fixa.classList.toggle('is-on', show);
+};
+var pendente = false;
+var agendarBarra = function () {
+if (pendente) { return; }
+pendente = true;
+window.requestAnimationFrame(function () { pendente = false; calcBarra(); });
+};
+window.addEventListener('scroll', agendarBarra, { passive: true });
+window.addEventListener('resize', agendarBarra);
+calcBarra();
+/* Pergunta aberta pelo visitante (a primeira já vem aberta e não conta) */
+each(root.querySelectorAll('details.cpk-qa'), function (d) {
+var s = d.querySelector('summary');
+if (!s) { return; }
+s.addEventListener('click', function () {
+if (d.open) { return; }
+var q = d.querySelector('.cpk-qa__q');
+push({ event: 'cpk_faq_abrir', cpk_pergunta: q ? q.textContent.trim() : '' });
+});
+});
+root.addEventListener('click', function (ev) {
+var t = ev.target;
+var el = t.closest ? t.closest('[data-cpk-cta]') : null;
+if (!el) { return; }
+push({ event: 'cpk_cta_click', cpk_cta: el.getAttribute('data-cpk-cta') || '', cpk_pacote: el.getAttribute('data-cpk-pacote') || '', cpk_posicao: el.getAttribute('data-cpk-pos') || '', link_url: el.href || '' });
+});
+})();
+</script>

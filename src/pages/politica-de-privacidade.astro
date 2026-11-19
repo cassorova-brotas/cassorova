@@ -1,0 +1,111 @@
+---
+import Base from '../layouts/Base.astro';
+import { NOME, CNPJ, EMAIL, TELEFONE, POLITICA_ATUALIZADA } from '../data/site';
+---
+<Base
+  title="Política de Privacidade e Cookies | Cassorova Resort e Ecoturismo"
+  description="Como o Cassorova, em Brotas, trata seus dados pessoais e usa cookies no site, conforme a LGPD. Veja seus direitos e como mudar suas escolhas."
+  path="/politica-de-privacidade/"
+  og="/og/cassorova-og-termos.jpg"
+>
+<article class="csr-pol">
+<div class="csr-pol__in">
+<h1>Política de privacidade e cookies</h1>
+<p class="csr-pol__data">Atualizada em {POLITICA_ATUALIZADA}</p>
+<p>Esta política explica quais dados pessoais o {NOME} coleta quando você visita o site, faz uma reserva ou fala com a nossa equipe, para que usamos esses dados e quais são os seus direitos, de acordo com a Lei Geral de Proteção de Dados (Lei 13.709/2018, a LGPD).</p>
+
+<h2>Quem é o responsável pelos dados</h2>
+<p>{NOME}, CNPJ {CNPJ}, em Brotas, São Paulo. Para qualquer assunto sobre seus dados, escreva para <a href={`mailto:${EMAIL}`}>{EMAIL}</a> ou chame no WhatsApp {TELEFONE}.</p>
+
+<h2>Quais dados coletamos</h2>
+<ul>
+<li><b>Dados que você informa.</b> Nome, e-mail, telefone e os dados necessários para a reserva e o pagamento, quando você usa os sistemas de reserva de hospedagem e de ingressos, ou fala conosco por WhatsApp e e-mail.</li>
+<li><b>Dados de navegação.</b> Endereço IP, tipo de aparelho e de navegador, páginas visitadas, tempo no site e o anúncio ou site de onde você veio. Eles são coletados por cookies e tecnologias parecidas, nas regras da seção sobre cookies.</li>
+</ul>
+
+<h2>Para que usamos e em que base legal</h2>
+<ul>
+<li><b>Responder você e concluir reservas e compras</b>, inclusive pagamento, confirmação e atendimento. Base: execução de contrato e procedimentos preliminares a ele.</li>
+<li><b>Cumprir obrigações legais</b>, como as fiscais e as de registro de hóspedes. Base: obrigação legal.</li>
+<li><b>Manter o site seguro e funcionando.</b> Base: legítimo interesse.</li>
+<li><b>Medir o uso do site e melhorar a experiência</b> (cookies de estatística). Base: seu consentimento.</li>
+<li><b>Medir anúncios e mostrar ofertas do Cassorova</b> (cookies de marketing). Base: seu consentimento.</li>
+</ul>
+
+<h2>Cookies que usamos</h2>
+<p>Ao entrar no site você escolhe quais cookies aceita. Recusar não impede a navegação nem a reserva. Cookies de estatística e de marketing só são ativados depois do seu consentimento.</p>
+<div class="csr-pol__tab" role="region" aria-label="Tabela de cookies" tabindex="0">
+<table>
+<thead><tr><th scope="col">Tipo</th><th scope="col">Para que serve</th><th scope="col">Quem coloca</th><th scope="col">Duração</th></tr></thead>
+<tbody>
+<tr><th scope="row">Necessário</th><td>Guarda a sua escolha de cookies.</td><td>Cassorova</td><td>12 meses</td></tr>
+<tr><th scope="row">Estatística</th><td>Conta visitas, mostra quais páginas são mais vistas e gera mapas de calor e gravações da navegação para melhorarmos o site (Google Analytics e Microsoft Clarity).</td><td>Google e Microsoft</td><td>Até 2 anos</td></tr>
+<tr><th scope="row">Marketing</th><td>Mede o resultado dos anúncios e permite mostrar ofertas a quem já visitou o site (Google Ads e Meta Pixel).</td><td>Google e Meta</td><td>Até 90 dias</td></tr>
+</tbody>
+</table>
+</div>
+<p>Os sistemas de reserva de hospedagem e de venda de ingressos, que abrem em outro endereço, podem usar cookies próprios, com política própria.</p>
+<p><button type="button" class="csr-pol__btn" data-csr-cookies>Mudar minhas escolhas de cookies</button></p>
+<p>Você também pode apagar ou bloquear cookies nas configurações do navegador. Nesse caso, partes do site podem funcionar de forma diferente.</p>
+
+<h2>Com quem compartilhamos</h2>
+<ul>
+<li>Sistemas de reserva de hospedagem e de venda de ingressos e de pagamento, para concluir a sua compra.</li>
+<li>Google, Microsoft e Meta, quando você aceita os cookies de estatística e de marketing.</li>
+<li>Empresas que hospedam o site e o e-mail, que tratam os dados só para nos prestar o serviço.</li>
+<li>Autoridades, quando a lei exigir.</li>
+</ul>
+<p>Não vendemos seus dados.</p>
+
+<h2>Transferência para outros países</h2>
+<p>Google, Microsoft e Meta podem processar dados em servidores fora do Brasil. Isso acontece com garantias previstas no artigo 33 da LGPD e só para quem aceitou os cookies correspondentes.</p>
+
+<h2>Por quanto tempo guardamos</h2>
+<p>Guardamos os dados pelo tempo necessário para as finalidades acima e para cumprir prazos legais, como os fiscais. Dados de cookies seguem as durações da tabela. Passado o prazo, eliminamos ou anonimizamos.</p>
+
+<h2>Seus direitos</h2>
+<p>Pela LGPD, você pode pedir, a qualquer momento:</p>
+<ul>
+<li>confirmação de que tratamos seus dados e acesso a eles;</li>
+<li>correção de dados incompletos, errados ou desatualizados;</li>
+<li>anonimização, bloqueio ou eliminação de dados desnecessários ou tratados fora da lei;</li>
+<li>portabilidade dos dados;</li>
+<li>eliminação dos dados tratados com base no seu consentimento;</li>
+<li>informação sobre com quem compartilhamos seus dados;</li>
+<li>revogação do consentimento, o que você também faz no botão de cookies acima.</li>
+</ul>
+<p>Para pedir, escreva para <a href={`mailto:${EMAIL}`}>{EMAIL}</a>. Você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+
+<h2>Segurança</h2>
+<p>Usamos conexão segura (HTTPS) e limitamos o acesso aos dados a quem precisa deles para o trabalho. Nenhum sistema é totalmente livre de risco, e avisaremos você e a ANPD se houver um incidente que possa causar dano relevante.</p>
+
+<h2>Crianças e adolescentes</h2>
+<p>O site e as reservas são para adultos. Não coletamos dados de menores de 18 anos de propósito. Se você acha que isso aconteceu, fale com a gente para eliminarmos.</p>
+
+<h2>Mudanças nesta política</h2>
+<p>Quando mudarmos esta política, a data no topo é atualizada. Se a mudança alterar o uso dos seus dados de forma relevante, avisamos no site.</p>
+</div>
+</article>
+<style>
+.csr-pol{background:#f3f2ee;color:#303323;font-family:"Albert Sans",Helvetica,Arial,sans-serif;padding:clamp(40px,6vw,88px) 0}
+.csr-pol *{box-sizing:border-box}
+.csr-pol__in{width:min(760px,88%);margin-inline:auto}
+.csr-pol h1{margin:0 0 8px;font-family:"Gilda Display",Georgia,serif;font-weight:400;font-size:clamp(34px,4vw,52px);line-height:1.1}
+.csr-pol h2{margin:40px 0 10px;font-family:"Gilda Display",Georgia,serif;font-weight:400;font-size:clamp(26px,2.4vw,32px);line-height:1.15}
+.csr-pol p,.csr-pol li{font-size:18px;line-height:1.65;color:#564944}
+.csr-pol p{margin:0 0 14px}
+.csr-pol ul{margin:0 0 14px;padding-left:22px}
+.csr-pol li{margin-bottom:8px}
+.csr-pol b{color:#303323;font-weight:600}
+.csr-pol a{color:#a65635;text-decoration:underline;text-underline-offset:3px}
+.csr-pol__data{font-size:16px!important;color:#756a48!important}
+.csr-pol__tab{overflow-x:auto;margin:12px 0 18px;background:#fff;box-shadow:0 0 0 1px rgba(48,51,35,.14)}
+.csr-pol table{width:100%;min-width:560px;border-collapse:collapse;font-size:16px;line-height:1.5;color:#564944}
+.csr-pol th,.csr-pol td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid rgba(48,51,35,.12)}
+.csr-pol thead th{background:#303323;color:#fff;font-weight:600}
+.csr-pol tbody th{color:#303323;font-weight:600}
+.csr-pol__btn{min-height:48px;padding:0 22px;font:600 17px/1 "Albert Sans",Helvetica,Arial,sans-serif;color:#fff;background:#756a48;border:0;border-radius:4px;cursor:pointer}
+.csr-pol__btn:hover{background:#635a3c}
+.csr-pol :focus-visible{outline:3px solid #a65635;outline-offset:3px}
+</style>
+</Base>

@@ -1,0 +1,866 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&amp;family=Trirong:ital,wght@0,300;0,400;1,400;1,700&amp;display=swap">
+<style>.et_pb_section:has(#clz){padding:0!important;margin:0!important;background:transparent!important;height:auto!important;min-height:0!important;max-height:none!important}
+.et_pb_row:has(#clz){width:100%!important;max-width:none!important;padding:0!important;margin:0!important;height:auto!important;max-height:none!important}
+.et_pb_column:has(#clz){width:100%!important;margin:0!important;padding:0!important;height:auto!important;max-height:none!important}
+.et_pb_code:has(#clz),.et_pb_code_inner:has(#clz),.et_pb_fullwidth_code:has(#clz){margin:0!important;padding:0!important;max-width:none!important;width:100%!important;height:auto!important;max-height:none!important}
+html.clz-travado{overflow:hidden}
+#clz{--mata:#303323;--musgo:#858666;--musgo-esc:#6b6c50;--musgo-hover:#5c5d44;--cinza:#c5c5b9;--nevoa:#cfd0c3;--linho:#f3f2ee;--pedra:#564944;--oliva:#756a48;--oliva-hover:#635a3c;--cobre-claro:#d4957a;--terracota:#a65635;--terracota-hover:#8f4a2d;--branco:#fff;--gilda:"Gilda Display",Georgia,"Times New Roman",serif;--trirong:"Trirong",Georgia,"Times New Roman",serif;--albert:"Albert Sans",Helvetica,Arial,sans-serif;--marcellus:"Marcellus",Georgia,"Times New Roman",serif;--linha:80%;--max:1200px;--foco:var(--terracota);position:relative;background:var(--branco);color:var(--pedra);font-family:var(--albert);font-size:18px;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+@media (max-width:980px){#clz{--linha:86%}}
+#clz *,#clz *::before,#clz *::after{box-sizing:border-box}
+#clz h1,#clz h2,#clz h3,#clz h4,#clz p,#clz ul,#clz ol,#clz figure,#clz blockquote{margin:0;padding:0;font-style:normal}
+#clz ul,#clz ol{list-style:none}
+#clz blockquote{border:0;quotes:none}
+#clz blockquote::before,#clz blockquote::after{content:none}
+#clz li{padding:0;margin:0;line-height:inherit}
+#clz h1,#clz h2,#clz h3,#clz h4{color:var(--mata);font-weight:400;letter-spacing:normal;text-transform:none;text-wrap:balance}
+#clz p{text-wrap:pretty}
+#clz a{color:inherit;text-decoration:none}
+#clz img{display:block;max-width:100%;height:auto;border:0}
+#clz br{display:none}
+#clz strong,#clz b{font-weight:700}
+#clz button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;text-transform:none;letter-spacing:inherit}
+#clz :focus-visible{outline:2px solid var(--foco);outline-offset:3px}
+#clz [id]{scroll-margin-top:16px}
+#clz .clz-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#clz .clz-linha{width:var(--linha);max-width:var(--max);margin-inline:auto}
+#clz .clz-sec{padding-block:clamp(64px,7vw,104px)}
+#clz .clz-sec--linho{background:var(--linho)}
+#clz .clz-sec--nevoa{background:var(--nevoa)}
+#clz .clz-sec--mata{background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+#clz .clz-titulo{font-family:var(--gilda);font-weight:400;font-size:clamp(33px,1.9vw + 22px,50px);line-height:1.05;color:var(--mata)}
+#clz .clz-titulo--trirong{font-family:var(--trirong);font-weight:300;font-size:clamp(33px,1.4vw + 24px,45px);line-height:1.05}
+#clz .clz-sec--mata .clz-titulo{color:#fff}
+#clz .clz-chamada{margin-top:14px;max-width:62ch;font-family:var(--albert);font-weight:300;font-size:clamp(17px,.4vw + 15px,20px);line-height:1.55;color:var(--pedra)}
+#clz .clz-sec--mata .clz-chamada{color:#fff}
+#clz .clz-cabeca{margin-bottom:clamp(36px,4vw,52px)}
+@media (min-width:1024px){#clz .clz-cabeca--lado{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:end}#clz .clz-cabeca--lado .clz-chamada{margin-top:0}}
+#clz .clz-btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;padding:8px 22px 8px 18px;border:0;border-radius:0;font-family:var(--marcellus);font-size:clamp(18px,.4vw + 16px,21px);font-weight:400;line-height:1.3;text-align:left;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+#clz .clz-btn::after{content:"";flex:none;width:8px;height:8px;margin-left:2px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
+#clz .clz-btn--branco{background:#fff;color:var(--mata)}
+#clz .clz-btn--branco:hover{background:var(--linho)}
+#clz .clz-btn--terracota{background:var(--terracota);color:#fff}
+#clz .clz-btn--terracota:hover{background:var(--terracota-hover)}
+#clz .clz-btn--oliva{background:var(--oliva);color:#fff}
+#clz .clz-btn--oliva:hover{background:var(--oliva-hover)}
+#clz .clz-btn--musgo{background:var(--musgo-esc);color:#fff}
+#clz .clz-btn--musgo:hover{background:var(--musgo-hover)}
+#clz .clz-btn--contorno{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.75)}
+#clz .clz-btn--contorno:hover{background:rgba(255,255,255,.1)}
+#clz .clz-btn--texto{min-height:0;padding:8px 0;background:none;color:inherit}
+#clz .clz-btn--texto:hover{text-decoration:underline;text-underline-offset:5px}
+#clz .clz-topo{position:relative;isolation:isolate;background:var(--mata);color:#fff}
+#clz .clz-topo__midia{position:relative;aspect-ratio:16 / 10;overflow:hidden;background:var(--musgo-esc)}
+#clz .clz-topo__midia picture,#clz .clz-topo__foto{display:block;width:100%;height:100%}
+#clz .clz-topo__foto{object-fit:cover;object-position:70% 55%;max-width:none}
+#clz .clz-topo__sombra{display:none}
+#clz .clz-topo__conteudo{position:relative;z-index:2;width:var(--linha);max-width:var(--max);margin-inline:auto;padding:28px 0 40px}
+#clz .clz-topo__sobre{display:flex;align-items:center;gap:12px;font-family:var(--trirong);font-size:clamp(18px,.3vw + 16px,22px);line-height:1.1;color:#fff}
+#clz .clz-topo__sobre::before{content:"";flex:none;width:34px;height:1px;background:currentColor}
+#clz .clz-topo__titulo{margin-top:14px;max-width:14ch;font-family:var(--gilda);font-weight:400;font-size:clamp(40px,3.4vw + 20px,74px);line-height:1.02;color:#fff}
+#clz .clz-topo__frase{margin-top:16px;max-width:46ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(19px,.5vw + 16px,25px);line-height:1.25;color:#fff}
+#clz .clz-topo__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:26px}
+#clz .clz-topo__prova{display:inline-flex;align-items:center;gap:14px;margin-top:26px;padding:12px 18px 12px 12px;background:#fff;color:var(--mata);box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
+#clz .clz-topo__prova img{width:60px;height:auto;flex:none}
+#clz .clz-topo__prova-txt{display:grid;gap:3px;line-height:1.25}
+#clz .clz-topo__prova-premio{font-family:var(--marcellus);font-size:17px;color:var(--mata)}
+#clz .clz-topo__prova-nota{font-size:15px;color:var(--pedra)}
+#clz .clz-topo__prova-nota strong{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:27px;line-height:1;color:var(--mata)}
+#clz .clz-topo__prova-qtd{font-size:14px;color:var(--pedra)}
+#clz .clz-topo__prova:hover .clz-topo__prova-premio{text-decoration:underline;text-underline-offset:4px}
+@media (max-width:600px){#clz .clz-topo__acoes .clz-btn--branco{flex:1 1 100%}}
+@media (min-width:981px){#clz .clz-topo{display:flex;align-items:flex-end;min-height:clamp(560px,calc(100vh - var(--clz-top,0px)),900px);min-height:clamp(560px,calc(100svh - var(--clz-top,0px)),900px);overflow:hidden}#clz .clz-topo__midia{position:absolute;inset:0;aspect-ratio:auto}#clz .clz-topo__foto{object-position:58% 75%}#clz .clz-topo__sombra{display:block;position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(48,51,35,.82) 0%,rgba(48,51,35,.6) 30%,rgba(48,51,35,.22) 44%,rgba(48,51,35,0) 52%),linear-gradient(180deg,rgba(48,51,35,.3) 0%,rgba(48,51,35,0) 24%,rgba(48,51,35,0) 70%,rgba(48,51,35,.62) 100%)}#clz .clz-topo__conteudo{padding:48px 0 clamp(40px,6vh,64px)}#clz .clz-topo__titulo{max-width:min(14ch,calc(50% - 4vw))}#clz .clz-topo__frase,#clz .clz-topo__acoes{max-width:min(46ch,calc(50% - 4vw))}#clz .clz-topo__sobre,#clz .clz-topo__titulo,#clz .clz-topo__frase{text-shadow:0 1px 14px rgba(0,0,0,.3)}}
+@media (min-width:981px){#clz .clz-topo__conteudo{padding:48px 0 calc(clamp(40px,6vh,72px) + 64px)}#clz .clz-topo__prova{position:absolute;right:0;bottom:calc(clamp(40px,6vh,72px) + 64px);margin:0;gap:18px;padding:14px 24px 14px 14px}#clz .clz-topo__prova img{width:80px}#clz .clz-topo__prova-premio{font-size:19px}#clz .clz-topo__prova-nota strong{font-size:32px}}
+#clz .clz-galeria__todas{display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-top:12px;padding:8px 16px;border:1px solid rgba(48,51,35,.28);background:#fff;color:var(--mata);font-family:var(--marcellus);font-size:16px}
+#clz .clz-galeria__todas::before{content:"";flex:none;width:16px;height:16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23303323' stroke-width='1.6'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3Crect x='14' y='14' width='7' height='7'/%3E%3C/svg%3E") center / 16px 16px no-repeat}
+#clz .clz-galeria__todas[hidden]{display:none}
+#clz .clz-galeria__todas:hover{background:var(--linho)}
+#clz .clz-lista{display:grid;gap:8px;margin-top:16px;font-family:var(--marcellus);font-size:16px;line-height:1.5;color:var(--oliva)}
+#clz .clz-lista li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px}
+#clz .clz-lista li::before{content:"";width:18px;height:18px;margin-top:3px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23756a48' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l4.5 4.5L19.5 7'/%3E%3C/svg%3E") center / 18px 18px no-repeat}
+#clz .clz-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+#clz .clz-card{display:flex;flex-direction:column;background:#fff}
+#clz .clz-card__foto{aspect-ratio:3 / 2;overflow:hidden;background:var(--cinza)}
+#clz .clz-card__foto img{width:100%;height:100%;object-fit:cover}
+#clz .clz-card__corpo{padding:18px 18px 22px}
+#clz .clz-card__titulo{font-family:var(--gilda);font-size:24px;line-height:1.1;color:var(--mata)}
+#clz .clz-card__texto{margin-top:8px;font-family:var(--marcellus);font-size:16px;line-height:1.55;color:var(--oliva)}
+@media (max-width:1023px){#clz .clz-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:699px){#clz .clz-cards{display:flex;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin-inline:-7vw;padding-inline:7vw;scroll-padding-inline:7vw;scrollbar-width:none}#clz .clz-cards::-webkit-scrollbar{display:none}#clz .clz-card{flex:none;width:78vw;scroll-snap-align:start}}
+#clz .clz-inclusos__link .clz-btn--texto{color:var(--mata)}
+#clz .clz-aval{display:grid;gap:36px}
+@media (min-width:1024px){#clz .clz-aval{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:72px;align-items:center}}
+#clz .clz-aval__citacao blockquote{margin-top:28px}
+#clz .clz-aval__citacao blockquote p{max-width:30ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(26px,1.3vw + 20px,40px);line-height:1.28;color:var(--pedra)}
+#clz .clz-aval__quem{margin-top:18px;font-family:var(--marcellus);font-size:16px;color:var(--oliva)}
+#clz .clz-aval__trip{display:grid;justify-items:start;gap:12px;padding:30px 30px 28px;background:var(--linho)}
+#clz .clz-aval__trip img{width:64px;height:auto}
+#clz .clz-aval__nota{font-family:var(--trirong);font-style:italic;font-weight:300;font-size:22px;line-height:1.1;color:var(--mata)}
+#clz .clz-aval__nota strong{font-weight:300;font-size:clamp(50px,2vw + 36px,64px);line-height:.9}
+#clz .clz-aval__fonte{font-size:15px;line-height:1.5;color:var(--pedra)}
+#clz .clz-aval__trip .clz-btn{margin-top:6px}
+#clz .clz-faq__grade{display:grid;gap:40px}
+@media (min-width:1024px){#clz .clz-faq__grade{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:80px;align-items:start}#clz .clz-faq__lado{position:sticky;top:32px}}
+#clz .clz-faq__lado .clz-btn{margin-top:26px}
+#clz .clz-qa{border-top:1px solid rgba(48,51,35,.22)}
+#clz .clz-qa:last-child{border-bottom:1px solid rgba(48,51,35,.22)}
+#clz .clz-qa summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;list-style:none;cursor:pointer}
+#clz .clz-qa summary::-webkit-details-marker{display:none}
+#clz .clz-qa__q{font-family:var(--trirong);font-weight:400;font-size:clamp(20px,.4vw + 17px,23px);line-height:1.25;color:var(--mata)}
+#clz .clz-qa__icon{position:relative;flex:none;width:28px;height:28px;border:1px solid var(--musgo);border-radius:50%}
+#clz .clz-qa__icon::before,#clz .clz-qa__icon::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--mata);transform:translate(-50%,-50%)}
+#clz .clz-qa__icon::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .25s ease}
+#clz .clz-qa[open] .clz-qa__icon::after{transform:translate(-50%,-50%) rotate(0deg)}
+#clz .clz-qa__a{max-width:66ch;padding:0 48px 26px 0;font-size:18px;line-height:1.6;color:var(--pedra)}
+@media (max-width:600px){#clz .clz-qa__a{padding-right:0}}
+#clz .clz-qa__a a{color:var(--terracota);text-decoration:underline;text-underline-offset:3px}
+#clz .clz-lb{width:100vw;max-width:100vw;height:100vh;height:100dvh;max-height:none;margin:0;padding:0;border:0;background:#1b1d14;color:#fff;overflow:hidden}
+#clz .clz-lb::backdrop{background:rgba(0,0,0,.7)}
+#clz .clz-lb[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+#clz .clz-lb__topo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(14px,3vw,28px)}
+#clz .clz-lb__titulo{font-family:var(--marcellus);font-size:17px;color:#fff}
+#clz .clz-lb__cont{margin-left:12px;font-size:15px;color:var(--cobre-claro)}
+#clz .clz-lb__fechar{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:8px 14px;border:1px solid rgba(255,255,255,.45);font-family:var(--marcellus);font-size:16px;color:#fff}
+#clz .clz-lb__fechar::after{content:"+";font-family:var(--albert);font-size:26px;font-weight:300;line-height:.7;transform:rotate(45deg)}
+#clz .clz-lb__fig{position:relative;display:flex;align-items:center;justify-content:center;min-height:0;margin:0;padding:0 clamp(8px,6vw,84px)}
+#clz .clz-lb__fig img{width:auto;height:auto;max-width:100%;max-height:calc(100vh - 150px);max-height:calc(100dvh - 150px);object-fit:contain}
+#clz .clz-lb__ant,#clz .clz-lb__prox{position:absolute;top:50%;z-index:2;display:grid;place-items:center;width:52px;height:52px;margin-top:-26px;border-radius:50%;background:rgba(48,51,35,.72);border:1px solid rgba(255,255,255,.5);color:#fff}
+#clz .clz-lb__ant{left:clamp(8px,2vw,22px)}
+#clz .clz-lb__prox{right:clamp(8px,2vw,22px)}
+#clz .clz-lb__ant::before,#clz .clz-lb__prox::before{content:"";width:11px;height:11px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor}
+#clz .clz-lb__ant::before{margin-left:5px;transform:rotate(-135deg)}
+#clz .clz-lb__prox::before{margin-right:5px;transform:rotate(45deg)}
+#clz .clz-lb__ant:hover,#clz .clz-lb__prox:hover{background:var(--terracota)}
+#clz .clz-lb__legenda{max-width:70ch;margin:0 auto;padding:12px 18px 18px;text-align:center;font-size:15px;line-height:1.4;color:#fff}
+@media (max-width:699px){#clz .clz-lb__ant,#clz .clz-lb__prox{top:auto;bottom:14px;margin-top:0}#clz .clz-lb__legenda{padding:12px 76px 22px}#clz .clz-lb__fig img{max-height:calc(100vh - 190px);max-height:calc(100dvh - 190px)}}
+#clz .clz-final{background:var(--nevoa) url("/images/2025/03/cassorova-folha-bg.png") right 6% center / min(520px,45%) no-repeat}
+#clz .clz-final__grade{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){#clz .clz-final__grade{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px}}
+#clz .clz-final__foto{overflow:hidden;aspect-ratio:3 / 2}
+#clz .clz-final__foto img{width:100%;height:100%;object-fit:cover}
+#clz .clz-final__frase{margin-top:16px;max-width:34ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(21px,.6vw + 17px,28px);line-height:1.15;color:var(--pedra)}
+#clz .clz-final .clz-chamada{max-width:42ch}
+#clz .clz-final__botoes{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:28px}
+#clz .clz-final .clz-btn--texto{color:var(--mata)}
+#clz .clz-fixa{position:fixed;z-index:9990;left:12px;right:96px;bottom:16px;display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:6px;background:var(--mata);color:#fff;box-shadow:0 12px 30px -12px rgba(0,0,0,.55);opacity:0;visibility:hidden;transform:translateY(130%);transition:transform .35s ease,opacity .35s ease,visibility 0s linear .35s;--foco:var(--cobre-claro)}
+#clz .clz-fixa.is-on{opacity:1;visibility:visible;transform:none;transition:transform .35s ease,opacity .35s ease}
+#clz .clz-fixa__txt{margin-right:auto;padding-left:10px;font-family:var(--marcellus);font-size:15px;line-height:1.2}
+#clz .clz-fixa .clz-btn{min-height:44px;padding:8px 14px;font-size:17px;white-space:nowrap}
+#clz .clz-fixa .clz-btn::after{display:none}
+@media (max-width:719px){#clz .clz-fixa__txt{display:none}#clz .clz-fixa .clz-btn{flex:1 1 auto;padding:8px 10px;font-size:16px}}
+@media (min-width:720px){#clz .clz-fixa{right:auto;left:24px;bottom:24px;max-width:560px;gap:10px}}
+#clz .clz-fim{display:block;height:1px}
+@media (prefers-reduced-motion:reduce){#clz .clz-fixa,#clz .clz-qa__icon::after,#clz .clz-btn}
+#clz .clz-reserva{position:relative;z-index:3;padding-bottom:clamp(40px,5vw,64px)}
+#clz .clz-reserva__caixa{width:var(--linha);max-width:var(--max);margin-inline:auto;padding:28px 32px 30px;background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+@media (min-width:981px){#clz .clz-reserva__caixa{margin-top:-64px;box-shadow:0 22px 44px -26px rgba(0,0,0,.65)}}
+@media (max-width:980px){#clz .clz-reserva__caixa{width:100%;padding:28px 7% 32px}}
+#clz .clz-reserva__topo{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 24px}
+#clz .clz-reserva__titulo{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(27px,.8vw + 21px,34px);line-height:1.1;color:#fff}
+#clz .clz-reserva__sub{font-family:var(--marcellus);font-size:16px;line-height:1.3;color:var(--cobre-claro)}
+#clz .clz-reserva__campos{display:grid;grid-template-columns:minmax(0,1.35fr) repeat(4,minmax(0,1fr));gap:14px;margin-top:20px}
+#clz .clz-campo label{display:block;margin-bottom:6px;font-family:var(--marcellus);font-size:15px;line-height:1.2;color:#fff}
+#clz .clz-campo input,#clz .clz-campo select{display:block;width:100%;height:50px;min-height:50px;padding:0 12px;border:0;border-radius:0;background:#fff;color:var(--mata);font-family:var(--albert);font-size:17px;font-weight:400;line-height:50px;text-align:left;-webkit-appearance:none;appearance:none}
+#clz .clz-campo input::-webkit-date-and-time-value{text-align:left}
+#clz .clz-campo select{padding-right:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23303323' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px}
+#clz .clz-reserva__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin-top:18px}
+#clz .clz-reserva__nota{flex:1 1 260px;font-size:15px;line-height:1.45;color:#fff}
+#clz .clz-reserva__aviso{margin-top:14px;font-size:15px;line-height:1.45;color:var(--cobre-claro)}
+#clz .clz-reserva__aviso[hidden]{display:none}
+@media (max-width:980px){#clz .clz-reserva__campos{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}#clz .clz-campo--bangalo{grid-column:1 / -1}}
+@media (max-width:719px){#clz .clz-reserva__acoes .clz-btn{flex:1 1 100%;justify-content:space-between}}
+#clz .clz-areas{display:grid;gap:clamp(56px,7vw,96px)}
+#clz .clz-area{display:grid;grid-template-columns:minmax(0,1fr);gap:26px}
+@media (min-width:900px){#clz .clz-area{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}#clz .clz-area:nth-child(even){grid-template-columns:minmax(0,5fr) minmax(0,7fr)}#clz .clz-area:nth-child(even) .clz-galeria{order:2}}
+#clz .clz-area__onde{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:21px;line-height:1.2;color:var(--terracota)}
+#clz .clz-area__nome{margin-top:6px;font-family:var(--gilda);font-size:clamp(32px,1.2vw + 24px,44px);line-height:1.04;color:var(--mata)}
+#clz .clz-area__texto{margin-top:12px;max-width:52ch;font-size:18px;line-height:1.6;color:var(--pedra)}
+#clz .clz-area .clz-btn{margin-top:20px}
+@media (max-width:600px){#clz .clz-area .clz-btn{display:flex;width:100%;justify-content:space-between}}
+#clz .clz-area--sem-foto{padding:clamp(28px,4vw,48px);background:var(--linho)}
+@media (min-width:900px){#clz .clz-area--sem-foto,#clz .clz-area--sem-foto:nth-child(even){grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px}}
+#clz .clz-area--sem-foto .clz-lista{margin-top:0}
+@media (min-width:900px){#clz .clz-area--inverte{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}#clz .clz-area--inverte .clz-galeria{order:2}}
+#clz .clz-area--spa .clz-titulo{margin-top:6px}
+#clz .clz-area--spa{padding:clamp(18px,3vw,36px);border:2px solid var(--terracota)}
+#clz .clz-spa-foto{position:relative;min-width:0}
+#clz .clz-selo{position:absolute;z-index:3;top:14px;left:14px;display:inline-flex;align-items:center;gap:8px;padding:9px 16px 9px 12px;background:var(--terracota);color:#fff;font-family:var(--marcellus);font-size:17px;line-height:1.2;box-shadow:0 8px 22px -8px rgba(0,0,0,.5);pointer-events:none}
+#clz .clz-selo svg{width:18px;height:18px;flex:none}
+#clz .clz-aviso{margin-top:18px;padding:16px 18px;border-left:4px solid var(--terracota);background:var(--linho);font-family:var(--marcellus);font-size:19px;line-height:1.35;color:var(--mata)}
+#clz .clz-aviso b{font-weight:400;color:var(--terracota)}
+#clz .clz-galeria__item img.clz-corte{object-fit:cover}
+#clz .clz-vant{display:grid;gap:36px}
+@media (min-width:900px){#clz .clz-vant{grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}}
+#clz .clz-vant__item{padding-top:22px;border-top:1px solid rgba(255,255,255,.26)}
+#clz .clz-vant__titulo{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(25px,.7vw + 21px,31px);line-height:1.15;color:var(--cobre-claro)}
+#clz .clz-vant__texto{margin-top:10px;max-width:40ch;font-size:17px;line-height:1.6;color:#fff}
+#clz .clz-vant__botoes{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:clamp(36px,4vw,52px)}
+@media (max-width:600px){#clz .clz-vant__botoes .clz-btn{width:100%;justify-content:space-between}}
+#clz .clz-vant__nota{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);font-size:15px;line-height:1.5;color:#fff}
+#clz .clz-ilus{display:grid;gap:36px}
+@media (min-width:1024px){#clz .clz-ilus{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:start}}
+#clz .clz-ilus__imagem{display:block;background:transparent}
+#clz .clz-ilus__imagem img{width:100%}
+#clz .clz-ilus__dica{margin-top:10px;font-family:var(--marcellus);font-size:15px;color:var(--pedra)}
+#clz .clz-legenda details{border-top:1px solid rgba(48,51,35,.24)}
+#clz .clz-legenda details:last-child{border-bottom:1px solid rgba(48,51,35,.24)}
+#clz .clz-legenda summary{display:flex;align-items:center;gap:12px;padding:15px 0;list-style:none;cursor:pointer;font-family:var(--trirong);font-size:22px;line-height:1.2;color:var(--mata)}
+#clz .clz-legenda summary::-webkit-details-marker{display:none}
+#clz .clz-legenda summary small{margin-left:auto;font-family:var(--marcellus);font-size:15px;color:var(--oliva)}
+#clz .clz-legenda summary::after{content:"+";flex:none;width:22px;text-align:center;font-family:var(--albert);font-size:24px;font-weight:300;line-height:1}
+#clz .clz-legenda details[open] summary::after{content:"–"}
+#clz .clz-legenda ol{display:grid;gap:8px;padding:2px 0 20px}
+#clz .clz-legenda li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;align-items:center;font-family:var(--marcellus);font-size:16px;line-height:1.35;color:var(--mata)}
+#clz .clz-n{display:inline-grid;place-items:center;width:26px;height:26px;border:1px solid var(--mata);border-radius:50%;font-family:var(--marcellus);font-size:13px;line-height:1}
+#clz .clz-dia{display:grid;gap:22px;align-items:center}
+@media (min-width:900px){#clz .clz-dia{grid-template-columns:minmax(0,7fr) auto;gap:56px}}
+#clz .clz-dia .clz-cabeca{margin-bottom:0}
+#clz .clz-dia .clz-chamada{max-width:58ch}
+#clz .clz-sec--nevoa .clz-btn--texto{color:var(--mata)}
+#clz .clz-galeria{position:relative;min-width:0;--gr:3 / 2}
+#clz .clz-galeria__lista{display:flex;aspect-ratio:var(--gr);overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;background:#111}
+#clz .clz-galeria__lista::-webkit-scrollbar{display:none}
+#clz .clz-galeria__item{position:relative;flex:0 0 100%;display:block;height:100%;overflow:hidden;scroll-snap-align:center;scroll-snap-stop:always;background:#111;cursor:zoom-in}
+#clz .clz-galeria__item::before{content:"";position:absolute;inset:-24px;background:var(--bg) center / cover no-repeat;filter:blur(22px) brightness(.72)}
+#clz .clz-galeria__item img{position:relative;display:block;width:100%;height:100%;max-width:none;object-fit:contain}
+#clz .clz-galeria__nav{position:absolute;z-index:3;top:50%;display:none;place-items:center;width:46px;height:46px;margin-top:-23px;border-radius:50%;background:rgba(48,51,35,.8);border:1px solid rgba(255,255,255,.55);color:#fff;transition:background-color .2s ease}
+#clz .clz-galeria--pronta .clz-galeria__nav{display:grid}
+#clz .clz-galeria__nav--ant{left:10px}
+#clz .clz-galeria__nav--prox{right:10px}
+#clz .clz-galeria__nav::before{content:"";width:10px;height:10px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor}
+#clz .clz-galeria__nav--ant::before{margin-left:4px;transform:rotate(-135deg)}
+#clz .clz-galeria__nav--prox::before{margin-right:4px;transform:rotate(45deg)}
+#clz .clz-galeria__nav:hover{background:var(--terracota)}
+#clz .clz-galeria__cont{position:absolute;z-index:2;left:10px;bottom:10px;padding:5px 12px;background:rgba(48,51,35,.82);color:#fff;font-family:var(--marcellus);font-size:15px;line-height:1.2;pointer-events:none}
+#clz .clz-galeria__pausa{position:absolute;z-index:3;right:10px;bottom:10px;display:none;place-items:center;width:40px;height:40px;border-radius:50%;background:rgba(48,51,35,.82);border:1px solid rgba(255,255,255,.55);color:#fff}
+#clz .clz-galeria--pronta .clz-galeria__pausa{display:grid}
+#clz .clz-galeria__pausa::before{content:"";width:12px;height:14px;border-left:4px solid currentColor;border-right:4px solid currentColor}
+#clz .clz-galeria__pausa[aria-pressed="true"]::before{width:0;height:0;border-left:12px solid currentColor;border-right:0;border-top:7px solid transparent;border-bottom:7px solid transparent}
+#clz .clz-galeria__pausa:hover{background:var(--terracota)}
+#clz .clz-cxs{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(44px,6vw,56px)}
+@media (min-width:900px){#clz .clz-cxs{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}}
+#clz .clz-cx{display:grid;align-content:start;gap:16px;min-width:0}
+#clz .clz-cx__nome{font-family:var(--gilda);font-weight:400;font-size:clamp(34px,1.6vw + 24px,52px);line-height:1;color:#fff}
+#clz .clz-chips{display:flex;flex-wrap:wrap;gap:8px}
+#clz .clz-chips li{display:inline-flex;align-items:center;min-height:38px;padding:6px 14px;border:1px solid rgba(255,255,255,.5);border-radius:999px;font-family:var(--marcellus);font-size:16px;line-height:1.2;color:#fff}
+#clz .clz-chips li:first-child{background:var(--terracota);border-color:var(--terracota)}
+#clz .clz-cx__texto{max-width:46ch;font-size:18px;line-height:1.6;color:#fff}
+#clz .clz-cx__texto a{color:#fff;text-decoration:underline;text-underline-offset:4px}
+#clz .clz-cach__rodape{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:clamp(40px,5vw,60px)}
+@media (max-width:600px){#clz .clz-cach__rodape .clz-btn{width:100%;justify-content:space-between}}
+#clz .clz-poente{position:relative;isolation:isolate;margin-top:clamp(40px,5vw,64px);overflow:hidden;background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+#clz .clz-poente__foto,#clz .clz-poente__foto picture{position:absolute;inset:0;z-index:-2;display:block}
+#clz .clz-poente__foto img{width:100%;height:100%;object-fit:cover;object-position:60% 55%;max-width:none}
+#clz .clz-poente::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(48,51,35,.88) 0%,rgba(48,51,35,.7) 45%,rgba(48,51,35,.15) 100%)}
+@media (max-width:899px){#clz .clz-poente::before{background:linear-gradient(180deg,rgba(48,51,35,.78) 0%,rgba(48,51,35,.88) 100%)}}
+#clz .clz-poente__corpo{max-width:560px;padding:clamp(32px,5vw,64px) clamp(22px,4vw,56px)}
+#clz .clz-poente__onde{font-family:var(--trirong);font-style:italic;font-size:21px;line-height:1.2;color:var(--cobre-claro)}
+#clz .clz-poente__titulo{margin-top:8px;font-family:var(--gilda);font-weight:400;font-size:clamp(32px,1.6vw + 24px,46px);line-height:1.05;color:#fff}
+#clz .clz-poente__texto{margin-top:14px;font-size:18px;line-height:1.6;color:#fff}
+#clz .clz-poente .clz-btn{margin-top:22px}
+@media (max-width:600px){#clz .clz-poente .clz-btn{display:flex;width:100%;justify-content:space-between}}
+#clz .clz-card__foto--v img{object-position:50% 58%}</style>
+<div id="clz" class="clz">
+<!-- ================= 1. TOPO ================= -->
+<section class="clz-topo" aria-labelledby="clz-titulo">
+<div class="clz-topo__midia">
+<img class="clz-topo__foto" src="/images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg" srcset="/images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 768w, /images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 1024w, /images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 1536w, /images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 2048w, /images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 2560w" sizes="100vw" width="2560" height="1707" alt="Piscina de borda infinita ao entardecer, com o lago refletindo o céu alaranjado" loading="eager" fetchpriority="high" decoding="async" style="object-position:50% 42%">
+</div>
+<div class="clz-topo__sombra" aria-hidden="true"></div>
+<div class="clz-topo__conteudo">
+<p class="clz-topo__sobre">Lazer do Cassorova</p>
+<h1 id="clz-titulo" class="clz-topo__titulo">Cachoeiras, piscina e lago no mesmo resort</h1>
+<p class="clz-topo__frase">Duas cachoeiras na propriedade, piscina de borda infinita com pôr do sol exclusivo dos hóspedes, Praia Resort no lago e Resort Spa. Tudo em Brotas.</p>
+<div class="clz-topo__acoes">
+<a class="clz-btn clz-btn--branco" href="#clz-reserva" data-clz-cta="ver-datas" data-clz-pos="topo">Ver Datas e Preços</a>
+<a class="clz-btn clz-btn--texto" href="#clz-cachoeiras" data-clz-cta="conhecer-cachoeiras" data-clz-pos="topo">Conhecer as Cachoeiras</a>
+</div>
+<a class="clz-topo__prova" href="https://www.tripadvisor.com.br/Hotel_Review-g793338-d21389571-Reviews-Cassorova_Hotel_Boutique-Brotas_State_of_Sao_Paulo.html" target="_blank" rel="noopener" data-clz-cta="avaliacoes-tripadvisor" data-clz-pos="topo">
+<img src="/images/2026/07/cassorova-tripadvisor.png" width="200" height="262" alt="Selo Travelers' Choice 2026 do Tripadvisor" loading="eager" decoding="async">
+<span class="clz-topo__prova-txt"><span class="clz-topo__prova-premio">Travelers' Choice 2026</span><span class="clz-topo__prova-nota"><strong>4,9</strong> de 5 em 275 avaliações</span><span class="clz-topo__prova-qtd">no Tripadvisor</span></span>
+</a>
+</div>
+</section>
+<!-- ================= 2. BUSCADOR ================= -->
+<section class="clz-reserva" id="clz-reserva" aria-labelledby="clz-reserva-t">
+<div class="clz-reserva__caixa clz-busca">
+<div class="clz-reserva__topo">
+<h2 id="clz-reserva-t" class="clz-reserva__titulo">Veja os preços das suas datas</h2>
+<p class="clz-reserva__sub">Hospedado, você usa todo o lazer. Café da manhã e até 10x no cartão</p>
+</div>
+<div class="clz-reserva__campos">
+<div class="clz-campo clz-campo--bangalo"><label for="clz-bangalo">Bangalô</label><select id="clz-bangalo"><option value="" selected>Ainda não sei</option><option value="villa-romance">Villa Romance</option><option value="villa-aconchego">Villa Aconchego (casal)</option><option value="villa-aconchego-familia">Villa Aconchego Família</option></select></div>
+<div class="clz-campo"><label for="clz-entrada">Entrada</label><input type="date" id="clz-entrada"></div>
+<div class="clz-campo"><label for="clz-saida">Saída</label><input type="date" id="clz-saida"></div>
+<div class="clz-campo"><label for="clz-adultos">Adultos</label><select id="clz-adultos"><option value="1">1 adulto</option><option value="2" selected>2 adultos</option><option value="3">3 adultos</option><option value="4">4 adultos</option><option value="5">5 adultos</option><option value="6">6 adultos</option><option value="7">7 adultos</option><option value="8">8 adultos</option></select></div>
+<div class="clz-campo"><label for="clz-criancas">Crianças</label><select id="clz-criancas"><option value="0" selected>Nenhuma</option><option value="1">1 criança</option><option value="2">2 crianças</option><option value="3">3 crianças</option><option value="4">4 crianças</option></select></div>
+</div>
+<div class="clz-reserva__acoes">
+<a class="clz-btn clz-btn--terracota" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-clz-busca="motor">Ver Preços e Reservar</a>
+<a class="clz-btn clz-btn--contorno" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20consultar%20datas%20e%20valores%20de%20hospedagem%20no%20Cassorova" target="_blank" rel="noopener" data-clz-busca="whatsapp">Reservar pelo WhatsApp</a>
+<p class="clz-reserva__nota">No motor de reservas aparecem os três tipos: Villa Romance, Villa Aconchego e Villa Aconchego Família. Check-in a partir das 16h e check-out até as 14h.</p>
+</div>
+<p class="clz-reserva__aviso" hidden></p>
+</div>
+</section>
+<!-- ================= 3. CACHOEIRAS (DESTAQUE) ================= -->
+<section class="clz-sec clz-sec--mata" id="clz-cachoeiras" aria-labelledby="clz-cachoeiras-t">
+<div class="clz-linha">
+<div class="clz-cabeca clz-cabeca--lado">
+<h2 id="clz-cachoeiras-t" class="clz-titulo">As duas cachoeiras do Cassorova</h2>
+<p class="clz-chamada">Duas quedas d'água dentro da propriedade, com mirantes e poços para banho. Hóspedes entram nas duas durante toda a estadia.</p>
+</div>
+<div class="clz-cxs">
+<article class="clz-cx" id="clz-cachoeira-cassorova" aria-labelledby="clz-cachoeira-cassorova-t">
+<div class="clz-galeria" data-clz-galeria="cachoeira-cassorova" data-clz-galeria-nome="Cachoeira Cassorova" style="--gr:3 / 2"><div class="clz-galeria__lista" tabindex="0" role="group" aria-label="Fotos: Cachoeira Cassorova"><a class="clz-galeria__item" href="/images/2026/11/cassorova-cachoeira-cassorova-queda-entre-paredoes-de-pedra-01-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-cachoeira-cassorova-queda-entre-paredoes-de-pedra-01-scaled.jpg" srcset="/images/2026/11/cassorova-cachoeira-cassorova-queda-entre-paredoes-de-pedra-01-scaled.jpg 768w, /images/2026/11/cassorova-cachoeira-cassorova-queda-entre-paredoes-de-pedra-01-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Queda da Cachoeira Cassorova entre paredões de pedra" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-cachoeira-cassorova-casal-se-beijando-09-scaled.jpeg" target="_blank"><img class="clz-corte" src="/images/2026/11/cassorova-cachoeira-cassorova-casal-se-beijando-09-scaled.jpeg" srcset="/images/2026/11/cassorova-cachoeira-cassorova-casal-se-beijando-09-scaled.jpeg 768w, /images/2026/11/cassorova-cachoeira-cassorova-casal-se-beijando-09-scaled.jpeg 1152w" sizes="(min-width:900px) 720px,100vw" width="1152" height="1536" alt="Casal sentado em uma pedra diante da Cachoeira Cassorova" loading="lazy" style="object-position:50% 18%"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-cachoeira-cassorova-pessoa-no-poco-da-queda-02-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-cachoeira-cassorova-pessoa-no-poco-da-queda-02-scaled.jpg" srcset="/images/2026/11/cassorova-cachoeira-cassorova-pessoa-no-poco-da-queda-02-scaled.jpg 768w, /images/2026/11/cassorova-cachoeira-cassorova-pessoa-no-poco-da-queda-02-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Pessoa no poço da queda da Cachoeira Cassorova" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-cachoeira-cassorova-mirante-de-madeira-na-queda-06-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-cachoeira-cassorova-mirante-de-madeira-na-queda-06-scaled.jpg" srcset="/images/2026/11/cassorova-cachoeira-cassorova-mirante-de-madeira-na-queda-06-scaled.jpg 768w, /images/2026/11/cassorova-cachoeira-cassorova-mirante-de-madeira-na-queda-06-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Mirante de madeira na queda da Cachoeira Cassorova" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/Cassorova-244.jpg" target="_blank"><img class="clz-corte" src="/images/2026/11/Cassorova-244.jpg" srcset="/images/2026/11/Cassorova-244.jpg 480w, /images/2026/11/Cassorova-244.jpg 683w" sizes="(min-width:900px) 720px,100vw" width="683" height="1024" alt="Pessoas sob a água da Cachoeira Cassorova, em uma passarela com grade" loading="lazy" style="object-position:50% 68%"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-mirante-do-cassorova-deck-com-cachoeira-ao-fundo-01-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-mirante-do-cassorova-deck-com-cachoeira-ao-fundo-01-scaled.jpg" srcset="/images/2026/11/cassorova-mirante-do-cassorova-deck-com-cachoeira-ao-fundo-01-scaled.jpg 768w, /images/2026/11/cassorova-mirante-do-cassorova-deck-com-cachoeira-ao-fundo-01-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Deck do Mirante do Cassorova com a cachoeira ao fundo" loading="lazy"></a></div></div>
+<h3 id="clz-cachoeira-cassorova-t" class="clz-cx__nome">Cachoeira Cassorova</h3>
+<ul class="clz-chips"><li>Acesso pavimentado</li><li>2 quedas</li><li>Hidromassagem nas alturas</li></ul>
+<p class="clz-cx__texto">Trilha de 250 metros com corrimão e degraus, mirantes para as duas quedas, piscina de água natural e a hidromassagem nas alturas. <a href="/cachoeiras/#cnv-cassorova" data-clz-cta="roteiro-cassorova" data-clz-pos="cachoeiras">Ver o roteiro ponto a ponto</a>.</p>
+</article>
+<article class="clz-cx" id="clz-cachoeira-quatis" aria-labelledby="clz-cachoeira-quatis-t">
+<div class="clz-galeria" data-clz-galeria="cachoeira-quatis" data-clz-galeria-nome="Cachoeira dos Quatis" style="--gr:3 / 2"><div class="clz-galeria__lista" tabindex="0" role="group" aria-label="Fotos: Cachoeira dos Quatis"><a class="clz-galeria__item" href="/images/2026/11/cassorova-mirante-dos-quatis-visitantes-no-mirante-1-05-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-mirante-dos-quatis-visitantes-no-mirante-1-05-scaled.jpg" srcset="/images/2026/11/cassorova-mirante-dos-quatis-visitantes-no-mirante-1-05-scaled.jpg 768w, /images/2026/11/cassorova-mirante-dos-quatis-visitantes-no-mirante-1-05-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Visitantes no Mirante dos Quatis" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-cachoeira-dos-quatis-queda-alta-e-poco-de-pedras-03-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-cachoeira-dos-quatis-queda-alta-e-poco-de-pedras-03-scaled.jpg" srcset="/images/2026/11/cassorova-cachoeira-dos-quatis-queda-alta-e-poco-de-pedras-03-scaled.jpg 768w, /images/2026/11/cassorova-cachoeira-dos-quatis-queda-alta-e-poco-de-pedras-03-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Queda alta da Cachoeira dos Quatis e poço de pedras" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-mirante-dos-quatis-visitantes-no-mirante-2-06-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-mirante-dos-quatis-visitantes-no-mirante-2-06-scaled.jpg" srcset="/images/2026/11/cassorova-mirante-dos-quatis-visitantes-no-mirante-2-06-scaled.jpg 768w, /images/2026/11/cassorova-mirante-dos-quatis-visitantes-no-mirante-2-06-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Visitantes no Mirante dos Quatis, diante da mata" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-mirante-dos-quatis-casal-de-mochila-no-mirante-03-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-mirante-dos-quatis-casal-de-mochila-no-mirante-03-scaled.jpg" srcset="/images/2026/11/cassorova-mirante-dos-quatis-casal-de-mochila-no-mirante-03-scaled.jpg 768w, /images/2026/11/cassorova-mirante-dos-quatis-casal-de-mochila-no-mirante-03-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Casal de mochila no Mirante dos Quatis" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-mirante-dos-quatis-mirante-com-troncos-em-primeiro-plano-1-01-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-mirante-dos-quatis-mirante-com-troncos-em-primeiro-plano-1-01-scaled.jpg" srcset="/images/2026/11/cassorova-mirante-dos-quatis-mirante-com-troncos-em-primeiro-plano-1-01-scaled.jpg 768w, /images/2026/11/cassorova-mirante-dos-quatis-mirante-com-troncos-em-primeiro-plano-1-01-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Mirante dos Quatis com troncos de árvore em primeiro plano" loading="lazy"></a></div></div>
+<h3 id="clz-cachoeira-quatis-t" class="clz-cx__nome">Cachoeira dos Quatis</h3>
+<ul class="clz-chips"><li>Trilha de 1,5 km</li><li>3 mirantes</li><li>Queda cercada de mata</li></ul>
+<p class="clz-cx__texto">Caminhada com trechos pavimentados e três mirantes sobre o cânion, até uma queda alta cercada de mata fechada. <a href="/cachoeiras/#cnv-quatis" data-clz-cta="roteiro-quatis" data-clz-pos="cachoeiras">Ver o roteiro ponto a ponto</a>.</p>
+</article>
+</div>
+<div class="clz-cach__rodape">
+<a class="clz-btn clz-btn--branco" href="/cachoeiras/" data-clz-cta="ver-cachoeiras" data-clz-pos="cachoeiras">Conhecer as Cachoeiras</a>
+<a class="clz-btn clz-btn--contorno" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-clz-cta="ver-datas" data-clz-pos="cachoeiras">Ver Datas e Preços</a>
+</div>
+</div>
+</section>
+<!-- ================= 4. PISCINA DE BORDA INFINITA ================= -->
+<section class="clz-sec" id="clz-borda-infinita" aria-labelledby="clz-borda-infinita-t">
+<div class="clz-linha">
+<article class="clz-area">
+<div class="clz-galeria" data-clz-galeria="borda-infinita" data-clz-galeria-nome="Piscina de borda infinita" style="--gr:3 / 2"><div class="clz-galeria__lista" tabindex="0" role="group" aria-label="Fotos: Piscina de borda infinita"><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg" srcset="/images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 768w, /images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 1024w, /images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 1536w, /images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 2048w, /images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 2560w" sizes="(min-width:900px) 720px,100vw" width="2560" height="1707" alt="Piscina de borda infinita ao entardecer, com o lago refletindo o céu alaranjado" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/01/Cassorova-Hotel-Boutique-32.jpg" target="_blank"><img src="/images/2026/01/Cassorova-Hotel-Boutique-32.jpg" srcset="/images/2026/01/Cassorova-Hotel-Boutique-32.jpg 300w, /images/2026/01/Cassorova-Hotel-Boutique-32.jpg 768w, /images/2026/01/Cassorova-Hotel-Boutique-32.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Casal na piscina de borda infinita, brindando com dois drinks, com o lago ao fundo" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/Cassorova-207.jpg" target="_blank"><img src="/images/2026/11/Cassorova-207.jpg" srcset="/images/2026/11/Cassorova-207.jpg 300w, /images/2026/11/Cassorova-207.jpg 768w, /images/2026/11/Cassorova-207.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Duas pessoas na água rasa da piscina de borda infinita, com o gramado ao fundo" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-natural-piscina-de-areia-ampla-03-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-piscina-natural-piscina-de-areia-ampla-03-scaled.jpg" srcset="/images/2026/11/cassorova-piscina-natural-piscina-de-areia-ampla-03-scaled.jpg 768w, /images/2026/11/cassorova-piscina-natural-piscina-de-areia-ampla-03-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Piscina de areia ampla, com água clara e espreguiçadeiras ao fundo" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-de-borda-infinita-por-do-sol-na-borda-07-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-piscina-de-borda-infinita-por-do-sol-na-borda-07-scaled.jpg" srcset="/images/2026/11/cassorova-piscina-de-borda-infinita-por-do-sol-na-borda-07-scaled.jpg 768w, /images/2026/11/cassorova-piscina-de-borda-infinita-por-do-sol-na-borda-07-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Pôr do sol na borda da piscina de borda infinita" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-de-borda-infinita-pai-lancando-a-crianca-na-agua-09-scaled.jpeg" target="_blank"><img src="/images/2026/11/cassorova-piscina-de-borda-infinita-pai-lancando-a-crianca-na-agua-09-scaled.jpeg" srcset="/images/2026/11/cassorova-piscina-de-borda-infinita-pai-lancando-a-crianca-na-agua-09-scaled.jpeg 768w, /images/2026/11/cassorova-piscina-de-borda-infinita-pai-lancando-a-crianca-na-agua-09-scaled.jpeg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1026" alt="Pai lançando a criança na água da piscina de borda infinita" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-beach-borda-infinita-com-pergolado-02-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-piscina-beach-borda-infinita-com-pergolado-02-scaled.jpg" srcset="/images/2026/11/cassorova-piscina-beach-borda-infinita-com-pergolado-02-scaled.jpg 768w, /images/2026/11/cassorova-piscina-beach-borda-infinita-com-pergolado-02-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Piscina beach de borda infinita, com pergolado ao fundo" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-beach-borda-infinita-04-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-piscina-beach-borda-infinita-04-scaled.jpg" srcset="/images/2026/11/cassorova-piscina-beach-borda-infinita-04-scaled.jpg 768w, /images/2026/11/cassorova-piscina-beach-borda-infinita-04-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Piscina beach de borda infinita" loading="lazy"></a></div></div>
+<div class="clz-area__corpo">
+<p class="clz-area__onde">Beach pool sem areia, aberta ao resort e ao day use</p>
+<h2 id="clz-borda-infinita-t" class="clz-titulo">Piscina de borda infinita</h2>
+<p class="clz-area__texto">Uma beach pool, com clima de praia e sem areia, e vista aberta para a mata. Tem bar molhado, lanchonete, banheiros e vestiários bem ao lado, então dá para passar o dia inteiro por ali.</p>
+<ul class="clz-lista"><li>Bar molhado e lanchonete</li><li>Banheiros e vestiários</li><li>Aberta aos hóspedes e ao day use até as 17h</li><li>Depois das 17h, só para hóspedes</li></ul>
+</div>
+</article>
+<div class="clz-poente">
+<figure class="clz-poente__foto"><img src="/images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg" srcset="/images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 768w, /images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 1024w, /images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 1536w, /images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 2048w, /images/2026/11/cassorova-piscina-borda-infinita-por-do-sol-brotas-scaled.jpg 2560w" sizes="100vw" width="2560" height="1707" alt="Piscina de borda infinita ao entardecer, com o lago refletindo o céu alaranjado" loading="lazy" style="object-position:50% 72%"></figure>
+<div class="clz-poente__corpo">
+<p class="clz-poente__onde">Das 17h às 19h, só para hóspedes</p>
+<h3 class="clz-poente__titulo">O pôr do sol na piscina é de quem se hospeda</h3>
+<p class="clz-poente__texto">Quando o day use termina, a borda infinita passa a ser só dos hóspedes. É a hora em que o céu muda de cor e a vista da mata se abre, e uma das principais razões para passar a noite no resort.</p>
+<a class="clz-btn clz-btn--branco" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-clz-cta="ver-datas" data-clz-pos="por-do-sol">Ver Datas e Preços</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= 5. SPA JUNTO DA BORDA INFINITA ================= -->
+<section class="clz-sec clz-sec--linho" id="clz-spa-borda" aria-labelledby="clz-spa-borda-t">
+<div class="clz-linha">
+<article class="clz-area clz-area--inverte">
+<div class="clz-galeria" data-clz-galeria="spa-borda" data-clz-galeria-nome="Spa junto da borda infinita" style="--gr:3 / 2"><div class="clz-galeria__lista" tabindex="0" role="group" aria-label="Fotos: Spa junto da borda infinita"><a class="clz-galeria__item" href="/images/2026/11/cassorova-hidromassagens-aquecidas-spa-com-pergolado-02-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-hidromassagens-aquecidas-spa-com-pergolado-02-scaled.jpg" srcset="/images/2026/11/cassorova-hidromassagens-aquecidas-spa-com-pergolado-02-scaled.jpg 768w, /images/2026/11/cassorova-hidromassagens-aquecidas-spa-com-pergolado-02-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Spa com hidromassagem aquecida e pergolado" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-hidromassagens-aquecidas-spa-iluminado-a-noite-06-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-hidromassagens-aquecidas-spa-iluminado-a-noite-06-scaled.jpg" srcset="/images/2026/11/cassorova-hidromassagens-aquecidas-spa-iluminado-a-noite-06-scaled.jpg 768w, /images/2026/11/cassorova-hidromassagens-aquecidas-spa-iluminado-a-noite-06-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Spa com hidromassagem aquecida iluminado à noite" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-hidromassagens-aquecidas-spa-com-palmeiras-03-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-hidromassagens-aquecidas-spa-com-palmeiras-03-scaled.jpg" srcset="/images/2026/11/cassorova-hidromassagens-aquecidas-spa-com-palmeiras-03-scaled.jpg 768w, /images/2026/11/cassorova-hidromassagens-aquecidas-spa-com-palmeiras-03-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Spa com hidromassagem aquecida entre palmeiras" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-hidromassagens-aquecidas-casal-brindando-na-agua-rasa-04-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-hidromassagens-aquecidas-casal-brindando-na-agua-rasa-04-scaled.jpg" srcset="/images/2026/11/cassorova-hidromassagens-aquecidas-casal-brindando-na-agua-rasa-04-scaled.jpg 768w, /images/2026/11/cassorova-hidromassagens-aquecidas-casal-brindando-na-agua-rasa-04-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Casal brindando na água rasa do spa com hidromassagem aquecida" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-aquecida-piscina-spa-iluminada-com-pergolado-a-noite-12-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-piscina-aquecida-piscina-spa-iluminada-com-pergolado-a-noite-12-scaled.jpg" srcset="/images/2026/11/cassorova-piscina-aquecida-piscina-spa-iluminada-com-pergolado-a-noite-12-scaled.jpg 768w, /images/2026/11/cassorova-piscina-aquecida-piscina-spa-iluminada-com-pergolado-a-noite-12-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Piscina do spa iluminada, com pergolado, à noite" loading="lazy"></a></div></div>
+<div class="clz-area__corpo">
+<p class="clz-area__onde">Junto da borda infinita, aberto a todos</p>
+<h2 id="clz-spa-borda-t" class="clz-titulo">Spa com hidromassagem aquecida</h2>
+<p class="clz-area__texto">Pequenos spas ao lado da piscina de borda infinita, com água quente e vista para o jardim. Ficam abertos aos hóspedes e ao day use até as 17h, e à noite são só dos hóspedes.</p>
+<ul class="clz-lista"><li>Hidromassagem com água aquecida</li><li>Ao lado da piscina de borda infinita</li><li>Aberto ao day use até as 17h</li><li>À noite, só para hóspedes</li></ul>
+</div>
+</article>
+</div>
+</section>
+<!-- ================= 6. RESORT SPA (EXCLUSIVO) ================= -->
+<section class="clz-sec" id="clz-spa" aria-labelledby="clz-spa-t">
+<div class="clz-linha">
+<article class="clz-area clz-area--spa">
+<div class="clz-spa-foto"><div class="clz-galeria" data-clz-galeria="resort-spa" data-clz-galeria-nome="Resort Spa" style="--gr:3 / 2"><div class="clz-galeria__lista" tabindex="0" role="group" aria-label="Fotos: Resort Spa"><a class="clz-galeria__item" href="/images/2026/11/Cassorova-3.jpg" target="_blank"><img src="/images/2026/11/Cassorova-3.jpg" srcset="/images/2026/11/Cassorova-3.jpg 300w, /images/2026/11/Cassorova-3.jpg 768w, /images/2026/11/Cassorova-3.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Piscina de água clara com borda de areia e espreguiçadeiras, cercada de árvores" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/Cassorova-22.jpg" target="_blank"><img src="/images/2026/11/Cassorova-22.jpg" srcset="/images/2026/11/Cassorova-22.jpg 300w, /images/2026/11/Cassorova-22.jpg 768w, /images/2026/11/Cassorova-22.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Piscina com borda de areia e pequena queda de pedra ao fundo, entre plantas tropicais" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/Cassorova-12.jpg" target="_blank"><img src="/images/2026/11/Cassorova-12.jpg" srcset="/images/2026/11/Cassorova-12.jpg 300w, /images/2026/11/Cassorova-12.jpg 768w, /images/2026/11/Cassorova-12.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Mini cachoeira caindo sobre a parede de pedra, ao lado das espreguiçadeiras" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/Cassorova-16.jpg" target="_blank"><img src="/images/2026/11/Cassorova-16.jpg" srcset="/images/2026/11/Cassorova-16.jpg 300w, /images/2026/11/Cassorova-16.jpg 768w, /images/2026/11/Cassorova-16.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Espreguiçadeiras dentro da água rasa da piscina, com areia e plantas ao fundo" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/Cassorova-50.jpg" target="_blank"><img src="/images/2026/11/Cassorova-50.jpg" srcset="/images/2026/11/Cassorova-50.jpg 300w, /images/2026/11/Cassorova-50.jpg 768w, /images/2026/11/Cassorova-50.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Piscina iluminada em azul à noite, com a construção iluminada ao fundo" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/Cassorova-52.jpg" target="_blank"><img src="/images/2026/11/Cassorova-52.jpg" srcset="/images/2026/11/Cassorova-52.jpg 300w, /images/2026/11/Cassorova-52.jpg 768w, /images/2026/11/Cassorova-52.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Área circular de hidromassagem iluminada em azul na piscina, à noite" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/Cassorova-53.jpg" target="_blank"><img src="/images/2026/11/Cassorova-53.jpg" srcset="/images/2026/11/Cassorova-53.jpg 300w, /images/2026/11/Cassorova-53.jpg 768w, /images/2026/11/Cassorova-53.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Piscina com luzes azuis à noite, entre as árvores" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/Cassorova-60.jpg" target="_blank"><img src="/images/2026/11/Cassorova-60.jpg" srcset="/images/2026/11/Cassorova-60.jpg 300w, /images/2026/11/Cassorova-60.jpg 768w, /images/2026/11/Cassorova-60.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Piscina grande iluminada em azul à noite, com a construção ao fundo" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/Cassorova-39.jpg" target="_blank"><img src="/images/2026/11/Cassorova-39.jpg" srcset="/images/2026/11/Cassorova-39.jpg 300w, /images/2026/11/Cassorova-39.jpg 768w, /images/2026/11/Cassorova-39.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Três drinks coloridos sobre uma mesa à beira da piscina, com espreguiçadeiras azuis ao fundo" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/Cassorova-47.jpg" target="_blank"><img src="/images/2026/11/Cassorova-47.jpg" srcset="/images/2026/11/Cassorova-47.jpg 300w, /images/2026/11/Cassorova-47.jpg 768w, /images/2026/11/Cassorova-47.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Drink gelado em uma mesinha de madeira ao lado da piscina, com a água ao fundo" loading="lazy"></a></div></div><span class="clz-selo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Exclusivo para hóspedes</span></div>
+<div class="clz-area__corpo">
+<p class="clz-area__onde">Espaço exclusivo dos hóspedes</p>
+<h2 id="clz-spa-t" class="clz-titulo">Resort Spa</h2>
+<p class="clz-area__texto">Uma piscina aquecida e exclusiva, com fervedouros, mini cachoeira relaxante e área de meditação. É um espaço só de quem está hospedado, que não entra no day use e fica tranquilo o dia todo.</p>
+<p class="clz-aviso"><b>Exclusivo para hóspedes.</b> O Resort Spa não faz parte do day use: só entra quem está hospedado no Cassorova.</p>
+<ul class="clz-lista"><li>Piscina exclusiva e aquecida, com fervedouros</li><li>Mini cachoeira relaxante</li><li>Área de meditação</li><li>Lanchonete do Spa, com cardápio exclusivo</li><li>Só para hóspedes, sem day use</li></ul>
+<a class="clz-btn clz-btn--terracota" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-clz-cta="ver-datas" data-clz-pos="spa">Ver Datas e Preços</a>
+</div>
+</article>
+</div>
+</section>
+<!-- ================= 7. PRAIA RESORT E PISCINA NATURAL ================= -->
+<section class="clz-sec clz-sec--linho" id="clz-praia" aria-labelledby="clz-praia-t">
+<div class="clz-linha">
+<h2 id="clz-praia-t" class="clz-sr">Praia Resort e piscina natural</h2>
+<div class="clz-areas">
+<article class="clz-area" id="clz-praia-resort" aria-labelledby="clz-praia-resort-t">
+<div class="clz-galeria" data-clz-galeria="praia-resort" data-clz-galeria-nome="Praia Resort" style="--gr:3 / 2"><div class="clz-galeria__lista" tabindex="0" role="group" aria-label="Fotos: Praia Resort"><a class="clz-galeria__item" href="/images/2026/11/cassorova-experiencias-casal-no-piquenique-ao-por-do-sol-11-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-experiencias-casal-no-piquenique-ao-por-do-sol-11-scaled.jpg" srcset="/images/2026/11/cassorova-experiencias-casal-no-piquenique-ao-por-do-sol-11-scaled.jpg 768w, /images/2026/11/cassorova-experiencias-casal-no-piquenique-ao-por-do-sol-11-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Casal no piquenique ao pôr do sol" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-quiosque-da-praia-quiosque-visto-do-lago-01-scaled.jpeg" target="_blank"><img class="clz-corte" src="/images/2026/11/cassorova-quiosque-da-praia-quiosque-visto-do-lago-01-scaled.jpeg" srcset="/images/2026/11/cassorova-quiosque-da-praia-quiosque-visto-do-lago-01-scaled.jpeg 768w, /images/2026/11/cassorova-quiosque-da-praia-quiosque-visto-do-lago-01-scaled.jpeg 1152w" sizes="(min-width:900px) 720px,100vw" width="1152" height="1536" alt="Quiosque da praia com telhado de palha, visto do lago" loading="lazy" style="object-position:50% 42%"></a><a class="clz-galeria__item" href="/images/2026/11/Cassorova-216.jpg" target="_blank"><img src="/images/2026/11/Cassorova-216.jpg" srcset="/images/2026/11/Cassorova-216.jpg 300w, /images/2026/11/Cassorova-216.jpg 768w, /images/2026/11/Cassorova-216.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Duas pessoas em um caiaque vermelho no lago" loading="lazy"></a><a class="clz-galeria__item" href="/images/2025/05/cassorova-resort-ecoturismo-pacotes-3.jpeg" target="_blank"><img src="/images/2025/05/cassorova-resort-ecoturismo-pacotes-3.jpeg" srcset="/images/2025/05/cassorova-resort-ecoturismo-pacotes-3.jpeg 300w, /images/2025/05/cassorova-resort-ecoturismo-pacotes-3.jpeg 768w, /images/2025/05/cassorova-resort-ecoturismo-pacotes-3.jpeg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="718" alt="Pessoas em pranchas de stand up paddle no lago" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/Cassorova-225.jpg" target="_blank"><img src="/images/2026/11/Cassorova-225.jpg" srcset="/images/2026/11/Cassorova-225.jpg 300w, /images/2026/11/Cassorova-225.jpg 768w, /images/2026/11/Cassorova-225.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Pessoa remando em pé em uma prancha no lago, com a margem ao fundo" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/07/cassorova-day-use.jpg" target="_blank"><img src="/images/2026/07/cassorova-day-use.jpg" srcset="/images/2026/07/cassorova-day-use.jpg 300w, /images/2026/07/cassorova-day-use.jpg 768w, /images/2026/07/cassorova-day-use.jpg 1024w" sizes="(min-width:900px) 720px,100vw" width="1024" height="682" alt="Pessoas de caiaque no lago, com a margem e a mata ao fundo" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-quiosque-da-praia-mulher-na-espreguicadeira-com-drink-02-scaled.jpeg" target="_blank"><img class="clz-corte" src="/images/2026/11/cassorova-quiosque-da-praia-mulher-na-espreguicadeira-com-drink-02-scaled.jpeg" srcset="/images/2026/11/cassorova-quiosque-da-praia-mulher-na-espreguicadeira-com-drink-02-scaled.jpeg 768w, /images/2026/11/cassorova-quiosque-da-praia-mulher-na-espreguicadeira-com-drink-02-scaled.jpeg 1152w" sizes="(min-width:900px) 720px,100vw" width="1152" height="1536" alt="Mulher em uma espreguiçadeira na praia, com um drink na mão" loading="lazy" style="object-position:50% 28%"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-lago-casal-no-por-do-sol-com-caiaques-04-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-lago-casal-no-por-do-sol-com-caiaques-04-scaled.jpg" srcset="/images/2026/11/cassorova-lago-casal-no-por-do-sol-com-caiaques-04-scaled.jpg 768w, /images/2026/11/cassorova-lago-casal-no-por-do-sol-com-caiaques-04-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Casal no lago ao pôr do sol, com caiaques" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-experiencias-piquenique-ao-por-do-sol-10-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-experiencias-piquenique-ao-por-do-sol-10-scaled.jpg" srcset="/images/2026/11/cassorova-experiencias-piquenique-ao-por-do-sol-10-scaled.jpg 768w, /images/2026/11/cassorova-experiencias-piquenique-ao-por-do-sol-10-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Piquenique ao pôr do sol" loading="lazy"></a></div></div>
+<div class="clz-area__corpo">
+<p class="clz-area__onde">O lago com praia</p>
+<h3 id="clz-praia-resort-t" class="clz-area__nome">Praia Resort</h3>
+<p class="clz-area__texto">É o lago do Cassorova, com praia e espreguiçadeiras à beira da água. Tem lanchonete exclusiva e é ali que acontecem as atividades no lago, como caiaque e stand up paddle.</p>
+<ul class="clz-lista"><li>Lago com praia</li><li>Lanchonete exclusiva</li><li>Caiaque e stand up paddle</li><li>Playground</li></ul>
+</div>
+</article>
+<article class="clz-area clz-area--inverte" id="clz-piscina-natural" aria-labelledby="clz-piscina-natural-t">
+<div class="clz-galeria" data-clz-galeria="piscina-natural" data-clz-galeria-nome="Piscina natural com carpas" style="--gr:3 / 2"><div class="clz-galeria__lista" tabindex="0" role="group" aria-label="Fotos: Piscina natural com carpas"><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-natural-refugio-a-beira-do-lago.jpg" target="_blank"><img src="/images/2026/11/cassorova-piscina-natural-refugio-a-beira-do-lago.jpg" srcset="/images/2026/11/cassorova-piscina-natural-refugio-a-beira-do-lago.jpg 768w, /images/2026/11/cassorova-piscina-natural-refugio-a-beira-do-lago.jpg 1024w, /images/2026/11/cassorova-piscina-natural-refugio-a-beira-do-lago.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Margem gramada do lago, com árvores floridas e um banco de madeira" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-natural-reflexos-vibrantes-no-lago.jpg" target="_blank"><img src="/images/2026/11/cassorova-piscina-natural-reflexos-vibrantes-no-lago.jpg" srcset="/images/2026/11/cassorova-piscina-natural-reflexos-vibrantes-no-lago.jpg 768w, /images/2026/11/cassorova-piscina-natural-reflexos-vibrantes-no-lago.jpg 1024w, /images/2026/11/cassorova-piscina-natural-reflexos-vibrantes-no-lago.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Lago de água escura que reflete o céu e as árvores" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-natural-lago-sereno-sob-ceu-azul.jpg" target="_blank"><img src="/images/2026/11/cassorova-piscina-natural-lago-sereno-sob-ceu-azul.jpg" srcset="/images/2026/11/cassorova-piscina-natural-lago-sereno-sob-ceu-azul.jpg 768w, /images/2026/11/cassorova-piscina-natural-lago-sereno-sob-ceu-azul.jpg 1024w, /images/2026/11/cassorova-piscina-natural-lago-sereno-sob-ceu-azul.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Lago sereno sob céu azul, com folhagens e árvores ao redor" loading="lazy"></a></div></div>
+<div class="clz-area__corpo">
+<p class="clz-area__onde">Água natural, carpas e sombra</p>
+<h3 id="clz-piscina-natural-t" class="clz-area__nome">Piscina natural com carpas</h3>
+<p class="clz-area__texto">Uma piscina de água natural, com espelho d'água e carpas, cercada de redários e da sombra das árvores. É o lugar para descansar depois do banho. As carpas moram aqui, e não no lago.</p>
+<ul class="clz-lista"><li>Piscina de água natural</li><li>Carpas no espelho d'água</li><li>Redários à sombra das árvores</li></ul>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- ================= 7B. FOGUEIRA ================= -->
+<section class="clz-sec" id="clz-fogueira" aria-labelledby="clz-fogueira-t">
+<div class="clz-linha">
+<article class="clz-area">
+<div class="clz-galeria" data-clz-galeria="fogueira" data-clz-galeria-nome="Área da fogueira" style="--gr:3 / 2"><div class="clz-galeria__lista" tabindex="0" role="group" aria-label="Fotos: Área da fogueira"><a class="clz-galeria__item" href="/images/2025/05/cassorova-resort-ecoturismo-pacotes-5.jpeg" target="_blank"><img src="/images/2025/05/cassorova-resort-ecoturismo-pacotes-5.jpeg" srcset="/images/2025/05/cassorova-resort-ecoturismo-pacotes-5.jpeg 300w, /images/2025/05/cassorova-resort-ecoturismo-pacotes-5.jpeg 768w, /images/2025/05/cassorova-resort-ecoturismo-pacotes-5.jpeg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Pessoas sentadas em volta de uma fogueira acesa, à noite" loading="lazy"></a><a class="clz-galeria__item" href="/images/2025/05/cassorova-resort-ecoturismo-pacotes-4.jpeg" target="_blank"><img src="/images/2025/05/cassorova-resort-ecoturismo-pacotes-4.jpeg" srcset="/images/2025/05/cassorova-resort-ecoturismo-pacotes-4.jpeg 300w, /images/2025/05/cassorova-resort-ecoturismo-pacotes-4.jpeg 768w, /images/2025/05/cassorova-resort-ecoturismo-pacotes-4.jpeg 1080w" sizes="(min-width:900px) 720px,100vw" width="1080" height="720" alt="Grupo reunido ao redor da fogueira, ao entardecer" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-area-da-fogueira-vinho-na-mesa-com-fogueira-ao-fundo-02-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-area-da-fogueira-vinho-na-mesa-com-fogueira-ao-fundo-02-scaled.jpg" srcset="/images/2026/11/cassorova-area-da-fogueira-vinho-na-mesa-com-fogueira-ao-fundo-02-scaled.jpg 768w, /images/2026/11/cassorova-area-da-fogueira-vinho-na-mesa-com-fogueira-ao-fundo-02-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Garrafa e taças de vinho sobre a mesa, com a fogueira ao fundo" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-area-da-fogueira-fogueira-e-balanco-iluminado-03-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-area-da-fogueira-fogueira-e-balanco-iluminado-03-scaled.jpg" srcset="/images/2026/11/cassorova-area-da-fogueira-fogueira-e-balanco-iluminado-03-scaled.jpg 768w, /images/2026/11/cassorova-area-da-fogueira-fogueira-e-balanco-iluminado-03-scaled.jpg 1536w" sizes="(min-width:900px) 720px,100vw" width="1536" height="1024" alt="Fogueira e balanço iluminado" loading="lazy"></a></div></div>
+<div class="clz-area__corpo">
+<p class="clz-area__onde">Noites de céu aberto</p>
+<h2 id="clz-fogueira-t" class="clz-titulo">Área da fogueira</h2>
+<p class="clz-area__texto">Cadeiras e troncos em volta de uma fogueira acesa, para encerrar o dia ao ar livre, longe das luzes da cidade e com o céu estrelado por cima.</p>
+<ul class="clz-lista"><li>Fogueira acesa à noite</li><li>Cadeiras e troncos em volta</li><li>Céu estrelado, longe da cidade</li></ul>
+</div>
+</article>
+</div>
+</section>
+<!-- ================= 8. DECKS, PONTE E TRILHAS ================= -->
+<section class="clz-sec clz-sec--nevoa" id="clz-propriedade" aria-labelledby="clz-propriedade-t">
+<div class="clz-linha">
+<div class="clz-cabeca clz-cabeca--lado">
+<h2 id="clz-propriedade-t" class="clz-titulo">Pela propriedade: decks, redário, ponte e trilhas</h2>
+<p class="clz-chamada">Lugares para caminhar, contemplar e descansar entre uma atividade e outra, todos dentro do resort.</p>
+</div>
+<ul class="clz-cards" tabindex="0" aria-label="Decks, redário, ponte e trilhas">
+<li class="clz-card"><figure class="clz-card__foto"><img src="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-8.jpg" srcset="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-8.jpg 400w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-8.jpg 1080w" sizes="(min-width: 1024px) 290px, (min-width: 700px) 42vw, 78vw" width="1080" height="675" alt="Casal de costas em um deck de madeira, olhando o vale" loading="lazy"></figure><div class="clz-card__corpo"><h3 class="clz-card__titulo">Decks e mirantes cênicos</h3><p class="clz-card__texto">Decks de madeira e mirantes com vista para o vale, para parar, olhar e fazer a foto.</p></div></li>
+<li class="clz-card"><figure class="clz-card__foto"><img src="/images/2025/05/cassorova-resort-ecoturismo-brotas-5.jpg" srcset="/images/2025/05/cassorova-resort-ecoturismo-brotas-5.jpg 400w, /images/2025/05/cassorova-resort-ecoturismo-brotas-5.jpg 1080w" sizes="(min-width: 1024px) 290px, (min-width: 700px) 42vw, 78vw" width="1080" height="675" alt="Casal descansando em uma rede suspensa entre as árvores" loading="lazy"></figure><div class="clz-card__corpo"><h3 class="clz-card__titulo">Redário e rede suspensa</h3><p class="clz-card__texto">Redes à sombra das árvores e uma rede suspensa entre a mata, para descansar entre um passeio e outro.</p></div></li>
+<li class="clz-card"><figure class="clz-card__foto clz-card__foto--v"><img src="/images/2025/05/cassorova-resort-ecoturismo-pacotes-8.jpeg" srcset="/images/2025/05/cassorova-resort-ecoturismo-pacotes-8.jpeg 300w, /images/2025/05/cassorova-resort-ecoturismo-pacotes-8.jpeg 768w, /images/2025/05/cassorova-resort-ecoturismo-pacotes-8.jpeg 1080w" sizes="(min-width: 1024px) 290px, (min-width: 700px) 42vw, 78vw" width="1080" height="720" alt="Casal atravessando a ponte pênsil de madeira entre as árvores" loading="lazy"></figure><div class="clz-card__corpo"><h3 class="clz-card__titulo">Ponte pênsil</h3><p class="clz-card__texto">Uma travessia de madeira sobre o cânion do rio Cassorova, com a mata dos dois lados.</p></div></li>
+<li class="clz-card"><figure class="clz-card__foto"><img src="/images/2026/11/cassorova-trilha-ponte-do-canion-caminhante-na-ponte-pensil-01-scaled.jpg" srcset="/images/2026/11/cassorova-trilha-ponte-do-canion-caminhante-na-ponte-pensil-01-scaled.jpg 768w, /images/2026/11/cassorova-trilha-ponte-do-canion-caminhante-na-ponte-pensil-01-scaled.jpg 1536w" sizes="(min-width: 1024px) 290px, (min-width: 700px) 42vw, 78vw" width="1536" height="1024" alt="Caminhante na ponte pênsil do cânion, em uma trilha entre a mata" loading="lazy"></figure><div class="clz-card__corpo"><h3 class="clz-card__titulo">Trilhas autoguiadas</h3><p class="clz-card__texto">Caminhos pela mata para fazer no seu ritmo, sem guia, até as cachoeiras, os mirantes e a ponte.</p></div></li>
+</ul>
+</div>
+</section>
+<!-- ================= 9. QUEM SE HOSPEDA ================= -->
+<section class="clz-sec clz-sec--mata" id="clz-hospedes" aria-labelledby="clz-hospedes-t">
+<div class="clz-linha">
+<div class="clz-cabeca clz-cabeca--lado">
+<h2 id="clz-hospedes-t" class="clz-titulo clz-titulo--trirong">Quem se hospeda aproveita tudo, sem pagar day use</h2>
+<p class="clz-chamada">A hospedagem já inclui a família no day use. Vocês ficam à vontade na estrutura do resort e ainda usam os espaços exclusivos.</p>
+</div>
+<ul class="clz-vant">
+<li class="clz-vant__item"><h3 class="clz-vant__titulo">Sem ingresso de day use</h3><p class="clz-vant__texto">Hóspedes e a família não pagam o day use, têm acesso a toda a estrutura do resort e ficam o tempo que quiserem.</p></li>
+<li class="clz-vant__item"><h3 class="clz-vant__titulo">Espaços só para hóspedes</h3><p class="clz-vant__texto">O Resort Spa é exclusivo, e depois das 17h a piscina de borda infinita fica só para hóspedes, na hora do pôr do sol. Os spas ao lado também são só deles à noite.</p></li>
+<li class="clz-vant__item"><h3 class="clz-vant__titulo">Cachoeiras e trilhas na estadia</h3><p class="clz-vant__texto">Acesso livre às cachoeiras Cassorova e dos Quatis, às trilhas autoguiadas, à ponte pênsil, ao lago e à Praia Resort durante toda a estadia.</p></li>
+</ul>
+<div class="clz-vant__botoes">
+<a class="clz-btn clz-btn--branco" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-clz-cta="ver-datas" data-clz-pos="hospedes">Ver Datas e Preços</a>
+<a class="clz-btn clz-btn--contorno" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20consultar%20datas%20e%20valores%20de%20hospedagem%20no%20Cassorova" target="_blank" rel="noopener" data-clz-cta="whatsapp" data-clz-pos="hospedes">Reservar pelo WhatsApp</a>
+</div>
+<p class="clz-vant__nota">Check-in a partir das 16h e check-out até as 14h.</p>
+</div>
+</section>
+<!-- ================= 10. MAPA DO RESORT ================= -->
+<section class="clz-sec clz-sec--linho" id="clz-mapa" aria-labelledby="clz-mapa-t">
+<div class="clz-linha">
+<div class="clz-cabeca clz-cabeca--lado">
+<h2 id="clz-mapa-t" class="clz-titulo clz-titulo--trirong">Mapa do Resort</h2>
+<p class="clz-chamada">Veja onde ficam as piscinas, a Praia Resort, o Resort Spa, as cachoeiras e as trilhas, tudo dentro da mesma propriedade. Toque no mapa para ampliar.</p>
+</div>
+<div class="clz-ilus">
+<div>
+<a class="clz-ilus__imagem" href="/images/2026/08/mapa_site-2-scaled.png" target="_blank" rel="noopener" data-clz-cta="mapa-ampliar" data-clz-pos="mapa"><img src="/images/2026/08/mapa_site-2-scaled.png" srcset="/images/2026/08/mapa_site-2-scaled.png 768w, /images/2026/08/mapa_site-2-scaled.png 1024w" sizes="(min-width: 1024px) 680px, 86vw" width="1024" height="935" alt="Mapa ilustrado do Cassorova com as piscinas, a Praia Resort, o Resort Spa, as cachoeiras, as trilhas e os bangalôs numerados" loading="lazy" decoding="async"></a>
+<p class="clz-ilus__dica">Os números do mapa correspondem aos da legenda.</p>
+</div>
+<div class="clz-legenda">
+<details><summary>Recepção <small>1 a 4</small></summary><ol><li><span class="clz-n">1</span>Entrada</li><li><span class="clz-n">2</span>Estacionamento</li><li><span class="clz-n">3</span>Recepção</li><li><span class="clz-n">4</span>Entrada dos bangalôs</li></ol></details>
+<details><summary>Cachoeira Cassorova <small>5 a 14</small></summary><ol><li><span class="clz-n">5</span>Arvorismo</li><li><span class="clz-n">6</span>Trilha da ponte do cânion</li><li><span class="clz-n">7</span>Ponte do cânion</li><li><span class="clz-n">8</span>Saída da tirolesa</li><li><span class="clz-n">9</span>Trilha Cassorova (250 m)</li><li><span class="clz-n">10</span>Mirante da 1ª queda</li><li><span class="clz-n">11</span>Hidromassagem nas alturas</li><li><span class="clz-n">12</span>Mirante da 2ª queda</li><li><span class="clz-n">13</span>Piscina Cassorova</li><li><span class="clz-n">14</span>Cassorovinha</li></ol></details>
+<details><summary>Cachoeira dos Quatis <small>15 a 19</small></summary><ol><li><span class="clz-n">15</span>Trilha dos Quatis (1.500 m)</li><li><span class="clz-n">16</span>Mirante do Cassorova</li><li><span class="clz-n">17</span>Mirante do cânion</li><li><span class="clz-n">18</span>Mirante dos Quatis</li><li><span class="clz-n">19</span>Cachoeira dos Quatis</li></ol></details>
+<details open><summary>Lazer do resort <small>20 a 28</small></summary><ol><li><span class="clz-n">20</span>Piscina de borda infinita</li><li><span class="clz-n">21</span>Pequenos spas com hidromassagem aquecida</li><li><span class="clz-n">22</span>Banheiros, vestiários e duchas</li><li><span class="clz-n">23</span>Choperia</li><li><span class="clz-n">24</span>Bar molhado</li><li><span class="clz-n">25</span>Deck dos pássaros</li><li><span class="clz-n">26</span>Restaurante colonial</li><li><span class="clz-n">27</span>Balanço infinito</li><li><span class="clz-n">28</span>Área da fogueira</li></ol></details>
+<details><summary>Praia Resort e piscina natural <small>29 a 35</small></summary><ol><li><span class="clz-n">29</span>Piscina de água natural e corrente</li><li><span class="clz-n">30</span>Lago: caiaques e stand up paddle</li><li><span class="clz-n">31</span>Quiosque da praia</li><li><span class="clz-n">32</span>Espelho d&#x27;água com carpas</li><li><span class="clz-n">33</span>Redário</li><li><span class="clz-n">34</span>Rede suspensa</li><li><span class="clz-n">35</span>Playground</li></ol></details>
+<details><summary>Só para hóspedes <small>36 a 40</small></summary><ol><li><span class="clz-n">36</span>Resort Spa: piscina aquecida com fervedouros</li><li><span class="clz-n">37</span>Lanchonete do Spa</li><li><span class="clz-n">38</span>Bangalôs Romance (01, 02, 21 e 22)</li><li><span class="clz-n">39</span>Bangalôs Aconchego (03 a 20)</li><li><span class="clz-n">40</span>Estacionamento dos bangalôs</li></ol></details>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= 7. GALERIA ================= -->
+<section class="clz-sec" id="clz-galeria" aria-labelledby="clz-galeria-t">
+<div class="clz-linha">
+<div class="clz-cabeca clz-cabeca--lado">
+<h2 id="clz-galeria-t" class="clz-titulo">Mais fotos do lazer</h2>
+<p class="clz-chamada">Do dia à noite: lago, piscinas, decks, trilhas e fogueira. Toque em uma foto para ampliar.</p>
+</div>
+<div class="clz-galeria" data-clz-galeria="geral" data-clz-galeria-nome="Fotos do lazer" style="--gr:3 / 2"><div class="clz-galeria__lista" tabindex="0" role="group" aria-label="Fotos: Fotos do lazer"><a class="clz-galeria__item" href="/images/2026/11/cassorova-ponte-do-canion-ponte-pensil-iluminada-a-noite-detalhe-03-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-ponte-do-canion-ponte-pensil-iluminada-a-noite-detalhe-03-scaled.jpg" srcset="/images/2026/11/cassorova-ponte-do-canion-ponte-pensil-iluminada-a-noite-detalhe-03-scaled.jpg 768w, /images/2026/11/cassorova-ponte-do-canion-ponte-pensil-iluminada-a-noite-detalhe-03-scaled.jpg 1536w" sizes="(min-width: 1200px) 1100px, 100vw" width="1536" height="1024" alt="Ponte pênsil do cânion iluminada à noite" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-exclusiva-hospedes-criancas-brincando-na-piscina-07.jpg" target="_blank"><img class="clz-corte" src="/images/2026/11/cassorova-piscina-exclusiva-hospedes-criancas-brincando-na-piscina-07.jpg" srcset="/images/2026/11/cassorova-piscina-exclusiva-hospedes-criancas-brincando-na-piscina-07.jpg 480w, /images/2026/11/cassorova-piscina-exclusiva-hospedes-criancas-brincando-na-piscina-07.jpg 768w" sizes="(min-width: 1200px) 1100px, 100vw" width="768" height="1015" alt="Crianças brincando na piscina exclusiva dos hóspedes" loading="lazy" style="object-position:50% 54%"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-de-borda-infinita-champanhe-no-por-do-sol-06-scaled.jpg" target="_blank"><img class="clz-corte" src="/images/2026/11/cassorova-piscina-de-borda-infinita-champanhe-no-por-do-sol-06-scaled.jpg" srcset="/images/2026/11/cassorova-piscina-de-borda-infinita-champanhe-no-por-do-sol-06-scaled.jpg 768w, /images/2026/11/cassorova-piscina-de-borda-infinita-champanhe-no-por-do-sol-06-scaled.jpg 1024w" sizes="(min-width: 1200px) 1100px, 100vw" width="1024" height="1536" alt="Champanhe em um balde de cobre à beira da piscina de borda infinita, ao pôr do sol" loading="lazy" style="object-position:50% 86%"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-aquecida-mae-e-filha-na-borda-13.jpg" target="_blank"><img class="clz-corte" src="/images/2026/11/cassorova-piscina-aquecida-mae-e-filha-na-borda-13.jpg" srcset="/images/2026/11/cassorova-piscina-aquecida-mae-e-filha-na-borda-13.jpg 768w, /images/2026/11/cassorova-piscina-aquecida-mae-e-filha-na-borda-13.jpg 1152w" sizes="(min-width: 1200px) 1100px, 100vw" width="1152" height="1536" alt="Mãe e filha na borda da piscina aquecida" loading="lazy" style="object-position:50% 42%"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-piscina-aquecida-casal-na-borda-da-piscina-01-scaled.jpeg" target="_blank"><img class="clz-corte" src="/images/2026/11/cassorova-piscina-aquecida-casal-na-borda-da-piscina-01-scaled.jpeg" srcset="/images/2026/11/cassorova-piscina-aquecida-casal-na-borda-da-piscina-01-scaled.jpeg 768w, /images/2026/11/cassorova-piscina-aquecida-casal-na-borda-da-piscina-01-scaled.jpeg 1152w" sizes="(min-width: 1200px) 1100px, 100vw" width="1152" height="1536" alt="Casal sentado na borda da piscina aquecida" loading="lazy" style="object-position:50% 26%"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-mirante-do-canion-casal-no-mirante-com-vista-do-vale-01-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-mirante-do-canion-casal-no-mirante-com-vista-do-vale-01-scaled.jpg" srcset="/images/2026/11/cassorova-mirante-do-canion-casal-no-mirante-com-vista-do-vale-01-scaled.jpg 768w, /images/2026/11/cassorova-mirante-do-canion-casal-no-mirante-com-vista-do-vale-01-scaled.jpg 1536w" sizes="(min-width: 1200px) 1100px, 100vw" width="1536" height="1024" alt="Casal no Mirante do cânion, com vista do vale" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-mirante-cassorova-grupo-de-capacete-no-mirante-08-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-mirante-cassorova-grupo-de-capacete-no-mirante-08-scaled.jpg" srcset="/images/2026/11/cassorova-mirante-cassorova-grupo-de-capacete-no-mirante-08-scaled.jpg 768w, /images/2026/11/cassorova-mirante-cassorova-grupo-de-capacete-no-mirante-08-scaled.jpg 1536w" sizes="(min-width: 1200px) 1100px, 100vw" width="1536" height="1024" alt="Grupo de capacete no mirante" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-lago-jardim-e-lago-06-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-lago-jardim-e-lago-06-scaled.jpg" srcset="/images/2026/11/cassorova-lago-jardim-e-lago-06-scaled.jpg 768w, /images/2026/11/cassorova-lago-jardim-e-lago-06-scaled.jpg 1536w" sizes="(min-width: 1200px) 1100px, 100vw" width="1536" height="1024" alt="Jardim e lago do resort" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-lago-casal-no-deck-ao-por-do-sol-05-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-lago-casal-no-deck-ao-por-do-sol-05-scaled.jpg" srcset="/images/2026/11/cassorova-lago-casal-no-deck-ao-por-do-sol-05-scaled.jpg 768w, /images/2026/11/cassorova-lago-casal-no-deck-ao-por-do-sol-05-scaled.jpg 1536w" sizes="(min-width: 1200px) 1100px, 100vw" width="1536" height="1024" alt="Casal no deck do lago ao pôr do sol" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-hidromassagens-aquecidas-criancas-dancando-perto-da-piscina-08-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-hidromassagens-aquecidas-criancas-dancando-perto-da-piscina-08-scaled.jpg" srcset="/images/2026/11/cassorova-hidromassagens-aquecidas-criancas-dancando-perto-da-piscina-08-scaled.jpg 768w, /images/2026/11/cassorova-hidromassagens-aquecidas-criancas-dancando-perto-da-piscina-08-scaled.jpg 1536w" sizes="(min-width: 1200px) 1100px, 100vw" width="1536" height="1026" alt="Crianças dançando perto da piscina aquecida" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-experiencias-casal-no-daybed-do-deck-09-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-experiencias-casal-no-daybed-do-deck-09-scaled.jpg" srcset="/images/2026/11/cassorova-experiencias-casal-no-daybed-do-deck-09-scaled.jpg 768w, /images/2026/11/cassorova-experiencias-casal-no-daybed-do-deck-09-scaled.jpg 1536w" sizes="(min-width: 1200px) 1100px, 100vw" width="1536" height="1024" alt="Casal em um daybed no deck" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-experiencias-casal-brindando-a-noite-12-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-experiencias-casal-brindando-a-noite-12-scaled.jpg" srcset="/images/2026/11/cassorova-experiencias-casal-brindando-a-noite-12-scaled.jpg 768w, /images/2026/11/cassorova-experiencias-casal-brindando-a-noite-12-scaled.jpg 1536w" sizes="(min-width: 1200px) 1100px, 100vw" width="1536" height="1024" alt="Casal brindando à noite" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-choperia-deck-com-mesas-ao-anoitecer-02-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-choperia-deck-com-mesas-ao-anoitecer-02-scaled.jpg" srcset="/images/2026/11/cassorova-choperia-deck-com-mesas-ao-anoitecer-02-scaled.jpg 768w, /images/2026/11/cassorova-choperia-deck-com-mesas-ao-anoitecer-02-scaled.jpg 1536w" sizes="(min-width: 1200px) 1100px, 100vw" width="1536" height="1024" alt="Deck da choperia com mesas ao anoitecer" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-deck-dos-passaros-deck-iluminado-com-daybeds-01-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-deck-dos-passaros-deck-iluminado-com-daybeds-01-scaled.jpg" srcset="/images/2026/11/cassorova-deck-dos-passaros-deck-iluminado-com-daybeds-01-scaled.jpg 768w, /images/2026/11/cassorova-deck-dos-passaros-deck-iluminado-com-daybeds-01-scaled.jpg 1536w" sizes="(min-width: 1200px) 1100px, 100vw" width="1536" height="1024" alt="Deck dos Pássaros iluminado, com daybeds" loading="lazy"></a><a class="clz-galeria__item" href="/images/2026/11/cassorova-balanco-infinito-balanco-iluminado-e-fogueira-01-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-balanco-infinito-balanco-iluminado-e-fogueira-01-scaled.jpg" srcset="/images/2026/11/cassorova-balanco-infinito-balanco-iluminado-e-fogueira-01-scaled.jpg 768w, /images/2026/11/cassorova-balanco-infinito-balanco-iluminado-e-fogueira-01-scaled.jpg 1536w" sizes="(min-width: 1200px) 1100px, 100vw" width="1536" height="1024" alt="Balanço infinito iluminado, ao lado da fogueira" loading="lazy"></a></div></div>
+</div>
+</section>
+<!-- ================= 8. DAY USE ================= -->
+<section class="clz-sec clz-sec--nevoa" id="clz-dia" aria-labelledby="clz-dia-t">
+<div class="clz-linha clz-dia">
+<div class="clz-cabeca">
+<h2 id="clz-dia-t" class="clz-titulo clz-titulo--trirong">Prefere conhecer em um dia?</h2>
+<p class="clz-chamada">O day use funciona das 9h às 17h, com cachoeiras, trilhas, a piscina de borda infinita e os spas. Tirolesa e arvorismo entram nos pacotes de aventura.</p>
+</div>
+<a class="clz-btn clz-btn--oliva" href="/day-use/" data-clz-cta="day-use" data-clz-pos="day-use">Ver o Day Use</a>
+</div>
+</section>
+<!-- ================= 9. AVALIAÇÕES ================= -->
+<section class="clz-sec" id="clz-avaliacoes" aria-labelledby="clz-aval-t">
+<div class="clz-linha clz-aval">
+<div class="clz-aval__citacao">
+<h2 id="clz-aval-t" class="clz-titulo">O que dizem os hóspedes</h2>
+<blockquote><p>Lindo local, excelente para relaxar com a pessoa amada ou a família toda.</p></blockquote>
+<p class="clz-aval__quem">Digo F., avaliação no Google em junho de 2026</p>
+</div>
+<div class="clz-aval__trip">
+<img src="/images/2026/07/cassorova-tripadvisor.png" width="200" height="262" alt="Selo Travelers' Choice 2026 do Tripadvisor" loading="lazy" decoding="async">
+<p class="clz-aval__nota"><strong>4,9</strong> de 5</p>
+<p class="clz-aval__fonte">Nota geral do Cassorova em 275 avaliações no Tripadvisor, com o Travelers' Choice 2026. Consulta em novembro de 2026.</p>
+<a class="clz-btn clz-btn--terracota" href="https://www.tripadvisor.com.br/Hotel_Review-g793338-d21389571-Reviews-Cassorova_Hotel_Boutique-Brotas_State_of_Sao_Paulo.html" target="_blank" rel="noopener" data-clz-cta="avaliacoes-tripadvisor" data-clz-pos="avaliacoes">Ler Avaliações no Tripadvisor</a>
+</div>
+</div>
+</section>
+<!-- ================= 10. PERGUNTAS FREQUENTES ================= -->
+<section class="clz-sec clz-sec--linho" id="clz-faq" aria-labelledby="clz-faq-t">
+<div class="clz-linha clz-faq__grade">
+<div class="clz-faq__lado">
+<h2 id="clz-faq-t" class="clz-titulo">Perguntas sobre o lazer</h2>
+<p class="clz-chamada">Não encontrou sua dúvida? A recepção responde pelo WhatsApp.</p>
+<a class="clz-btn clz-btn--musgo" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20lazer%20do%20Cassorova" target="_blank" rel="noopener" data-clz-cta="whatsapp" data-clz-pos="faq">Falar no WhatsApp</a>
+</div>
+<div class="clz-faq__lista">
+<details class="clz-qa" name="clz-faq" open><summary><h3 class="clz-qa__q">O que tem de lazer no Cassorova?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>O resort tem duas cachoeiras, a Cassorova e a dos Quatis, piscina de borda infinita com bar molhado, lanchonete e spas com hidromassagem aquecida, a Praia Resort, que é o lago com praia, lanchonete exclusiva e atividades como caiaque e stand up paddle, uma piscina de água natural com carpas cercada de redários e o Resort Spa, a piscina exclusiva dos hóspedes. Também há decks e mirantes, ponte pênsil, trilhas autoguiadas, restaurante colonial, playground e área da fogueira.</p></div></details>
+<details class="clz-qa" name="clz-faq"><summary><h3 class="clz-qa__q">Como é o acesso às cachoeiras?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>A Cachoeira Cassorova tem acesso pavimentado, com corrimão e degraus, por uma trilha de 250 m, e tem duas quedas, a piscina Cassorova e a hidromassagem nas alturas. A Cachoeira dos Quatis fica no fim de uma trilha de 1,5 km, com trechos pavimentados e três mirantes pelo caminho. Hóspedes entram nas duas cachoeiras durante toda a estadia. Veja o roteiro de cada uma na página das <a href="/cachoeiras/">Cachoeiras</a>.</p></div></details>
+<details class="clz-qa" name="clz-faq"><summary><h3 class="clz-qa__q">O que é a hidromassagem nas alturas?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>É uma hidromassagem que fica na Cachoeira Cassorova, sob a primeira queda, com vista para a mata. Ela faz parte do passeio das cachoeiras, junto do mirante da 1ª queda e da piscina Cassorova.</p></div></details>
+<details class="clz-qa" name="clz-faq"><summary><h3 class="clz-qa__q">A piscina de borda infinita tem areia?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>Não. Ela é uma beach pool, com clima de praia, mas sem areia. A areia fica na Praia Resort, no lago. A piscina tem bar molhado, lanchonete, banheiros e vestiários, e fica aberta aos hóspedes e ao day use.</p></div></details>
+<details class="clz-qa" name="clz-faq"><summary><h3 class="clz-qa__q">A piscina de borda infinita é só para hóspedes depois das 17h?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>Sim. Depois das 17h, quando o day use termina, a piscina de borda infinita fica só para hóspedes até as 19h. É nessa hora que acontece o pôr do sol na piscina, um dos principais atrativos para quem se hospeda.</p></div></details>
+<details class="clz-qa" name="clz-faq"><summary><h3 class="clz-qa__q">Tem hidromassagem junto da piscina de borda infinita?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>Tem. Ao lado da borda infinita ficam pequenos spas com hidromassagem aquecida, abertos ao day use até as 17h. À noite, eles são só para hóspedes.</p></div></details>
+<details class="clz-qa" name="clz-faq"><summary><h3 class="clz-qa__q">O que é o Resort Spa e quem pode usar?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>O Resort Spa é a piscina exclusiva dos hóspedes, com água aquecida e fervedouros, mini cachoeira relaxante, área de meditação e lanchonete com cardápio exclusivo. Ele não faz parte do day use.</p></div></details>
+<details class="clz-qa" name="clz-faq"><summary><h3 class="clz-qa__q">O que é a Praia Resort?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>É o lago do Cassorova, com praia, espreguiçadeiras à beira da água e lanchonete exclusiva. Lá acontecem as atividades no lago, como caiaque e stand up paddle.</p></div></details>
+<details class="clz-qa" name="clz-faq"><summary><h3 class="clz-qa__q">Onde ficam as carpas e os redários?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>Na piscina de água natural do resort, cercada de redários e sombra de árvores, com espelho d'água e carpas. O lago da Praia Resort não tem carpas.</p></div></details>
+<details class="clz-qa" name="clz-faq"><summary><h3 class="clz-qa__q">Tem fogueira no resort?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>Tem. O resort tem uma área da fogueira, com cadeiras e troncos em volta, para o fim do dia ao ar livre. Consulte a recepção sobre os dias e os horários.</p></div></details>
+<details class="clz-qa" name="clz-faq"><summary><h3 class="clz-qa__q">Quem se hospeda paga o day use?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>Não. Hóspedes e a família não pagam o ingresso do day use e aproveitam toda a estrutura do resort, inclusive o Resort Spa, que é exclusivo para hóspedes.</p></div></details>
+<details class="clz-qa" name="clz-faq"><summary><h3 class="clz-qa__q">Dá para conhecer o lazer em um dia, sem se hospedar?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>Dá. O day use funciona das 9h às 17h, com cachoeiras, trilhas, a piscina de borda infinita e os spas. Veja os ingressos na página do <a href="/day-use/">Day Use</a>.</p></div></details>
+<details class="clz-qa" name="clz-faq"><summary><h3 class="clz-qa__q">Qual o horário de check-in e de check-out?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>O check-in é a partir das 16h e o check-out vai até as 14h.</p></div></details>
+<details class="clz-qa" name="clz-faq"><summary><h3 class="clz-qa__q">A que distância o Cassorova fica de São Paulo?</h3><span class="clz-qa__icon" aria-hidden="true"></span></summary><div class="clz-qa__a"><p>O Cassorova fica a 217 km de São Paulo, 173 km de Ribeirão Preto e 278 km de São José do Rio Preto. O trecho final da viagem é de estrada de terra.</p></div></details>
+</div>
+</div>
+</section>
+<!-- ================= 11. CHAMADA FINAL ================= -->
+<section class="clz-sec clz-final" aria-labelledby="clz-final-t">
+<div class="clz-linha clz-final__grade">
+<figure class="clz-final__foto"><img src="/images/2026/11/cassorova-vistas-aereas-drone-resort-e-lago-2-02.jpeg" srcset="/images/2026/11/cassorova-vistas-aereas-drone-resort-e-lago-2-02.jpeg 768w, /images/2026/11/cassorova-vistas-aereas-drone-resort-e-lago-2-02.jpeg 1536w" sizes="(min-width: 900px) 560px, 86vw" width="1536" height="864" alt="Vista aérea do Cassorova, com o lago, a piscina e a mata ao redor" loading="lazy" style="object-position:50% 50%"></figure>
+<div>
+<h2 id="clz-final-t" class="clz-titulo">Venha aproveitar o lazer do Cassorova</h2>
+<p class="clz-final__frase">Piscina de borda infinita, Praia Resort e Resort Spa, a 217 km de São Paulo.</p>
+<p class="clz-chamada">Veja as datas disponíveis e reserve online, ou fale com a recepção pelo WhatsApp.</p>
+<div class="clz-final__botoes">
+<a class="clz-btn clz-btn--oliva" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-clz-cta="ver-datas" data-clz-pos="chamada-final">Ver Datas e Preços</a>
+<a class="clz-btn clz-btn--texto" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20consultar%20datas%20e%20valores%20de%20hospedagem%20no%20Cassorova" target="_blank" rel="noopener" data-clz-cta="whatsapp" data-clz-pos="chamada-final">Reservar pelo WhatsApp</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= BARRA FIXA ================= -->
+<div class="clz-fixa">
+<p class="clz-fixa__txt">Lazer do Cassorova</p>
+<a class="clz-btn clz-btn--branco" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-clz-cta="ver-datas" data-clz-pos="barra-fixa">Ver Datas</a>
+<a class="clz-btn clz-btn--terracota" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20consultar%20datas%20e%20valores%20de%20hospedagem%20no%20Cassorova" target="_blank" rel="noopener" data-clz-cta="whatsapp" data-clz-pos="barra-fixa">WhatsApp</a>
+</div>
+<span class="clz-fim" aria-hidden="true"></span>
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Resort","@id":"https://cassorova.com.br/#resort","name":"Cassorova Resort e Ecoturismo","url":"https://cassorova.com.br/","amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Cachoeira Cassorova com duas quedas, piscina natural e hidromassagem nas alturas","value":true},{"@type":"LocationFeatureSpecification","name":"Cachoeira dos Quatis com trilha e três mirantes","value":true},{"@type":"LocationFeatureSpecification","name":"Ponte pênsil e trilhas autoguiadas","value":true},{"@type":"LocationFeatureSpecification","name":"Piscina de borda infinita (beach pool sem areia) com bar molhado e lanchonete","value":true},{"@type":"LocationFeatureSpecification","name":"Pequenos spas com hidromassagem aquecida","value":true},{"@type":"LocationFeatureSpecification","name":"Praia Resort: lago com praia e lanchonete exclusiva","value":true},{"@type":"LocationFeatureSpecification","name":"Caiaque e stand up paddle","value":true},{"@type":"LocationFeatureSpecification","name":"Piscina de água natural com carpas cercada de redários","value":true},{"@type":"LocationFeatureSpecification","name":"Decks, mirantes, redário e rede suspensa","value":true},{"@type":"LocationFeatureSpecification","name":"Resort Spa exclusivo para hóspedes com piscina aquecida e fervedouros","value":true},{"@type":"LocationFeatureSpecification","name":"Choperia","value":true},{"@type":"LocationFeatureSpecification","name":"Restaurante colonial","value":true},{"@type":"LocationFeatureSpecification","name":"Playground","value":true},{"@type":"LocationFeatureSpecification","name":"Área da fogueira","value":true}]},{"@type":"FAQPage","@id":"https://cassorova.com.br/lazer/#faq","mainEntity":[{"@type":"Question","name":"O que tem de lazer no Cassorova?","acceptedAnswer":{"@type":"Answer","text":"O resort tem duas cachoeiras, a Cassorova e a dos Quatis, piscina de borda infinita com bar molhado, lanchonete e spas com hidromassagem aquecida, a Praia Resort, que é o lago com praia, lanchonete exclusiva e atividades como caiaque e stand up paddle, uma piscina de água natural com carpas cercada de redários e o Resort Spa, a piscina exclusiva dos hóspedes. Também há decks e mirantes, ponte pênsil, trilhas autoguiadas, restaurante colonial, playground e área da fogueira."}},{"@type":"Question","name":"Como é o acesso às cachoeiras?","acceptedAnswer":{"@type":"Answer","text":"A Cachoeira Cassorova tem acesso pavimentado, com corrimão e degraus, por uma trilha de 250 m, e tem duas quedas, a piscina Cassorova e a hidromassagem nas alturas. A Cachoeira dos Quatis fica no fim de uma trilha de 1,5 km, com trechos pavimentados e três mirantes pelo caminho. Hóspedes entram nas duas cachoeiras durante toda a estadia. Veja o roteiro de cada uma na página das Cachoeiras."}},{"@type":"Question","name":"O que é a hidromassagem nas alturas?","acceptedAnswer":{"@type":"Answer","text":"É uma hidromassagem que fica na Cachoeira Cassorova, sob a primeira queda, com vista para a mata. Ela faz parte do passeio das cachoeiras, junto do mirante da 1ª queda e da piscina Cassorova."}},{"@type":"Question","name":"A piscina de borda infinita tem areia?","acceptedAnswer":{"@type":"Answer","text":"Não. Ela é uma beach pool, com clima de praia, mas sem areia. A areia fica na Praia Resort, no lago. A piscina tem bar molhado, lanchonete, banheiros e vestiários, e fica aberta aos hóspedes e ao day use."}},{"@type":"Question","name":"A piscina de borda infinita é só para hóspedes depois das 17h?","acceptedAnswer":{"@type":"Answer","text":"Sim. Depois das 17h, quando o day use termina, a piscina de borda infinita fica só para hóspedes até as 19h. É nessa hora que acontece o pôr do sol na piscina, um dos principais atrativos para quem se hospeda."}},{"@type":"Question","name":"Tem hidromassagem junto da piscina de borda infinita?","acceptedAnswer":{"@type":"Answer","text":"Tem. Ao lado da borda infinita ficam pequenos spas com hidromassagem aquecida, abertos ao day use até as 17h. À noite, eles são só para hóspedes."}},{"@type":"Question","name":"O que é o Resort Spa e quem pode usar?","acceptedAnswer":{"@type":"Answer","text":"O Resort Spa é a piscina exclusiva dos hóspedes, com água aquecida e fervedouros, mini cachoeira relaxante, área de meditação e lanchonete com cardápio exclusivo. Ele não faz parte do day use."}},{"@type":"Question","name":"O que é a Praia Resort?","acceptedAnswer":{"@type":"Answer","text":"É o lago do Cassorova, com praia, espreguiçadeiras à beira da água e lanchonete exclusiva. Lá acontecem as atividades no lago, como caiaque e stand up paddle."}},{"@type":"Question","name":"Onde ficam as carpas e os redários?","acceptedAnswer":{"@type":"Answer","text":"Na piscina de água natural do resort, cercada de redários e sombra de árvores, com espelho d'água e carpas. O lago da Praia Resort não tem carpas."}},{"@type":"Question","name":"Tem fogueira no resort?","acceptedAnswer":{"@type":"Answer","text":"Tem. O resort tem uma área da fogueira, com cadeiras e troncos em volta, para o fim do dia ao ar livre. Consulte a recepção sobre os dias e os horários."}},{"@type":"Question","name":"Quem se hospeda paga o day use?","acceptedAnswer":{"@type":"Answer","text":"Não. Hóspedes e a família não pagam o ingresso do day use e aproveitam toda a estrutura do resort, inclusive o Resort Spa, que é exclusivo para hóspedes."}},{"@type":"Question","name":"Dá para conhecer o lazer em um dia, sem se hospedar?","acceptedAnswer":{"@type":"Answer","text":"Dá. O day use funciona das 9h às 17h, com cachoeiras, trilhas, a piscina de borda infinita e os spas. Veja os ingressos na página do Day Use."}},{"@type":"Question","name":"Qual o horário de check-in e de check-out?","acceptedAnswer":{"@type":"Answer","text":"O check-in é a partir das 16h e o check-out vai até as 14h."}},{"@type":"Question","name":"A que distância o Cassorova fica de São Paulo?","acceptedAnswer":{"@type":"Answer","text":"O Cassorova fica a 217 km de São Paulo, 173 km de Ribeirão Preto e 278 km de São José do Rio Preto. O trecho final da viagem é de estrada de terra."}}]}]}
+</script>
+<script>
+(function () {
+var root = document.getElementById('clz');
+if (!root) { return; }
+var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
+var push = function (data) { window.dataLayer = window.dataLayer || []; window.dataLayer.push(data); };
+var topo = root.querySelector('.clz-topo');
+var caixa = root.querySelector('.clz-busca');
+/* O topo ocupa a altura da tela menos o menu do site acima dele */
+var setTop = function () {
+if (!topo) { return; }
+var y = topo.getBoundingClientRect().top + (window.pageYOffset || 0);
+if (y > 280) { y = 0; }
+if (0 > y) { y = 0; }
+root.style.setProperty('--clz-top', Math.round(y) + 'px');
+};
+setTop();
+window.addEventListener('load', setTop);
+var rt = 0;
+window.addEventListener('resize', function () { window.clearTimeout(rt); rt = window.setTimeout(setTop, 150); });
+var novoBtn = function (cls, rotulo) { var b = document.createElement('button'); b.type = 'button'; b.className = cls; b.setAttribute('aria-label', rotulo); return b; };
+/* Buscador: monta o link do motor HBook com as datas e a mensagem do WhatsApp com o bangalô escolhido */
+var AMP = String.fromCharCode(38);
+var MOTOR = 'https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee';
+var FONE = '5514991068097';
+var NOITES_PADRAO = 2;
+var MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+var NOMES = { 'villa-romance': 'Villa Romance', 'villa-aconchego': 'Villa Aconchego', 'villa-aconchego-familia': 'Villa Aconchego Família' };
+var bang = root.querySelector('#clz-bangalo');
+var ent = root.querySelector('#clz-entrada');
+var sai = root.querySelector('#clz-saida');
+var adu = root.querySelector('#clz-adultos');
+var cri = root.querySelector('#clz-criancas');
+var linkMotor = root.querySelector('[data-clz-busca="motor"]');
+var linkWhats = root.querySelector('[data-clz-busca="whatsapp"]');
+var aviso = root.querySelector('.clz-reserva__aviso');
+var pad = function (n) { return (n > 9 ? '' : '0') + n; };
+var iso = function (d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); };
+var parse = function (s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2], 12); };
+var somaDias = function (s, n) { var d = parse(s); d.setDate(d.getDate() + n); return iso(d); };
+var extenso = function (s) { var d = parse(s); return d.getDate() + ' de ' + MESES[d.getMonth()] + ' de ' + d.getFullYear(); };
+var temDatas = function () { if (!ent.value) { return false; } return !!sai.value; };
+var noites = function () { if (!temDatas()) { return 0; } return Math.round((parse(sai.value) - parse(ent.value)) / 86400000); };
+var avisoTexto = function (b, a, c) {
+var total = (+a) + (+c);
+if (total > 2) { if (b === 'villa-romance') { return 'A Villa Romance recebe até 2 pessoas. Para 3 ou 4, escolha a Villa Aconchego Família.'; } }
+if (total > 4) { return 'Cada bangalô recebe até 4 pessoas. No motor de reservas, escolha a quantidade de bangalôs para o grupo.'; }
+if (c !== '0') { return 'Com crianças, o motor de reservas pede a idade de cada uma antes de mostrar os preços.'; }
+return '';
+};
+var atualizar = function () {
+var hoje = iso(new Date());
+ent.min = hoje;
+if (ent.value) {
+var minSaida = somaDias(ent.value, 1);
+sai.min = minSaida;
+if (!(sai.value >= minSaida)) { sai.value = somaDias(ent.value, NOITES_PADRAO); }
+} else {
+sai.min = somaDias(hoje, 1);
+}
+var b = bang ? bang.value : '';
+var a = adu.value || '2';
+var c = cri.value || '0';
+var txt = avisoTexto(b, a, c);
+if (aviso) { aviso.textContent = txt; aviso.hidden = !txt; }
+var partes = [MOTOR];
+if (temDatas()) { partes.push('checkin=' + ent.value, 'checkout=' + sai.value); }
+partes.push('adults=' + a, 'children=' + c);
+linkMotor.href = partes.join(AMP);
+var msg = 'Olá vim pelo site e quero consultar ' + (NOMES[b] ? 'a ' + NOMES[b] : 'um bangalô') + ' no Cassorova';
+if (temDatas()) { msg += ' com entrada em ' + extenso(ent.value) + ' e saída em ' + extenso(sai.value); }
+msg += ' para ' + a + (a === '1' ? ' adulto' : ' adultos');
+if (c !== '0') { msg += ' e ' + c + (c === '1' ? ' criança' : ' crianças'); }
+linkWhats.href = 'https://wa.me/' + FONE + '?text=' + encodeURIComponent(msg);
+};
+if (ent) { if (sai) { if (linkMotor) { if (linkWhats) {
+each([bang, ent, sai, adu, cri], function (el) { if (el) { el.addEventListener('change', atualizar); } });
+atualizar();
+each([linkMotor, linkWhats], function (link) {
+link.addEventListener('click', function () {
+atualizar();
+push({ event: 'clz_busca_hospedagem', clz_metodo: link.getAttribute('data-clz-busca'), clz_bangalo: bang ? bang.value : '', clz_entrada: ent.value || '', clz_saida: sai.value || '', clz_noites: noites(), clz_adultos: +(adu.value || 2), clz_criancas: +(cri.value || 0), link_url: link.href });
+});
+});
+}}}}
+/* Carrossel: uma foto por vez, passa sozinho a cada 5 segundos, com setas, contador e botão de pausa */
+var reduz = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
+each(root.querySelectorAll('.clz-galeria'), function (g) {
+var lista = g.querySelector('.clz-galeria__lista');
+var fotos = g.querySelectorAll('.clz-galeria__item');
+if (!lista) { return; }
+var total = fotos.length;
+each(fotos, function (a) {
+var im = a.querySelector('img');
+var fundo = function () { a.style.setProperty('--bg', 'url("' + (im.currentSrc || im.src) + '")'); };
+if (im.complete) { fundo(); } else { im.addEventListener('load', fundo); }
+});
+var ant = novoBtn('clz-galeria__nav clz-galeria__nav--ant', 'Foto anterior');
+var prox = novoBtn('clz-galeria__nav clz-galeria__nav--prox', 'Próxima foto');
+var pausa = novoBtn('clz-galeria__pausa', 'Pausar a troca automática das fotos');
+pausa.setAttribute('aria-pressed', 'false');
+var cont = document.createElement('span');
+cont.className = 'clz-galeria__cont';
+cont.setAttribute('aria-hidden', 'true');
+g.appendChild(ant);
+g.appendChild(prox);
+g.appendChild(cont);
+g.appendChild(pausa);
+var atual = function () { return Math.max(0, Math.min(total - 1, Math.round(lista.scrollLeft / Math.max(1, lista.clientWidth)))); };
+var atualizar = function () { cont.textContent = (atual() + 1) + ' de ' + total; };
+var cur = 0;
+var sync = 0;
+var ir = function (n) {
+var alvo = (n + total) % total;
+cur = alvo;
+var x = alvo * lista.clientWidth;
+lista.scrollTo({ left: x, behavior: reduz ? 'auto' : 'smooth' });
+window.setTimeout(function () { if (Math.abs(lista.scrollLeft - x) > 3) { lista.style.scrollSnapType = 'none'; lista.scrollLeft = x; window.setTimeout(function () { lista.style.scrollSnapType = ''; }, 60); } }, 700);
+};
+ant.addEventListener('click', function () { ir(cur - 1); });
+prox.addEventListener('click', function () { ir(cur + 1); });
+lista.addEventListener('scroll', function () { window.requestAnimationFrame(atualizar); window.clearTimeout(sync); sync = window.setTimeout(function () { cur = atual(); }, 200); }, { passive: true });
+window.addEventListener('resize', function () { lista.scrollLeft = atual() * lista.clientWidth; atualizar(); });
+var parado = reduz;
+var visivel = true;
+var sobre = false;
+var timer = null;
+var parar = function () { parado = true; pausa.setAttribute('aria-pressed', 'true'); pausa.setAttribute('aria-label', 'Retomar a troca automática das fotos'); };
+pausa.addEventListener('click', function () {
+if (parado) { parado = false; pausa.setAttribute('aria-pressed', 'false'); pausa.setAttribute('aria-label', 'Pausar a troca automática das fotos'); } else { parar(); }
+});
+if (reduz) { pausa.setAttribute('aria-pressed', 'true'); pausa.setAttribute('aria-label', 'Retomar a troca automática das fotos'); }
+g.addEventListener('mouseenter', function () { sobre = true; });
+g.addEventListener('mouseleave', function () { sobre = false; });
+g.addEventListener('focusin', function () { sobre = true; });
+g.addEventListener('focusout', function () { sobre = false; });
+g.addEventListener('touchstart', function () { sobre = true; }, { passive: true });
+g.addEventListener('touchend', function () { window.setTimeout(function () { sobre = false; }, 4000); }, { passive: true });
+if (window.IntersectionObserver) {
+new IntersectionObserver(function (es) { visivel = es[0].isIntersecting; }, { threshold: 0.4 }).observe(g);
+}
+timer = window.setInterval(function () {
+if (parado) { return; }
+if (sobre) { return; }
+if (!visivel) { return; }
+if (document.hidden) { return; }
+if (document.documentElement.classList.contains('clz-travado')) { return; }
+ir(cur + 1);
+}, 5000);
+g.classList.add('clz-galeria--pronta');
+atualizar();
+});
+/* Fotos ampliadas: a janela é criada aqui (fora do editor) e abre a galeria em tela cheia, com setas, teclado e deslize */
+var novo = function (tag, cls, txt) { var e = document.createElement(tag); if (cls) { e.className = cls; } if (txt) { e.textContent = txt; } return e; };
+var lb = novo('dialog', 'clz-lb');
+if (typeof lb.showModal === 'function') {
+lb.setAttribute('aria-label', 'Fotos ampliadas do lazer');
+var lbTopo = novo('div', 'clz-lb__topo');
+var lbP = novo('p');
+var lbTit = novo('span', 'clz-lb__titulo');
+var lbCont = novo('span', 'clz-lb__cont');
+lbP.appendChild(lbTit);
+lbP.appendChild(lbCont);
+var lbFechar = novo('button', 'clz-lb__fechar', 'Fechar');
+lbFechar.type = 'button';
+lbTopo.appendChild(lbP);
+lbTopo.appendChild(lbFechar);
+var lbFig = novo('figure', 'clz-lb__fig');
+var lbAnt = novo('button', 'clz-lb__ant');
+lbAnt.type = 'button';
+lbAnt.setAttribute('aria-label', 'Foto anterior');
+var lbImg = novo('img');
+lbImg.alt = '';
+var lbProx = novo('button', 'clz-lb__prox');
+lbProx.type = 'button';
+lbProx.setAttribute('aria-label', 'Próxima foto');
+lbFig.appendChild(lbAnt);
+lbFig.appendChild(lbImg);
+lbFig.appendChild(lbProx);
+var lbLeg = novo('p', 'clz-lb__legenda');
+lbLeg.setAttribute('aria-live', 'polite');
+lb.appendChild(lbTopo);
+lb.appendChild(lbFig);
+lb.appendChild(lbLeg);
+root.appendChild(lb);
+var atual = { itens: [], i: 0, origem: null };
+var mostrar = function (i) {
+var n = atual.itens.length;
+if (!n) { return; }
+atual.i = (i + n) % n;
+var a = atual.itens[atual.i];
+var im = a.querySelector('img');
+var alt = im ? im.getAttribute('alt') : '';
+lbImg.src = a.getAttribute('href');
+lbImg.alt = alt;
+lbLeg.textContent = alt;
+lbCont.textContent = (atual.i + 1) + ' de ' + n;
+var seguinte = new Image();
+seguinte.src = atual.itens[(atual.i + 1) % n].getAttribute('href');
+};
+var abrir = function (g, i, origem) {
+atual.itens = Array.prototype.slice.call(g.querySelectorAll('.clz-galeria__item'));
+atual.origem = origem;
+lbTit.textContent = g.getAttribute('data-clz-galeria-nome') || '';
+mostrar(i);
+document.documentElement.classList.add('clz-travado');
+lb.showModal();
+push({ event: 'clz_galeria_abrir', clz_area: g.getAttribute('data-clz-galeria') || '', clz_foto: i + 1 });
+};
+each(root.querySelectorAll('.clz-galeria'), function (g) {
+each(g.querySelectorAll('.clz-galeria__item'), function (a, i) {
+a.addEventListener('click', function (ev) { ev.preventDefault(); abrir(g, i, a); });
+});
+var todas = g.querySelector('.clz-galeria__todas');
+if (todas) {
+todas.hidden = false;
+todas.addEventListener('click', function () { abrir(g, 0, todas); });
+}
+});
+lbAnt.addEventListener('click', function () { mostrar(atual.i - 1); });
+lbProx.addEventListener('click', function () { mostrar(atual.i + 1); });
+lbFechar.addEventListener('click', function () { lb.close(); });
+lb.addEventListener('close', function () {
+document.documentElement.classList.remove('clz-travado');
+if (atual.origem) { atual.origem.focus({ preventScroll: true }); }
+});
+lb.addEventListener('keydown', function (ev) {
+if (ev.key === 'ArrowRight') { mostrar(atual.i + 1); }
+if (ev.key === 'ArrowLeft') { mostrar(atual.i - 1); }
+});
+lb.addEventListener('click', function (ev) { if (ev.target === lb) { lb.close(); } });
+var x0 = null;
+lb.addEventListener('touchstart', function (ev) { x0 = ev.changedTouches[0].clientX; }, { passive: true });
+lb.addEventListener('touchend', function (ev) {
+if (x0 === null) { return; }
+var dx = ev.changedTouches[0].clientX - x0;
+x0 = null;
+if (dx > 50) { mostrar(atual.i - 1); } else if (-50 > dx) { mostrar(atual.i + 1); }
+});
+}
+/* Barra fixa: aparece depois do topo e some no fim da página.
+A posição é medida a cada rolagem, então a barra acerta mesmo depois de um salto por link. */
+var fixa = root.querySelector('.clz-fixa');
+var fim = root.querySelector('.clz-fim');
+var calcBarra = function () {
+if (!fixa) { return; }
+var ih = window.innerHeight;
+var show = true;
+if (topo) { if (topo.getBoundingClientRect().bottom > ih * 0.3) { show = false; } }
+if (fim) { if (ih > fim.getBoundingClientRect().top) { show = false; } }
+if (caixa) { var rc = caixa.getBoundingClientRect(); if (ih > rc.top) { if (rc.bottom > 0) { show = false; } } }
+fixa.classList.toggle('is-on', show);
+};
+var pendente = false;
+var agendarBarra = function () {
+if (pendente) { return; }
+pendente = true;
+window.requestAnimationFrame(function () { pendente = false; calcBarra(); });
+};
+window.addEventListener('scroll', agendarBarra, { passive: true });
+window.addEventListener('resize', agendarBarra);
+calcBarra();
+/* Perguntas e grupos do mapa: a abertura e o fechamento são feitos aqui, para funcionar também onde o navegador ou o tema do site interferem no comportamento padrão */
+var alternar = function (d, aoAbrir) {
+var s = d.querySelector('summary');
+if (!s) { return; }
+s.addEventListener('click', function (ev) {
+ev.preventDefault();
+if (d.open) { d.open = false; return; }
+var grupo = d.getAttribute('name');
+if (grupo) {
+each(root.querySelectorAll('details[name="' + grupo + '"]'), function (o) { if (o !== d) { o.open = false; } });
+}
+d.open = true;
+aoAbrir(d);
+});
+};
+each(root.querySelectorAll('details.clz-qa'), function (d) {
+alternar(d, function (x) {
+var q = x.querySelector('.clz-qa__q');
+push({ event: 'clz_faq_abrir', clz_pergunta: q ? q.textContent.trim() : '' });
+});
+});
+each(root.querySelectorAll('.clz-legenda details'), function (d) {
+alternar(d, function (x) {
+var t = x.querySelector('summary');
+push({ event: 'clz_mapa_grupo', clz_grupo: t ? t.firstChild.textContent.trim() : '' });
+});
+});
+root.addEventListener('click', function (ev) {
+var t = ev.target;
+var el = t.closest ? t.closest('[data-clz-cta]') : null;
+if (!el) { return; }
+push({ event: 'clz_cta_click', clz_cta: el.getAttribute('data-clz-cta') || '', clz_posicao: el.getAttribute('data-clz-pos') || '', link_url: el.href || '' });
+});
+})();
+</script>

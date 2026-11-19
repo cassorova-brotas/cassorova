@@ -1,0 +1,774 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&amp;family=Trirong:ital,wght@0,300;0,400;1,400;1,700&amp;display=swap">
+<style>
+/* ---------- Ajustes do Divi, aplicados só onde existe #cbg ---------- */
+.et_pb_section:has(#cbg){padding:0!important;margin:0!important;background:transparent!important}
+.et_pb_row:has(#cbg){width:100%!important;max-width:none!important;padding:0!important;margin:0!important}
+.et_pb_column:has(#cbg){width:100%!important;margin:0!important;padding:0!important}
+.et_pb_code:has(#cbg),.et_pb_code_inner:has(#cbg),.et_pb_fullwidth_code:has(#cbg){margin:0!important;padding:0!important;max-width:none!important;width:100%!important}
+html.cbg-travado{overflow:hidden}
+/* ---------- Base com os tokens do site ---------- */
+#cbg{--mata:#303323;--musgo:#858666;--musgo-esc:#6b6c50;--musgo-hover:#5c5d44;--cinza:#c5c5b9;--nevoa:#cfd0c3;--linho:#f3f2ee;--pedra:#564944;--oliva:#756a48;--oliva-hover:#635a3c;--cobre-claro:#d4957a;--terracota:#a65635;--terracota-hover:#8f4a2d;--branco:#fff;--gilda:"Gilda Display",Georgia,"Times New Roman",serif;--trirong:"Trirong",Georgia,"Times New Roman",serif;--albert:"Albert Sans",Helvetica,Arial,sans-serif;--marcellus:"Marcellus",Georgia,"Times New Roman",serif;--linha:80%;--max:1200px;--foco:var(--terracota);position:relative;background:var(--branco);color:var(--pedra);font-family:var(--albert);font-size:18px;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+@media (max-width:980px){#cbg{--linha:86%}}
+#cbg *,#cbg *::before,#cbg *::after{box-sizing:border-box}
+#cbg h1,#cbg h2,#cbg h3,#cbg h4,#cbg p,#cbg ul,#cbg ol,#cbg figure,#cbg blockquote,#cbg table{margin:0;padding:0;font-style:normal}
+#cbg ul,#cbg ol{list-style:none}
+#cbg blockquote{border:0;quotes:none}
+#cbg blockquote::before,#cbg blockquote::after{content:none}
+#cbg li{padding:0;margin:0;line-height:inherit}
+#cbg h1,#cbg h2,#cbg h3,#cbg h4{color:var(--mata);font-weight:400;letter-spacing:normal;text-transform:none;text-wrap:balance}
+#cbg p{text-wrap:pretty}
+#cbg a{color:inherit;text-decoration:none}
+#cbg img{display:block;max-width:100%;height:auto;border:0}
+/* O WordPress insere quebras de linha automáticas entre ícones e títulos: ficam ocultas */
+#cbg br{display:none}
+#cbg strong,#cbg b{font-weight:700}
+#cbg button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;text-transform:none;letter-spacing:inherit}
+#cbg :focus-visible{outline:2px solid var(--foco);outline-offset:3px}
+#cbg [id]{scroll-margin-top:16px}
+#cbg .cbg-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#cbg .cbg-linha{width:var(--linha);max-width:var(--max);margin-inline:auto}
+#cbg .cbg-sec{padding-block:clamp(64px,7vw,104px)}
+#cbg .cbg-sec--linho{background:var(--linho)}
+#cbg .cbg-sec--nevoa{background:var(--nevoa)}
+#cbg .cbg-sec--mata{background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+#cbg .cbg-ico{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+/* ---------- Títulos no padrão do site ---------- */
+#cbg .cbg-titulo{font-family:var(--gilda);font-weight:400;font-size:clamp(33px,1.9vw + 22px,50px);line-height:1.05;color:var(--mata)}
+#cbg .cbg-titulo--trirong{font-family:var(--trirong);font-weight:300;font-size:clamp(33px,1.4vw + 24px,45px);line-height:1.05}
+#cbg .cbg-sec--mata .cbg-titulo{color:#fff}
+#cbg .cbg-chamada{margin-top:14px;max-width:62ch;font-family:var(--albert);font-weight:300;font-size:clamp(17px,.4vw + 15px,20px);line-height:1.55;color:var(--pedra)}
+#cbg .cbg-sec--mata .cbg-chamada{color:#fff}
+#cbg .cbg-cabeca{margin-bottom:clamp(36px,4vw,52px)}
+@media (min-width:1024px){#cbg .cbg-cabeca--lado{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:end}#cbg .cbg-cabeca--lado .cbg-chamada{margin-top:0}}
+/* ---------- Botões no padrão do site (Marcellus, quadrados, com seta) ---------- */
+#cbg .cbg-btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;padding:8px 22px 8px 18px;border:0;border-radius:0;font-family:var(--marcellus);font-size:clamp(18px,.4vw + 16px,21px);font-weight:400;line-height:1.3;text-align:left;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+#cbg .cbg-btn::after{content:"";flex:none;width:8px;height:8px;margin-left:2px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
+#cbg .cbg-btn--branco{background:#fff;color:var(--mata)}
+#cbg .cbg-btn--branco:hover{background:var(--linho)}
+#cbg .cbg-btn--terracota{background:var(--terracota);color:#fff}
+#cbg .cbg-btn--terracota:hover{background:var(--terracota-hover)}
+#cbg .cbg-btn--oliva{background:var(--oliva);color:#fff}
+#cbg .cbg-btn--oliva:hover{background:var(--oliva-hover)}
+#cbg .cbg-btn--musgo{background:var(--musgo-esc);color:#fff}
+#cbg .cbg-btn--musgo:hover{background:var(--musgo-hover)}
+#cbg .cbg-btn--contorno{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.75)}
+#cbg .cbg-btn--contorno:hover{background:rgba(255,255,255,.1)}
+#cbg .cbg-btn--texto{min-height:0;padding:8px 0;background:none;color:inherit}
+#cbg .cbg-btn--texto:hover{text-decoration:underline;text-underline-offset:5px}
+#cbg .cbg-selo{display:inline-flex;align-items:center;padding:6px 10px 5px;border-radius:0;font-family:var(--marcellus);font-size:14px;line-height:1.1;letter-spacing:.02em;white-space:nowrap}
+#cbg .cbg-selo--linho{background:var(--linho);color:var(--mata)}
+#cbg .cbg-selo--branco{background:#fff;color:var(--mata)}
+/* ---------- Topo ---------- */
+#cbg .cbg-topo{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-height:clamp(560px,calc(100vh - var(--cbg-top,0px)),900px);min-height:clamp(560px,calc(100svh - var(--cbg-top,0px)),900px);overflow:hidden;background:var(--mata);color:#fff}
+#cbg .cbg-topo__midia,#cbg .cbg-topo__midia picture,#cbg .cbg-topo__foto{position:absolute;inset:0;width:100%;height:100%}
+#cbg .cbg-topo__foto{object-fit:cover;object-position:62% 60%;max-width:none}
+#cbg .cbg-topo__sombra{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(48,51,35,.62) 0%,rgba(48,51,35,.28) 40%,rgba(48,51,35,0) 66%),linear-gradient(180deg,rgba(48,51,35,.32) 0%,rgba(48,51,35,0) 28%,rgba(48,51,35,.3) 54%,rgba(48,51,35,.9) 100%)}
+#cbg .cbg-topo__sobre,#cbg .cbg-topo__titulo,#cbg .cbg-topo__frase{text-shadow:0 1px 14px rgba(0,0,0,.3)}
+#cbg .cbg-topo__conteudo{position:relative;z-index:2;width:var(--linha);max-width:var(--max);margin-inline:auto;padding:72px 0 clamp(40px,6vh,64px)}
+#cbg .cbg-topo__sobre{display:flex;align-items:center;gap:12px;font-family:var(--trirong);font-size:clamp(18px,.3vw + 16px,22px);line-height:1.1;color:#fff}
+#cbg .cbg-topo__sobre::before{content:"";flex:none;width:34px;height:1px;background:currentColor}
+#cbg .cbg-topo__titulo{margin-top:16px;max-width:15ch;font-family:var(--gilda);font-weight:400;font-size:clamp(40px,3.4vw + 20px,74px);line-height:1.02;color:#fff}
+#cbg .cbg-topo__frase{margin-top:18px;max-width:46ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(19px,.5vw + 16px,25px);line-height:1.25;color:#fff}
+#cbg .cbg-topo__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:28px}
+#cbg .cbg-topo__prova{display:inline-flex;align-items:center;gap:14px;margin-top:26px;padding:12px 18px 12px 12px;background:#fff;color:var(--mata);box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
+#cbg .cbg-topo__prova img{width:60px;height:auto;flex:none}
+#cbg .cbg-topo__prova-txt{display:grid;gap:3px;line-height:1.25}
+#cbg .cbg-topo__prova-premio{font-family:var(--marcellus);font-size:17px;color:var(--mata)}
+#cbg .cbg-topo__prova-nota{font-size:15px;color:var(--pedra)}
+#cbg .cbg-topo__prova-nota strong{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:27px;line-height:1;color:var(--mata)}
+#cbg .cbg-topo__prova-qtd{font-size:14px;color:var(--pedra)}
+#cbg .cbg-topo__prova:hover .cbg-topo__prova-premio{text-decoration:underline;text-underline-offset:4px}
+@media (max-width:600px){#cbg .cbg-topo__acoes .cbg-btn--branco{flex:1 1 100%}#cbg .cbg-topo__acoes{margin-top:24px}}
+@media (max-width:719px){#cbg .cbg-topo__foto{object-position:50% 100%}#cbg .cbg-topo__sombra{background:linear-gradient(180deg,rgba(48,51,35,.42) 0%,rgba(48,51,35,.3) 22%,rgba(48,51,35,.62) 48%,rgba(48,51,35,.93) 100%)}}
+@media (min-width:981px){#cbg .cbg-topo__conteudo{padding:110px 0 calc(clamp(52px,8vh,92px) + 64px)}#cbg .cbg-topo__prova{position:absolute;right:0;bottom:calc(clamp(52px,8vh,92px) + 64px);margin:0;padding:14px 24px 14px 14px;gap:18px}#cbg .cbg-topo__prova img{width:80px}#cbg .cbg-topo__prova-premio{font-size:19px}#cbg .cbg-topo__prova-nota strong{font-size:32px}}
+/* ---------- Buscador de hospedagem ---------- */
+#cbg .cbg-reserva{position:relative;z-index:3}
+#cbg .cbg-reserva__caixa{width:var(--linha);max-width:var(--max);margin-inline:auto;padding:28px 32px 30px;background:var(--mata);color:#fff;--foco:var(--cobre-claro);transition:box-shadow .4s ease}
+#cbg .cbg-reserva__caixa.is-destaque{box-shadow:0 0 0 3px var(--cobre-claro),0 22px 44px -26px rgba(0,0,0,.65)}
+@media (min-width:981px){#cbg .cbg-reserva__caixa{margin-top:-64px;box-shadow:0 22px 44px -26px rgba(0,0,0,.65)}}
+@media (max-width:980px){#cbg .cbg-reserva__caixa{width:100%;padding:28px 7% 32px}}
+#cbg .cbg-reserva__topo{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 24px}
+#cbg .cbg-reserva__titulo{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(27px,.8vw + 21px,34px);line-height:1.1;color:#fff}
+#cbg .cbg-reserva__sub{font-family:var(--marcellus);font-size:16px;line-height:1.3;color:var(--cobre-claro)}
+#cbg .cbg-reserva__campos{display:grid;grid-template-columns:minmax(0,1.35fr) repeat(4,minmax(0,1fr));gap:14px;margin-top:20px}
+#cbg .cbg-campo label{display:block;margin-bottom:6px;font-family:var(--marcellus);font-size:15px;line-height:1.2;color:#fff}
+#cbg .cbg-campo input,#cbg .cbg-campo select{display:block;width:100%;height:50px;min-height:50px;padding:0 12px;border:0;border-radius:0;background:#fff;color:var(--mata);font-family:var(--albert);font-size:17px;font-weight:400;line-height:50px;text-align:left;-webkit-appearance:none;appearance:none}
+#cbg .cbg-campo input::-webkit-date-and-time-value{text-align:left}
+#cbg .cbg-campo select{padding-right:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23303323' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px}
+#cbg .cbg-reserva__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin-top:18px}
+#cbg .cbg-reserva__nota{flex:1 1 260px;font-size:15px;line-height:1.45;color:#fff}
+#cbg .cbg-reserva__aviso{margin-top:14px;font-size:15px;line-height:1.45;color:var(--cobre-claro)}
+#cbg .cbg-reserva__aviso[hidden]{display:none}
+@media (max-width:980px){#cbg .cbg-reserva__campos{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}#cbg .cbg-campo--bangalo{grid-column:1 / -1}}
+@media (max-width:719px){#cbg .cbg-reserva__acoes .cbg-btn{flex:1 1 100%;justify-content:space-between}}
+/* ---------- Escolha do bangalô (comparação) ---------- */
+#cbg .cbg-tabela{width:100%;border:0;border-collapse:collapse;table-layout:fixed;margin:0;font-size:17px;line-height:1.4}
+#cbg .cbg-tabela th,#cbg .cbg-tabela td{padding:14px 16px;border:0;border-top:1px solid rgba(48,51,35,.14);text-align:left;vertical-align:top;font-weight:400}
+#cbg .cbg-tabela thead th{padding:0 16px 22px;border-top:0;vertical-align:top}
+#cbg .cbg-tabela thead th:first-child{width:26%}
+#cbg .cbg-tabela tbody th{font-family:var(--marcellus);color:var(--oliva)}
+#cbg .cbg-tabela td{color:var(--pedra)}
+#cbg .cbg-col__foto{display:block;aspect-ratio:3 / 2;overflow:hidden;margin-bottom:16px;background:var(--nevoa)}
+#cbg .cbg-col__foto img{width:100%;height:100%;object-fit:cover}
+#cbg .cbg-col__tipo{display:block;font-family:var(--trirong);font-style:italic;font-size:20px;line-height:1.1;color:var(--terracota)}
+#cbg .cbg-col__nome{display:block;margin-top:6px;font-family:var(--gilda);font-size:clamp(26px,.8vw + 20px,34px);line-height:1.05;color:var(--mata)}
+#cbg .cbg-col .cbg-btn{margin-top:10px;color:var(--mata)}
+#cbg .cbg-sim,#cbg .cbg-nao{display:inline-flex;align-items:center;gap:8px}
+#cbg .cbg-sim::before{content:"";flex:none;width:18px;height:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a65635' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l4.5 4.5L19.5 7'/%3E%3C/svg%3E") center / 18px 18px no-repeat}
+#cbg .cbg-nao{color:var(--musgo)}
+#cbg .cbg-nao::before{content:"";flex:none;width:14px;height:1.5px;margin-inline:2px;background:currentColor}
+@media (max-width:699px){#cbg .cbg-tabela{font-size:15px}#cbg .cbg-tabela th,#cbg .cbg-tabela td{padding:12px 6px}#cbg .cbg-tabela th:first-child{padding-left:0}#cbg .cbg-tabela thead th{padding:0 6px 16px}#cbg .cbg-tabela thead th:first-child{width:29%}#cbg .cbg-col__tipo{font-size:16px}#cbg .cbg-col__nome{font-size:22px}#cbg .cbg-col .cbg-btn{font-size:16px;gap:10px}#cbg .cbg-sim,#cbg .cbg-nao{align-items:flex-start}#cbg .cbg-sim::before{margin-top:1px}}
+/* ---------- Bangalô em detalhe ---------- */
+#cbg .cbg-villa__cabeca{display:grid;gap:14px;margin-bottom:28px}
+@media (min-width:1024px){#cbg .cbg-villa__cabeca{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:end}}
+#cbg .cbg-villa__tipo{font-family:var(--trirong);font-style:italic;font-size:22px;line-height:1.1;color:var(--terracota)}
+#cbg .cbg-villa__nome{margin-top:8px;font-family:var(--gilda);font-size:clamp(38px,1.8vw + 26px,58px);line-height:1.02;color:var(--mata)}
+#cbg .cbg-villa__lead{max-width:56ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(19px,.4vw + 17px,23px);line-height:1.35;color:var(--pedra)}
+#cbg .cbg-villa__grade{display:grid;gap:40px;margin-top:40px}
+@media (min-width:1024px){#cbg .cbg-villa__grade{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:64px;align-items:start}#cbg .cbg-cartao{position:sticky;top:24px}}
+#cbg .cbg-villa__chips{display:flex;flex-wrap:wrap;gap:8px}
+#cbg .cbg-villa__texto{margin-top:20px;max-width:62ch;font-size:18px;line-height:1.6}
+#cbg .cbg-grupos{display:grid;gap:28px 44px;margin-top:32px;padding-top:28px;border-top:1px solid rgba(48,51,35,.16)}
+@media (min-width:700px){#cbg .cbg-grupos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+#cbg .cbg-grupo__titulo{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:21px;line-height:1.15;color:var(--terracota)}
+#cbg .cbg-lista{display:grid;gap:9px;margin-top:12px;font-family:var(--marcellus);font-size:16px;line-height:1.5;color:var(--oliva)}
+#cbg .cbg-lista li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px}
+#cbg .cbg-lista li::before{content:"";width:18px;height:18px;margin-top:3px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23756a48' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l4.5 4.5L19.5 7'/%3E%3C/svg%3E") center / 18px 18px no-repeat}
+#cbg .cbg-cartao{padding:28px 28px 26px;background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+#cbg .cbg-cartao__nome{font-family:var(--gilda);font-size:30px;line-height:1.05;color:#fff}
+#cbg .cbg-cartao__para{margin-top:6px;font-family:var(--marcellus);font-size:16px;color:var(--cobre-claro)}
+#cbg .cbg-cartao__texto{margin-top:16px;font-size:16px;line-height:1.5;color:#fff}
+#cbg .cbg-cartao__botoes{display:grid;gap:10px;margin-top:20px}
+#cbg .cbg-cartao__botoes .cbg-btn{justify-content:space-between}
+#cbg .cbg-cartao__nota{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.22);font-size:14px;line-height:1.45;color:#fff}
+/* ---------- Galeria: mosaico no computador, carrossel no celular ---------- */
+#cbg .cbg-galeria{position:relative}
+#cbg .cbg-galeria__lista{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:repeat(2,clamp(160px,16vw,240px));gap:8px}
+#cbg .cbg-galeria__item{position:relative;display:block;overflow:hidden;background:var(--nevoa);cursor:zoom-in}
+#cbg .cbg-galeria__item:first-child{grid-row:1 / span 2}
+#cbg .cbg-galeria__item:nth-child(n+6){display:none}
+#cbg .cbg-galeria__item img{width:100%;height:100%;object-fit:cover}
+#cbg .cbg-galeria__todas{position:absolute;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:8px 16px;background:#fff;color:var(--mata);font-family:var(--marcellus);font-size:16px;box-shadow:0 10px 26px -14px rgba(0,0,0,.6)}
+#cbg .cbg-galeria__todas::before{content:"";flex:none;width:16px;height:16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23303323' stroke-width='1.6'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3Crect x='14' y='14' width='7' height='7'/%3E%3C/svg%3E") center / 16px 16px no-repeat}
+#cbg .cbg-galeria__todas[hidden]{display:none}
+#cbg .cbg-galeria__todas:hover{background:var(--linho)}
+@media (max-width:699px){#cbg .cbg-galeria__lista{display:flex;gap:6px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin-inline:-7vw;padding-inline:7vw;scroll-padding-inline:7vw;scrollbar-width:none}#cbg .cbg-galeria__lista::-webkit-scrollbar{display:none}#cbg .cbg-galeria__item,#cbg .cbg-galeria__item:nth-child(n+6){display:block;flex:none;scroll-snap-align:start}#cbg .cbg-galeria__item img{width:auto;max-width:88vw;height:min(64vw,320px);object-fit:cover}#cbg .cbg-galeria__todas{position:static;margin-top:12px;box-shadow:none;border:1px solid rgba(48,51,35,.28)}}
+/* ---------- Fotos ampliadas ---------- */
+#cbg .cbg-lb{width:100vw;max-width:100vw;height:100vh;height:100dvh;max-height:none;margin:0;padding:0;border:0;background:#1b1d14;color:#fff;overflow:hidden}
+#cbg .cbg-lb::backdrop{background:rgba(0,0,0,.7)}
+#cbg .cbg-lb[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+#cbg .cbg-lb__topo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(14px,3vw,28px)}
+#cbg .cbg-lb__titulo{font-family:var(--marcellus);font-size:17px;color:#fff}
+#cbg .cbg-lb__cont{margin-left:12px;font-size:15px;color:var(--cobre-claro)}
+#cbg .cbg-lb__fechar{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:8px 14px;border:1px solid rgba(255,255,255,.45);font-family:var(--marcellus);font-size:16px;color:#fff}
+#cbg .cbg-lb__fechar::after{content:"+";font-family:var(--albert);font-size:26px;font-weight:300;line-height:.7;transform:rotate(45deg)}
+#cbg .cbg-lb__fig{position:relative;display:flex;align-items:center;justify-content:center;min-height:0;margin:0;padding:0 clamp(8px,6vw,84px)}
+#cbg .cbg-lb__fig img{width:auto;height:auto;max-width:100%;max-height:calc(100vh - 150px);max-height:calc(100dvh - 150px);object-fit:contain}
+#cbg .cbg-lb__ant,#cbg .cbg-lb__prox{position:absolute;top:50%;z-index:2;display:grid;place-items:center;width:52px;height:52px;margin-top:-26px;border-radius:50%;background:rgba(48,51,35,.72);border:1px solid rgba(255,255,255,.5);color:#fff}
+#cbg .cbg-lb__ant{left:clamp(8px,2vw,22px)}
+#cbg .cbg-lb__prox{right:clamp(8px,2vw,22px)}
+#cbg .cbg-lb__ant::before,#cbg .cbg-lb__prox::before{content:"";width:11px;height:11px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor}
+#cbg .cbg-lb__ant::before{margin-left:5px;transform:rotate(-135deg)}
+#cbg .cbg-lb__prox::before{margin-right:5px;transform:rotate(45deg)}
+#cbg .cbg-lb__ant:hover,#cbg .cbg-lb__prox:hover{background:var(--terracota)}
+#cbg .cbg-lb__legenda{max-width:70ch;margin:0 auto;padding:12px 18px 18px;text-align:center;font-size:15px;line-height:1.4;color:#fff}
+@media (max-width:699px){#cbg .cbg-lb__ant,#cbg .cbg-lb__prox{top:auto;bottom:14px;margin-top:0}#cbg .cbg-lb__legenda{padding:12px 76px 22px}#cbg .cbg-lb__fig img{max-height:calc(100vh - 190px);max-height:calc(100dvh - 190px)}}
+/* ---------- Uma noite no bangalô ---------- */
+#cbg .cbg-noite__grade{display:grid;gap:44px}
+@media (min-width:1024px){#cbg .cbg-noite__grade{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:start}#cbg .cbg-noite__fotos{position:sticky;top:24px}}
+#cbg .cbg-noite__fotos{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:auto clamp(150px,17vw,250px);gap:8px}
+#cbg .cbg-noite__foto{overflow:hidden;background:var(--musgo-esc)}
+#cbg .cbg-noite__foto img{width:100%;height:100%;object-fit:cover}
+#cbg .cbg-noite__foto--a{grid-column:1 / -1;aspect-ratio:16 / 10}
+#cbg .cbg-noite__foto--b{grid-column:1 / 4}
+#cbg .cbg-noite__foto--c{grid-column:4 / -1}
+#cbg .cbg-tempo{display:grid;gap:0}
+#cbg .cbg-tempo li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:22px;padding:22px 0;border-top:1px solid rgba(255,255,255,.2)}
+#cbg .cbg-tempo li:first-child{border-top:0;padding-top:0}
+#cbg .cbg-tempo__hora{font-family:var(--trirong);font-style:italic;font-weight:300;font-size:clamp(28px,1vw + 20px,36px);line-height:1;color:var(--cobre-claro)}
+#cbg .cbg-tempo__titulo{font-family:var(--marcellus);font-size:21px;line-height:1.2;color:#fff}
+#cbg .cbg-tempo__texto{margin-top:6px;font-size:17px;line-height:1.55;color:#fff}
+@media (max-width:699px){#cbg .cbg-tempo li{grid-template-columns:80px minmax(0,1fr);gap:12px}#cbg .cbg-tempo__hora{font-size:26px}}
+#cbg .cbg-incluso{margin-top:clamp(48px,5vw,64px);padding-top:26px;border-top:1px solid rgba(255,255,255,.22)}
+#cbg .cbg-incluso__titulo{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:24px;line-height:1.15;color:#fff}
+#cbg .cbg-incluso ul{display:flex;flex-wrap:wrap;gap:12px 30px;margin-top:16px}
+#cbg .cbg-incluso li{display:flex;align-items:center;gap:10px;font-family:var(--marcellus);font-size:17px;line-height:1.3;color:#fff}
+#cbg .cbg-incluso li::before{content:"";flex:none;width:18px;height:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4957a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l4.5 4.5L19.5 7'/%3E%3C/svg%3E") center / 18px 18px no-repeat}
+/* ---------- Experiências românticas ---------- */
+#cbg .cbg-exp__grade{display:grid;gap:24px}
+@media (min-width:900px){#cbg .cbg-exp__grade{grid-template-columns:repeat(2,minmax(0,1fr))}}
+#cbg .cbg-exp{display:flex;flex-direction:column;background:#fff}
+#cbg .cbg-exp__foto{aspect-ratio:16 / 9;overflow:hidden;background:var(--nevoa)}
+#cbg .cbg-exp__foto img{width:100%;height:100%;object-fit:cover}
+#cbg .cbg-exp__corpo{display:flex;flex:1;flex-direction:column;padding:24px 26px 26px}
+#cbg .cbg-exp__titulo{font-family:var(--gilda);font-size:clamp(26px,.6vw + 21px,32px);line-height:1.06;color:var(--mata)}
+#cbg .cbg-exp__texto{margin-top:10px;font-family:var(--marcellus);font-size:16px;line-height:1.65;color:var(--oliva)}
+#cbg .cbg-exp__preco{margin-top:auto;padding-top:16px;font-family:var(--trirong);font-style:italic;font-weight:300;font-size:21px;line-height:1.25;color:var(--mata)}
+#cbg .cbg-exp__preco strong{font-weight:400;font-size:30px}
+#cbg .cbg-exp__rodape{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;margin-top:24px}
+#cbg .cbg-exp__regras{max-width:70ch;font-size:15px;line-height:1.5;color:var(--pedra)}
+#cbg .cbg-exp__rodape .cbg-btn--texto{color:var(--mata)}
+/* ---------- Avaliações ---------- */
+#cbg .cbg-aval__grade{display:grid;gap:36px}
+@media (min-width:1024px){#cbg .cbg-aval__grade{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px;align-items:center}}
+#cbg .cbg-notas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+#cbg .cbg-nota{padding:20px 18px 18px;background:var(--linho)}
+#cbg .cbg-nota__num{font-family:var(--trirong);font-style:italic;font-weight:300;font-size:clamp(42px,2vw + 30px,60px);line-height:.9;color:var(--mata)}
+#cbg .cbg-nota__txt{margin-top:10px;font-family:var(--marcellus);font-size:16px;line-height:1.25;color:var(--mata)}
+#cbg .cbg-aval__fonte{display:flex;align-items:center;gap:14px;margin-top:18px;font-size:14px;line-height:1.5;color:var(--pedra)}
+#cbg .cbg-aval__fonte img{width:52px;height:auto;flex:none}
+#cbg .cbg-aval__citacao{padding:30px 30px 28px;background:var(--linho)}
+#cbg .cbg-aval__citacao blockquote p{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(20px,.4vw + 18px,24px);line-height:1.4;color:var(--pedra)}
+#cbg .cbg-aval__quem{margin-top:16px;font-family:var(--marcellus);font-size:15px;color:var(--oliva)}
+#cbg .cbg-aval__citacao .cbg-btn{margin-top:22px}
+/* ---------- Perguntas frequentes ---------- */
+#cbg .cbg-faq__grade{display:grid;gap:40px}
+@media (min-width:1024px){#cbg .cbg-faq__grade{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:80px;align-items:start}#cbg .cbg-faq__lado{position:sticky;top:32px}}
+#cbg .cbg-faq__lado .cbg-btn{margin-top:26px}
+#cbg .cbg-qa{border-top:1px solid rgba(48,51,35,.22)}
+#cbg .cbg-qa:last-child{border-bottom:1px solid rgba(48,51,35,.22)}
+#cbg .cbg-qa summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;list-style:none;cursor:pointer}
+#cbg .cbg-qa summary::-webkit-details-marker{display:none}
+#cbg .cbg-qa__q{font-family:var(--trirong);font-weight:400;font-size:clamp(20px,.4vw + 17px,23px);line-height:1.25;color:var(--mata)}
+#cbg .cbg-qa__icon{position:relative;flex:none;width:28px;height:28px;border:1px solid var(--musgo);border-radius:50%}
+#cbg .cbg-qa__icon::before,#cbg .cbg-qa__icon::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--mata);transform:translate(-50%,-50%)}
+#cbg .cbg-qa__icon::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .25s ease}
+#cbg .cbg-qa[open] .cbg-qa__icon::after{transform:translate(-50%,-50%) rotate(0deg)}
+#cbg .cbg-qa__a{max-width:66ch;padding:0 48px 26px 0;font-size:18px;line-height:1.6;color:var(--pedra)}
+#cbg .cbg-qa__a a{color:var(--terracota);text-decoration:underline;text-underline-offset:3px}
+/* ---------- Chamada final ---------- */
+#cbg .cbg-final{background:var(--nevoa) url("/images/2025/03/cassorova-folha-bg.png") right 6% center / min(520px,45%) no-repeat}
+#cbg .cbg-final__grade{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){#cbg .cbg-final__grade{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px}}
+#cbg .cbg-final__foto{overflow:hidden;aspect-ratio:3 / 2}
+#cbg .cbg-final__foto img{width:100%;height:100%;object-fit:cover}
+#cbg .cbg-final__frase{margin-top:16px;max-width:34ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(21px,.6vw + 17px,28px);line-height:1.15;color:var(--pedra)}
+#cbg .cbg-final .cbg-chamada{max-width:42ch}
+#cbg .cbg-final__botoes{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:28px}
+#cbg .cbg-final .cbg-btn--texto{color:var(--mata)}
+/* ---------- Barra fixa ---------- */
+#cbg .cbg-fixa{position:fixed;z-index:9990;left:12px;right:96px;bottom:16px;display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:6px;background:var(--mata);color:#fff;box-shadow:0 12px 30px -12px rgba(0,0,0,.55);opacity:0;visibility:hidden;transform:translateY(130%);transition:transform .35s ease,opacity .35s ease,visibility 0s linear .35s;--foco:var(--cobre-claro)}
+#cbg .cbg-fixa.is-on{opacity:1;visibility:visible;transform:none;transition:transform .35s ease,opacity .35s ease}
+#cbg .cbg-fixa__txt{margin-right:auto;padding-left:10px;font-family:var(--marcellus);font-size:15px;line-height:1.2}
+#cbg .cbg-fixa .cbg-btn{min-height:44px;padding:8px 14px;font-size:17px;white-space:nowrap}
+#cbg .cbg-fixa .cbg-btn::after{display:none}
+@media (max-width:719px){#cbg .cbg-fixa__txt{display:none}#cbg .cbg-fixa .cbg-btn{flex:1 1 auto;padding:8px 10px;font-size:16px}}
+@media (min-width:720px){#cbg .cbg-fixa{right:auto;left:24px;bottom:24px;max-width:560px;gap:10px}}
+#cbg .cbg-fim{display:block;height:1px}
+/* ---------- Movimento reduzido ---------- */
+@media (prefers-reduced-motion:reduce){#cbg .cbg-fixa,#cbg .cbg-qa__icon::after,#cbg .cbg-btn,#cbg .cbg-reserva__caixa{transition:none}}
+</style>
+<div id="cbg" class="cbg">
+<!-- ================= 1. TOPO ================= -->
+<section class="cbg-topo" aria-labelledby="cbg-titulo">
+<div class="cbg-topo__midia">
+<picture>
+<source media="(max-width: 719px)" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-2.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-2.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-2.jpg 1080w" sizes="100vw">
+<img class="cbg-topo__foto" src="/images/2026/03/bangalo-aconchego-cassorova-6.jpg" srcset="/images/2026/03/bangalo-aconchego-cassorova-6.jpg 1024w, /images/2026/03/bangalo-aconchego-cassorova-6.jpg 1536w, /images/2026/03/bangalo-aconchego-cassorova-6.jpg 2000w" sizes="100vw" width="2000" height="800" alt="Varanda de um bangalô do Cassorova com ofurô aquecido e cadeiras" loading="eager" fetchpriority="high" decoding="async">
+</picture>
+</div>
+<div class="cbg-topo__sombra" aria-hidden="true"></div>
+<div class="cbg-topo__conteudo">
+<p class="cbg-topo__sobre">22 bangalôs no alto da serra</p>
+<h1 id="cbg-titulo" class="cbg-topo__titulo">Bangalôs com ofurô e lareira em Brotas</h1>
+<p class="cbg-topo__frase">Ofurô aquecido na varanda, lareira e cama king em todos. Escolha a Villa Romance, para casais, ou a Villa Aconchego, para casais e famílias.</p>
+<div class="cbg-topo__acoes">
+<a class="cbg-btn cbg-btn--branco" href="#cbg-reserva" data-cbg-cta="ver-datas" data-cbg-pos="topo">Ver Datas e Preços</a>
+<a class="cbg-btn cbg-btn--texto" href="#cbg-escolha" data-cbg-cta="comparar" data-cbg-pos="topo">Comparar os Bangalôs</a>
+</div>
+<a class="cbg-topo__prova" href="https://www.tripadvisor.com.br/Hotel_Review-g793338-d21389571-Reviews-Cassorova_Hotel_Boutique-Brotas_State_of_Sao_Paulo.html" target="_blank" rel="noopener" data-cbg-cta="avaliacoes-tripadvisor" data-cbg-pos="topo">
+<img src="/images/2026/07/cassorova-tripadvisor.png" width="200" height="262" alt="Selo Travelers' Choice 2026 do Tripadvisor" loading="eager" decoding="async">
+<span class="cbg-topo__prova-txt"><span class="cbg-topo__prova-premio">Travelers' Choice 2026</span><span class="cbg-topo__prova-nota"><strong>4,9</strong> de 5 para os quartos</span><span class="cbg-topo__prova-qtd">nas avaliações do Tripadvisor</span></span>
+</a>
+</div>
+</section>
+<!-- ================= 2. BUSCADOR ================= -->
+<section class="cbg-reserva" id="cbg-reserva" aria-labelledby="cbg-reserva-t">
+<div class="cbg-reserva__caixa cbg-busca">
+<div class="cbg-reserva__topo">
+<h2 id="cbg-reserva-t" class="cbg-reserva__titulo">Veja os preços das suas datas</h2>
+<p class="cbg-reserva__sub">Diárias com café da manhã e pagamento em até 10x no cartão</p>
+</div>
+<div class="cbg-reserva__campos">
+<div class="cbg-campo cbg-campo--bangalo"><label for="cbg-bangalo">Bangalô</label><select id="cbg-bangalo" name="cbg-bangalo"><option value="" selected>Ainda não sei</option><option value="villa-romance">Villa Romance</option><option value="villa-aconchego">Villa Aconchego (casal)</option><option value="villa-aconchego-familia">Villa Aconchego Família</option></select></div>
+<div class="cbg-campo"><label for="cbg-entrada">Entrada</label><input type="date" id="cbg-entrada" name="cbg-entrada" autocomplete="off"></div>
+<div class="cbg-campo"><label for="cbg-saida">Saída</label><input type="date" id="cbg-saida" name="cbg-saida" autocomplete="off"></div>
+<div class="cbg-campo"><label for="cbg-adultos">Adultos</label><select id="cbg-adultos" name="cbg-adultos"><option value="1">1 adulto</option><option value="2" selected>2 adultos</option><option value="3">3 adultos</option><option value="4">4 adultos</option><option value="5">5 adultos</option><option value="6">6 adultos</option><option value="7">7 adultos</option><option value="8">8 adultos</option></select></div>
+<div class="cbg-campo"><label for="cbg-criancas">Crianças</label><select id="cbg-criancas" name="cbg-criancas"><option value="0" selected>Nenhuma</option><option value="1">1 criança</option><option value="2">2 crianças</option><option value="3">3 crianças</option><option value="4">4 crianças</option></select></div>
+</div>
+<div class="cbg-reserva__acoes">
+<a class="cbg-btn cbg-btn--terracota" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-cbg-busca="motor">Ver Preços e Reservar</a>
+<a class="cbg-btn cbg-btn--contorno" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20reservar%20um%20bangal%C3%B4%20no%20Cassorova" target="_blank" rel="noopener" data-cbg-busca="whatsapp">Reservar pelo WhatsApp</a>
+<p class="cbg-reserva__nota">No motor de reservas aparecem os três tipos: Villa Romance, Villa Aconchego e Villa Aconchego Família. Check-in a partir das 16h e check-out até as 14h.</p>
+</div>
+<p class="cbg-reserva__aviso" hidden></p>
+</div>
+</section>
+<!-- ================= 3. ESCOLHA DO BANGALÔ ================= -->
+<section class="cbg-sec" id="cbg-escolha" aria-labelledby="cbg-escolha-t">
+<div class="cbg-linha">
+<div class="cbg-cabeca cbg-cabeca--lado">
+<h2 id="cbg-escolha-t" class="cbg-titulo">Escolha o seu bangalô</h2>
+<p class="cbg-chamada">Os dois têm ofurô aquecido na varanda, lareira e cama king. A diferença está no tamanho, no banho e em quem vai com você.</p>
+</div>
+<div class="cbg-escolha__tabela">
+<table class="cbg-tabela">
+<caption class="cbg-sr">Comparação entre a Villa Romance e a Villa Aconchego</caption>
+<thead>
+<tr>
+<th scope="col"><span class="cbg-sr">Item</span></th>
+<th scope="col" class="cbg-col"><a class="cbg-col__foto" href="#cbg-romance" data-cbg-cta="ver-bangalo" data-cbg-bangalo="villa-romance" data-cbg-pos="comparacao" tabindex="-1" aria-hidden="true"><img src="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-6.jpg" srcset="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-6.jpg 480w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-6.jpg 768w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-6.jpg 1080w" sizes="(min-width: 1024px) 440px, 40vw" width="1080" height="720" alt="Villa Romance com cama king, armário e poltrona" loading="lazy" decoding="async"></a><span class="cbg-col__tipo">Para casais</span><span class="cbg-col__nome">Villa Romance</span><a class="cbg-btn cbg-btn--texto" href="#cbg-romance" data-cbg-cta="ver-bangalo" data-cbg-bangalo="villa-romance" data-cbg-pos="comparacao">Ver a Villa Romance</a></th>
+<th scope="col" class="cbg-col"><a class="cbg-col__foto" href="#cbg-aconchego" data-cbg-cta="ver-bangalo" data-cbg-bangalo="villa-aconchego" data-cbg-pos="comparacao" tabindex="-1" aria-hidden="true"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-11.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-11.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-11.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-11.jpg 1080w" sizes="(min-width: 1024px) 440px, 40vw" width="1080" height="1620" alt="Ofurô aquecido na varanda da Villa Aconchego" loading="lazy" decoding="async" style="object-position:50% 82%"></a><span class="cbg-col__tipo">Para casais e famílias</span><span class="cbg-col__nome">Villa Aconchego</span><a class="cbg-btn cbg-btn--texto" href="#cbg-aconchego" data-cbg-cta="ver-bangalo" data-cbg-bangalo="villa-aconchego" data-cbg-pos="comparacao">Ver a Villa Aconchego</a></th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row">Tamanho</th><td>60 m², dois ambientes</td><td>40 m²</td></tr>
+<tr><th scope="row">Hóspedes</th><td>Até 2</td><td>Até 4</td></tr>
+<tr><th scope="row">Camas</th><td>King size</td><td>King size, ou king e duas de solteiro</td></tr>
+<tr><th scope="row">Banheira de hidromassagem</th><td><span class="cbg-sim">Sim, com cromoterapia</span></td><td><span class="cbg-nao">Não tem</span></td></tr>
+<tr><th scope="row">Ofurô aquecido na varanda</th><td><span class="cbg-sim">Sim</span></td><td><span class="cbg-sim">Sim</span></td></tr>
+<tr><th scope="row">Lareira</th><td><span class="cbg-sim">Sim</span></td><td><span class="cbg-sim">Sim</span></td></tr>
+<tr><th scope="row">Ar-condicionado</th><td>Dois</td><td>Um</td></tr>
+<tr><th scope="row">Banho</th><td>Duchas duplas de alta pressão</td><td>Ducha de alta pressão com vista para o horizonte</td></tr>
+<tr><th scope="row">Smart TV</th><td>65 polegadas</td><td>50 polegadas</td></tr>
+<tr><th scope="row">Unidades</th><td>4 bangalôs</td><td>18 bangalôs</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- ================= 4. VILLA ROMANCE ================= -->
+<section class="cbg-sec cbg-sec--linho cbg-villa" id="cbg-romance" aria-labelledby="cbg-romance-t">
+<div class="cbg-linha">
+<div class="cbg-villa__cabeca">
+<div>
+<p class="cbg-villa__tipo">Para casais</p>
+<h2 id="cbg-romance-t" class="cbg-villa__nome">Villa Romance</h2>
+</div>
+<p class="cbg-villa__lead">O maior bangalô do Cassorova. São 60 m² em dois ambientes, com cama king, lareira e banheira de hidromassagem no mesmo espaço, e ofurô aquecido na varanda.</p>
+</div>
+<div class="cbg-galeria" data-cbg-galeria="villa-romance" data-cbg-galeria-nome="Villa Romance"><div class="cbg-galeria__lista" tabindex="0" aria-label="Fotos da Villa Romance"><a class="cbg-galeria__item" href="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-2.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Ambiente principal da Villa Romance com cama king, lareira e banheira de hidromassagem"><img src="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-2.jpg" srcset="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-2.jpg 480w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-2.jpg 768w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-2.jpg 1080w" sizes="(min-width: 1024px) 600px, (min-width: 700px) 46vw, 96vw" width="1080" height="720" alt="Ambiente principal da Villa Romance com cama king, lareira e banheira de hidromassagem" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-12.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Banheira de hidromassagem com cromoterapia sobre deque de madeira na Villa Romance"><img src="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-12.jpg" srcset="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-12.jpg 480w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-12.jpg 768w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-12.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Banheira de hidromassagem com cromoterapia sobre deque de madeira na Villa Romance" loading="lazy" decoding="async" style="object-position:50% 70%"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-1.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Cama king com manta vermelha de frente para a lareira e as poltronas da Villa Romance"><img src="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-1.jpg" srcset="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-1.jpg 480w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-1.jpg 768w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-1.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 96vw" width="1080" height="720" alt="Cama king com manta vermelha de frente para a lareira e as poltronas da Villa Romance" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-7.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Canto da Villa Romance com frigobar vermelho, mesa e cadeiras"><img src="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-7.jpg" srcset="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-7.jpg 480w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-7.jpg 768w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-7.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Canto da Villa Romance com frigobar vermelho, mesa e cadeiras" loading="lazy" decoding="async" style="object-position:50% 62%"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-3.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Pia e amenities do banheiro da Villa Romance"><img src="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-3.jpg" srcset="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-3.jpg 480w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-3.jpg 768w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-3.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 96vw" width="1080" height="720" alt="Pia e amenities do banheiro da Villa Romance" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-6.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Vista geral da Villa Romance, com armário, cama king e poltrona"><img src="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-6.jpg" srcset="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-6.jpg 480w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-6.jpg 768w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-6.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 96vw" width="1080" height="720" alt="Vista geral da Villa Romance, com armário, cama king e poltrona" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-13.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Cama king com almofadas e poltrona azul na Villa Romance"><img src="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-13.jpg" srcset="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-13.jpg 480w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-13.jpg 768w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-13.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Cama king com almofadas e poltrona azul na Villa Romance" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-9.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Duas poltronas azuis junto à janela da Villa Romance"><img src="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-9.jpg" srcset="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-9.jpg 480w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-9.jpg 768w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-9.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Duas poltronas azuis junto à janela da Villa Romance" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-4.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Cama king com Smart TV e janela na Villa Romance"><img src="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-4.jpg" srcset="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-4.jpg 480w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-4.jpg 768w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-4.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 96vw" width="1080" height="720" alt="Cama king com Smart TV e janela na Villa Romance" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-8.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Cama king arrumada com manta vermelha na Villa Romance"><img src="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-8.jpg" srcset="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-8.jpg 480w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-8.jpg 768w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-8.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Cama king arrumada com manta vermelha na Villa Romance" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-14.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Almofadas e roupa de cama da Villa Romance"><img src="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-14.jpg" srcset="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-14.jpg 480w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-14.jpg 768w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-14.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Almofadas e roupa de cama da Villa Romance" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-5.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Fachada dos bangalôs Villa Romance sob o céu azul de Brotas"><img src="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-5.jpg" srcset="/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-5.jpg 480w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-5.jpg 768w, /images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-5.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 96vw" width="1080" height="720" alt="Fachada dos bangalôs Villa Romance sob o céu azul de Brotas" loading="lazy" decoding="async"></a></div><button class="cbg-galeria__todas" type="button" hidden>Ver as 12 fotos</button></div>
+<div class="cbg-villa__grade">
+<div>
+<div class="cbg-villa__chips"><span class="cbg-selo cbg-selo--branco">60 m²</span><span class="cbg-selo cbg-selo--branco">Dois ambientes</span><span class="cbg-selo cbg-selo--branco">Até 2 pessoas</span><span class="cbg-selo cbg-selo--branco">4 bangalôs</span></div>
+<p class="cbg-villa__texto">Feito para datas a dois, como lua de mel e aniversário de casamento. Depois do ofurô na varanda, a banheira com cromoterapia e as duchas duplas de alta pressão completam o banho, e a lareira aquece as noites frias do alto da serra.</p>
+<div class="cbg-grupos">
+<div class="cbg-grupo"><h3 class="cbg-grupo__titulo">No quarto</h3><ul class="cbg-lista"><li>Cama king size</li><li>Lareira</li><li>Dois ares-condicionados</li><li>Smart TV de 65 polegadas</li><li>Janelas com abertura por controle remoto</li><li>Mesa de trabalho</li></ul></div>
+<div class="cbg-grupo"><h3 class="cbg-grupo__titulo">Banho e relaxamento</h3><ul class="cbg-lista"><li>Banheira de hidromassagem com hidroterapia e cromoterapia</li><li>Duchas duplas de alta pressão</li><li>Roupões, toalhas de piscina e amenities</li></ul></div>
+<div class="cbg-grupo"><h3 class="cbg-grupo__titulo">Na varanda</h3><ul class="cbg-lista"><li>Ofurô privativo aquecido</li><li>Espreguiçadeiras</li></ul></div>
+<div class="cbg-grupo"><h3 class="cbg-grupo__titulo">Serviços</h3><ul class="cbg-lista"><li>Frigobar abastecido</li><li>Wi-Fi e telefone interno</li><li>Serviço de quarto das 10h às 22h</li><li>Estacionamento exclusivo atrás dos bangalôs</li></ul></div>
+</div>
+</div>
+<aside class="cbg-cartao" aria-label="Reservar a Villa Romance">
+<p class="cbg-cartao__nome">Villa Romance</p>
+<p class="cbg-cartao__para">Para casais, até 2 pessoas</p>
+<p class="cbg-cartao__texto">Diárias com café da manhã colonial, acesso às duas cachoeiras e ao Resort Spa, em até 10x no cartão.</p>
+<div class="cbg-cartao__botoes">
+<a class="cbg-btn cbg-btn--terracota" href="#cbg-reserva" data-cbg-escolher="villa-romance" data-cbg-cta="ver-datas" data-cbg-bangalo="villa-romance" data-cbg-pos="cartao-romance">Ver Datas e Preços</a>
+<a class="cbg-btn cbg-btn--contorno" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20reservar%20a%20Villa%20Romance%20no%20Cassorova" target="_blank" rel="noopener" data-cbg-cta="whatsapp" data-cbg-bangalo="villa-romance" data-cbg-pos="cartao-romance">Reservar pelo WhatsApp</a>
+</div>
+<p class="cbg-cartao__nota">No motor de reservas, escolha Villa Romance.</p>
+</aside>
+</div>
+</div>
+</section>
+<!-- ================= 5. VILLA ACONCHEGO ================= -->
+<section class="cbg-sec cbg-villa" id="cbg-aconchego" aria-labelledby="cbg-aconchego-t">
+<div class="cbg-linha">
+<div class="cbg-villa__cabeca">
+<div>
+<p class="cbg-villa__tipo">Para casais e famílias</p>
+<h2 id="cbg-aconchego-t" class="cbg-villa__nome">Villa Aconchego</h2>
+</div>
+<p class="cbg-villa__lead">São 40 m² com ofurô aquecido na varanda, lareira e banho com vista para o horizonte. Recebe o casal ou a família de até 4 pessoas.</p>
+</div>
+<div class="cbg-galeria" data-cbg-galeria="villa-aconchego" data-cbg-galeria-nome="Villa Aconchego"><div class="cbg-galeria__lista" tabindex="0" aria-label="Fotos da Villa Aconchego"><a class="cbg-galeria__item" href="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-3.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Villa Aconchego com cama king, banco aos pés da cama e armário"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-3.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-3.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-3.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-3.jpg 1080w" sizes="(min-width: 1024px) 600px, (min-width: 700px) 46vw, 96vw" width="1080" height="720" alt="Villa Aconchego com cama king, banco aos pés da cama e armário" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-2.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Varanda da Villa Aconchego com ofurô aquecido e roupões pendurados"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-2.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-2.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-2.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-2.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Varanda da Villa Aconchego com ofurô aquecido e roupões pendurados" loading="lazy" decoding="async" style="object-position:50% 78%"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-1.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Cama king com manta verde e quadro na Villa Aconchego"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-1.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-1.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-1.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-1.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Cama king com manta verde e quadro na Villa Aconchego" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-7.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Villa Aconchego na configuração para família, com camas de solteiro e vista para o verde"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-7.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-7.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-7.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-7.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Villa Aconchego na configuração para família, com camas de solteiro e vista para o verde" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-9.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Banheiro da Villa Aconchego com espelho, pia e secador"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-9.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-9.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-9.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-9.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Banheiro da Villa Aconchego com espelho, pia e secador" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-11.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Ofurô privativo na varanda de parede azul da Villa Aconchego"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-11.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-11.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-11.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-11.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Ofurô privativo na varanda de parede azul da Villa Aconchego" loading="lazy" decoding="async" style="object-position:50% 80%"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-4.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Quarto da Villa Aconchego com cama de solteiro junto à janela"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-4.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-4.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-4.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-4.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Quarto da Villa Aconchego com cama de solteiro junto à janela" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-6.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Cama de solteiro com manta verde ao lado da janela na Villa Aconchego"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-6.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-6.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-6.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-6.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Cama de solteiro com manta verde ao lado da janela na Villa Aconchego" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-12.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Armário com roupões e toalhas na Villa Aconchego"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-12.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-12.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-12.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-12.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Armário com roupões e toalhas na Villa Aconchego" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-10.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Varanda com ofurô e parede amarela em um dos bangalôs Villa Aconchego"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-10.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-10.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-10.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-10.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 43vw" width="1080" height="1620" alt="Varanda com ofurô e parede amarela em um dos bangalôs Villa Aconchego" loading="lazy" decoding="async" style="object-position:50% 75%"></a><a class="cbg-galeria__item" href="/images/2026/03/bangalo-aconchego-cassorova-14.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Ofurô aquecido na varanda, com parede azul e vaso de planta"><img src="/images/2026/03/bangalo-aconchego-cassorova-14.jpg" srcset="/images/2026/03/bangalo-aconchego-cassorova-14.jpg 768w, /images/2026/03/bangalo-aconchego-cassorova-14.jpg 1024w, /images/2026/03/bangalo-aconchego-cassorova-14.jpg 1536w, /images/2026/03/bangalo-aconchego-cassorova-14.jpg 2000w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 88vw" width="2000" height="800" alt="Ofurô aquecido na varanda, com parede azul e vaso de planta" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2026/03/bangalo-aconchego-cassorova-8.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Amenities do Cassorova em bandeja de madeira no banheiro do bangalô"><img src="/images/2026/03/bangalo-aconchego-cassorova-8.jpg" srcset="/images/2026/03/bangalo-aconchego-cassorova-8.jpg 768w, /images/2026/03/bangalo-aconchego-cassorova-8.jpg 1024w, /images/2026/03/bangalo-aconchego-cassorova-8.jpg 1536w, /images/2026/03/bangalo-aconchego-cassorova-8.jpg 2000w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 88vw" width="2000" height="800" alt="Amenities do Cassorova em bandeja de madeira no banheiro do bangalô" loading="lazy" decoding="async"></a><a class="cbg-galeria__item" href="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-13.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Fachada de um bangalô Villa Aconchego com bambus e flores"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-13.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-13.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-13.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-13.jpg 1080w" sizes="(min-width: 1024px) 300px, (min-width: 700px) 23vw, 96vw" width="1080" height="720" alt="Fachada de um bangalô Villa Aconchego com bambus e flores" loading="lazy" decoding="async"></a></div><button class="cbg-galeria__todas" type="button" hidden>Ver as 13 fotos</button></div>
+<div class="cbg-villa__grade">
+<div>
+<div class="cbg-villa__chips"><span class="cbg-selo cbg-selo--linho">40 m²</span><span class="cbg-selo cbg-selo--linho">Até 4 pessoas</span><span class="cbg-selo cbg-selo--linho">18 bangalôs</span></div>
+<p class="cbg-villa__texto">Há duas configurações. Para casal, com cama king size. Para família, com cama king e duas camas de solteiro. No motor de reservas, elas aparecem como Villa Aconchego e Villa Aconchego Família.</p>
+<div class="cbg-grupos">
+<div class="cbg-grupo"><h3 class="cbg-grupo__titulo">No quarto</h3><ul class="cbg-lista"><li>Cama king size, ou cama king e duas camas de solteiro</li><li>Lareira</li><li>Ar-condicionado</li><li>Smart TV de 50 polegadas</li><li>Janelas com abertura por controle remoto</li><li>Mesa de trabalho</li></ul></div>
+<div class="cbg-grupo"><h3 class="cbg-grupo__titulo">Banho</h3><ul class="cbg-lista"><li>Ducha de alta pressão com vista para o horizonte</li><li>Roupões, toalhas de piscina e amenities</li></ul></div>
+<div class="cbg-grupo"><h3 class="cbg-grupo__titulo">Na varanda</h3><ul class="cbg-lista"><li>Ofurô privativo aquecido</li></ul></div>
+<div class="cbg-grupo"><h3 class="cbg-grupo__titulo">Serviços</h3><ul class="cbg-lista"><li>Frigobar abastecido</li><li>Wi-Fi e telefone interno</li><li>Serviço de quarto das 10h às 22h</li><li>Estacionamento exclusivo atrás dos bangalôs</li></ul></div>
+</div>
+</div>
+<aside class="cbg-cartao" aria-label="Reservar a Villa Aconchego">
+<p class="cbg-cartao__nome">Villa Aconchego</p>
+<p class="cbg-cartao__para">Casal ou família de até 4 pessoas</p>
+<p class="cbg-cartao__texto">Diárias com café da manhã colonial, acesso às duas cachoeiras e ao Resort Spa, em até 10x no cartão.</p>
+<div class="cbg-cartao__botoes">
+<a class="cbg-btn cbg-btn--terracota" href="#cbg-reserva" data-cbg-escolher="villa-aconchego" data-cbg-cta="ver-datas" data-cbg-bangalo="villa-aconchego" data-cbg-pos="cartao-aconchego">Ver Datas e Preços</a>
+<a class="cbg-btn cbg-btn--contorno" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20reservar%20a%20Villa%20Aconchego%20no%20Cassorova" target="_blank" rel="noopener" data-cbg-cta="whatsapp" data-cbg-bangalo="villa-aconchego" data-cbg-pos="cartao-aconchego">Reservar pelo WhatsApp</a>
+</div>
+<p class="cbg-cartao__nota">No motor de reservas, escolha Villa Aconchego para casal ou Villa Aconchego Família para até 4 pessoas.</p>
+</aside>
+</div>
+</div>
+</section>
+<!-- ================= 6. UMA NOITE NO BANGALÔ ================= -->
+<section class="cbg-sec cbg-sec--mata" id="cbg-noite" aria-labelledby="cbg-noite-t">
+<div class="cbg-linha">
+<div class="cbg-cabeca cbg-cabeca--lado">
+<h2 id="cbg-noite-t" class="cbg-titulo cbg-titulo--trirong">Uma noite no bangalô</h2>
+<p class="cbg-chamada">Do check-in às 16h ao check-out às 14h do dia seguinte, um roteiro para aproveitar o bangalô e o resort sem pressa.</p>
+</div>
+<div class="cbg-noite__grade">
+<div class="cbg-noite__fotos">
+<figure class="cbg-noite__foto cbg-noite__foto--a"><img src="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg" srcset="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 768w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 1024w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 1536w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 2000w" sizes="(min-width: 1024px) 480px, 86vw" width="2000" height="800" alt="Casal de roupão brindando ao pôr do sol na varanda do bangalô" loading="lazy" decoding="async" style="object-position:62% 50%"></figure>
+<figure class="cbg-noite__foto cbg-noite__foto--b"><img src="/images/2025/06/Cassorova-Resort-02.jpg" srcset="/images/2025/06/Cassorova-Resort-02.jpg 480w, /images/2025/06/Cassorova-Resort-02.jpg 768w, /images/2025/06/Cassorova-Resort-02.jpg 1080w" sizes="(min-width: 1024px) 290px, 52vw" width="1080" height="720" alt="Casal de roupão brindando com vinho diante da lareira do bangalô" loading="lazy" decoding="async"></figure>
+<figure class="cbg-noite__foto cbg-noite__foto--c"><img src="/images/2026/03/bangalo-aconchego-cassorova-12.jpg" srcset="/images/2026/03/bangalo-aconchego-cassorova-12.jpg 768w, /images/2026/03/bangalo-aconchego-cassorova-12.jpg 1024w, /images/2026/03/bangalo-aconchego-cassorova-12.jpg 1536w, /images/2026/03/bangalo-aconchego-cassorova-12.jpg 2000w" sizes="(min-width: 1024px) 190px, 34vw" width="2000" height="800" alt="Hóspede relaxando no ofurô aquecido da varanda" loading="lazy" decoding="async" style="object-position:44% 50%"></figure>
+</div>
+<ol class="cbg-tempo">
+<li><span class="cbg-tempo__hora">16h</span><div><h3 class="cbg-tempo__titulo">Chegada</h3><p class="cbg-tempo__texto">Abra as janelas pelo controle remoto e deixe a brisa da serra entrar no bangalô.</p></div></li>
+<li><span class="cbg-tempo__hora">17h</span><div><h3 class="cbg-tempo__titulo">Pôr do sol</h3><p class="cbg-tempo__texto">Depois das 17h, a piscina de borda infinita fica só para os hóspedes. Se preferir, veja o céu mudar de cor da sua varanda.</p></div></li>
+<li><span class="cbg-tempo__hora">Noite</span><div><h3 class="cbg-tempo__titulo">Ofurô aquecido</h3><p class="cbg-tempo__texto">Água quente na varanda privativa e o céu estrelado do alto da serra.</p></div></li>
+<li><span class="cbg-tempo__hora">Até 22h</span><div><h3 class="cbg-tempo__titulo">Jantar no bangalô</h3><p class="cbg-tempo__texto">O serviço de quarto entrega pratos, drinks e petiscos na porta. Nas noites frias, a lareira aquece o bangalô.</p></div></li>
+<li><span class="cbg-tempo__hora">Manhã</span><div><h3 class="cbg-tempo__titulo">Café colonial</h3><p class="cbg-tempo__texto">Itens quentes do fogão a lenha, omeletes e tapiocas feitas na hora, já inclusos na diária.</p></div></li>
+<li><span class="cbg-tempo__hora">Até 14h</span><div><h3 class="cbg-tempo__titulo">Check-out sem pressa</h3><p class="cbg-tempo__texto">Ainda dá tempo de um banho de cachoeira: a Cassorova e a dos Quatis estão incluídas na diária.</p></div></li>
+</ol>
+</div>
+<div class="cbg-incluso">
+<h3 class="cbg-incluso__titulo">Incluso em todas as diárias</h3>
+<ul><li>Café da manhã colonial</li><li>Cachoeiras e parque de ecoturismo</li><li>Resort Spa exclusivo para hóspedes</li><li>Borda infinita só para hóspedes depois das 17h</li><li>Estacionamento e Wi-Fi</li></ul>
+</div>
+</div>
+</section>
+<!-- ================= 7. EXPERIÊNCIAS ROMÂNTICAS ================= -->
+<section class="cbg-sec cbg-sec--nevoa" id="cbg-experiencias" aria-labelledby="cbg-exp-t">
+<div class="cbg-linha">
+<div class="cbg-cabeca cbg-cabeca--lado">
+<h2 id="cbg-exp-t" class="cbg-titulo">Experiências românticas</h2>
+<p class="cbg-chamada">Para preparar uma surpresa, reserve com pelo menos 72 horas de antecedência. A equipe monta tudo e você só aproveita.</p>
+</div>
+<div class="cbg-exp__grade">
+<article class="cbg-exp">
+<figure class="cbg-exp__foto"><img src="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-2.jpg" srcset="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-2.jpg 768w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-2.jpg 1024w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-2.jpg 1536w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-2.jpg 2000w" sizes="(min-width: 900px) 590px, 86vw" width="2000" height="800" alt="Casal de roupão com taças de vinho e cesta de picnic diante da lareira" loading="lazy" decoding="async" style="object-position:50% 50%"></figure>
+<div class="cbg-exp__corpo">
+<h3 class="cbg-exp__titulo">Picnic na Varanda</h3>
+<p class="cbg-exp__texto">Na varanda do seu bangalô, ao lado do ofurô, com vista para o horizonte. Cesta com queijos e frios, seleção de pães, dois bolos caseiros e uma garrafa de vinho tinto ou branco.</p>
+<p class="cbg-exp__preco"><strong>R$&nbsp;525</strong> por experiência</p>
+</div>
+</article>
+<article class="cbg-exp">
+<figure class="cbg-exp__foto"><img src="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg" srcset="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 768w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 1024w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 1536w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 2000w" sizes="(min-width: 900px) 590px, 86vw" width="2000" height="800" alt="Casal em um picnic à beira do lago ao pôr do sol no Cassorova" loading="lazy" decoding="async" style="object-position:50% 50%"></figure>
+<div class="cbg-exp__corpo">
+<h3 class="cbg-exp__titulo">Picnic na Natureza</h3>
+<p class="cbg-exp__texto">Escolha um canto da propriedade e a equipe monta o picnic, com a mesma cesta de queijos, frios, pães e bolos caseiros e a garrafa de vinho.</p>
+<p class="cbg-exp__preco"><strong>R$&nbsp;525</strong> por experiência</p>
+</div>
+</article>
+</div>
+<div class="cbg-exp__rodape">
+<p class="cbg-exp__regras">Valores adicionais à diária e não reembolsáveis, em até 5x sem juros no cartão. Para a experiência ser entregue como planejado, faça o check-in antes das 22h.</p>
+<a class="cbg-btn cbg-btn--texto" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20reservar%20uma%20experi%C3%AAncia%20rom%C3%A2ntica%20no%20Cassorova" target="_blank" rel="noopener" data-cbg-cta="experiencia" data-cbg-pos="experiencias">Reservar uma Experiência</a>
+</div>
+</div>
+</section>
+<!-- ================= 8. AVALIAÇÕES ================= -->
+<section class="cbg-sec" id="cbg-avaliacoes" aria-labelledby="cbg-aval-t">
+<div class="cbg-linha cbg-aval__grade">
+<div>
+<h2 id="cbg-aval-t" class="cbg-titulo">O que os hóspedes dizem dos bangalôs</h2>
+<div class="cbg-notas">
+<div class="cbg-nota"><p class="cbg-nota__num">4,9</p><p class="cbg-nota__txt">Quartos</p></div>
+<div class="cbg-nota"><p class="cbg-nota__num">4,9</p><p class="cbg-nota__txt">Qualidade do sono</p></div>
+<div class="cbg-nota"><p class="cbg-nota__num">4,9</p><p class="cbg-nota__txt">Limpeza</p></div>
+</div>
+<p class="cbg-aval__fonte"><img src="/images/2026/07/cassorova-tripadvisor.png" width="200" height="262" alt="Selo Travelers' Choice 2026 do Tripadvisor" loading="lazy" decoding="async"><span>Médias das notas dos hóspedes no Tripadvisor, onde o Cassorova tem nota geral 4,9 em 275 avaliações e o Travelers' Choice 2026. Consulta em novembro de 2026.</span></p>
+</div>
+<div class="cbg-aval__citacao">
+<blockquote><p>Espaço encantador pelas belezas naturais, acolhedor em suas experiências de hospitalidade, desde o sorriso amigo e afetuoso de seus colaboradores até o cuidado com os detalhes das refeições e acomodações (...)</p></blockquote>
+<p class="cbg-aval__quem">Júlio César C., avaliação no Google em julho de 2026</p>
+<a class="cbg-btn cbg-btn--terracota" href="https://www.tripadvisor.com.br/Hotel_Review-g793338-d21389571-Reviews-Cassorova_Hotel_Boutique-Brotas_State_of_Sao_Paulo.html" target="_blank" rel="noopener" data-cbg-cta="avaliacoes-tripadvisor" data-cbg-pos="avaliacoes">Ler Avaliações no Tripadvisor</a>
+</div>
+</div>
+</section>
+<!-- ================= 9. PERGUNTAS FREQUENTES ================= -->
+<section class="cbg-sec cbg-sec--linho" id="cbg-faq" aria-labelledby="cbg-faq-t">
+<div class="cbg-linha cbg-faq__grade">
+<div class="cbg-faq__lado">
+<h2 id="cbg-faq-t" class="cbg-titulo">Perguntas sobre os bangalôs</h2>
+<p class="cbg-chamada">Não encontrou sua dúvida? A equipe de reservas responde pelo WhatsApp.</p>
+<a class="cbg-btn cbg-btn--musgo" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20bangal%C3%B4s%20do%20Cassorova" target="_blank" rel="noopener" data-cbg-cta="whatsapp" data-cbg-pos="faq">Falar no WhatsApp</a>
+</div>
+<div class="cbg-faq__lista">
+<details class="cbg-qa" name="cbg-faq" open><summary><h3 class="cbg-qa__q">Qual a diferença entre a Villa Romance e a Villa Aconchego?</h3><span class="cbg-qa__icon" aria-hidden="true"></span></summary><div class="cbg-qa__a"><p>A Villa Romance tem 60 m² em dois ambientes, banheira de hidromassagem com cromoterapia, duchas duplas, dois ares-condicionados e Smart TV de 65 polegadas, e recebe até 2 pessoas. A Villa Aconchego tem 40 m², ducha com vista para o horizonte e Smart TV de 50 polegadas, e recebe até 4 pessoas. As duas têm ofurô privativo aquecido na varanda, lareira e cama king size.</p></div></details>
+<details class="cbg-qa" name="cbg-faq"><summary><h3 class="cbg-qa__q">Quantas pessoas cabem em cada bangalô?</h3><span class="cbg-qa__icon" aria-hidden="true"></span></summary><div class="cbg-qa__a"><p>A Villa Romance recebe até 2 pessoas. A Villa Aconchego recebe até 4: no motor de reservas, escolha Villa Aconchego para casal ou Villa Aconchego Família para a configuração com cama king e duas camas de solteiro.</p></div></details>
+<details class="cbg-qa" name="cbg-faq"><summary><h3 class="cbg-qa__q">O ofurô é privativo e aquecido?</h3><span class="cbg-qa__icon" aria-hidden="true"></span></summary><div class="cbg-qa__a"><p>Sim. Todos os 22 bangalôs têm ofurô privativo com água aquecida na varanda, para ver o pôr do sol ou o céu estrelado sem sair do bangalô.</p></div></details>
+<details class="cbg-qa" name="cbg-faq"><summary><h3 class="cbg-qa__q">A banheira de hidromassagem fica dentro do bangalô?</h3><span class="cbg-qa__icon" aria-hidden="true"></span></summary><div class="cbg-qa__a"><p>Na Villa Romance, sim. A banheira de hidromassagem, com hidroterapia e cromoterapia, fica no mesmo ambiente da cama e da lareira, além do ofurô na varanda. A Villa Aconchego tem ofurô na varanda e ducha de alta pressão.</p></div></details>
+<details class="cbg-qa" name="cbg-faq"><summary><h3 class="cbg-qa__q">O que está incluso na diária dos bangalôs?</h3><span class="cbg-qa__icon" aria-hidden="true"></span></summary><div class="cbg-qa__a"><p>Café da manhã colonial, acesso às cachoeiras Cassorova e dos Quatis e a todo o parque de ecoturismo, o Resort Spa exclusivo para hóspedes, a piscina de borda infinita só para hóspedes depois das 17h, estacionamento e Wi-Fi. Almoço, jantar, bebidas, tirolesa, arvorismo e as experiências românticas são pagos à parte.</p></div></details>
+<details class="cbg-qa" name="cbg-faq"><summary><h3 class="cbg-qa__q">Qual o horário de check-in e check-out?</h3><span class="cbg-qa__icon" aria-hidden="true"></span></summary><div class="cbg-qa__a"><p>O check-in é a partir das 16h e o check-out vai até as 14h. Entrada antecipada e saída mais tarde dependem da disponibilidade e podem ter custo: consulte a equipe de reservas.</p></div></details>
+<details class="cbg-qa" name="cbg-faq"><summary><h3 class="cbg-qa__q">Posso cancelar ou mudar a data da reserva?</h3><span class="cbg-qa__icon" aria-hidden="true"></span></summary><div class="cbg-qa__a"><p>Até 7 dias antes do check-in, sim. O cancelamento gera uma carta de crédito no valor pago, válida por 1 ano, e a mudança de data não tem taxa, só a diferença de tarifa, se houver. Com menos de 7 dias, a reserva não pode ser cancelada nem alterada. Os pedidos são feitos por e-mail, em <a href="mailto:gerencia@cassorova.com.br">gerencia@cassorova.com.br</a>.</p></div></details>
+<details class="cbg-qa" name="cbg-faq"><summary><h3 class="cbg-qa__q">Os bangalôs são para não fumantes?</h3><span class="cbg-qa__icon" aria-hidden="true"></span></summary><div class="cbg-qa__a"><p>Sim, todos são 100% não fumantes. Se houver sinal de fumo no bangalô, é cobrada uma taxa de limpeza de R$ 200 por diária reservada.</p></div></details>
+<details class="cbg-qa" name="cbg-faq"><summary><h3 class="cbg-qa__q">Tem serviço de quarto?</h3><span class="cbg-qa__icon" aria-hidden="true"></span></summary><div class="cbg-qa__a"><p>Sim, das 10h às 22h, com pratos, drinks e petiscos entregues na porta do bangalô.</p></div></details>
+<details class="cbg-qa" name="cbg-faq"><summary><h3 class="cbg-qa__q">Dá para fazer um picnic na varanda do bangalô?</h3><span class="cbg-qa__icon" aria-hidden="true"></span></summary><div class="cbg-qa__a"><p>Sim. O Picnic na Varanda tem cesta com queijos e frios, pães, dois bolos caseiros e uma garrafa de vinho, por R$ 525. Reserve com pelo menos 72 horas de antecedência e faça o check-in antes das 22h para receber a experiência.</p></div></details>
+<details class="cbg-qa" name="cbg-faq"><summary><h3 class="cbg-qa__q">Bangalô é a mesma coisa que chalé?</h3><span class="cbg-qa__icon" aria-hidden="true"></span></summary><div class="cbg-qa__a"><p>São nomes parecidos para uma hospedagem mais reservada. No Cassorova, cada bangalô tem o que se procura num chalé com ofurô em Brotas: varanda privativa com ofurô aquecido, lareira e cama king. E, por ficar num resort, a diária inclui café da manhã colonial, duas cachoeiras e o Resort Spa.</p></div></details>
+<details class="cbg-qa" name="cbg-faq"><summary><h3 class="cbg-qa__q">Onde ficam os bangalôs no Cassorova?</h3><span class="cbg-qa__icon" aria-hidden="true"></span></summary><div class="cbg-qa__a"><p>Na parte da propriedade reservada aos hóspedes, onde também fica o Resort Spa. No mapa ilustrado do Cassorova, a Villa Romance são os bangalôs 01, 02, 21 e 22, e a Villa Aconchego vai do 03 ao 20.</p></div></details>
+<details class="cbg-qa" name="cbg-faq"><summary><h3 class="cbg-qa__q">Como faço para reservar um bangalô?</h3><span class="cbg-qa__icon" aria-hidden="true"></span></summary><div class="cbg-qa__a"><p>Escolha as datas e o número de hóspedes no <a href="#cbg-reserva">buscador desta página</a> e clique em Ver Preços e Reservar. O motor de reservas mostra os bangalôs disponíveis com os preços das suas datas, e a reserva é confirmada online, com pagamento em até 10x no cartão. Se preferir, fale com a equipe de reservas pelo WhatsApp.</p></div></details>
+</div>
+</div>
+</section>
+<!-- ================= 10. CHAMADA FINAL ================= -->
+<section class="cbg-sec cbg-final" aria-labelledby="cbg-final-t">
+<div class="cbg-linha cbg-final__grade">
+<figure class="cbg-final__foto"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-13.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-13.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-13.jpg 768w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-13.jpg 1080w" sizes="(min-width: 900px) 560px, 86vw" width="1080" height="720" alt="Fachada de um bangalô do Cassorova com bambus e flores ao fim da tarde" loading="lazy" decoding="async"></figure>
+<div>
+<h2 id="cbg-final-t" class="cbg-titulo">Reserve seu bangalô</h2>
+<p class="cbg-final__frase">Ofurô aquecido na varanda, lareira e duas cachoeiras inclusas na diária, a 217 km de São Paulo.</p>
+<p class="cbg-chamada">Veja os preços das suas datas e reserve online, ou fale com a equipe de reservas pelo WhatsApp.</p>
+<div class="cbg-final__botoes">
+<a class="cbg-btn cbg-btn--oliva" href="#cbg-reserva" data-cbg-cta="ver-datas" data-cbg-pos="chamada-final">Ver Datas e Preços</a>
+<a class="cbg-btn cbg-btn--texto" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20reservar%20um%20bangal%C3%B4%20no%20Cassorova" target="_blank" rel="noopener" data-cbg-cta="whatsapp" data-cbg-pos="chamada-final">Falar no WhatsApp</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= BARRA FIXA ================= -->
+<div class="cbg-fixa">
+<p class="cbg-fixa__txt">Bangalôs com ofurô e lareira</p>
+<a class="cbg-btn cbg-btn--branco" href="#cbg-escolha" data-cbg-cta="comparar" data-cbg-pos="barra-fixa">Comparar</a>
+<a class="cbg-btn cbg-btn--terracota" href="#cbg-reserva" data-cbg-cta="ver-datas" data-cbg-pos="barra-fixa">Ver Datas e Preços</a>
+</div>
+<span class="cbg-fim" aria-hidden="true"></span>
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Resort","@id":"https://cassorova.com.br/#resort","name":"Cassorova Resort e Ecoturismo","url":"https://cassorova.com.br/","numberOfRooms":22,"checkinTime":"16:00","checkoutTime":"14:00","containsPlace":[{"@id":"https://cassorova.com.br/bangalos/#villa-romance"},{"@id":"https://cassorova.com.br/bangalos/#villa-aconchego"}]},{"@type":"HotelRoom","@id":"https://cassorova.com.br/bangalos/#villa-romance","name":"Villa Romance","description":"Bangalô de 60 m² em dois ambientes para casais, com cama king size, lareira, banheira de hidromassagem com hidroterapia e cromoterapia, duchas duplas de alta pressão, dois ares-condicionados, Smart TV de 65 polegadas e ofurô privativo aquecido na varanda.","url":"https://cassorova.com.br/bangalos/#cbg-romance","floorSize":{"@type":"QuantitativeValue","value":60,"unitCode":"MTK"},"occupancy":{"@type":"QuantitativeValue","maxValue":2},"bed":{"@type":"BedDetails","typeOfBed":"King size","numberOfBeds":1},"smokingAllowed":false,"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Ofurô privativo aquecido na varanda","value":true},{"@type":"LocationFeatureSpecification","name":"Lareira","value":true},{"@type":"LocationFeatureSpecification","name":"Cama king size","value":true},{"@type":"LocationFeatureSpecification","name":"Janelas com abertura por controle remoto","value":true},{"@type":"LocationFeatureSpecification","name":"Roupões e toalhas de piscina","value":true},{"@type":"LocationFeatureSpecification","name":"Amenities","value":true},{"@type":"LocationFeatureSpecification","name":"Frigobar abastecido","value":true},{"@type":"LocationFeatureSpecification","name":"Mesa de trabalho","value":true},{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Telefone interno","value":true},{"@type":"LocationFeatureSpecification","name":"Serviço de quarto","value":true},{"@type":"LocationFeatureSpecification","name":"Estacionamento exclusivo","value":true},{"@type":"LocationFeatureSpecification","name":"Café da manhã incluso","value":true},{"@type":"LocationFeatureSpecification","name":"Banheira de hidromassagem com cromoterapia","value":true},{"@type":"LocationFeatureSpecification","name":"Duchas duplas de alta pressão","value":true},{"@type":"LocationFeatureSpecification","name":"Dois ares-condicionados","value":true},{"@type":"LocationFeatureSpecification","name":"Smart TV de 65 polegadas","value":true},{"@type":"LocationFeatureSpecification","name":"Espreguiçadeiras","value":true}],"image":["https://cassorova.com.br/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-2.jpg","https://cassorova.com.br/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-12.jpg","https://cassorova.com.br/images/2025/07/bangalo-romance-cassorova-resort-ecoturismo-1.jpg"],"containedInPlace":{"@id":"https://cassorova.com.br/#resort"}},{"@type":"HotelRoom","@id":"https://cassorova.com.br/bangalos/#villa-aconchego","name":"Villa Aconchego","description":"Bangalô de 40 m² para casais e famílias de até 4 pessoas, com cama king size ou cama king e duas camas de solteiro, lareira, ar-condicionado, ducha de alta pressão com vista para o horizonte, Smart TV de 50 polegadas e ofurô privativo aquecido na varanda.","url":"https://cassorova.com.br/bangalos/#cbg-aconchego","floorSize":{"@type":"QuantitativeValue","value":40,"unitCode":"MTK"},"occupancy":{"@type":"QuantitativeValue","maxValue":4},"bed":[{"@type":"BedDetails","typeOfBed":"King size","numberOfBeds":1},{"@type":"BedDetails","typeOfBed":"Solteiro","numberOfBeds":2}],"smokingAllowed":false,"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Ofurô privativo aquecido na varanda","value":true},{"@type":"LocationFeatureSpecification","name":"Lareira","value":true},{"@type":"LocationFeatureSpecification","name":"Cama king size","value":true},{"@type":"LocationFeatureSpecification","name":"Janelas com abertura por controle remoto","value":true},{"@type":"LocationFeatureSpecification","name":"Roupões e toalhas de piscina","value":true},{"@type":"LocationFeatureSpecification","name":"Amenities","value":true},{"@type":"LocationFeatureSpecification","name":"Frigobar abastecido","value":true},{"@type":"LocationFeatureSpecification","name":"Mesa de trabalho","value":true},{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Telefone interno","value":true},{"@type":"LocationFeatureSpecification","name":"Serviço de quarto","value":true},{"@type":"LocationFeatureSpecification","name":"Estacionamento exclusivo","value":true},{"@type":"LocationFeatureSpecification","name":"Café da manhã incluso","value":true},{"@type":"LocationFeatureSpecification","name":"Ducha de alta pressão com vista para o horizonte","value":true},{"@type":"LocationFeatureSpecification","name":"Ar-condicionado","value":true},{"@type":"LocationFeatureSpecification","name":"Smart TV de 50 polegadas","value":true}],"image":["https://cassorova.com.br/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-3.jpg","https://cassorova.com.br/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-2.jpg","https://cassorova.com.br/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-1.jpg"],"containedInPlace":{"@id":"https://cassorova.com.br/#resort"}},{"@type":"FAQPage","@id":"https://cassorova.com.br/bangalos/#faq","mainEntity":[{"@type":"Question","name":"Qual a diferença entre a Villa Romance e a Villa Aconchego?","acceptedAnswer":{"@type":"Answer","text":"A Villa Romance tem 60 m² em dois ambientes, banheira de hidromassagem com cromoterapia, duchas duplas, dois ares-condicionados e Smart TV de 65 polegadas, e recebe até 2 pessoas. A Villa Aconchego tem 40 m², ducha com vista para o horizonte e Smart TV de 50 polegadas, e recebe até 4 pessoas. As duas têm ofurô privativo aquecido na varanda, lareira e cama king size."}},{"@type":"Question","name":"Quantas pessoas cabem em cada bangalô?","acceptedAnswer":{"@type":"Answer","text":"A Villa Romance recebe até 2 pessoas. A Villa Aconchego recebe até 4: no motor de reservas, escolha Villa Aconchego para casal ou Villa Aconchego Família para a configuração com cama king e duas camas de solteiro."}},{"@type":"Question","name":"O ofurô é privativo e aquecido?","acceptedAnswer":{"@type":"Answer","text":"Sim. Todos os 22 bangalôs têm ofurô privativo com água aquecida na varanda, para ver o pôr do sol ou o céu estrelado sem sair do bangalô."}},{"@type":"Question","name":"A banheira de hidromassagem fica dentro do bangalô?","acceptedAnswer":{"@type":"Answer","text":"Na Villa Romance, sim. A banheira de hidromassagem, com hidroterapia e cromoterapia, fica no mesmo ambiente da cama e da lareira, além do ofurô na varanda. A Villa Aconchego tem ofurô na varanda e ducha de alta pressão."}},{"@type":"Question","name":"O que está incluso na diária dos bangalôs?","acceptedAnswer":{"@type":"Answer","text":"Café da manhã colonial, acesso às cachoeiras Cassorova e dos Quatis e a todo o parque de ecoturismo, o Resort Spa exclusivo para hóspedes, a piscina de borda infinita só para hóspedes depois das 17h, estacionamento e Wi-Fi. Almoço, jantar, bebidas, tirolesa, arvorismo e as experiências românticas são pagos à parte."}},{"@type":"Question","name":"Qual o horário de check-in e check-out?","acceptedAnswer":{"@type":"Answer","text":"O check-in é a partir das 16h e o check-out vai até as 14h. Entrada antecipada e saída mais tarde dependem da disponibilidade e podem ter custo: consulte a equipe de reservas."}},{"@type":"Question","name":"Posso cancelar ou mudar a data da reserva?","acceptedAnswer":{"@type":"Answer","text":"Até 7 dias antes do check-in, sim. O cancelamento gera uma carta de crédito no valor pago, válida por 1 ano, e a mudança de data não tem taxa, só a diferença de tarifa, se houver. Com menos de 7 dias, a reserva não pode ser cancelada nem alterada. Os pedidos são feitos por e-mail, em gerencia@cassorova.com.br."}},{"@type":"Question","name":"Os bangalôs são para não fumantes?","acceptedAnswer":{"@type":"Answer","text":"Sim, todos são 100% não fumantes. Se houver sinal de fumo no bangalô, é cobrada uma taxa de limpeza de R$ 200 por diária reservada."}},{"@type":"Question","name":"Tem serviço de quarto?","acceptedAnswer":{"@type":"Answer","text":"Sim, das 10h às 22h, com pratos, drinks e petiscos entregues na porta do bangalô."}},{"@type":"Question","name":"Dá para fazer um picnic na varanda do bangalô?","acceptedAnswer":{"@type":"Answer","text":"Sim. O Picnic na Varanda tem cesta com queijos e frios, pães, dois bolos caseiros e uma garrafa de vinho, por R$ 525. Reserve com pelo menos 72 horas de antecedência e faça o check-in antes das 22h para receber a experiência."}},{"@type":"Question","name":"Bangalô é a mesma coisa que chalé?","acceptedAnswer":{"@type":"Answer","text":"São nomes parecidos para uma hospedagem mais reservada. No Cassorova, cada bangalô tem o que se procura num chalé com ofurô em Brotas: varanda privativa com ofurô aquecido, lareira e cama king. E, por ficar num resort, a diária inclui café da manhã colonial, duas cachoeiras e o Resort Spa."}},{"@type":"Question","name":"Onde ficam os bangalôs no Cassorova?","acceptedAnswer":{"@type":"Answer","text":"Na parte da propriedade reservada aos hóspedes, onde também fica o Resort Spa. No mapa ilustrado do Cassorova, a Villa Romance são os bangalôs 01, 02, 21 e 22, e a Villa Aconchego vai do 03 ao 20."}},{"@type":"Question","name":"Como faço para reservar um bangalô?","acceptedAnswer":{"@type":"Answer","text":"Escolha as datas e o número de hóspedes no buscador desta página e clique em Ver Preços e Reservar. O motor de reservas mostra os bangalôs disponíveis com os preços das suas datas, e a reserva é confirmada online, com pagamento em até 10x no cartão. Se preferir, fale com a equipe de reservas pelo WhatsApp."}}]}]}
+</script>
+<script>
+(function () {
+var root = document.getElementById('cbg');
+if (!root) { return; }
+var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
+var push = function (data) { window.dataLayer = window.dataLayer || []; window.dataLayer.push(data); };
+var AMP = String.fromCharCode(38);
+var topo = root.querySelector('.cbg-topo');
+/* O topo ocupa a altura da tela menos o menu do site acima dele */
+var setTop = function () {
+if (!topo) { return; }
+var y = topo.getBoundingClientRect().top + (window.pageYOffset || 0);
+if (y > 280) { y = 0; }
+if (0 > y) { y = 0; }
+root.style.setProperty('--cbg-top', Math.round(y) + 'px');
+};
+setTop();
+window.addEventListener('load', setTop);
+var rt = 0;
+window.addEventListener('resize', function () { window.clearTimeout(rt); rt = window.setTimeout(setTop, 150); });
+/* Buscador: monta o link do motor HBook com as datas e a mensagem do WhatsApp com o bangalô escolhido */
+var MOTOR = 'https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee';
+var FONE = '5514991068097';
+var NOITES_PADRAO = 2;
+var MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+var NOMES = { 'villa-romance': 'Villa Romance', 'villa-aconchego': 'Villa Aconchego', 'villa-aconchego-familia': 'Villa Aconchego Família' };
+var caixa = root.querySelector('.cbg-reserva__caixa');
+var bang = root.querySelector('#cbg-bangalo');
+var ent = root.querySelector('#cbg-entrada');
+var sai = root.querySelector('#cbg-saida');
+var adu = root.querySelector('#cbg-adultos');
+var cri = root.querySelector('#cbg-criancas');
+var linkMotor = root.querySelector('[data-cbg-busca="motor"]');
+var linkWhats = root.querySelector('[data-cbg-busca="whatsapp"]');
+var aviso = root.querySelector('.cbg-reserva__aviso');
+var pad = function (n) { return (n > 9 ? '' : '0') + n; };
+var iso = function (d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); };
+var parse = function (s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2], 12); };
+var somaDias = function (s, n) { var d = parse(s); d.setDate(d.getDate() + n); return iso(d); };
+var extenso = function (s) { var d = parse(s); return d.getDate() + ' de ' + MESES[d.getMonth()] + ' de ' + d.getFullYear(); };
+var temDatas = function () { if (!ent.value) { return false; } return !!sai.value; };
+var noites = function () { if (!temDatas()) { return 0; } return Math.round((parse(sai.value) - parse(ent.value)) / 86400000); };
+var avisoTexto = function (b, a, c) {
+var total = (+a) + (+c);
+if (b === 'villa-romance') { if (total > 2) { return 'A Villa Romance recebe até 2 pessoas. Para 3 ou 4, escolha a Villa Aconchego Família.'; } }
+if (b === 'villa-aconchego') { if (total > 2) { return 'Para 3 ou 4 pessoas, escolha a Villa Aconchego Família, com cama king e duas camas de solteiro.'; } }
+if (total > 4) { return 'Cada bangalô recebe até 4 pessoas. No motor de reservas, escolha a quantidade de bangalôs para o grupo.'; }
+if (c !== '0') { return 'Com crianças, o motor de reservas pede a idade de cada uma antes de mostrar os preços.'; }
+return '';
+};
+var atualizar = function () {
+var hoje = iso(new Date());
+ent.min = hoje;
+if (ent.value) {
+var minSaida = somaDias(ent.value, 1);
+sai.min = minSaida;
+if (!(sai.value >= minSaida)) { sai.value = somaDias(ent.value, NOITES_PADRAO); }
+} else {
+sai.min = somaDias(hoje, 1);
+}
+var b = bang ? bang.value : '';
+var a = adu.value || '2';
+var c = cri.value || '0';
+var txt = avisoTexto(b, a, c);
+if (aviso) { aviso.textContent = txt; aviso.hidden = !txt; }
+var partes = [MOTOR];
+if (temDatas()) { partes.push('checkin=' + ent.value, 'checkout=' + sai.value); }
+partes.push('adults=' + a, 'children=' + c);
+linkMotor.href = partes.join(AMP);
+var msg = 'Olá vim pelo site e quero consultar ' + (NOMES[b] ? 'a ' + NOMES[b] : 'um bangalô') + ' no Cassorova';
+if (temDatas()) { msg += ' com entrada em ' + extenso(ent.value) + ' e saída em ' + extenso(sai.value); }
+msg += ' para ' + a + (a === '1' ? ' adulto' : ' adultos');
+if (c !== '0') { msg += ' e ' + c + (c === '1' ? ' criança' : ' crianças'); }
+linkWhats.href = 'https://wa.me/' + FONE + '?text=' + encodeURIComponent(msg);
+};
+if (ent) {
+if (sai) {
+each([bang, ent, sai, adu, cri], function (el) { if (el) { el.addEventListener('change', atualizar); } });
+atualizar();
+each([linkMotor, linkWhats], function (link) {
+link.addEventListener('click', function () {
+atualizar();
+push({ event: 'cbg_busca_hospedagem', cbg_metodo: link.getAttribute('data-cbg-busca'), cbg_bangalo: bang ? bang.value : '', cbg_entrada: ent.value || '', cbg_saida: sai.value || '', cbg_noites: noites(), cbg_adultos: +(adu.value || 2), cbg_criancas: +(cri.value || 0), link_url: link.href });
+});
+});
+}
+}
+/* Botões dos cartões: já deixam o bangalô escolhido no buscador e destacam a caixa */
+var dt = 0;
+each(root.querySelectorAll('[data-cbg-escolher]'), function (el) {
+el.addEventListener('click', function () {
+var v = el.getAttribute('data-cbg-escolher');
+if (bang) { bang.value = v; }
+if (ent) { atualizar(); }
+if (caixa) {
+caixa.classList.add('is-destaque');
+window.clearTimeout(dt);
+dt = window.setTimeout(function () { caixa.classList.remove('is-destaque'); }, 1800);
+}
+});
+});
+/* Fotos ampliadas: a janela é criada aqui (fora do editor) e abre a galeria do bangalô em tela cheia, com setas, teclado e deslize */
+var novo = function (tag, cls, txt) { var e = document.createElement(tag); if (cls) { e.className = cls; } if (txt) { e.textContent = txt; } return e; };
+var lb = novo('dialog', 'cbg-lb');
+if (typeof lb.showModal === 'function') {
+lb.setAttribute('aria-label', 'Fotos ampliadas do bangalô');
+var lbTopo = novo('div', 'cbg-lb__topo');
+var lbP = novo('p');
+var lbTit = novo('span', 'cbg-lb__titulo');
+var lbCont = novo('span', 'cbg-lb__cont');
+lbP.appendChild(lbTit);
+lbP.appendChild(lbCont);
+var lbFechar = novo('button', 'cbg-lb__fechar', 'Fechar');
+lbFechar.type = 'button';
+lbTopo.appendChild(lbP);
+lbTopo.appendChild(lbFechar);
+var lbFig = novo('figure', 'cbg-lb__fig');
+var lbAnt = novo('button', 'cbg-lb__ant');
+lbAnt.type = 'button';
+lbAnt.setAttribute('aria-label', 'Foto anterior');
+var lbImg = novo('img');
+lbImg.alt = '';
+var lbProx = novo('button', 'cbg-lb__prox');
+lbProx.type = 'button';
+lbProx.setAttribute('aria-label', 'Próxima foto');
+lbFig.appendChild(lbAnt);
+lbFig.appendChild(lbImg);
+lbFig.appendChild(lbProx);
+var lbLeg = novo('p', 'cbg-lb__legenda');
+lbLeg.setAttribute('aria-live', 'polite');
+lb.appendChild(lbTopo);
+lb.appendChild(lbFig);
+lb.appendChild(lbLeg);
+root.appendChild(lb);
+var atual = { itens: [], i: 0, origem: null };
+var mostrar = function (i) {
+var n = atual.itens.length;
+if (!n) { return; }
+atual.i = (i + n) % n;
+var a = atual.itens[atual.i];
+var im = a.querySelector('img');
+var alt = im ? im.getAttribute('alt') : '';
+lbImg.src = a.getAttribute('href');
+lbImg.alt = alt;
+lbLeg.textContent = alt;
+lbCont.textContent = (atual.i + 1) + ' de ' + n;
+var seguinte = new Image();
+seguinte.src = atual.itens[(atual.i + 1) % n].getAttribute('href');
+};
+var abrir = function (g, i, origem) {
+atual.itens = Array.prototype.slice.call(g.querySelectorAll('.cbg-galeria__item'));
+atual.origem = origem;
+lbTit.textContent = g.getAttribute('data-cbg-galeria-nome') || '';
+mostrar(i);
+document.documentElement.classList.add('cbg-travado');
+lb.showModal();
+push({ event: 'cbg_galeria_abrir', cbg_bangalo: g.getAttribute('data-cbg-galeria') || '', cbg_foto: i + 1 });
+};
+each(root.querySelectorAll('.cbg-galeria'), function (g) {
+each(g.querySelectorAll('.cbg-galeria__item'), function (a, i) {
+a.addEventListener('click', function (ev) { ev.preventDefault(); abrir(g, i, a); });
+});
+var todas = g.querySelector('.cbg-galeria__todas');
+if (todas) {
+todas.hidden = false;
+todas.addEventListener('click', function () { abrir(g, 0, todas); });
+}
+});
+lbAnt.addEventListener('click', function () { mostrar(atual.i - 1); });
+lbProx.addEventListener('click', function () { mostrar(atual.i + 1); });
+lbFechar.addEventListener('click', function () { lb.close(); });
+lb.addEventListener('close', function () {
+document.documentElement.classList.remove('cbg-travado');
+if (atual.origem) { atual.origem.focus({ preventScroll: true }); }
+});
+lb.addEventListener('keydown', function (ev) {
+if (ev.key === 'ArrowRight') { mostrar(atual.i + 1); }
+if (ev.key === 'ArrowLeft') { mostrar(atual.i - 1); }
+});
+lb.addEventListener('click', function (ev) { if (ev.target === lb) { lb.close(); } });
+var x0 = null;
+lb.addEventListener('touchstart', function (ev) { x0 = ev.changedTouches[0].clientX; }, { passive: true });
+lb.addEventListener('touchend', function (ev) {
+if (x0 === null) { return; }
+var dx = ev.changedTouches[0].clientX - x0;
+x0 = null;
+if (dx > 50) { mostrar(atual.i - 1); } else if (-50 > dx) { mostrar(atual.i + 1); }
+});
+}
+/* Barra fixa: aparece fora do topo e some no buscador e no fim da página */
+var fixa = root.querySelector('.cbg-fixa');
+var state = { topo: true, reserva: false, fim: false };
+var refresh = function () {
+if (!fixa) { return; }
+var show = !state.topo;
+if (state.reserva) { show = false; }
+if (state.fim) { show = false; }
+fixa.classList.toggle('is-on', show);
+};
+if ('IntersectionObserver' in window) {
+var watch = function (el, key, ratio) {
+if (!el) { return; }
+var io = new IntersectionObserver(function (entries) {
+each(entries, function (en) {
+if (key === 'fim') {
+state.fim = en.isIntersecting || 0 > en.boundingClientRect.top;
+} else {
+state[key] = ratio ? en.intersectionRatio > ratio : en.isIntersecting;
+}
+refresh();
+});
+}, { threshold: ratio ? [0, ratio] : [0] });
+io.observe(el);
+};
+watch(topo, 'topo', 0.3);
+watch(root.querySelector('.cbg-busca'), 'reserva', 0);
+watch(root.querySelector('.cbg-fim'), 'fim', 0);
+}
+/* Pergunta aberta pelo visitante (a primeira já vem aberta e não conta) */
+each(root.querySelectorAll('details.cbg-qa'), function (d) {
+var s = d.querySelector('summary');
+if (!s) { return; }
+s.addEventListener('click', function () {
+if (d.open) { return; }
+var q = d.querySelector('.cbg-qa__q');
+push({ event: 'cbg_faq_abrir', cbg_pergunta: q ? q.textContent.trim() : '' });
+});
+});
+root.addEventListener('click', function (ev) {
+var t = ev.target;
+var el = t.closest ? t.closest('[data-cbg-cta]') : null;
+if (!el) { return; }
+push({ event: 'cbg_cta_click', cbg_cta: el.getAttribute('data-cbg-cta') || '', cbg_bangalo: el.getAttribute('data-cbg-bangalo') || '', cbg_posicao: el.getAttribute('data-cbg-pos') || '', link_url: el.href || '' });
+});
+})();
+</script>

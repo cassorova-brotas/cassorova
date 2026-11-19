@@ -1,0 +1,257 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&amp;family=Trirong:ital,wght@0,300;0,400;1,300;1,400&amp;display=swap">
+<style>
+/* ---------- Ajustes do Divi, aplicados só onde existe #cnv ---------- */
+.et_pb_section:has(#cnv){padding:0!important;margin:0!important;background:transparent!important}
+.et_pb_row:has(#cnv){width:100%!important;max-width:none!important;padding:0!important;margin:0!important}
+.et_pb_column:has(#cnv){width:100%!important;margin:0!important;padding:0!important}
+.et_pb_code:has(#cnv),.et_pb_code_inner:has(#cnv),.et_pb_fullwidth_code:has(#cnv){margin:0!important;padding:0!important;max-width:none!important;width:100%!important}
+/* ---------- Base com os tokens do site ---------- */
+#cnv{--mata:#303323;--musgo:#858666;--musgo-esc:#6b6c50;--musgo-hover:#5c5d44;--cinza:#c5c5b9;--nevoa:#cfd0c3;--linho:#f3f2ee;--pedra:#564944;--oliva:#756a48;--oliva-hover:#635a3c;--cobre-claro:#d4957a;--terracota:#a65635;--terracota-hover:#8f4a2d;--branco:#fff;--gilda:"Gilda Display",Georgia,"Times New Roman",serif;--trirong:"Trirong",Georgia,"Times New Roman",serif;--albert:"Albert Sans",Helvetica,Arial,sans-serif;--marcellus:"Marcellus",Georgia,"Times New Roman",serif;--linha:80%;--max:1200px;--foco:var(--terracota);position:relative;background:var(--branco);color:var(--pedra);font-family:var(--albert);font-size:18px;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+@media (max-width:980px){#cnv{--linha:86%}}
+#cnv *,#cnv *::before,#cnv *::after{box-sizing:border-box}
+#cnv h1,#cnv h2,#cnv h3,#cnv h4,#cnv p,#cnv ul,#cnv ol,#cnv figure,#cnv blockquote{margin:0;padding:0;font-style:normal}
+#cnv ul,#cnv ol{list-style:none}
+#cnv blockquote{border:0;quotes:none}
+#cnv blockquote::before,#cnv blockquote::after{content:none}
+#cnv li{padding:0;margin:0;line-height:inherit}
+#cnv h1,#cnv h2,#cnv h3,#cnv h4{color:var(--mata);font-weight:400;letter-spacing:normal;text-transform:none;text-wrap:balance}
+#cnv p{text-wrap:pretty}
+#cnv a{color:inherit;text-decoration:none}
+#cnv img{display:block;max-width:100%;height:auto;border:0}
+/* O WordPress insere quebras de linha automáticas no Módulo de Código: ficam ocultas */
+#cnv br{display:none}
+#cnv strong,#cnv b{font-weight:700}
+#cnv button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;text-transform:none;letter-spacing:inherit}
+#cnv :focus-visible{outline:2px solid var(--foco);outline-offset:3px}
+#cnv [id]{scroll-margin-top:16px}
+#cnv .cnv-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#cnv .cnv-linha{width:var(--linha);max-width:var(--max);margin-inline:auto}
+#cnv .cnv-sec{padding-block:clamp(64px,7vw,104px)}
+#cnv .cnv-sec--linho{background:var(--linho)}
+#cnv .cnv-sec--nevoa{background:var(--nevoa)}
+#cnv .cnv-sec--mata{background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+/* ---------- Títulos no padrão do site ---------- */
+#cnv .cnv-titulo{font-family:var(--gilda);font-weight:400;font-size:clamp(33px,1.9vw + 22px,50px);line-height:1.05;color:var(--mata)}
+#cnv .cnv-titulo--trirong{font-family:var(--trirong);font-weight:300;font-size:clamp(33px,1.4vw + 24px,45px);line-height:1.05}
+#cnv .cnv-sec--mata .cnv-titulo{color:#fff}
+#cnv .cnv-chamada{margin-top:14px;max-width:62ch;font-family:var(--albert);font-weight:300;font-size:clamp(17px,.4vw + 15px,20px);line-height:1.55;color:var(--pedra)}
+#cnv .cnv-sec--mata .cnv-chamada{color:#fff}
+#cnv .cnv-cabeca{margin-bottom:clamp(36px,4vw,52px)}
+@media (min-width:1024px){#cnv .cnv-cabeca--lado{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:end}#cnv .cnv-cabeca--lado .cnv-chamada{margin-top:0}}
+/* ---------- Botões no padrão do site (Marcellus, quadrados, com seta) ---------- */
+#cnv .cnv-btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;padding:8px 22px 8px 18px;border:0;border-radius:0;font-family:var(--marcellus);font-size:clamp(18px,.4vw + 16px,21px);font-weight:400;line-height:1.3;text-align:left;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+#cnv .cnv-btn::after{content:"";flex:none;width:8px;height:8px;margin-left:2px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
+#cnv .cnv-btn--branco{background:#fff;color:var(--mata)}
+#cnv .cnv-btn--branco:hover{background:var(--linho)}
+#cnv .cnv-btn--terracota{background:var(--terracota);color:#fff}
+#cnv .cnv-btn--terracota:hover{background:var(--terracota-hover)}
+#cnv .cnv-btn--oliva{background:var(--oliva);color:#fff}
+#cnv .cnv-btn--oliva:hover{background:var(--oliva-hover)}
+#cnv .cnv-btn--musgo{background:var(--musgo-esc);color:#fff}
+#cnv .cnv-btn--musgo:hover{background:var(--musgo-hover)}
+#cnv .cnv-btn--contorno{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.75)}
+#cnv .cnv-btn--contorno:hover{background:rgba(255,255,255,.1)}
+#cnv .cnv-btn--texto{min-height:0;padding:8px 0;background:none;color:inherit}
+#cnv .cnv-btn--texto:hover{text-decoration:underline;text-underline-offset:5px}
+/* ---------- Termos e condições ---------- */
+#cnv .cnv-topo{position:relative;isolation:isolate;overflow:hidden;background:var(--mata) url("/images/2025/03/cassorova-folha-bg.png") right 6% center / min(460px,42%) no-repeat;color:#fff;--foco:var(--cobre-claro)}
+#cnv .cnv-topo__in{width:var(--linha);max-width:var(--max);margin-inline:auto;padding:clamp(56px,8vw,112px) 0 clamp(44px,6vw,76px)}
+#cnv .cnv-topo__sobre{display:flex;align-items:center;gap:12px;font-family:var(--trirong);font-size:22px;line-height:1;color:#fff}
+#cnv .cnv-topo__sobre::before{content:"";width:34px;height:1px;background:currentColor}
+#cnv .cnv-topo__t{margin-top:18px;font-family:var(--gilda);font-weight:400;font-size:clamp(40px,3vw + 22px,72px);line-height:1.04;color:#fff}
+#cnv .cnv-topo__x{margin-top:16px;max-width:50ch;font-family:var(--trirong);font-style:italic;font-weight:300;font-size:clamp(18px,.5vw + 16px,23px);line-height:1.5;color:#fff}
+#cnv .cnv-topo__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:26px}
+/* Resumo */
+#cnv .cnv-resumo{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid rgba(48,51,35,.3)}
+#cnv .cnv-resumo__item{padding:24px 24px 8px 0}
+#cnv .cnv-resumo__item+.cnv-resumo__item{padding-left:24px;border-left:1px solid rgba(48,51,35,.2)}
+#cnv .cnv-resumo__n{font-family:var(--trirong);font-style:italic;font-weight:300;font-size:clamp(34px,1.4vw + 26px,48px);line-height:1;color:var(--terracota)}
+#cnv .cnv-resumo__t{margin-top:10px;font-family:var(--marcellus);font-size:20px;line-height:1.2;color:var(--mata)}
+#cnv .cnv-resumo__item p{margin-top:8px;font-size:16px;line-height:1.5}
+/* Documento */
+#cnv .cnv-doc{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:clamp(32px,5vw,80px);align-items:start}
+#cnv .cnv-indice{position:sticky;top:24px;font-family:var(--marcellus);font-size:18px;line-height:1.3}
+#cnv .cnv-indice__t{font-family:var(--trirong);font-style:italic;font-size:24px;line-height:1.1;color:var(--musgo-esc)}
+#cnv .cnv-indice ul{display:grid;gap:2px;margin-top:12px}
+#cnv .cnv-indice a{display:block;padding:7px 0 7px 14px;border-left:2px solid rgba(48,51,35,.18);color:var(--pedra)}
+#cnv .cnv-indice a:hover,#cnv .cnv-indice a.is-on{border-left-color:var(--terracota);color:var(--mata)}
+#cnv .cnv-indice .cnv-sub{margin-top:12px;padding:0 0 4px 14px;font-family:var(--albert);font-size:14px;font-weight:700;color:var(--oliva)}
+#cnv .cnv-bloco+.cnv-bloco{margin-top:clamp(56px,6vw,88px)}
+#cnv .cnv-bloco__t{font-family:var(--gilda);font-size:clamp(32px,1.6vw + 22px,46px);line-height:1.05;color:var(--mata)}
+#cnv .cnv-bloco__sub{margin-top:10px;max-width:60ch;font-family:var(--trirong);font-style:italic;font-size:20px;line-height:1.45;color:var(--oliva)}
+#cnv .cnv-grupo{margin-top:clamp(32px,4vw,48px)}
+#cnv .cnv-grupo__t{padding-bottom:10px;border-bottom:1px solid var(--mata);font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(26px,.8vw + 20px,32px);line-height:1.1;color:var(--musgo-esc)}
+#cnv .cnv-regra{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,8fr);gap:8px 32px;padding:20px 0;border-bottom:1px solid rgba(48,51,35,.18)}
+#cnv .cnv-regra dt{font-family:var(--marcellus);font-size:20px;line-height:1.25;color:var(--mata)}
+#cnv .cnv-regra dd{margin:0;font-size:18px;line-height:1.6;color:var(--pedra)}
+#cnv .cnv-regra dd p+p{margin-top:8px}
+#cnv .cnv-regra dd strong{color:var(--mata)}
+#cnv .cnv-horas{display:grid;gap:6px}
+#cnv .cnv-horas li{display:flex;flex-wrap:wrap;gap:2px 14px}
+#cnv .cnv-horas span:first-child{min-width:12ch;font-weight:700;color:var(--mata)}
+#cnv .cnv-valores{display:grid;gap:0;max-width:420px}
+#cnv .cnv-valores li{display:flex;justify-content:space-between;gap:20px;padding:8px 0;border-bottom:1px dashed rgba(48,51,35,.28)}
+#cnv .cnv-valores b{font-weight:700;color:var(--mata);white-space:nowrap}
+#cnv .cnv-passos{counter-reset:p;display:grid;gap:0;margin-top:6px}
+#cnv .cnv-passos li{counter-increment:p;display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;padding:18px 0;border-bottom:1px solid rgba(48,51,35,.18);font-size:18px;line-height:1.6}
+#cnv .cnv-passos li::before{content:counter(p);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--musgo);font-family:var(--trirong);font-style:italic;font-size:19px;color:var(--mata)}
+#cnv .cnv-passos strong{font-family:var(--marcellus);font-weight:400;font-size:20px;color:var(--mata)}
+#cnv .cnv-intro{margin-top:18px;max-width:68ch;font-size:18px;line-height:1.6}
+#cnv .cnv-aviso{margin-top:22px;padding:16px 20px;border-left:4px solid var(--terracota);background:var(--linho);font-size:18px;line-height:1.5;color:var(--mata)}
+#cnv .cnv-declara{margin-top:22px;padding:20px 24px;background:var(--mata);color:#fff;font-size:17px;line-height:1.6}
+#cnv .cnv-declara strong{font-family:var(--marcellus);font-weight:400;color:var(--cobre-claro)}
+/* Fecho */
+#cnv .cnv-fecho{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,72px);align-items:start}
+#cnv .cnv-fecho__grade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
+#cnv .cnv-dado{padding:18px 0 20px;border-top:1px solid rgba(255,255,255,.25)}
+#cnv .cnv-dado h3{font-family:var(--trirong);font-style:italic;font-size:24px;line-height:1.1;color:var(--cobre-claro)}
+#cnv .cnv-dado p{margin-top:8px;font-size:17px;line-height:1.5;color:#fff}
+#cnv .cnv-dado a{color:#fff;text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+#cnv .cnv-fecho .cnv-btn{margin-top:24px}
+@media (max-width:980px){#cnv .cnv-doc,#cnv .cnv-fecho{grid-template-columns:minmax(0,1fr)}#cnv .cnv-indice{position:static}#cnv .cnv-indice ul{display:flex;flex-wrap:wrap;gap:8px}#cnv .cnv-indice a{padding:8px 14px;border:0;box-shadow:inset 0 0 0 1px rgba(48,51,35,.35)}#cnv .cnv-indice .cnv-sub{display:none}#cnv .cnv-resumo{grid-template-columns:repeat(2,minmax(0,1fr))}#cnv .cnv-resumo__item,#cnv .cnv-resumo__item+.cnv-resumo__item{padding:20px 16px 8px 0;border-left:0}#cnv .cnv-resumo__item:nth-child(even){padding-left:16px;border-left:1px solid rgba(48,51,35,.2)}}
+@media (max-width:640px){#cnv .cnv-topo{background-image:none}#cnv .cnv-regra{grid-template-columns:minmax(0,1fr);gap:6px;padding:18px 0}#cnv .cnv-fecho__grade{grid-template-columns:minmax(0,1fr)}#cnv .cnv-resumo{grid-template-columns:minmax(0,1fr)}#cnv .cnv-resumo__item:nth-child(even),#cnv .cnv-resumo__item+.cnv-resumo__item{padding-left:0;border-left:0;border-top:1px solid rgba(48,51,35,.2)}}
+@media print{#cnv .cnv-topo{background-image:none;background:#fff;color:#000}#cnv .cnv-topo *{color:#000!important}#cnv .cnv-indice,#cnv .cnv-topo__acoes,#cnv .cnv-fecho .cnv-btn{display:none}#cnv .cnv-doc{display:block}#cnv .cnv-sec--mata{background:#fff;color:#000}#cnv .cnv-sec--mata *{color:#000!important}}
+</style>
+<div id="cnv" class="cnv" data-mes="termos">
+<!-- ================= 1. TOPO ================= -->
+<section class="cnv-topo" aria-labelledby="cnv-titulo">
+<div class="cnv-topo__in">
+<p class="cnv-topo__sobre">Antes de reservar</p>
+<h1 id="cnv-titulo" class="cnv-topo__t">Termos e condições</h1>
+<p class="cnv-topo__x">As regras da hospedagem no Resort e do day use de ecoturismo, explicadas por assunto para você consultar com calma.</p>
+<div class="cnv-topo__acoes">
+<a class="cnv-btn cnv-btn--terracota" href="/reservas/" data-cnv-cta="reservar" data-cnv-pos="topo">Reservar Agora</a>
+<button type="button" class="cnv-btn cnv-btn--texto cnv-imprimir" data-cnv-cta="imprimir" data-cnv-pos="topo">Imprimir esta página</button>
+</div>
+</div>
+</section>
+<!-- ================= 2. RESUMO ================= -->
+<section class="cnv-sec cnv-sec--linho" id="cnv-resumo" aria-labelledby="cnv-resumo-t">
+<div class="cnv-linha">
+<div class="cnv-cabeca">
+<h2 id="cnv-resumo-t" class="cnv-titulo">O essencial em 30 segundos</h2>
+<p class="cnv-chamada">Os pontos que mais geram dúvida. O texto completo de cada regra está logo abaixo.</p>
+</div>
+<div class="cnv-resumo">
+<div class="cnv-resumo__item"><p class="cnv-resumo__n">7 dias</p><h3 class="cnv-resumo__t">Cancelar a hospedagem</h3><p>Até 7 dias antes do check-in, você recebe crédito de 100% para usar em até 1 ano.</p></div>
+<div class="cnv-resumo__item"><p class="cnv-resumo__n">4 dias</p><h3 class="cnv-resumo__t">Cancelar o day use</h3><p>Até 4 dias antes da data, você recebe crédito de 100% para usar em até 1 ano.</p></div>
+<div class="cnv-resumo__item"><p class="cnv-resumo__n">E-mail</p><h3 class="cnv-resumo__t">Como pedir</h3><p>Cancelamentos e alterações só valem por e-mail, não por telefone nem WhatsApp.</p></div>
+<div class="cnv-resumo__item"><p class="cnv-resumo__n">16h e 14h</p><h3 class="cnv-resumo__t">Check-in e check-out</h3><p>Entrada a partir das 16h e saída até as 14h.</p></div>
+</div>
+</div>
+</section>
+<!-- ================= 3. DOCUMENTO ================= -->
+<section class="cnv-sec" aria-label="Texto dos termos e condições">
+<div class="cnv-linha cnv-doc">
+<nav class="cnv-indice" aria-label="Nesta página">
+<p class="cnv-indice__t">Nesta página</p>
+<ul>
+<li class="cnv-sub">Resort</li>
+<li><a href="#cnv-estadia" data-cnv-cta="indice-estadia" data-cnv-pos="indice">Estadia</a></li>
+<li><a href="#cnv-refeicoes" data-cnv-cta="indice-refeicoes" data-cnv-pos="indice">Refeições e lazer</a></li>
+<li><a href="#cnv-bangalo" data-cnv-cta="indice-bangalo" data-cnv-pos="indice">No bangalô</a></li>
+<li><a href="#cnv-valores" data-cnv-cta="indice-valores" data-cnv-pos="indice">Valores e danos</a></li>
+<li><a href="#cnv-cancelamento-resort" data-cnv-cta="indice-cancelamento-resort" data-cnv-pos="indice">Cancelamento do Resort</a></li>
+<li class="cnv-sub">Day use</li>
+<li><a href="#cnv-cancelamento-day" data-cnv-cta="indice-cancelamento-day" data-cnv-pos="indice">Cancelamento do day use</a></li>
+<li><a href="#cnv-alimentos" data-cnv-cta="indice-alimentos" data-cnv-pos="indice">Alimentos e bebidas</a></li>
+<li><a href="#cnv-pets" data-cnv-cta="indice-pets" data-cnv-pos="indice">Pets no day use</a></li>
+<li class="cnv-sub">Geral</li>
+<li><a href="#cnv-foro" data-cnv-cta="indice-foro" data-cnv-pos="indice">Código do consumidor e foro</a></li>
+</ul>
+</nav>
+<div>
+<article class="cnv-bloco" id="cnv-resort" aria-labelledby="cnv-resort-t">
+<h2 id="cnv-resort-t" class="cnv-bloco__t">Termos do Resort</h2>
+<p class="cnv-bloco__sub">Hospedagem nos bangalôs.</p>
+<div class="cnv-grupo" id="cnv-estadia"><h3 class="cnv-grupo__t">Estadia</h3><dl><div class="cnv-regra"><dt>Check-in e check-out</dt><dd><p>Check-in a partir das 16h. Check-out até as 14h.</p><p>Consulte preços e disponibilidade para early check-in e late check-out.</p></dd></div><div class="cnv-regra"><dt>Late check-out</dt><dd><p>Para saída até as 22h00, haverá acréscimo de meia diária.</p><p>Para saída após as 22h00, será cobrada a diária completa.</p></dd></div><div class="cnv-regra"><dt>Arrumação do bangalô</dt><dd><p>Solicite na recepção ou no restaurante até as 12h00.</p></dd></div><div class="cnv-regra"><dt>Entrada na propriedade</dt><dd><p>O portão de entrada da propriedade permanece fechado. Quando possível, avise-nos para ficarmos atentos à sua chegada e à sua saída.</p></dd></div></dl></div>
+<div class="cnv-grupo" id="cnv-refeicoes"><h3 class="cnv-grupo__t">Refeições, lazer e atividades</h3><dl><div class="cnv-regra"><dt>Horários das refeições</dt><dd><ul class="cnv-horas"><li><span>Café da manhã</span><span>das 8h00 às 10h00</span></li><li><span>Lanches e porções</span><span>das 10h00 às 22h00, servidos no restaurante ou nos bangalôs</span></li><li><span>Almoço</span><span>das 12h30 às 15h00</span></li><li><span>Jantar</span><span>das 19h30 às 21h30</span></li></ul></dd></div><div class="cnv-regra"><dt>Piscina de borda infinita</dt><dd><p>A piscina de borda infinita fica aberta até as 19h. Lanches, porções e drinks também são servidos até as 19h, para curtir o final de tarde e o pôr do sol.</p></dd></div><div class="cnv-regra"><dt>Resort Spa</dt><dd><p>Área exclusiva para hóspedes do resort, com acesso liberado com o cartão do bangalô.</p><p>Horário: das 11h às 17h.</p></dd></div><div class="cnv-regra"><dt>Trilhas e cachoeiras</dt><dd><p>As trilhas e cachoeiras são de acesso livre para os hóspedes. As atividades de aventura envolvem custos adicionais e, nesse caso, é necessário agendar na recepção.</p></dd></div><div class="cnv-regra"><dt>Toalha de piscina</dt><dd><p>Disponibilizamos 1 toalha de piscina por hóspede por dia.</p></dd></div></dl></div>
+<div class="cnv-grupo" id="cnv-bangalo"><h3 class="cnv-grupo__t">No bangalô</h3><dl><div class="cnv-regra"><dt>Acomodações não fumantes</dt><dd><p>Nossas acomodações são 100% não fumantes. Caso seja identificado cheiro de fumo na acomodação, será cobrada taxa extra de limpeza e desodorização, com multa de <strong>R$ 200,00 por diária reservada</strong>.</p></dd></div><div class="cnv-regra"><dt>Hidromassagem e ofurô</dt><dd><p>Para usar a hidromassagem do ofurô, é necessário encher por completo, até ultrapassar as bocas de hidromassagem. Depois, acione o botão de pulso na lateral. O desligamento é automático após 15 minutos.</p></dd></div><div class="cnv-regra"><dt>Lareira</dt><dd><p>Todo bangalô possui lareira. Para acender, solicite na recepção ou no restaurante e siga as recomendações necessárias.</p><ul class="cnv-valores"><li><span>Primeiro kit de lenha</span><b>R$ 120,00</b></li><li><span>Demais kits, por kit</span><b>R$ 80,00</b></li></ul></dd></div><div class="cnv-regra"><dt>Pets</dt><dd><p>Não aceitamos pets na hospedagem do Resort.</p></dd></div></dl></div>
+<div class="cnv-grupo" id="cnv-valores"><h3 class="cnv-grupo__t">Valores, pagamento e danos</h3><dl><div class="cnv-regra"><dt>Taxa de serviço</dt><dd><p>No check-out será apresentada uma taxa de serviço de 10% sobre a hospedagem e o consumo interno. O pagamento é opcional para o cliente.</p></dd></div><div class="cnv-regra"><dt>Orçamentos</dt><dd><p>O envio de orçamento não significa confirmação de reserva. A reserva passa a ser considerada confirmada somente após o pagamento e o envio do voucher de confirmação.</p></dd></div><div class="cnv-regra"><dt>Pagamentos</dt><dd><p>Aceitamos pagamento em dinheiro e em todos os cartões de crédito. Parcelamos em até 10x, com parcela mínima de R$ 200,00.</p></dd></div><div class="cnv-regra"><dt>Extravio ou danos</dt><dd><p>Qualquer dano patrimonial causado pelo hóspede, assim como o extravio ou dano em itens emprestados ou pertencentes às acomodações, será cobrado na conta com os seguintes valores:</p><ul class="cnv-valores"><li><span>Enxoval: edredons</span><b>R$ 400,00</b></li><li><span>Enxoval: demais peças</span><b>R$ 150,00</b></li><li><span>Toalha de piscina</span><b>R$ 80,00</b></li><li><span>Controle remoto</span><b>R$ 150,00</b></li><li><span>Cartão da porta</span><b>R$ 50,00</b></li></ul><p>Considera-se danificado o enxoval manchado a ponto de não sair com lavagem profissional.</p></dd></div></dl></div>
+<div class="cnv-grupo" id="cnv-cancelamento-resort">
+<h3 class="cnv-grupo__t">Cancelamento, desistência e No Show</h3>
+<p class="cnv-intro">Pedidos de cancelamento ou de alteração de data devem ser feitos por e-mail ao setor de reservas, em <a href="mailto:resort@cassorova.com.br" data-cnv-cta="email-resort" data-cnv-pos="cancelamento"><strong>resort@cassorova.com.br</strong></a>. Não são aceitos pedidos feitos por telefone ou WhatsApp. Valem os prazos abaixo para reservas confirmadas.</p>
+<ol class="cnv-passos"><li><span><strong>Até 7 dias de antecedência</strong> da data do check-in, será emitido um cupom de desconto como crédito de 100% do valor já pago, para ser usado em uma nova reserva no nosso site no prazo de 1 (um) ano.</span></li><li><span><strong>Menos de 7 dias de antecedência</strong> da data do check-in, a reserva não poderá ser cancelada ou alterada, sem possibilidade de restituição ou emissão de crédito do valor pago. Os valores eventualmente parcelados no cartão de crédito serão cobrados em sua totalidade.</span></li><li><span><strong>Não comparecimento.</strong> O não comparecimento na data prevista, sem comunicação prévia por escrito, será considerado No Show (desistência sem cancelamento). A reserva permanece disponível por 24 horas a partir do horário de check-in. Depois desse período, será cancelada, com retenção de 100% do valor pago, e a acomodação poderá ser disponibilizada para outros hóspedes. Não haverá restituição do valor pago.</span></li><li><span><strong>Desistência no check-in e check-out antecipado</strong> não contemplam qualquer tipo de restituição ou reembolso em dinheiro ou carta de crédito.</span></li></ol>
+</div>
+</article>
+<article class="cnv-bloco" id="cnv-ecoturismo" aria-labelledby="cnv-eco-t">
+<h2 id="cnv-eco-t" class="cnv-bloco__t">Termos do day use</h2>
+<p class="cnv-bloco__sub">Ecoturismo, cachoeiras e atividades.</p>
+<div class="cnv-grupo" id="cnv-cancelamento-day">
+<h3 class="cnv-grupo__t">Cancelamento, desistência e No Show</h3>
+<p class="cnv-intro">Pedidos de cancelamento devem ser feitos por e-mail ao setor de reservas, em <a href="mailto:ecoturismo@cassorova.com.br" data-cnv-cta="email-day-use" data-cnv-pos="cancelamento"><strong>ecoturismo@cassorova.com.br</strong></a>. Não são aceitos pedidos de cancelamento ou alteração feitos por telefone ou WhatsApp. Valem os prazos abaixo para reservas confirmadas.</p>
+<ol class="cnv-passos"><li><span><strong>Até 4 dias de antecedência</strong> da data do day use, será emitido um cupom de desconto como crédito de 100% do valor já pago, para ser usado em uma nova reserva no nosso site no prazo de 1 (um) ano.</span></li><li><span><strong>Menos de 4 dias de antecedência</strong> da data do day use, a reserva não poderá ser cancelada ou alterada, sem possibilidade de restituição ou emissão de crédito do valor pago. Os valores eventualmente parcelados no cartão de crédito serão cobrados em sua totalidade.</span></li><li><span><strong>Não comparecimento.</strong> O não comparecimento na data prevista, sem comunicação prévia por e-mail, será considerado No Show (desistência sem cancelamento) e não haverá restituição do valor pago.</span></li></ol>
+</div>
+<div class="cnv-grupo" id="cnv-alimentos">
+<h3 class="cnv-grupo__t">Alimentos e bebidas</h3>
+<p class="cnv-intro">É proibida a entrada nas dependências do Resort com alimentos e bebidas. Temos lanchonetes e restaurantes.</p>
+</div>
+<div class="cnv-grupo" id="cnv-pets">
+<h3 class="cnv-grupo__t">Pets no day use</h3>
+<p class="cnv-intro">Seu pet é muito bem-vindo no Cassorova Ecoturismo, mas temos algumas regras de convívio que devem ser seguidas para que todos se sintam bem e aproveitem ao máximo a experiência.</p>
+<ol class="cnv-passos"><li><span>Todas as raças são bem-vindas, desde que os animais sejam sociáveis, dóceis e capazes de permanecer em contato com todos e em total segurança.</span></li><li><span>Como o espaço é amplo, não é permitido que os animais fiquem sozinhos. Eles devem permanecer o tempo todo com o tutor e ser conduzidos com guia (coleira).</span></li><li><span>Não é permitida a circulação do pet em toda a área da piscina de borda infinita, que também contempla o solarium, a choperia e os vestiários.</span></li><li><span>Temos áreas pet friendly, como as áreas verdes de gramado, os pomares e as trilhas das cachoeiras Cassorova e dos Quatis, onde eles podem inclusive se banhar. Como algumas trilhas são mais longas, e pensando no bem-estar deles, sugerimos levar água para o seu animal.</span></li><li><span>A Praia Resort, com piscina natural de água corrente para banho, caiaque e stand up paddle, é totalmente acessível aos pets, sob monitoramento e segurança do tutor.</span></li><li><span>Os pets podem frequentar a área externa do restaurante, sob monitoramento e segurança do tutor.</span></li><li><span>Seguindo a lei nº 11.531, pets de grande porte e de raças específicas devem usar focinheira e coleira peitoral durante todo o período de permanência no Resort.</span></li><li><span>A alimentação e a limpeza de resíduos durante a permanência do animal são de total responsabilidade do tutor.</span></li><li><span>Eventuais danos físicos, materiais, morais ou estéticos causados pelo animal, ao estabelecimento ou a terceiros, são de total responsabilidade do tutor.</span></li><li><span>Em caso de má conduta do animal ou barulho excessivo, o visitante será convidado a deixar as dependências do Resort, mesmo que a visita não tenha terminado. Neste caso, não haverá devolução de valores pagos.</span></li></ol>
+<p class="cnv-declara"><strong>O tutor declara</strong> que conhece os riscos a que submete o seu animal, por se tratar de zona rural, onde há a presença de animais como cães, cavalos, vacas, pássaros, peixes, cobras, lagartos e animais peçonhentos, e que está ciente dos riscos de afogamento ao levá-lo a lagos, rios, corredeiras e cachoeiras.</p>
+</div>
+</article>
+<article class="cnv-bloco" id="cnv-foro" aria-labelledby="cnv-foro-t">
+<h2 id="cnv-foro-t" class="cnv-bloco__t">Código do consumidor e foro</h2>
+<p class="cnv-intro">Outros assuntos não abrangidos por este instrumento serão regidos pela Lei nº 8.078/1990, o Código de Defesa do Consumidor. As partes elegem o foro de Brotas (SP), com a exclusão de qualquer outro, por mais privilegiado que seja ou venha a ser, para dirimir quaisquer pendências oriundas da interpretação e da execução deste documento.</p>
+</article>
+</div>
+</div>
+</section>
+<!-- ================= 4. FECHO ================= -->
+<section class="cnv-sec cnv-sec--mata" aria-labelledby="cnv-fecho-t">
+<div class="cnv-linha cnv-fecho">
+<div>
+<h2 id="cnv-fecho-t" class="cnv-titulo">Ficou com alguma dúvida?</h2>
+<p class="cnv-chamada">A equipe responde dúvidas pelo WhatsApp. Para cancelar ou alterar uma reserva, use apenas o e-mail indicado em cada seção.</p>
+<a class="cnv-btn cnv-btn--terracota" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pela%20p%C3%A1gina%20de%20termos%20e%20condi%C3%A7%C3%B5es%20e%20quero%20tirar%20uma%20d%C3%BAvida" target="_blank" rel="noopener" data-cnv-cta="whatsapp" data-cnv-pos="fecho">Falar no WhatsApp</a>
+</div>
+<div class="cnv-fecho__grade">
+<div class="cnv-dado"><h3>Reservas do Resort</h3><p><a href="mailto:resort@cassorova.com.br" data-cnv-cta="email-resort" data-cnv-pos="fecho">resort@cassorova.com.br</a></p></div>
+<div class="cnv-dado"><h3>Reservas do day use</h3><p><a href="mailto:ecoturismo@cassorova.com.br" data-cnv-cta="email-day-use" data-cnv-pos="fecho">ecoturismo@cassorova.com.br</a></p></div>
+<div class="cnv-dado"><h3>WhatsApp</h3><p>(14) 99106-8097</p></div>
+<div class="cnv-dado"><h3>Endereço</h3><p>Patrimônio de São Sebastião da Serra, Brotas (SP). CNPJ 02.216.704/0001-21.</p></div>
+</div>
+</div>
+</section>
+</div>
+<script>
+(function () {
+var root = document.getElementById('cnv');
+if (!root) { return; }
+var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
+var push = function (data) { data.cnv_mes = 'termos'; window.dataLayer = window.dataLayer || []; window.dataLayer.push(data); };
+root.addEventListener('click', function (ev) {
+var el = ev.target;
+while (el) {
+if (el === root) { return; }
+if (el.getAttribute) {
+var cta = el.getAttribute('data-cnv-cta');
+if (cta) {
+push({ event: 'cnv_cta', cnv_cta: cta, cnv_posicao: el.getAttribute('data-cnv-pos') || '', link_url: el.getAttribute('href') || '' });
+if (cta === 'imprimir') { window.print(); }
+return;
+}
+}
+el = el.parentNode;
+}
+});
+/* Destaca no índice a seção que está na tela */
+if ('IntersectionObserver' in window) {
+var links = root.querySelectorAll('.cnv-indice a');
+var mapa = {};
+each(links, function (a) { mapa[a.getAttribute('href').slice(1)] = a; });
+var io = new IntersectionObserver(function (entries) {
+each(entries, function (en) {
+if (!en.isIntersecting) { return; }
+each(links, function (a) { a.classList.remove('is-on'); });
+var a = mapa[en.target.id];
+if (a) { a.classList.add('is-on'); }
+});
+}, { rootMargin: '-20% 0px -70% 0px' });
+Object.keys(mapa).forEach(function (id) { var t = document.getElementById(id); if (t) { io.observe(t); } });
+}
+})();
+</script>

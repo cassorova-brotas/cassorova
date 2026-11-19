@@ -1,0 +1,49 @@
+---
+// Rastreamento: Google Tag Manager (centraliza GA4, Google Ads e Meta Pixel) com Consent Mode v2.
+// Tudo nasce NEGADO. O banner (CookieBanner.astro) libera conforme a escolha do visitante.
+// IDs vêm das variáveis PUBLIC_* (veja .env.example). ID vazio ou com XXXX = não carrega.
+const ok = (v?: string) => !!v && !/X{4,}/i.test(v);
+const gtm = import.meta.env.PUBLIC_GTM_ID;
+const ga4 = import.meta.env.PUBLIC_GA4_ID;
+const ads = import.meta.env.PUBLIC_ADS_ID;
+const pixel = import.meta.env.PUBLIC_META_PIXEL_ID;
+const usaGtm = ok(gtm);
+const direto = !usaGtm && (ok(ga4) || ok(ads) || ok(pixel));
+const config = JSON.stringify({ ga4: ok(ga4) ? ga4 : '', ads: ok(ads) ? ads : '', pixel: ok(pixel) ? pixel : '' });
+const gtmCodigo = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtm}');`;
+---
+<script is:inline>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+window.gtag=gtag;
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+gtag('set','url_passthrough',true);
+gtag('set','ads_data_redaction',true);
+try{
+var s=JSON.parse(localStorage.getItem('csr_consent')||'null');
+if(s&&s.v===1&&Date.now()-s.t<31536000000){
+gtag('consent','update',{analytics_storage:s.a?'granted':'denied',ad_storage:s.m?'granted':'denied',ad_user_data:s.m?'granted':'denied',ad_personalization:s.m?'granted':'denied'});
+}
+}catch(e){}
+</script>
+{usaGtm && <script is:inline set:html={gtmCodigo}></script>}
+{direto && <script is:inline define:vars={{ config }}>
+(function(){
+var c=JSON.parse(config);
+var primeiro=c.ga4||c.ads;
+if(primeiro){
+var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id='+primeiro;document.head.appendChild(g);
+gtag('js',new Date());
+if(c.ga4){gtag('config',c.ga4);}
+if(c.ads){gtag('config',c.ads);}
+}
+function carregaPixel(){
+if(!c.pixel||window.fbq){return;}
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init',c.pixel);fbq('track','PageView');
+}
+function confere(d){if(d&&d.m){carregaPixel();}}
+try{var s=JSON.parse(localStorage.getItem('csr_consent')||'null');if(s&&s.v===1){confere(s);}}catch(e){}
+window.addEventListener('csr:consent',function(e){confere(e.detail);});
+})();
+</script>}

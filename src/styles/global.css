@@ -1,0 +1,5 @@
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:#fff;color:#303323}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+main#conteudo{display:block}
+main#conteudo:focus{outline:none}

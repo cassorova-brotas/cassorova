@@ -1,0 +1,347 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&amp;family=Trirong:ital,wght@0,300;0,400;1,300;1,400&amp;display=swap">
+<style>
+/* ---------- Ajustes do Divi, aplicados só onde existe #cnv ---------- */
+.et_pb_section:has(#cnv){padding:0!important;margin:0!important;background:transparent!important}
+.et_pb_row:has(#cnv){width:100%!important;max-width:none!important;padding:0!important;margin:0!important}
+.et_pb_column:has(#cnv){width:100%!important;margin:0!important;padding:0!important}
+.et_pb_code:has(#cnv),.et_pb_code_inner:has(#cnv),.et_pb_fullwidth_code:has(#cnv){margin:0!important;padding:0!important;max-width:none!important;width:100%!important}
+/* ---------- Base com os tokens do site ---------- */
+#cnv{--mata:#303323;--musgo:#858666;--musgo-esc:#6b6c50;--musgo-hover:#5c5d44;--cinza:#c5c5b9;--nevoa:#cfd0c3;--linho:#f3f2ee;--pedra:#564944;--oliva:#756a48;--oliva-hover:#635a3c;--cobre-claro:#d4957a;--terracota:#a65635;--terracota-hover:#8f4a2d;--branco:#fff;--gilda:"Gilda Display",Georgia,"Times New Roman",serif;--trirong:"Trirong",Georgia,"Times New Roman",serif;--albert:"Albert Sans",Helvetica,Arial,sans-serif;--marcellus:"Marcellus",Georgia,"Times New Roman",serif;--linha:80%;--max:1200px;--foco:var(--terracota);position:relative;background:var(--branco);color:var(--pedra);font-family:var(--albert);font-size:18px;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+@media (max-width:980px){#cnv{--linha:86%}}
+#cnv *,#cnv *::before,#cnv *::after{box-sizing:border-box}
+#cnv h1,#cnv h2,#cnv h3,#cnv h4,#cnv p,#cnv ul,#cnv ol,#cnv figure,#cnv blockquote{margin:0;padding:0;font-style:normal}
+#cnv ul,#cnv ol{list-style:none}
+#cnv blockquote{border:0;quotes:none}
+#cnv blockquote::before,#cnv blockquote::after{content:none}
+#cnv li{padding:0;margin:0;line-height:inherit}
+#cnv h1,#cnv h2,#cnv h3,#cnv h4{color:var(--mata);font-weight:400;letter-spacing:normal;text-transform:none;text-wrap:balance}
+#cnv p{text-wrap:pretty}
+#cnv a{color:inherit;text-decoration:none}
+#cnv img{display:block;max-width:100%;height:auto;border:0}
+/* O WordPress insere quebras de linha automáticas no Módulo de Código: ficam ocultas */
+#cnv br{display:none}
+#cnv strong,#cnv b{font-weight:700}
+#cnv button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;text-transform:none;letter-spacing:inherit}
+#cnv :focus-visible{outline:2px solid var(--foco);outline-offset:3px}
+#cnv [id]{scroll-margin-top:16px}
+#cnv .cnv-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#cnv .cnv-linha{width:var(--linha);max-width:var(--max);margin-inline:auto}
+#cnv .cnv-sec{padding-block:clamp(64px,7vw,104px)}
+#cnv .cnv-sec--linho{background:var(--linho)}
+#cnv .cnv-sec--nevoa{background:var(--nevoa)}
+#cnv .cnv-sec--mata{background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+/* ---------- Títulos no padrão do site ---------- */
+#cnv .cnv-titulo{font-family:var(--gilda);font-weight:400;font-size:clamp(33px,1.9vw + 22px,50px);line-height:1.05;color:var(--mata)}
+#cnv .cnv-titulo--trirong{font-family:var(--trirong);font-weight:300;font-size:clamp(33px,1.4vw + 24px,45px);line-height:1.05}
+#cnv .cnv-sec--mata .cnv-titulo{color:#fff}
+#cnv .cnv-chamada{margin-top:14px;max-width:62ch;font-family:var(--albert);font-weight:300;font-size:clamp(17px,.4vw + 15px,20px);line-height:1.55;color:var(--pedra)}
+#cnv .cnv-sec--mata .cnv-chamada{color:#fff}
+#cnv .cnv-cabeca{margin-bottom:clamp(36px,4vw,52px)}
+@media (min-width:1024px){#cnv .cnv-cabeca--lado{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:end}#cnv .cnv-cabeca--lado .cnv-chamada{margin-top:0}}
+/* ---------- Botões no padrão do site (Marcellus, quadrados, com seta) ---------- */
+#cnv .cnv-btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;padding:8px 22px 8px 18px;border:0;border-radius:0;font-family:var(--marcellus);font-size:clamp(18px,.4vw + 16px,21px);font-weight:400;line-height:1.3;text-align:left;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+#cnv .cnv-btn::after{content:"";flex:none;width:8px;height:8px;margin-left:2px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
+#cnv .cnv-btn--branco{background:#fff;color:var(--mata)}
+#cnv .cnv-btn--branco:hover{background:var(--linho)}
+#cnv .cnv-btn--terracota{background:var(--terracota);color:#fff}
+#cnv .cnv-btn--terracota:hover{background:var(--terracota-hover)}
+#cnv .cnv-btn--oliva{background:var(--oliva);color:#fff}
+#cnv .cnv-btn--oliva:hover{background:var(--oliva-hover)}
+#cnv .cnv-btn--musgo{background:var(--musgo-esc);color:#fff}
+#cnv .cnv-btn--musgo:hover{background:var(--musgo-hover)}
+#cnv .cnv-btn--contorno{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.75)}
+#cnv .cnv-btn--contorno:hover{background:rgba(255,255,255,.1)}
+#cnv .cnv-btn--texto{min-height:0;padding:8px 0;background:none;color:inherit}
+#cnv .cnv-btn--texto:hover{text-decoration:underline;text-underline-offset:5px}
+#cnv .cnv-form{margin-top:24px;max-width:520px;padding:18px 18px 16px;background:#fff;color:var(--mata);box-shadow:0 18px 40px -22px rgba(0,0,0,.55);text-shadow:none;--foco:var(--terracota)}
+#cnv .cnv-form__t{font-family:var(--marcellus);font-size:20px;line-height:1.25;color:var(--mata)}
+#cnv .cnv-form__campos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 92px;gap:10px;margin-top:12px}
+#cnv .cnv-campo{display:grid;gap:4px;min-width:0}
+#cnv .cnv-campo label{font-family:var(--albert);font-size:14px;font-weight:700;line-height:1.2;color:var(--pedra)}
+#cnv .cnv-campo input,#cnv .cnv-campo select{width:100%;min-width:0;max-width:100%;-webkit-appearance:none;appearance:none;min-height:50px;margin:0;padding:8px 10px;border:1px solid rgba(48,51,35,.4);border-radius:0;background:#fff;font-family:var(--albert);font-size:17px;font-weight:400;line-height:1.2;color:var(--mata);box-shadow:none}
+#cnv .cnv-form .cnv-btn{width:100%;margin-top:12px;justify-content:space-between}
+#cnv .cnv-form__aviso{margin-top:10px;font-size:14px;line-height:1.45;color:var(--pedra)}
+#cnv .cnv-form__erro{margin-top:8px;font-size:14px;line-height:1.4;font-weight:700;color:var(--terracota)}
+@media (max-width:459px){#cnv .cnv-form__campos{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}#cnv .cnv-campo--ad{grid-column:1 / -1}}
+/* ---------- Reservas, contato e localização ---------- */
+#cnv .cnv-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+#cnv .cnv-hero__foto{position:absolute;inset:0;z-index:-2}
+#cnv .cnv-hero__foto img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:60% 50%}
+#cnv .cnv-hero__sombra{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(48,51,35,.25) 0%,rgba(48,51,35,.45) 50%,rgba(48,51,35,.92) 100%)}
+#cnv .cnv-hero__in{width:var(--linha);max-width:var(--max);margin-inline:auto;padding:clamp(96px,14vw,190px) 0 clamp(36px,5vw,60px)}
+#cnv .cnv-hero__sobre{display:flex;align-items:center;gap:12px;font-family:var(--trirong);font-size:22px;line-height:1;color:#fff}
+#cnv .cnv-hero__sobre::before{content:"";width:34px;height:1px;background:currentColor}
+#cnv .cnv-hero__titulo{margin-top:18px;max-width:18ch;font-family:var(--gilda);font-weight:400;font-size:clamp(38px,2.8vw + 22px,68px);line-height:1.04;color:#fff}
+#cnv .cnv-hero__texto{margin-top:16px;max-width:46ch;font-family:var(--trirong);font-style:italic;font-weight:300;font-size:clamp(18px,.5vw + 16px,23px);line-height:1.5;color:#fff}
+#cnv .cnv-atalhos{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+#cnv .cnv-atalhos a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;background:rgba(255,255,255,.14);box-shadow:inset 0 0 0 1px rgba(255,255,255,.55);font-family:var(--marcellus);font-size:18px;line-height:1.2;color:#fff;transition:background-color .2s ease}
+#cnv .cnv-atalhos a:hover{background:rgba(255,255,255,.28)}
+/* Bifurcação */
+#cnv .cnv-fork{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5vw,72px);align-items:stretch}
+#cnv .cnv-fork::before{content:"";position:absolute;left:50%;top:6%;bottom:6%;border-left:1px dashed rgba(48,51,35,.4)}
+#cnv .cnv-fork__ou{position:absolute;left:50%;top:50%;z-index:2;display:grid;place-items:center;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:var(--linho);box-shadow:inset 0 0 0 1px rgba(48,51,35,.4);font-family:var(--trirong);font-style:italic;font-size:19px;color:var(--mata)}
+#cnv .cnv-via{display:flex;flex-direction:column;background:#fff}
+#cnv .cnv-via__foto{aspect-ratio:16 / 8;overflow:hidden;background:var(--nevoa)}
+#cnv .cnv-via__foto img{width:100%;height:100%;object-fit:cover}
+#cnv .cnv-via__corpo{display:flex;flex:1;flex-direction:column;padding:clamp(22px,2.6vw,34px)}
+#cnv .cnv-via__tag{align-self:flex-start;padding:6px 10px 5px;background:var(--musgo-esc);color:#fff;font-family:var(--marcellus);font-size:14px;line-height:1.1}
+#cnv .cnv-via__t{margin-top:14px;font-family:var(--gilda);font-size:clamp(28px,1vw + 22px,38px);line-height:1.08;color:var(--mata)}
+#cnv .cnv-via__x{margin-top:10px;font-size:18px;line-height:1.5}
+#cnv .cnv-via .cnv-form{margin-top:20px;max-width:none;padding:0;box-shadow:none}
+#cnv .cnv-via__lista{display:grid;gap:0;margin-top:22px;border-top:1px solid rgba(48,51,35,.2)}
+#cnv .cnv-via__lista li{border-bottom:1px solid rgba(48,51,35,.2)}
+#cnv .cnv-via__lista a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;font-family:var(--marcellus);font-size:20px;line-height:1.25;color:var(--mata)}
+#cnv .cnv-via__lista a::after{content:"";flex:none;width:8px;height:8px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
+#cnv .cnv-via__lista a:hover{color:var(--terracota)}
+#cnv .cnv-via__lista small{display:block;font-family:var(--albert);font-size:15px;font-weight:300;color:var(--pedra)}
+#cnv .cnv-via .cnv-btn{margin-top:22px;width:100%;justify-content:space-between}
+#cnv .cnv-ln{display:block}
+/* Guia rápido */
+#cnv .cnv-guia{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:clamp(48px,5vw,72px);border-top:1px solid rgba(48,51,35,.3)}
+#cnv .cnv-guia__item{padding:22px 26px 6px 0}
+#cnv .cnv-guia__item+.cnv-guia__item{padding-left:26px;border-left:1px solid rgba(48,51,35,.2)}
+#cnv .cnv-guia__t{font-family:var(--trirong);font-style:italic;font-size:26px;line-height:1.1;color:var(--musgo-esc)}
+#cnv .cnv-guia__item p{margin-top:8px;font-size:17px;line-height:1.5}
+/* Contato */
+#cnv .cnv-contato{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,5vw,80px);align-items:start}
+#cnv .cnv-contato .cnv-btn{margin-top:26px}
+#cnv .cnv-contato__grade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 36px}
+#cnv .cnv-dado{padding:20px 0 22px;border-top:1px solid rgba(255,255,255,.25)}
+#cnv .cnv-dado__r{font-family:var(--trirong);font-style:italic;font-size:24px;line-height:1.1;color:var(--cobre-claro)}
+#cnv .cnv-dado p{margin-top:8px;font-size:17px;line-height:1.5;color:#fff}
+#cnv .cnv-dado a{color:#fff;text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+/* Localização */
+#cnv .cnv-onde{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,72px);align-items:stretch}
+#cnv .cnv-onde address{font-style:normal;margin-top:20px;font-size:18px;line-height:1.55}
+#cnv .cnv-onde address strong{font-family:var(--marcellus);font-weight:400}
+#cnv .cnv-dist{display:grid;gap:6px;margin-top:16px;font-size:18px}
+#cnv .cnv-onde__nota{margin-top:18px;padding:12px 16px;border-left:4px solid var(--terracota);background:rgba(255,255,255,.55);font-size:17px;line-height:1.45}
+#cnv .cnv-onde__btn{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+#cnv .cnv-mapa{position:relative;display:grid;place-items:center;min-height:420px;background:var(--mata);color:#fff;text-align:center}
+#cnv .cnv-mapa__cta{display:grid;justify-items:center;gap:14px;padding:24px}
+#cnv .cnv-mapa__cta p{max-width:34ch;font-size:17px}
+#cnv .cnv-mapa iframe{position:absolute;inset:0;z-index:2;width:100%;height:100%;border:0}
+/* Perguntas */
+#cnv .cnv-faq{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:start}
+#cnv .cnv-faq__lado .cnv-btn{margin-top:26px}
+#cnv .cnv-qa{border-top:1px solid rgba(48,51,35,.22)}
+#cnv .cnv-qa:last-child{border-bottom:1px solid rgba(48,51,35,.22)}
+#cnv .cnv-qa summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;list-style:none;cursor:pointer}
+#cnv .cnv-qa summary::-webkit-details-marker{display:none}
+#cnv .cnv-qa__q{font-family:var(--trirong);font-weight:400;font-size:clamp(20px,.4vw + 17px,23px);line-height:1.25;color:var(--mata)}
+#cnv .cnv-qa__icon{position:relative;flex:none;width:28px;height:28px;border:1px solid var(--musgo);border-radius:50%}
+#cnv .cnv-qa__icon::before,#cnv .cnv-qa__icon::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--mata);transform:translate(-50%,-50%)}
+#cnv .cnv-qa__icon::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .25s ease}
+#cnv .cnv-qa[open] .cnv-qa__icon::after{transform:translate(-50%,-50%) rotate(0deg)}
+#cnv .cnv-qa__a{max-width:66ch;padding:0 48px 26px 0;font-size:18px;line-height:1.6}
+#cnv .cnv-qa__a a{color:var(--terracota);text-decoration:underline;text-underline-offset:3px}
+@media (max-width:980px){#cnv .cnv-fork,#cnv .cnv-contato,#cnv .cnv-onde,#cnv .cnv-faq{grid-template-columns:minmax(0,1fr)}#cnv .cnv-fork::before{display:none}#cnv .cnv-fork__ou{position:relative;left:auto;top:auto;margin:-20px auto}#cnv .cnv-guia{grid-template-columns:minmax(0,1fr)}#cnv .cnv-guia__item,#cnv .cnv-guia__item+.cnv-guia__item{padding:20px 0 6px;border-left:0}#cnv .cnv-guia__item+.cnv-guia__item{border-top:1px solid rgba(48,51,35,.2)}#cnv .cnv-mapa{min-height:340px}}
+@media (max-width:600px){#cnv .cnv-contato__grade{grid-template-columns:minmax(0,1fr)}#cnv .cnv-onde__btn .cnv-btn{width:100%;justify-content:space-between}}
+@media (prefers-reduced-motion:reduce){#cnv .cnv-qa__icon::after,#cnv .cnv-btn,#cnv .cnv-atalhos a{transition:none}}
+</style>
+<div id="cnv" class="cnv" data-mes="reservas">
+<!-- ================= 1. TOPO ================= -->
+<section class="cnv-hero" aria-labelledby="cnv-titulo">
+<div class="cnv-hero__foto"><img src="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-1.jpg" srcset="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-1.jpg 1280w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-1.jpg 1536w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-1.jpg 2000w" sizes="100vw" width="2000" height="800" alt="Vista da piscina de borda infinita e do vale do Cassorova em Brotas" loading="eager" fetchpriority="high" decoding="async"></div>
+<div class="cnv-hero__sombra" aria-hidden="true"></div>
+<div class="cnv-hero__in">
+<p class="cnv-hero__sobre">Reservas e contato</p>
+<h1 id="cnv-titulo" class="cnv-hero__titulo">Reserve, tire dúvidas e venha para o Cassorova</h1>
+<p class="cnv-hero__texto">Bangalôs, day use e atividades em Brotas: escolha o caminho, reserve online ou fale com a recepção.</p>
+<nav class="cnv-atalhos" aria-label="Nesta página">
+<a href="#cnv-reservar" data-cnv-cta="atalho-reservar" data-cnv-pos="topo">Reservar</a>
+<a href="#cnv-contato" data-cnv-cta="atalho-contato" data-cnv-pos="topo">Contato</a>
+<a href="#cnv-como-chegar" data-cnv-cta="atalho-como-chegar" data-cnv-pos="topo">Como chegar</a>
+<a href="#cnv-faq" data-cnv-cta="atalho-perguntas" data-cnv-pos="topo">Perguntas</a>
+</nav>
+</div>
+</section>
+<!-- ================= 2. ESCOLHA SEU CAMINHO ================= -->
+<section class="cnv-sec cnv-sec--linho" id="cnv-reservar" aria-labelledby="cnv-reservar-t">
+<div class="cnv-linha">
+<div class="cnv-cabeca">
+<h2 id="cnv-reservar-t" class="cnv-titulo">Escolha o seu caminho</h2>
+<p class="cnv-chamada">O Cassorova tem dois sistemas de reserva: um para se hospedar nos bangalôs e outro para o day use e as atividades.</p>
+</div>
+<div class="cnv-fork">
+<span class="cnv-fork__ou" aria-hidden="true">ou</span>
+<article class="cnv-via" aria-labelledby="cnv-via-h">
+<div class="cnv-via__foto"><img src="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-3.jpg" srcset="/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-3.jpg 480w, /images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-3.jpg 768w" sizes="(min-width:981px) 560px, 100vw" width="768" height="512" alt="Varanda de um bangalô Aconchego do Cassorova, cercada de mata" loading="lazy" decoding="async"></div>
+<div class="cnv-via__corpo">
+<span class="cnv-via__tag">Hospedagem</span>
+<h3 id="cnv-via-h" class="cnv-via__t">Durma na serra, nos bangalôs</h3>
+<p class="cnv-via__x">Informe as datas e o motor de reservas abre com a busca pronta, mostrando os bangalôs livres e o valor na hora.</p>
+<form class="cnv-form" data-cnv-pos="form-reservas" action="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" method="get" novalidate><div class="cnv-form__campos"><div class="cnv-campo"><label for="cnv-in">Entrada</label><input type="date" id="cnv-in" data-campo="entrada" required></div><div class="cnv-campo"><label for="cnv-out">Saída</label><input type="date" id="cnv-out" data-campo="saida" required></div><div class="cnv-campo cnv-campo--ad"><label for="cnv-ad">Adultos</label><select id="cnv-ad" data-campo="adultos"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></div></div><p class="cnv-form__erro" role="alert" hidden></p><button type="submit" class="cnv-btn cnv-btn--terracota" data-cnv-cta="buscar-datas" data-cnv-pos="form-reservas">Ver Disponibilidade e Preços</button><p class="cnv-form__aviso">Algumas datas têm estadia mínima: se for o caso, o motor avisa.</p></form>
+<ul class="cnv-via__lista">
+<li><a href="/bangalos/" data-cnv-cta="ver-bangalos" data-cnv-pos="caminhos"><span>Conhecer os bangalôs<small>Romance e Aconchego, com varanda e vista</small></span></a></li>
+<li><a href="/pacotes/" data-cnv-cta="ver-pacotes" data-cnv-pos="caminhos"><span>Pacotes e datas especiais<small>Carnaval, Réveillon, feriados e férias</small></span></a></li>
+</ul>
+</div>
+</article>
+<article class="cnv-via" aria-labelledby="cnv-via-d">
+<div class="cnv-via__foto"><img src="/images/2026/10/cachoeira-cassorova-brotas.webp" srcset="/images/2026/10/cachoeira-cassorova-brotas-640.webp 640w, /images/2026/10/cachoeira-cassorova-brotas.webp 1080w" sizes="(min-width:981px) 560px, 100vw" width="1080" height="675" alt="Cachoeira Cassorova com suas duas quedas e visitantes no poço, em Brotas" loading="lazy" decoding="async"></div>
+<div class="cnv-via__corpo">
+<span class="cnv-via__tag">Day use e atividades</span>
+<h3 id="cnv-via-d" class="cnv-via__t">Passe o dia com cachoeiras e aventura</h3>
+<p class="cnv-via__x">Ingressos e passeios são vendidos no site de reservas do Cassorova, com pagamento por Pix ou cartão.</p>
+<ul class="cnv-via__lista">
+<li><a href="https://reservas.cassorova.com.br/passeio/day-use" data-cnv-cta="reservar-day-use" data-cnv-pos="caminhos"><span>Day use<small>Das 9h às 17h, todos os dias</small></span></a></li>
+<li><a href="https://reservas.cassorova.com.br/passeio/tirolesa" data-cnv-cta="reservar-tirolesa" data-cnv-pos="caminhos"><span>Day use com tirolesa<small>Duas tirolesas sobre o cânion e a cachoeira</small></span></a></li>
+<li><a href="https://reservas.cassorova.com.br/passeio/arvorismo" data-cnv-cta="reservar-arvorismo" data-cnv-pos="caminhos"><span>Day use com arvorismo<small>Circuito entre as árvores a 8 metros de altura</small></span></a></li>
+<li><a href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pela%20p%C3%A1gina%20de%20reservas%20e%20quero%20reservar%20o%20canionismo%20no%20Cassorova" target="_blank" rel="noopener" data-cnv-cta="reservar-canionismo" data-cnv-pos="caminhos"><span>Canionismo<small>Reserva pelo WhatsApp da Território Selvagem</small></span></a></li>
+</ul>
+<a class="cnv-btn cnv-btn--terracota" href="https://reservas.cassorova.com.br/" data-cnv-cta="reservar-todos-passeios" data-cnv-pos="caminhos">Ver Todos os Passeios</a>
+</div>
+</article>
+</div>
+<div class="cnv-guia">
+<div class="cnv-guia__item"><h3 class="cnv-guia__t">Hospedagem</h3><p>Reserva no motor de hospedagem. Cancelando até 7 dias antes do check-in, você recebe crédito de 100%.</p></div>
+<div class="cnv-guia__item"><h3 class="cnv-guia__t">Day use</h3><p>Ingresso comprado online para a data escolhida. Cancelando até 4 dias antes, você recebe crédito de 100%. Veja os <a href="/termos-e-condicoes/" data-cnv-cta="termos" data-cnv-pos="guia">termos e condições</a>.</p></div>
+<div class="cnv-guia__item"><h3 class="cnv-guia__t">Dúvidas</h3><p>Não sabe qual escolher? A recepção ajuda pelo WhatsApp, e a resposta vem de uma pessoa da equipe.</p></div>
+</div>
+</div>
+</section>
+<!-- ================= 3. CONTATO ================= -->
+<section class="cnv-sec cnv-sec--mata" id="cnv-contato" aria-labelledby="cnv-contato-t">
+<div class="cnv-linha cnv-contato">
+<div>
+<h2 id="cnv-contato-t" class="cnv-titulo">Fale com a recepção</h2>
+<p class="cnv-chamada">Datas, bangalôs, atividades, chegada com crianças ou pets: pergunte antes de reservar e viaje tranquilo.</p>
+<a class="cnv-btn cnv-btn--terracota" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pela%20p%C3%A1gina%20de%20reservas%20e%20quero%20falar%20com%20a%20recep%C3%A7%C3%A3o%20do%20Cassorova" target="_blank" rel="noopener" data-cnv-cta="whatsapp" data-cnv-pos="contato">Chamar no WhatsApp</a>
+</div>
+<div class="cnv-contato__grade">
+<div class="cnv-dado"><h3 class="cnv-dado__r">WhatsApp</h3><p><a href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pela%20p%C3%A1gina%20de%20reservas%20e%20quero%20falar%20com%20a%20recep%C3%A7%C3%A3o%20do%20Cassorova" target="_blank" rel="noopener" data-cnv-cta="whatsapp" data-cnv-pos="contato-dado">(14) 99106-8097</a></p></div>
+<div class="cnv-dado"><h3 class="cnv-dado__r">E-mail de reservas</h3><p><a href="mailto:resort@cassorova.com.br" data-cnv-cta="email" data-cnv-pos="contato-dado">resort@cassorova.com.br</a></p></div>
+<div class="cnv-dado"><h3 class="cnv-dado__r">Alterar ou cancelar</h3><p><span class="cnv-ln">Só por e-mail, nunca por WhatsApp ou telefone.</span><span class="cnv-ln">Hospedagem: <a href="mailto:resort@cassorova.com.br" data-cnv-cta="email-cancelamento" data-cnv-pos="contato-dado">resort@cassorova.com.br</a></span><span class="cnv-ln">Day use: <a href="mailto:ecoturismo@cassorova.com.br" data-cnv-cta="email-day-use" data-cnv-pos="contato-dado">ecoturismo@cassorova.com.br</a></span></p></div>
+<div class="cnv-dado"><h3 class="cnv-dado__r">Horários</h3><p><span class="cnv-ln">Check-in a partir das 16h.</span><span class="cnv-ln">Check-out até as 14h.</span><span class="cnv-ln">Day use das 9h às 17h.</span></p></div>
+<div class="cnv-dado"><h3 class="cnv-dado__r">Redes sociais</h3><p><span class="cnv-ln"><a href="https://www.instagram.com/cassorovaresort" target="_blank" rel="noopener" data-cnv-cta="instagram" data-cnv-pos="contato-dado">Instagram</a></span><span class="cnv-ln"><a href="https://www.facebook.com/cassorovaresort/" target="_blank" rel="noopener" data-cnv-cta="facebook" data-cnv-pos="contato-dado">Facebook</a></span></p></div>
+<div class="cnv-dado"><h3 class="cnv-dado__r">Avaliações</h3><p>Nota 4,9 em 275 avaliações no <a href="https://www.tripadvisor.com.br/Hotel_Review-g793338-d21389571-Reviews-Cassorova_Hotel_Boutique-Brotas_State_of_Sao_Paulo.html" target="_blank" rel="noopener" data-cnv-cta="tripadvisor" data-cnv-pos="contato-dado">Tripadvisor</a>, com o selo Travelers Choice 2026.</p></div>
+</div>
+</div>
+</section>
+<!-- ================= 4. LOCALIZAÇÃO ================= -->
+<section class="cnv-sec cnv-sec--nevoa" id="cnv-como-chegar" aria-labelledby="cnv-onde-t">
+<div class="cnv-linha cnv-onde">
+<div>
+<h2 id="cnv-onde-t" class="cnv-titulo">Como chegar ao Cassorova</h2>
+<address><span class="cnv-ln"><strong>Cassorova Resort e Ecoturismo</strong></span><span class="cnv-ln">Patrimônio de São Sebastião da Serra, s/n, Fazenda Cassorova</span><span class="cnv-ln">Brotas (SP), CEP 17380-000</span></address>
+<ul class="cnv-dist">
+<li><strong>217 km</strong> de São Paulo</li>
+<li><strong>173 km</strong> de Ribeirão Preto</li>
+<li><strong>278 km</strong> de São José do Rio Preto</li>
+</ul>
+<p class="cnv-onde__nota">Vai chegar à noite? Avise a recepção pelo WhatsApp antes de subir a serra.</p>
+<div class="cnv-onde__btn">
+<a class="cnv-btn cnv-btn--terracota" href="https://www.google.com/maps/dir/?api=1&amp;destination=-22.414687,-47.992489" target="_blank" rel="noopener" data-cnv-cta="rota-google-maps" data-cnv-pos="como-chegar">Rota no Google Maps</a>
+<a class="cnv-btn cnv-btn--oliva" href="https://waze.com/ul?ll=-22.414687,-47.992489&amp;navigate=yes" target="_blank" rel="noopener" data-cnv-cta="rota-waze" data-cnv-pos="como-chegar">Rota no Waze</a>
+</div>
+</div>
+<div class="cnv-mapa">
+<div class="cnv-mapa__cta"><p>Cassorova Resort e Ecoturismo, no Patrimônio de São Sebastião da Serra, em Brotas (SP).</p><a class="cnv-btn cnv-btn--branco" href="https://maps.app.goo.gl/1JQauZYiT3AKgjbS9" target="_blank" rel="noopener" tabindex="-1" data-cnv-cta="mapa-google" data-cnv-pos="como-chegar">Abrir no Google Maps</a></div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60000!2d-47.992489!3d-22.414687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c798a56cd6537d%3A0x8ab7fc0c9f7dfc16!2sCassorova%20Ecoturismo!5e0!3m2!1spt-BR!2sbr!4v1793180000000!5m2!1spt-BR!2sbr" title="Mapa do Google com a localização do Cassorova, em Brotas (SP)" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen credentialless></iframe>
+<script>
+(function () {
+var f = document.querySelector('#cnv .cnv-mapa iframe');
+if (!f) { return; }
+if (!window.crossOriginIsolated) { return; }
+if ('credentialless' in f) { return; }
+var a = f.parentNode.querySelector('a');
+if (a) { a.removeAttribute('tabindex'); }
+f.parentNode.removeChild(f);
+})();
+</script>
+</div>
+</div>
+</section>
+<!-- ================= 5. PERGUNTAS ================= -->
+<section class="cnv-sec" id="cnv-faq" aria-labelledby="cnv-faq-t">
+<div class="cnv-linha cnv-faq">
+<div class="cnv-faq__lado">
+<h2 id="cnv-faq-t" class="cnv-titulo">Perguntas sobre reservas e chegada</h2>
+<p class="cnv-chamada">Não encontrou sua dúvida? A equipe responde pelo WhatsApp.</p>
+<a class="cnv-btn cnv-btn--musgo" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pela%20p%C3%A1gina%20de%20reservas%20e%20quero%20tirar%20uma%20d%C3%BAvida" target="_blank" rel="noopener" data-cnv-cta="whatsapp" data-cnv-pos="faq">Falar no WhatsApp</a>
+</div>
+<div class="cnv-faq__lista">
+<details class="cnv-qa" name="cnv-faq" open><summary><h3 class="cnv-qa__q">Como reservo a hospedagem no Cassorova?</h3><span class="cnv-qa__icon" aria-hidden="true"></span></summary><div class="cnv-qa__a"><p>Escolha entrada, saída e número de adultos no formulário desta página. O motor de reservas abre com a busca pronta e mostra os bangalôs livres e o valor para as suas datas. Se preferir, a recepção atende pelo WhatsApp (14) 99106-8097.</p></div></details>
+<details class="cnv-qa" name="cnv-faq"><summary><h3 class="cnv-qa__q">Como compro o ingresso do day use?</h3><span class="cnv-qa__icon" aria-hidden="true"></span></summary><div class="cnv-qa__a"><p>O day use é vendido no site de reservas do Cassorova, em reservas.cassorova.com.br, com pagamento por Pix ou cartão de crédito. Basta escolher a data e o pacote, com ou sem tirolesa e arvorismo.</p></div></details>
+<details class="cnv-qa" name="cnv-faq"><summary><h3 class="cnv-qa__q">Como reservo tirolesa, arvorismo e canionismo?</h3><span class="cnv-qa__icon" aria-hidden="true"></span></summary><div class="cnv-qa__a"><p>Tirolesa e arvorismo estão nos pacotes de day use do site de reservas. O canionismo é reservado pelo WhatsApp (14) 99106-8097, com a equipe da Território Selvagem.</p></div></details>
+<details class="cnv-qa" name="cnv-faq"><summary><h3 class="cnv-qa__q">Qual é o horário de check-in e check-out?</h3><span class="cnv-qa__icon" aria-hidden="true"></span></summary><div class="cnv-qa__a"><p>O check-in começa às 16h e o check-out vai até as 14h. O day use funciona todos os dias, das 9h às 17h.</p></div></details>
+<details class="cnv-qa" name="cnv-faq"><summary><h3 class="cnv-qa__q">Como altero ou cancelo uma reserva?</h3><span class="cnv-qa__icon" aria-hidden="true"></span></summary><div class="cnv-qa__a"><p>Pedidos de cancelamento ou alteração só valem por e-mail, nunca por telefone ou WhatsApp. Para hospedagem, escreva para resort@cassorova.com.br: até 7 dias antes do check-in, você recebe crédito de 100% para usar em até 1 ano. Para day use, escreva para ecoturismo@cassorova.com.br: até 4 dias antes da data, o crédito também é de 100% por até 1 ano. Fora desses prazos, a reserva não pode ser cancelada nem alterada. Os detalhes estão nos termos e condições do site.</p></div></details>
+<details class="cnv-qa" name="cnv-faq"><summary><h3 class="cnv-qa__q">Onde fica o Cassorova e como chegar?</h3><span class="cnv-qa__icon" aria-hidden="true"></span></summary><div class="cnv-qa__a"><p>O Cassorova fica no Patrimônio de São Sebastião da Serra, em Brotas (SP), a 217 km de São Paulo, 173 km de Ribeirão Preto e 278 km de São José do Rio Preto. Use os botões de rota do Google Maps ou do Waze nesta página.</p></div></details>
+<details class="cnv-qa" name="cnv-faq"><summary><h3 class="cnv-qa__q">Posso chegar à noite?</h3><span class="cnv-qa__icon" aria-hidden="true"></span></summary><div class="cnv-qa__a"><p>Pode. Avise a recepção pelo WhatsApp antes de subir a serra, para que a equipe esteja pronta para receber você.</p></div></details>
+<details class="cnv-qa" name="cnv-faq"><summary><h3 class="cnv-qa__q">Qual é o e-mail e o telefone do Cassorova?</h3><span class="cnv-qa__icon" aria-hidden="true"></span></summary><div class="cnv-qa__a"><p>O WhatsApp da recepção é (14) 99106-8097 e o e-mail de reservas é resort@cassorova.com.br. Estamos também no Instagram e no Facebook como cassorovaresort.</p></div></details>
+</div>
+</div>
+</section>
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Resort","@id":"https://cassorova.com.br/#resort","name":"Cassorova Resort e Ecoturismo","url":"https://cassorova.com.br/reservas/","image":"https://cassorova.com.br/images/2025/07/bangalo-aconchego-cassorova-resort-ecoturismo-3.jpg","telephone":"+55 14 99106-8097","email":"resort@cassorova.com.br","checkinTime":"16:00","checkoutTime":"14:00","hasMap":"https://maps.app.goo.gl/1JQauZYiT3AKgjbS9","address":{"@type":"PostalAddress","streetAddress":"Patrimônio de São Sebastião da Serra, s/n, Fazenda Cassorova","addressLocality":"Brotas","addressRegion":"SP","postalCode":"17380-000","addressCountry":"BR"},"geo":{"@type":"GeoCoordinates","latitude":-22.414687,"longitude":-47.992489},"sameAs":["https://www.instagram.com/cassorovaresort","https://www.facebook.com/cassorovaresort/","https://www.tripadvisor.com.br/Hotel_Review-g793338-d21389571-Reviews-Cassorova_Hotel_Boutique-Brotas_State_of_Sao_Paulo.html"]},{"@type":"FAQPage","@id":"https://cassorova.com.br/reservas/#faq","mainEntity":[{"@type":"Question","name":"Como reservo a hospedagem no Cassorova?","acceptedAnswer":{"@type":"Answer","text":"Escolha entrada, saída e número de adultos no formulário desta página. O motor de reservas abre com a busca pronta e mostra os bangalôs livres e o valor para as suas datas. Se preferir, a recepção atende pelo WhatsApp (14) 99106-8097."}},{"@type":"Question","name":"Como compro o ingresso do day use?","acceptedAnswer":{"@type":"Answer","text":"O day use é vendido no site de reservas do Cassorova, em reservas.cassorova.com.br, com pagamento por Pix ou cartão de crédito. Basta escolher a data e o pacote, com ou sem tirolesa e arvorismo."}},{"@type":"Question","name":"Como reservo tirolesa, arvorismo e canionismo?","acceptedAnswer":{"@type":"Answer","text":"Tirolesa e arvorismo estão nos pacotes de day use do site de reservas. O canionismo é reservado pelo WhatsApp (14) 99106-8097, com a equipe da Território Selvagem."}},{"@type":"Question","name":"Qual é o horário de check-in e check-out?","acceptedAnswer":{"@type":"Answer","text":"O check-in começa às 16h e o check-out vai até as 14h. O day use funciona todos os dias, das 9h às 17h."}},{"@type":"Question","name":"Como altero ou cancelo uma reserva?","acceptedAnswer":{"@type":"Answer","text":"Pedidos de cancelamento ou alteração só valem por e-mail, nunca por telefone ou WhatsApp. Para hospedagem, escreva para resort@cassorova.com.br: até 7 dias antes do check-in, você recebe crédito de 100% para usar em até 1 ano. Para day use, escreva para ecoturismo@cassorova.com.br: até 4 dias antes da data, o crédito também é de 100% por até 1 ano. Fora desses prazos, a reserva não pode ser cancelada nem alterada. Os detalhes estão nos termos e condições do site."}},{"@type":"Question","name":"Onde fica o Cassorova e como chegar?","acceptedAnswer":{"@type":"Answer","text":"O Cassorova fica no Patrimônio de São Sebastião da Serra, em Brotas (SP), a 217 km de São Paulo, 173 km de Ribeirão Preto e 278 km de São José do Rio Preto. Use os botões de rota do Google Maps ou do Waze nesta página."}},{"@type":"Question","name":"Posso chegar à noite?","acceptedAnswer":{"@type":"Answer","text":"Pode. Avise a recepção pelo WhatsApp antes de subir a serra, para que a equipe esteja pronta para receber você."}},{"@type":"Question","name":"Qual é o e-mail e o telefone do Cassorova?","acceptedAnswer":{"@type":"Answer","text":"O WhatsApp da recepção é (14) 99106-8097 e o e-mail de reservas é resort@cassorova.com.br. Estamos também no Instagram e no Facebook como cassorovaresort."}}]}]}
+</script>
+<script>
+(function () {
+var root = document.getElementById('cnv');
+if (!root) { return; }
+var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
+var push = function (data) { data.cnv_mes = 'reservas'; window.dataLayer = window.dataLayer || []; window.dataLayer.push(data); };
+var pad = function (n) { return (n > 9 ? '' : '0') + n; };
+var iso = function (d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); };
+var br = function (s) { var p = s.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; };
+var daqui = function (s, n) { var p = s.split('-'); var d = new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]) + n); return iso(d); };
+var hoje = iso(new Date());
+var motor = 'https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee';
+root.addEventListener('click', function (ev) {
+var el = ev.target;
+while (el) {
+if (el === root) { return; }
+if (el.getAttribute) {
+var cta = el.getAttribute('data-cnv-cta');
+if (cta) {
+push({ event: 'cnv_cta', cnv_cta: cta, cnv_posicao: el.getAttribute('data-cnv-pos') || '', link_url: el.getAttribute('href') || '' });
+return;
+}
+}
+el = el.parentNode;
+}
+});
+each(root.querySelectorAll('details.cnv-qa'), function (d) {
+d.addEventListener('toggle', function () {
+if (!d.open) { return; }
+var q = d.querySelector('.cnv-qa__q');
+push({ event: 'cnv_faq_abrir', cnv_pergunta: q ? q.textContent.trim() : '' });
+});
+});
+each(root.querySelectorAll('.cnv-form'), function (f) {
+var a = f.querySelector('[data-campo="entrada"]');
+var b = f.querySelector('[data-campo="saida"]');
+var ad = f.querySelector('[data-campo="adultos"]');
+var erro = f.querySelector('.cnv-form__erro');
+if (a) { a.min = hoje; }
+if (b) { b.min = daqui(hoje, 1); }
+if (a) {
+a.addEventListener('change', function () {
+if (a.value) {
+if (b) {
+b.min = daqui(a.value, 1);
+if (b.value === '') { b.value = daqui(a.value, 2); }
+if (a.value >= b.value) { b.value = daqui(a.value, 2); }
+}
+}
+});
+}
+f.addEventListener('submit', function (ev) {
+ev.preventDefault();
+var ent = a ? a.value : '';
+var sai = b ? b.value : '';
+if (erro) { erro.hidden = true; }
+if (ent === '' || sai === '' || ent >= sai || hoje > ent) {
+if (erro) { erro.textContent = 'Escolha a data de entrada e a de saída, com saída depois da entrada.'; erro.hidden = false; }
+return;
+}
+var adultos = ad ? ad.value : '2';
+var url = motor + String.fromCharCode(38) + 'checkin=' + br(ent) + String.fromCharCode(38) + 'checkout=' + br(sai) + String.fromCharCode(38) + 'adults=' + adultos;
+push({ event: 'cnv_busca', cnv_posicao: f.getAttribute('data-cnv-pos') || '', cnv_entrada: ent, cnv_saida: sai, cnv_adultos: adultos, link_url: url });
+window.location.href = url;
+});
+});
+})();
+</script>

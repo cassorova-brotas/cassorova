@@ -1,0 +1,679 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&amp;family=Trirong:ital,wght@0,300;0,400;1,400;1,700&amp;display=swap">
+<style>
+/* ---------- Ajustes do Divi, aplicados só onde existe #cgs ---------- */
+.et_pb_section:has(#cgs){padding:0!important;margin:0!important;background:transparent!important;height:auto!important;min-height:0!important;max-height:none!important}
+.et_pb_row:has(#cgs){width:100%!important;max-width:none!important;padding:0!important;margin:0!important;height:auto!important;max-height:none!important}
+.et_pb_column:has(#cgs){width:100%!important;margin:0!important;padding:0!important;height:auto!important;max-height:none!important}
+.et_pb_code:has(#cgs),.et_pb_code_inner:has(#cgs),.et_pb_fullwidth_code:has(#cgs){margin:0!important;padding:0!important;max-width:none!important;width:100%!important;height:auto!important;max-height:none!important}
+html.cgs-travado{overflow:hidden}
+/* ---------- Base com os tokens do site ---------- */
+#cgs{--mata:#303323;--musgo:#858666;--musgo-esc:#6b6c50;--musgo-hover:#5c5d44;--cinza:#c5c5b9;--nevoa:#cfd0c3;--linho:#f3f2ee;--pedra:#564944;--oliva:#756a48;--oliva-hover:#635a3c;--cobre-claro:#d4957a;--terracota:#a65635;--terracota-hover:#8f4a2d;--branco:#fff;--gilda:"Gilda Display",Georgia,"Times New Roman",serif;--trirong:"Trirong",Georgia,"Times New Roman",serif;--albert:"Albert Sans",Helvetica,Arial,sans-serif;--marcellus:"Marcellus",Georgia,"Times New Roman",serif;--linha:80%;--max:1200px;--foco:var(--terracota);position:relative;background:var(--branco);color:var(--pedra);font-family:var(--albert);font-size:18px;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+@media (max-width:980px){#cgs{--linha:86%}}
+#cgs *,#cgs *::before,#cgs *::after{box-sizing:border-box}
+#cgs h1,#cgs h2,#cgs h3,#cgs h4,#cgs p,#cgs ul,#cgs ol,#cgs figure,#cgs blockquote{margin:0;padding:0;font-style:normal}
+#cgs ul,#cgs ol{list-style:none}
+#cgs blockquote{border:0;quotes:none}
+#cgs blockquote::before,#cgs blockquote::after{content:none}
+#cgs li{padding:0;margin:0;line-height:inherit}
+#cgs h1,#cgs h2,#cgs h3,#cgs h4{color:var(--mata);font-weight:400;letter-spacing:normal;text-transform:none;text-wrap:balance}
+#cgs p{text-wrap:pretty}
+#cgs a{color:inherit;text-decoration:none}
+#cgs img{display:block;max-width:100%;height:auto;border:0}
+/* O WordPress insere quebras de linha automáticas no Módulo de Código: ficam ocultas */
+#cgs br{display:none}
+#cgs strong,#cgs b{font-weight:700}
+#cgs button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;text-transform:none;letter-spacing:inherit}
+#cgs :focus-visible{outline:2px solid var(--foco);outline-offset:3px}
+#cgs [id]{scroll-margin-top:16px}
+#cgs .cgs-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#cgs .cgs-linha{width:var(--linha);max-width:var(--max);margin-inline:auto}
+#cgs .cgs-sec{padding-block:clamp(64px,7vw,104px)}
+#cgs .cgs-sec--linho{background:var(--linho)}
+#cgs .cgs-sec--nevoa{background:var(--nevoa)}
+#cgs .cgs-sec--mata{background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+/* ---------- Títulos no padrão do site ---------- */
+#cgs .cgs-titulo{font-family:var(--gilda);font-weight:400;font-size:clamp(33px,1.9vw + 22px,50px);line-height:1.05;color:var(--mata)}
+#cgs .cgs-titulo--trirong{font-family:var(--trirong);font-weight:300;font-size:clamp(33px,1.4vw + 24px,45px);line-height:1.05}
+#cgs .cgs-sec--mata .cgs-titulo{color:#fff}
+#cgs .cgs-chamada{margin-top:14px;max-width:62ch;font-family:var(--albert);font-weight:300;font-size:clamp(17px,.4vw + 15px,20px);line-height:1.55;color:var(--pedra)}
+#cgs .cgs-sec--mata .cgs-chamada{color:#fff}
+#cgs .cgs-cabeca{margin-bottom:clamp(36px,4vw,52px)}
+@media (min-width:1024px){#cgs .cgs-cabeca--lado{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:end}#cgs .cgs-cabeca--lado .cgs-chamada{margin-top:0}}
+/* ---------- Botões no padrão do site (Marcellus, quadrados, com seta) ---------- */
+#cgs .cgs-btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;padding:8px 22px 8px 18px;border:0;border-radius:0;font-family:var(--marcellus);font-size:clamp(18px,.4vw + 16px,21px);font-weight:400;line-height:1.3;text-align:left;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+#cgs .cgs-btn::after{content:"";flex:none;width:8px;height:8px;margin-left:2px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
+#cgs .cgs-btn--branco{background:#fff;color:var(--mata)}
+#cgs .cgs-btn--branco:hover{background:var(--linho)}
+#cgs .cgs-btn--terracota{background:var(--terracota);color:#fff}
+#cgs .cgs-btn--terracota:hover{background:var(--terracota-hover)}
+#cgs .cgs-btn--oliva{background:var(--oliva);color:#fff}
+#cgs .cgs-btn--oliva:hover{background:var(--oliva-hover)}
+#cgs .cgs-btn--musgo{background:var(--musgo-esc);color:#fff}
+#cgs .cgs-btn--musgo:hover{background:var(--musgo-hover)}
+#cgs .cgs-btn--contorno{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.75)}
+#cgs .cgs-btn--contorno:hover{background:rgba(255,255,255,.1)}
+#cgs .cgs-btn--texto{min-height:0;padding:8px 0;background:none;color:inherit}
+#cgs .cgs-btn--texto:hover{text-decoration:underline;text-underline-offset:5px}
+/* ---------- Topo: foto e texto empilhados no celular, no tablet em pé e em telas estreitas; nas telas largas e deitadas, foto de fundo com o texto à esquerda e o casal inteiro à direita ---------- */
+#cgs .cgs-topo{position:relative;isolation:isolate;background:var(--mata);color:#fff}
+#cgs .cgs-topo__midia{position:relative;aspect-ratio:16 / 10;overflow:hidden;background:var(--musgo-esc)}
+#cgs .cgs-topo__midia picture,#cgs .cgs-topo__foto{display:block;width:100%;height:100%}
+#cgs .cgs-topo__foto{object-fit:cover;object-position:70% 55%;max-width:none}
+#cgs .cgs-topo__sombra{display:none}
+#cgs .cgs-topo__conteudo{position:relative;z-index:2;width:var(--linha);max-width:var(--max);margin-inline:auto;padding:28px 0 40px}
+#cgs .cgs-topo__sobre{display:flex;align-items:center;gap:12px;font-family:var(--trirong);font-size:clamp(18px,.3vw + 16px,22px);line-height:1.1;color:#fff}
+#cgs .cgs-topo__sobre::before{content:"";flex:none;width:34px;height:1px;background:currentColor}
+#cgs .cgs-topo__titulo{margin-top:14px;max-width:14ch;font-family:var(--gilda);font-weight:400;font-size:clamp(40px,3.4vw + 20px,74px);line-height:1.02;color:#fff}
+#cgs .cgs-topo__frase{margin-top:16px;max-width:46ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(19px,.5vw + 16px,25px);line-height:1.25;color:#fff}
+#cgs .cgs-topo__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:26px}
+#cgs .cgs-topo__prova{display:inline-flex;align-items:center;gap:14px;margin-top:26px;padding:12px 18px 12px 12px;background:#fff;color:var(--mata);box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
+#cgs .cgs-topo__prova img{width:60px;height:auto;flex:none}
+#cgs .cgs-topo__prova-txt{display:grid;gap:3px;line-height:1.25}
+#cgs .cgs-topo__prova-premio{font-family:var(--marcellus);font-size:17px;color:var(--mata)}
+#cgs .cgs-topo__prova-nota{font-size:15px;color:var(--pedra)}
+#cgs .cgs-topo__prova-nota strong{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:27px;line-height:1;color:var(--mata)}
+#cgs .cgs-topo__prova-qtd{font-size:14px;color:var(--pedra)}
+#cgs .cgs-topo__prova:hover .cgs-topo__prova-premio{text-decoration:underline;text-underline-offset:4px}
+@media (max-width:600px){#cgs .cgs-topo__acoes .cgs-btn--branco{flex:1 1 100%}}
+@media (min-width:981px){#cgs .cgs-topo{display:flex;align-items:flex-end;min-height:clamp(560px,calc(100vh - var(--cgs-top,0px)),900px);min-height:clamp(560px,calc(100svh - var(--cgs-top,0px)),900px);overflow:hidden}#cgs .cgs-topo__midia{position:absolute;inset:0;aspect-ratio:auto}#cgs .cgs-topo__foto{object-position:58% 75%}#cgs .cgs-topo__sombra{display:block;position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(48,51,35,.82) 0%,rgba(48,51,35,.6) 30%,rgba(48,51,35,.22) 44%,rgba(48,51,35,0) 52%),linear-gradient(180deg,rgba(48,51,35,.3) 0%,rgba(48,51,35,0) 24%,rgba(48,51,35,0) 70%,rgba(48,51,35,.62) 100%)}#cgs .cgs-topo__conteudo{padding:48px 0 clamp(40px,6vh,64px)}#cgs .cgs-topo__titulo{max-width:min(14ch,calc(50% - 4vw))}#cgs .cgs-topo__frase,#cgs .cgs-topo__acoes{max-width:min(46ch,calc(50% - 4vw))}#cgs .cgs-topo__sobre,#cgs .cgs-topo__titulo,#cgs .cgs-topo__frase{text-shadow:0 1px 14px rgba(0,0,0,.3)}}
+@media (min-width:981px){#cgs .cgs-topo__conteudo{padding:48px 0 calc(clamp(40px,6vh,72px) + 64px)}#cgs .cgs-topo__prova{position:absolute;right:0;bottom:calc(clamp(40px,6vh,72px) + 64px);margin:0;gap:18px;padding:14px 24px 14px 14px}#cgs .cgs-topo__prova img{width:80px}#cgs .cgs-topo__prova-premio{font-size:19px}#cgs .cgs-topo__prova-nota strong{font-size:32px}}
+/* ---------- Picnics: galeria com foto grande e duas miniaturas, todas na proporção original da foto (5 x 2), sem cortar o casal ---------- */
+#cgs .cgs-picnics{display:grid;grid-template-columns:minmax(0,1fr);gap:64px}
+@media (min-width:900px){#cgs .cgs-picnics{grid-template-columns:repeat(2,minmax(0,1fr));gap:44px;align-items:start}}
+#cgs .cgs-lista{display:grid;gap:8px;margin-top:16px;font-family:var(--marcellus);font-size:16px;line-height:1.5;color:var(--oliva)}
+#cgs .cgs-lista li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px}
+#cgs .cgs-lista li::before{content:"";width:18px;height:18px;margin-top:3px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23756a48' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l4.5 4.5L19.5 7'/%3E%3C/svg%3E") center / 18px 18px no-repeat}
+/* ---------- Momentos inclusos na diária ---------- */
+#cgs .cgs-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+#cgs .cgs-card{display:flex;flex-direction:column;background:#fff}
+#cgs .cgs-card__foto{aspect-ratio:16 / 10;overflow:hidden;background:var(--cinza)}
+#cgs .cgs-card__foto img{width:100%;height:100%;object-fit:cover}
+#cgs .cgs-card__corpo{padding:18px 18px 22px}
+#cgs .cgs-card__titulo{font-family:var(--gilda);font-size:24px;line-height:1.1;color:var(--mata)}
+#cgs .cgs-card__texto{margin-top:8px;font-family:var(--marcellus);font-size:16px;line-height:1.55;color:var(--oliva)}
+@media (max-width:1023px){#cgs .cgs-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:699px){#cgs .cgs-cards{display:flex;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin-inline:-7vw;padding-inline:7vw;scroll-padding-inline:7vw;scrollbar-width:none}#cgs .cgs-cards::-webkit-scrollbar{display:none}#cgs .cgs-card{flex:none;width:78vw;scroll-snap-align:start}}
+#cgs .cgs-inclusos__link{margin-top:24px}
+#cgs .cgs-inclusos__link .cgs-btn--texto{color:var(--mata)}
+/* ---------- Avaliações ---------- */
+#cgs .cgs-aval{display:grid;gap:36px}
+@media (min-width:1024px){#cgs .cgs-aval{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:72px;align-items:center}}
+#cgs .cgs-aval__citacao blockquote{margin-top:28px}
+#cgs .cgs-aval__citacao blockquote p{max-width:30ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(26px,1.3vw + 20px,40px);line-height:1.28;color:var(--pedra)}
+#cgs .cgs-aval__quem{margin-top:18px;font-family:var(--marcellus);font-size:16px;color:var(--oliva)}
+#cgs .cgs-aval__trip{display:grid;justify-items:start;gap:12px;padding:30px 30px 28px;background:var(--linho)}
+#cgs .cgs-aval__trip img{width:64px;height:auto}
+#cgs .cgs-aval__nota{font-family:var(--trirong);font-style:italic;font-weight:300;font-size:22px;line-height:1.1;color:var(--mata)}
+#cgs .cgs-aval__nota strong{font-weight:300;font-size:clamp(50px,2vw + 36px,64px);line-height:.9}
+#cgs .cgs-aval__fonte{font-size:15px;line-height:1.5;color:var(--pedra)}
+#cgs .cgs-aval__trip .cgs-btn{margin-top:6px}
+/* ---------- Perguntas frequentes ---------- */
+#cgs .cgs-faq__grade{display:grid;gap:40px}
+@media (min-width:1024px){#cgs .cgs-faq__grade{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:80px;align-items:start}#cgs .cgs-faq__lado{position:sticky;top:32px}}
+#cgs .cgs-faq__lado .cgs-btn{margin-top:26px}
+#cgs .cgs-qa{border-top:1px solid rgba(48,51,35,.22)}
+#cgs .cgs-qa:last-child{border-bottom:1px solid rgba(48,51,35,.22)}
+#cgs .cgs-qa summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;list-style:none;cursor:pointer}
+#cgs .cgs-qa summary::-webkit-details-marker{display:none}
+#cgs .cgs-qa__q{font-family:var(--trirong);font-weight:400;font-size:clamp(20px,.4vw + 17px,23px);line-height:1.25;color:var(--mata)}
+#cgs .cgs-qa__icon{position:relative;flex:none;width:28px;height:28px;border:1px solid var(--musgo);border-radius:50%}
+#cgs .cgs-qa__icon::before,#cgs .cgs-qa__icon::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--mata);transform:translate(-50%,-50%)}
+#cgs .cgs-qa__icon::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .25s ease}
+#cgs .cgs-qa[open] .cgs-qa__icon::after{transform:translate(-50%,-50%) rotate(0deg)}
+#cgs .cgs-qa__a{max-width:66ch;padding:0 48px 26px 0;font-size:18px;line-height:1.6;color:var(--pedra)}
+@media (max-width:600px){#cgs .cgs-qa__a{padding-right:0}}
+#cgs .cgs-qa__a a{color:var(--terracota);text-decoration:underline;text-underline-offset:3px}
+#cgs .cgs-galeria{position:relative;min-width:0;--gr:3 / 2}
+#cgs .cgs-galeria__lista{display:flex;aspect-ratio:var(--gr);overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;background:#111}
+#cgs .cgs-galeria__lista::-webkit-scrollbar{display:none}
+#cgs .cgs-galeria__item{position:relative;flex:0 0 100%;display:block;height:100%;overflow:hidden;scroll-snap-align:center;scroll-snap-stop:always;background:#111;cursor:zoom-in}
+#cgs .cgs-galeria__item::before{content:"";position:absolute;inset:-24px;background:var(--bg) center / cover no-repeat;filter:blur(22px) brightness(.72)}
+#cgs .cgs-galeria__item img{position:relative;display:block;width:100%;height:100%;max-width:none;object-fit:contain}
+#cgs .cgs-galeria__nav{position:absolute;z-index:3;top:50%;display:none;place-items:center;width:46px;height:46px;margin-top:-23px;border-radius:50%;background:rgba(48,51,35,.8);border:1px solid rgba(255,255,255,.55);color:#fff;transition:background-color .2s ease}
+#cgs .cgs-galeria--pronta .cgs-galeria__nav{display:grid}
+#cgs .cgs-galeria__nav--ant{left:10px}
+#cgs .cgs-galeria__nav--prox{right:10px}
+#cgs .cgs-galeria__nav::before{content:"";width:10px;height:10px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor}
+#cgs .cgs-galeria__nav--ant::before{margin-left:4px;transform:rotate(-135deg)}
+#cgs .cgs-galeria__nav--prox::before{margin-right:4px;transform:rotate(45deg)}
+#cgs .cgs-galeria__nav:hover{background:var(--terracota)}
+#cgs .cgs-galeria__cont{position:absolute;z-index:2;left:10px;bottom:10px;padding:5px 12px;background:rgba(48,51,35,.82);color:#fff;font-family:var(--marcellus);font-size:15px;line-height:1.2;pointer-events:none}
+#cgs .cgs-galeria__pausa{position:absolute;z-index:3;right:10px;bottom:10px;display:none;place-items:center;width:40px;height:40px;border-radius:50%;background:rgba(48,51,35,.82);border:1px solid rgba(255,255,255,.55);color:#fff}
+#cgs .cgs-galeria--pronta .cgs-galeria__pausa{display:grid}
+#cgs .cgs-galeria__pausa::before{content:"";width:12px;height:14px;border-left:4px solid currentColor;border-right:4px solid currentColor}
+#cgs .cgs-galeria__pausa[aria-pressed="true"]::before{width:0;height:0;border-left:12px solid currentColor;border-right:0;border-top:7px solid transparent;border-bottom:7px solid transparent}
+#cgs .cgs-galeria__pausa:hover{background:var(--terracota)}
+/* ---------- Fotos ampliadas ---------- */
+#cgs .cgs-lb{width:100vw;max-width:100vw;height:100vh;height:100dvh;max-height:none;margin:0;padding:0;border:0;background:#1b1d14;color:#fff;overflow:hidden}
+#cgs .cgs-lb::backdrop{background:rgba(0,0,0,.7)}
+#cgs .cgs-lb[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+#cgs .cgs-lb__topo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(14px,3vw,28px)}
+#cgs .cgs-lb__titulo{font-family:var(--marcellus);font-size:17px;color:#fff}
+#cgs .cgs-lb__cont{margin-left:12px;font-size:15px;color:var(--cobre-claro)}
+#cgs .cgs-lb__fechar{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:8px 14px;border:1px solid rgba(255,255,255,.45);font-family:var(--marcellus);font-size:16px;color:#fff}
+#cgs .cgs-lb__fechar::after{content:"+";font-family:var(--albert);font-size:26px;font-weight:300;line-height:.7;transform:rotate(45deg)}
+#cgs .cgs-lb__fig{position:relative;display:flex;align-items:center;justify-content:center;min-height:0;margin:0;padding:0 clamp(8px,6vw,84px)}
+#cgs .cgs-lb__fig img{width:auto;height:auto;max-width:100%;max-height:calc(100vh - 150px);max-height:calc(100dvh - 150px);object-fit:contain}
+#cgs .cgs-lb__ant,#cgs .cgs-lb__prox{position:absolute;top:50%;z-index:2;display:grid;place-items:center;width:52px;height:52px;margin-top:-26px;border-radius:50%;background:rgba(48,51,35,.72);border:1px solid rgba(255,255,255,.5);color:#fff}
+#cgs .cgs-lb__ant{left:clamp(8px,2vw,22px)}
+#cgs .cgs-lb__prox{right:clamp(8px,2vw,22px)}
+#cgs .cgs-lb__ant::before,#cgs .cgs-lb__prox::before{content:"";width:11px;height:11px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor}
+#cgs .cgs-lb__ant::before{margin-left:5px;transform:rotate(-135deg)}
+#cgs .cgs-lb__prox::before{margin-right:5px;transform:rotate(45deg)}
+#cgs .cgs-lb__ant:hover,#cgs .cgs-lb__prox:hover{background:var(--terracota)}
+#cgs .cgs-lb__legenda{max-width:70ch;margin:0 auto;padding:12px 18px 18px;text-align:center;font-size:15px;line-height:1.4;color:#fff}
+@media (max-width:699px){#cgs .cgs-lb__ant,#cgs .cgs-lb__prox{top:auto;bottom:14px;margin-top:0}#cgs .cgs-lb__legenda{padding:12px 76px 22px}#cgs .cgs-lb__fig img{max-height:calc(100vh - 190px);max-height:calc(100dvh - 190px)}}
+/* ---------- Chamada final ---------- */
+#cgs .cgs-final{background:var(--nevoa) url("/images/2025/03/cassorova-folha-bg.png") right 6% center / min(520px,45%) no-repeat}
+#cgs .cgs-final__grade{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){#cgs .cgs-final__grade{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px}}
+#cgs .cgs-final__foto{overflow:hidden;aspect-ratio:3 / 2}
+#cgs .cgs-final__foto img{width:100%;height:100%;object-fit:cover}
+#cgs .cgs-final__frase{margin-top:16px;max-width:34ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(21px,.6vw + 17px,28px);line-height:1.15;color:var(--pedra)}
+#cgs .cgs-final .cgs-chamada{max-width:42ch}
+#cgs .cgs-final__botoes{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:28px}
+#cgs .cgs-final .cgs-btn--texto{color:var(--mata)}
+/* ---------- Barra fixa ---------- */
+#cgs .cgs-fixa{position:fixed;z-index:9990;left:12px;right:96px;bottom:16px;display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:6px;background:var(--mata);color:#fff;box-shadow:0 12px 30px -12px rgba(0,0,0,.55);opacity:0;visibility:hidden;transform:translateY(130%);transition:transform .35s ease,opacity .35s ease,visibility 0s linear .35s;--foco:var(--cobre-claro)}
+#cgs .cgs-fixa.is-on{opacity:1;visibility:visible;transform:none;transition:transform .35s ease,opacity .35s ease}
+#cgs .cgs-fixa__txt{margin-right:auto;padding-left:10px;font-family:var(--marcellus);font-size:15px;line-height:1.2}
+#cgs .cgs-fixa .cgs-btn{min-height:44px;padding:8px 14px;font-size:17px;white-space:nowrap}
+#cgs .cgs-fixa .cgs-btn::after{display:none}
+@media (max-width:719px){#cgs .cgs-fixa__txt{display:none}#cgs .cgs-fixa .cgs-btn{flex:1 1 auto;padding:8px 10px;font-size:16px}}
+@media (min-width:720px){#cgs .cgs-fixa{right:auto;left:24px;bottom:24px;max-width:560px;gap:10px}}
+#cgs .cgs-fim{display:block;height:1px}
+/* ---------- Movimento reduzido ---------- */
+@media (prefers-reduced-motion:reduce){#cgs .cgs-fixa,#cgs .cgs-qa__icon::after,#cgs .cgs-btn,#cgs .cgs-reserva__caixa{transition:none}}
+/* ---------- Buscador de hospedagem ---------- */
+#cgs .cgs-reserva{position:relative;z-index:3;padding-bottom:clamp(40px,5vw,64px)}
+#cgs .cgs-reserva__caixa{width:var(--linha);max-width:var(--max);margin-inline:auto;padding:28px 32px 30px;background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+@media (min-width:981px){#cgs .cgs-reserva__caixa{margin-top:-64px;box-shadow:0 22px 44px -26px rgba(0,0,0,.65)}}
+@media (max-width:980px){#cgs .cgs-reserva__caixa{width:100%;padding:28px 7% 32px}}
+#cgs .cgs-reserva__topo{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 24px}
+#cgs .cgs-reserva__titulo{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(27px,.8vw + 21px,34px);line-height:1.1;color:#fff}
+#cgs .cgs-reserva__sub{font-family:var(--marcellus);font-size:16px;line-height:1.3;color:var(--cobre-claro)}
+#cgs .cgs-reserva__campos{display:grid;grid-template-columns:minmax(0,1.35fr) repeat(4,minmax(0,1fr));gap:14px;margin-top:20px}
+#cgs .cgs-campo label{display:block;margin-bottom:6px;font-family:var(--marcellus);font-size:15px;line-height:1.2;color:#fff}
+#cgs .cgs-campo input,#cgs .cgs-campo select{display:block;width:100%;height:50px;min-height:50px;padding:0 12px;border:0;border-radius:0;background:#fff;color:var(--mata);font-family:var(--albert);font-size:17px;font-weight:400;line-height:50px;text-align:left;-webkit-appearance:none;appearance:none}
+#cgs .cgs-campo input::-webkit-date-and-time-value{text-align:left}
+#cgs .cgs-campo select{padding-right:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23303323' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px}
+#cgs .cgs-reserva__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin-top:18px}
+#cgs .cgs-reserva__nota{flex:1 1 260px;font-size:15px;line-height:1.45;color:#fff}
+#cgs .cgs-reserva__aviso{margin-top:14px;font-size:15px;line-height:1.45;color:var(--cobre-claro)}
+#cgs .cgs-reserva__aviso[hidden]{display:none}
+@media (max-width:980px){#cgs .cgs-reserva__campos{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}#cgs .cgs-campo--bangalo{grid-column:1 / -1}}
+@media (max-width:719px){#cgs .cgs-reserva__acoes .cgs-btn{flex:1 1 100%;justify-content:space-between}}
+/* ---------- Áreas do resort: galeria de um lado, texto do outro ---------- */
+#cgs .cgs-areas{display:grid;gap:clamp(56px,7vw,96px)}
+#cgs .cgs-area{display:grid;grid-template-columns:minmax(0,1fr);gap:26px}
+@media (min-width:900px){#cgs .cgs-area{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:center}#cgs .cgs-area:nth-child(even){grid-template-columns:minmax(0,5fr) minmax(0,7fr)}#cgs .cgs-area:nth-child(even) .cgs-galeria{order:2}}
+#cgs .cgs-area__onde{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:21px;line-height:1.2;color:var(--terracota)}
+#cgs .cgs-area__nome{margin-top:6px;font-family:var(--gilda);font-size:clamp(32px,1.2vw + 24px,44px);line-height:1.04;color:var(--mata)}
+#cgs .cgs-area__texto{margin-top:12px;max-width:52ch;font-size:18px;line-height:1.6;color:var(--pedra)}
+#cgs .cgs-area .cgs-btn{margin-top:20px}
+@media (max-width:600px){#cgs .cgs-area .cgs-btn{display:flex;width:100%;justify-content:space-between}}
+/* ---------- Galeria: foto na proporção original (5 x 2), carrossel no celular ---------- */
+/* ---------- Vantagens de quem se hospeda ---------- */
+#cgs .cgs-vant{display:grid;gap:36px}
+@media (min-width:900px){#cgs .cgs-vant{grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}}
+#cgs .cgs-vant__item{padding-top:22px;border-top:1px solid rgba(255,255,255,.26)}
+#cgs .cgs-vant__titulo{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(25px,.7vw + 21px,31px);line-height:1.15;color:var(--cobre-claro)}
+#cgs .cgs-vant__texto{margin-top:10px;max-width:40ch;font-size:17px;line-height:1.6;color:#fff}
+#cgs .cgs-vant__botoes{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:clamp(36px,4vw,52px)}
+@media (max-width:600px){#cgs .cgs-vant__botoes .cgs-btn{width:100%;justify-content:space-between}}
+#cgs .cgs-vant__nota{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);font-size:15px;line-height:1.5;color:#fff}
+#cgs .cgs-sec--nevoa .cgs-btn--texto{color:var(--mata)}
+</style>
+<div id="cgs" class="cgs">
+<!-- ================= 1. TOPO ================= -->
+<section class="cgs-topo" aria-labelledby="cgs-titulo">
+<div class="cgs-topo__midia">
+<img class="cgs-topo__foto" src="/images/2026/11/cassorova-gastronomia-bolos-e-doces-18-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-bolos-e-doces-18-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-bolos-e-doces-18-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-bolos-e-doces-18-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-bolos-e-doces-18-scaled.jpg 2048w" sizes="100vw" width="1280" height="853" alt="Bolo de chocolate com morangos em um prato alto, cercado por cupcakes e outros bolos na mesa do café colonial" loading="eager" fetchpriority="high" decoding="async" style="object-position:50% 60%">
+</div>
+<div class="cgs-topo__sombra" aria-hidden="true"></div>
+<div class="cgs-topo__conteudo">
+<p class="cgs-topo__sobre">Gastronomia do Cassorova</p>
+<h1 id="cgs-titulo" class="cgs-topo__titulo">Restaurante em Brotas com café colonial e chope gelado</h1>
+<p class="cgs-topo__frase">Café da manhã ao lado do fogão a lenha, pratos à la carte no almoço e no jantar, choperia e bar molhado à beira da piscina. Tudo dentro do resort.</p>
+<div class="cgs-topo__acoes">
+<a class="cgs-btn cgs-btn--branco" href="#cgs-reserva" data-cgs-cta="ver-datas" data-cgs-pos="topo">Ver Datas e Preços</a>
+<a class="cgs-btn cgs-btn--texto" href="#cgs-sabores" data-cgs-cta="conhecer-sabores" data-cgs-pos="topo">Conhecer os Sabores</a>
+</div>
+<a class="cgs-topo__prova" href="https://www.tripadvisor.com.br/Hotel_Review-g793338-d21389571-Reviews-Cassorova_Hotel_Boutique-Brotas_State_of_Sao_Paulo.html" target="_blank" rel="noopener" data-cgs-cta="avaliacoes-tripadvisor" data-cgs-pos="topo">
+<img src="/images/2026/07/cassorova-tripadvisor.png" width="200" height="262" alt="Selo Travelers' Choice 2026 do Tripadvisor" loading="eager" decoding="async">
+<span class="cgs-topo__prova-txt"><span class="cgs-topo__prova-premio">Travelers' Choice 2026</span><span class="cgs-topo__prova-nota"><strong>4,9</strong> de 5 em 275 avaliações</span><span class="cgs-topo__prova-qtd">no Tripadvisor</span></span>
+</a>
+</div>
+</section>
+<!-- ================= 2. BUSCADOR ================= -->
+<section class="cgs-reserva" id="cgs-reserva" aria-labelledby="cgs-reserva-t">
+<div class="cgs-reserva__caixa cgs-busca">
+<div class="cgs-reserva__topo">
+<h2 id="cgs-reserva-t" class="cgs-reserva__titulo">Veja os preços das suas datas</h2>
+<p class="cgs-reserva__sub">Diárias com café da manhã colonial e pagamento em até 10x no cartão</p>
+</div>
+<div class="cgs-reserva__campos">
+<div class="cgs-campo cgs-campo--bangalo"><label for="cgs-bangalo">Bangalô</label><select id="cgs-bangalo"><option value="" selected>Ainda não sei</option><option value="villa-romance">Villa Romance</option><option value="villa-aconchego">Villa Aconchego (casal)</option><option value="villa-aconchego-familia">Villa Aconchego Família</option></select></div>
+<div class="cgs-campo"><label for="cgs-entrada">Entrada</label><input type="date" id="cgs-entrada"></div>
+<div class="cgs-campo"><label for="cgs-saida">Saída</label><input type="date" id="cgs-saida"></div>
+<div class="cgs-campo"><label for="cgs-adultos">Adultos</label><select id="cgs-adultos"><option value="1">1 adulto</option><option value="2" selected>2 adultos</option><option value="3">3 adultos</option><option value="4">4 adultos</option><option value="5">5 adultos</option><option value="6">6 adultos</option><option value="7">7 adultos</option><option value="8">8 adultos</option></select></div>
+<div class="cgs-campo"><label for="cgs-criancas">Crianças</label><select id="cgs-criancas"><option value="0" selected>Nenhuma</option><option value="1">1 criança</option><option value="2">2 crianças</option><option value="3">3 crianças</option><option value="4">4 crianças</option></select></div>
+</div>
+<div class="cgs-reserva__acoes">
+<a class="cgs-btn cgs-btn--terracota" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-cgs-busca="motor">Ver Preços e Reservar</a>
+<a class="cgs-btn cgs-btn--contorno" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20consultar%20datas%20e%20valores%20de%20hospedagem%20no%20Cassorova" target="_blank" rel="noopener" data-cgs-busca="whatsapp">Reservar pelo WhatsApp</a>
+<p class="cgs-reserva__nota">No motor de reservas aparecem os três tipos: Villa Romance, Villa Aconchego e Villa Aconchego Família. Check-in a partir das 16h e check-out até as 14h.</p>
+</div>
+<p class="cgs-reserva__aviso" hidden></p>
+</div>
+</section>
+<!-- ================= 3. OS ESPAÇOS ================= -->
+<section class="cgs-sec" id="cgs-sabores" aria-labelledby="cgs-sabores-t">
+<div class="cgs-linha">
+<div class="cgs-cabeca cgs-cabeca--lado">
+<h2 id="cgs-sabores-t" class="cgs-titulo">Onde comer e beber no Cassorova</h2>
+<p class="cgs-chamada">Muitas opções de gastronomia e um café da manhã colonial, com o charme e a tradição de fazenda em versões atuais.</p>
+</div>
+<div class="cgs-areas">
+<article class="cgs-area" id="cgs-cafe" aria-labelledby="cgs-cafe-t">
+<div class="cgs-galeria" data-cgs-galeria="cafe-da-manha" data-cgs-galeria-nome="Café da manhã colonial" style="--gr:3 / 2"><div class="cgs-galeria__lista" tabindex="0" role="group" aria-label="Fotos: Café da manhã colonial"><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-frutas-e-salada-de-frutas-06-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-frutas-e-salada-de-frutas-06-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-frutas-e-salada-de-frutas-06-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-frutas-e-salada-de-frutas-06-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-frutas-e-salada-de-frutas-06-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-frutas-e-salada-de-frutas-06-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Tigela de madeira com maçãs, uvas e mamão e taças de salada de frutas no buffet do café da manhã" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-restaurante-colonial-buffet-de-sucos-07-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-restaurante-colonial-buffet-de-sucos-07-scaled.jpg" srcset="/images/2026/11/cassorova-restaurante-colonial-buffet-de-sucos-07-scaled.jpg 768w, /images/2026/11/cassorova-restaurante-colonial-buffet-de-sucos-07-scaled.jpg 1024w, /images/2026/11/cassorova-restaurante-colonial-buffet-de-sucos-07-scaled.jpg 1536w, /images/2026/11/cassorova-restaurante-colonial-buffet-de-sucos-07-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Mesa com jarras de suco e copos no buffet de sucos do restaurante colonial" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-restaurante-colonial-mesa-do-cafe-colonial-06-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-restaurante-colonial-mesa-do-cafe-colonial-06-scaled.jpg" srcset="/images/2026/11/cassorova-restaurante-colonial-mesa-do-cafe-colonial-06-scaled.jpg 768w, /images/2026/11/cassorova-restaurante-colonial-mesa-do-cafe-colonial-06-scaled.jpg 1024w, /images/2026/11/cassorova-restaurante-colonial-mesa-do-cafe-colonial-06-scaled.jpg 1536w, /images/2026/11/cassorova-restaurante-colonial-mesa-do-cafe-colonial-06-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Mesa comprida do café colonial com pães, frutas e doces, no salão do restaurante" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-restaurante-colonial-casal-se-servindo-no-fogao-a-lenha-08-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-restaurante-colonial-casal-se-servindo-no-fogao-a-lenha-08-scaled.jpg" srcset="/images/2026/11/cassorova-restaurante-colonial-casal-se-servindo-no-fogao-a-lenha-08-scaled.jpg 768w, /images/2026/11/cassorova-restaurante-colonial-casal-se-servindo-no-fogao-a-lenha-08-scaled.jpg 1024w, /images/2026/11/cassorova-restaurante-colonial-casal-se-servindo-no-fogao-a-lenha-08-scaled.jpg 1536w, /images/2026/11/cassorova-restaurante-colonial-casal-se-servindo-no-fogao-a-lenha-08-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Casal se servindo no fogão a lenha do restaurante colonial" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-fogao-a-lenha-com-chapas-22-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-fogao-a-lenha-com-chapas-22-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-fogao-a-lenha-com-chapas-22-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-fogao-a-lenha-com-chapas-22-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-fogao-a-lenha-com-chapas-22-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-fogao-a-lenha-com-chapas-22-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Chapas do fogão a lenha com pães e sanduíches quentes, com o fogo aceso embaixo" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-fogao-a-lenha-com-pratos-quentes-10-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-fogao-a-lenha-com-pratos-quentes-10-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-fogao-a-lenha-com-pratos-quentes-10-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-fogao-a-lenha-com-pratos-quentes-10-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-fogao-a-lenha-com-pratos-quentes-10-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-fogao-a-lenha-com-pratos-quentes-10-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Fogão a lenha com pães, travessas de barro e pratos quentes, com a lenha acesa" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-sanduiches-na-chapa-23-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-sanduiches-na-chapa-23-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-sanduiches-na-chapa-23-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-sanduiches-na-chapa-23-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-sanduiches-na-chapa-23-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-sanduiches-na-chapa-23-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Sanduíches com queijo derretido na chapa do fogão a lenha, com o fogo aceso embaixo" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-restaurante-colonial-fogao-antigo-e-mesa-de-sucos-05-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-restaurante-colonial-fogao-antigo-e-mesa-de-sucos-05-scaled.jpg" srcset="/images/2026/11/cassorova-restaurante-colonial-fogao-antigo-e-mesa-de-sucos-05-scaled.jpg 768w, /images/2026/11/cassorova-restaurante-colonial-fogao-antigo-e-mesa-de-sucos-05-scaled.jpg 1024w, /images/2026/11/cassorova-restaurante-colonial-fogao-antigo-e-mesa-de-sucos-05-scaled.jpg 1536w, /images/2026/11/cassorova-restaurante-colonial-fogao-antigo-e-mesa-de-sucos-05-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Fogão antigo florido e mesa de sucos e cafés no salão do restaurante" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-waffles-e-bolos-04-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-waffles-e-bolos-04-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-waffles-e-bolos-04-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-waffles-e-bolos-04-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-waffles-e-bolos-04-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-waffles-e-bolos-04-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Prato de waffles com geleia e flores vermelhas, com bolos ao fundo" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-tapioca-e-paes-21-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-tapioca-e-paes-21-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-tapioca-e-paes-21-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-tapioca-e-paes-21-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-tapioca-e-paes-21-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-tapioca-e-paes-21-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Tapioca com tomate e manjericão em um prato amarelo, ao lado de pães de queijo e travessas de barro" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-paes-de-queijo-20-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-paes-de-queijo-20-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-paes-de-queijo-20-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-paes-de-queijo-20-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-paes-de-queijo-20-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-paes-de-queijo-20-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Travessa de barro com pães de queijo, perto das chapas do fogão a lenha" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-tabua-de-frios-07-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-tabua-de-frios-07-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-tabua-de-frios-07-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-tabua-de-frios-07-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-tabua-de-frios-07-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-tabua-de-frios-07-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Tábua de madeira com queijos e frios fatiados no buffet, com frutas ao fundo" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-bolos-e-pudim-05-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-bolos-e-pudim-05-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-bolos-e-pudim-05-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-bolos-e-pudim-05-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-bolos-e-pudim-05-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-bolos-e-pudim-05-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Pudim e bolo de chocolate com cobertura de caramelo em suportes brancos" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-cupcakes-19-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-cupcakes-19-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-cupcakes-19-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-cupcakes-19-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-cupcakes-19-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-cupcakes-19-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Cupcakes de vários sabores em um suporte rosa, com pães ao fundo" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-salada-de-frutas-e-mamao-08-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-salada-de-frutas-e-mamao-08-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-salada-de-frutas-e-mamao-08-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-salada-de-frutas-e-mamao-08-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-salada-de-frutas-e-mamao-08-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-salada-de-frutas-e-mamao-08-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Taças de salada de frutas sobre uma tigela de madeira, com frutas e mamão ao fundo" loading="lazy"></a></div></div>
+<div class="cgs-area__corpo">
+<p class="cgs-area__onde">Buffet e itens do fogão a lenha</p>
+<h3 id="cgs-cafe-t" class="cgs-area__nome">Café da manhã colonial</h3>
+<p class="cgs-area__texto">Comece o dia ao lado do fogão a lenha, no restaurante Colonial, com um farto buffet de pães, bolos, geleias, frutas e sucos.</p>
+<ul class="cgs-lista"><li>Self service de cafés Nestlé feitos na hora: café, café com leite, capuccino e chocolate</li><li>Itens quentes do fogão a lenha</li><li>Omeletes e tapiocas feitas na hora, sob seu pedido</li></ul>
+</div>
+</article>
+<article class="cgs-area" id="cgs-restaurante" aria-labelledby="cgs-restaurante-t">
+<div class="cgs-galeria" data-cgs-galeria="restaurante" data-cgs-galeria-nome="Restaurante Colonial" style="--gr:3 / 2"><div class="cgs-galeria__lista" tabindex="0" role="group" aria-label="Fotos: Restaurante Colonial"><a class="cgs-galeria__item" href="/images/2026/11/cassorova-restaurante-colonial-salao-amplo-com-telhado-aparente-04-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-restaurante-colonial-salao-amplo-com-telhado-aparente-04-scaled.jpg" srcset="/images/2026/11/cassorova-restaurante-colonial-salao-amplo-com-telhado-aparente-04-scaled.jpg 768w, /images/2026/11/cassorova-restaurante-colonial-salao-amplo-com-telhado-aparente-04-scaled.jpg 1024w, /images/2026/11/cassorova-restaurante-colonial-salao-amplo-com-telhado-aparente-04-scaled.jpg 1536w, /images/2026/11/cassorova-restaurante-colonial-salao-amplo-com-telhado-aparente-04-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Salão amplo do restaurante colonial, com telhado de madeira aparente, luminárias de palha e mesas" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-salmao-com-risoto-03-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-salmao-com-risoto-03-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-salmao-com-risoto-03-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-salmao-com-risoto-03-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-salmao-com-risoto-03-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-salmao-com-risoto-03-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Prato fundo branco com salmão grelhado sobre risoto cremoso, decorado com alecrim e flor" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-prato-de-carne-com-fritas-11-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-prato-de-carne-com-fritas-11-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-prato-de-carne-com-fritas-11-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-prato-de-carne-com-fritas-11-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-prato-de-carne-com-fritas-11-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-prato-de-carne-com-fritas-11-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Prato com carne fatiada, batata frita e molho, com arroz e suco de laranja ao lado" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-risoto-de-cogumelos-14-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-risoto-de-cogumelos-14-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-risoto-de-cogumelos-14-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-risoto-de-cogumelos-14-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-risoto-de-cogumelos-14-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-risoto-de-cogumelos-14-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Prato fundo com risoto de cogumelos, uma casquinha de limão e uma flor comestível" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-restaurante-colonial-salao-com-mesas-03-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-restaurante-colonial-salao-com-mesas-03-scaled.jpg" srcset="/images/2026/11/cassorova-restaurante-colonial-salao-com-mesas-03-scaled.jpg 768w, /images/2026/11/cassorova-restaurante-colonial-salao-com-mesas-03-scaled.jpg 1024w, /images/2026/11/cassorova-restaurante-colonial-salao-com-mesas-03-scaled.jpg 1536w, /images/2026/11/cassorova-restaurante-colonial-salao-com-mesas-03-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Salão do restaurante colonial com mesas de madeira, piso de tijolos e pratos decorativos na parede" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-restaurante-colonial-terraco-com-pergolado-09-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-restaurante-colonial-terraco-com-pergolado-09-scaled.jpg" srcset="/images/2026/11/cassorova-restaurante-colonial-terraco-com-pergolado-09-scaled.jpg 768w, /images/2026/11/cassorova-restaurante-colonial-terraco-com-pergolado-09-scaled.jpg 1024w, /images/2026/11/cassorova-restaurante-colonial-terraco-com-pergolado-09-scaled.jpg 1536w, /images/2026/11/cassorova-restaurante-colonial-terraco-com-pergolado-09-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Terraço com pergolado de madeira, mesas e cadeiras e vista para o jardim" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-salada-caprese-12-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-salada-caprese-12-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-salada-caprese-12-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-salada-caprese-12-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-salada-caprese-12-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-salada-caprese-12-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Salada verde com tomate, cenoura e queijo branco em um prato azul, ao lado de suco de laranja" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-salada-com-croutons-26-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-salada-com-croutons-26-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-salada-com-croutons-26-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-salada-com-croutons-26-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-salada-com-croutons-26-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-salada-com-croutons-26-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Salada com frutos do mar, folhas e croutons em prato branco, ao lado de uma taça" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-sobremesa-de-copo-13-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-sobremesa-de-copo-13-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-sobremesa-de-copo-13-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-sobremesa-de-copo-13-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-sobremesa-de-copo-13-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-sobremesa-de-copo-13-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Sobremesa de copo com creme e calda de chocolate sobre uma tábua, ao lado de uma taça de vinho" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-banana-caramelizada-15-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-banana-caramelizada-15-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-banana-caramelizada-15-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-banana-caramelizada-15-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-banana-caramelizada-15-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-banana-caramelizada-15-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Banana caramelizada com farofa de castanhas em um prato azul, ao lado de um café" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-restaurante-colonial-varanda-com-rodas-de-carroca-01-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-restaurante-colonial-varanda-com-rodas-de-carroca-01-scaled.jpg" srcset="/images/2026/11/cassorova-restaurante-colonial-varanda-com-rodas-de-carroca-01-scaled.jpg 768w, /images/2026/11/cassorova-restaurante-colonial-varanda-com-rodas-de-carroca-01-scaled.jpg 1024w, /images/2026/11/cassorova-restaurante-colonial-varanda-com-rodas-de-carroca-01-scaled.jpg 1536w, /images/2026/11/cassorova-restaurante-colonial-varanda-com-rodas-de-carroca-01-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Varanda amarela do restaurante com rodas de carroça na parede, mesas e cadeiras" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-restaurante-colonial-varanda-iluminada-a-noite-02-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-restaurante-colonial-varanda-iluminada-a-noite-02-scaled.jpg" srcset="/images/2026/11/cassorova-restaurante-colonial-varanda-iluminada-a-noite-02-scaled.jpg 768w, /images/2026/11/cassorova-restaurante-colonial-varanda-iluminada-a-noite-02-scaled.jpg 1024w, /images/2026/11/cassorova-restaurante-colonial-varanda-iluminada-a-noite-02-scaled.jpg 1536w, /images/2026/11/cassorova-restaurante-colonial-varanda-iluminada-a-noite-02-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Varanda do restaurante iluminada à noite, vista do gramado" loading="lazy"></a></div></div>
+<div class="cgs-area__corpo">
+<p class="cgs-area__onde">Almoço e jantar</p>
+<h3 id="cgs-restaurante-t" class="cgs-area__nome">Restaurante Colonial</h3>
+<p class="cgs-area__texto">Pratos à la carte no almoço e no jantar, em um salão com ar de fazenda.</p>
+<ul class="cgs-lista"><li>Cardápio à la carte no almoço e no jantar</li><li>Também servido na varanda do seu bangalô: é só pedir</li></ul>
+<a class="cgs-btn cgs-btn--terracota" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20o%20restaurante%20do%20Cassorova" target="_blank" rel="noopener" data-cgs-cta="whatsapp-cardapio" data-cgs-pos="restaurante">Perguntar pelo WhatsApp</a>
+</div>
+</article>
+<article class="cgs-area" id="cgs-choperia" aria-labelledby="cgs-choperia-t">
+<div class="cgs-galeria" data-cgs-galeria="choperia" data-cgs-galeria-nome="Choperia da Piscina" style="--gr:3 / 2"><div class="cgs-galeria__lista" tabindex="0" role="group" aria-label="Fotos: Choperia da Piscina"><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-petisco-de-queijos-e-azeitonas-01-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-petisco-de-queijos-e-azeitonas-01-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-petisco-de-queijos-e-azeitonas-01-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-petisco-de-queijos-e-azeitonas-01-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-petisco-de-queijos-e-azeitonas-01-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-petisco-de-queijos-e-azeitonas-01-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Petisco de queijos, azeitonas e tomates com molho verde, e um copo de chope ao fundo" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-gastronomia-queijo-grelhado-com-melaco-02-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-gastronomia-queijo-grelhado-com-melaco-02-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-queijo-grelhado-com-melaco-02-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-queijo-grelhado-com-melaco-02-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-queijo-grelhado-com-melaco-02-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-queijo-grelhado-com-melaco-02-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Queijo grelhado com melaço e hortelã em uma travessa branca, com chope ao fundo" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/Cassorova-30.jpg" target="_blank"><img src="/images/2026/11/Cassorova-30.jpg" srcset="/images/2026/11/Cassorova-30.jpg 768w, /images/2026/11/Cassorova-30.jpg 1024w, /images/2026/11/Cassorova-30.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="540" height="360" alt="Prato de petiscos com queijos, azeitonas, tomates e molho verde, ao lado de um copo de chope" loading="lazy"></a></div></div>
+<div class="cgs-area__corpo">
+<p class="cgs-area__onde">Chope e petiscos com vista da piscina</p>
+<h3 id="cgs-choperia-t" class="cgs-area__nome">Choperia da Piscina</h3>
+<p class="cgs-area__texto">Chopes gelados Brotas Beer, cervejaria local com mais de 70 prêmios ao redor do mundo, e uma seleção de petiscos para contemplar o visual da piscina.</p>
+<ul class="cgs-lista"><li>Chope Brotas Beer sempre gelado</li><li>Seleção de petiscos</li><li>Vista para a piscina de borda infinita</li></ul>
+</div>
+</article>
+<article class="cgs-area" id="cgs-bar" aria-labelledby="cgs-bar-t">
+<div class="cgs-galeria" data-cgs-galeria="bar-molhado" data-cgs-galeria-nome="Bar Molhado" style="--gr:3 / 2"><div class="cgs-galeria__lista" tabindex="0" role="group" aria-label="Fotos: Bar Molhado"><a class="cgs-galeria__item" href="/images/2026/11/cassorova-lanchonete-do-spa-drinks-coloridos-na-mesa-da-piscina-01-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-lanchonete-do-spa-drinks-coloridos-na-mesa-da-piscina-01-scaled.jpg" srcset="/images/2026/11/cassorova-lanchonete-do-spa-drinks-coloridos-na-mesa-da-piscina-01-scaled.jpg 768w, /images/2026/11/cassorova-lanchonete-do-spa-drinks-coloridos-na-mesa-da-piscina-01-scaled.jpg 980w, /images/2026/11/cassorova-lanchonete-do-spa-drinks-coloridos-na-mesa-da-piscina-01-scaled.jpg 1024w, /images/2026/11/cassorova-lanchonete-do-spa-drinks-coloridos-na-mesa-da-piscina-01-scaled.jpg 1080w, /images/2026/11/cassorova-lanchonete-do-spa-drinks-coloridos-na-mesa-da-piscina-01-scaled.jpg 1280w, /images/2026/11/cassorova-lanchonete-do-spa-drinks-coloridos-na-mesa-da-piscina-01-scaled.jpg 1536w, /images/2026/11/cassorova-lanchonete-do-spa-drinks-coloridos-na-mesa-da-piscina-01-scaled.jpg 2048w, /images/2026/11/cassorova-lanchonete-do-spa-drinks-coloridos-na-mesa-da-piscina-01-scaled.jpg 2560w" sizes="(min-width:900px) 720px,100vw" width="1280" height="853" alt="Três drinks coloridos e um prato de petiscos sobre a mesa, à beira da piscina" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-lanchonete-do-spa-drink-de-maracuja-e-petisco-02-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-lanchonete-do-spa-drink-de-maracuja-e-petisco-02-scaled.jpg" srcset="/images/2026/11/cassorova-lanchonete-do-spa-drink-de-maracuja-e-petisco-02-scaled.jpg 683w, /images/2026/11/cassorova-lanchonete-do-spa-drink-de-maracuja-e-petisco-02-scaled.jpg 768w, /images/2026/11/cassorova-lanchonete-do-spa-drink-de-maracuja-e-petisco-02-scaled.jpg 980w, /images/2026/11/cassorova-lanchonete-do-spa-drink-de-maracuja-e-petisco-02-scaled.jpg 1024w, /images/2026/11/cassorova-lanchonete-do-spa-drink-de-maracuja-e-petisco-02-scaled.jpg 1080w, /images/2026/11/cassorova-lanchonete-do-spa-drink-de-maracuja-e-petisco-02-scaled.jpg 1280w, /images/2026/11/cassorova-lanchonete-do-spa-drink-de-maracuja-e-petisco-02-scaled.jpg 1365w, /images/2026/11/cassorova-lanchonete-do-spa-drink-de-maracuja-e-petisco-02-scaled.jpg 1707w" sizes="(min-width:900px) 720px,100vw" width="853" height="1280" alt="Drink de maracujá com o logotipo do Cassorova e um prato de petiscos sobre a mesa, ao lado da piscina" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/Cassorova-48.jpg" target="_blank"><img src="/images/2026/11/Cassorova-48.jpg" srcset="/images/2026/11/Cassorova-48.jpg 768w, /images/2026/11/Cassorova-48.jpg 1024w, /images/2026/11/Cassorova-48.jpg 1080w" sizes="(min-width:900px) 720px,100vw" width="540" height="360" alt="Dois drinks sobre uma mesinha de madeira dentro da água rasa da piscina, entre espreguiçadeiras azuis" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-bar-molhado-drinks-na-borda-da-piscina-01-scaled.jpg" target="_blank"><img src="/images/2026/11/cassorova-bar-molhado-drinks-na-borda-da-piscina-01-scaled.jpg" srcset="/images/2026/11/cassorova-bar-molhado-drinks-na-borda-da-piscina-01-scaled.jpg 768w, /images/2026/11/cassorova-bar-molhado-drinks-na-borda-da-piscina-01-scaled.jpg 1024w, /images/2026/11/cassorova-bar-molhado-drinks-na-borda-da-piscina-01-scaled.jpg 1536w, /images/2026/11/cassorova-bar-molhado-drinks-na-borda-da-piscina-01-scaled.jpg 2048w" sizes="(min-width:900px) 720px,100vw" width="1280" height="855" alt="Três drinks coloridos sobre a borda da piscina, com a água ao fundo" loading="lazy"></a><a class="cgs-galeria__item" href="/images/2026/11/cassorova-quiosque-da-praia-mulher-na-espreguicadeira-com-drink-02-scaled.jpeg" target="_blank"><img src="/images/2026/11/cassorova-quiosque-da-praia-mulher-na-espreguicadeira-com-drink-02-scaled.jpeg" srcset="/images/2026/11/cassorova-quiosque-da-praia-mulher-na-espreguicadeira-com-drink-02-scaled.jpeg 768w, /images/2026/11/cassorova-quiosque-da-praia-mulher-na-espreguicadeira-com-drink-02-scaled.jpeg 980w, /images/2026/11/cassorova-quiosque-da-praia-mulher-na-espreguicadeira-com-drink-02-scaled.jpeg 1080w, /images/2026/11/cassorova-quiosque-da-praia-mulher-na-espreguicadeira-com-drink-02-scaled.jpeg 1152w, /images/2026/11/cassorova-quiosque-da-praia-mulher-na-espreguicadeira-com-drink-02-scaled.jpeg 1280w, /images/2026/11/cassorova-quiosque-da-praia-mulher-na-espreguicadeira-com-drink-02-scaled.jpeg 1536w, /images/2026/11/cassorova-quiosque-da-praia-mulher-na-espreguicadeira-com-drink-02-scaled.jpeg 1920w" sizes="(min-width:900px) 720px,100vw" width="960" height="1280" alt="Mulher sentada em uma espreguiçadeira na praia, com um drink alaranjado na mão" loading="lazy"></a></div></div>
+<div class="cgs-area__corpo">
+<p class="cgs-area__onde">Drinks e petiscos no deck</p>
+<h3 id="cgs-bar-t" class="cgs-area__nome">Bar Molhado</h3>
+<p class="cgs-area__texto">Uma seleção de drinks e petiscos para curtir no deck ou, literalmente, dentro da piscina, com toda a vista do horizonte.</p>
+<ul class="cgs-lista"><li>Drinks e petiscos</li><li>Deck e piscina de borda infinita</li><li>Vista do horizonte</li></ul>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- ================= 4. QUEM SE HOSPEDA ================= -->
+<section class="cgs-sec cgs-sec--mata" id="cgs-hospedes" aria-labelledby="cgs-hospedes-t">
+<div class="cgs-linha">
+<div class="cgs-cabeca cgs-cabeca--lado">
+<h2 id="cgs-hospedes-t" class="cgs-titulo cgs-titulo--trirong">Hospede-se e aproveite o resort inteiro, sem pagar day use</h2>
+<p class="cgs-chamada">Quem se hospeda tem a gastronomia, as piscinas e a natureza no mesmo lugar, pelo tempo que quiser.</p>
+</div>
+<ul class="cgs-vant">
+<li class="cgs-vant__item"><h3 class="cgs-vant__titulo">Sem ingresso de day use</h3><p class="cgs-vant__texto">Ao se hospedar, você economiza as taxas de day use da sua família e aproveita todo o conforto e a estrutura do resort.</p></li>
+<li class="cgs-vant__item"><h3 class="cgs-vant__titulo">Cardápio na varanda do bangalô</h3><p class="cgs-vant__texto">Prefere ficar no quarto? O cardápio à la carte do restaurante também é servido na varanda do seu bangalô. É só pedir.</p></li>
+<li class="cgs-vant__item"><h3 class="cgs-vant__titulo">Do café ao drink, sem sair do resort</h3><p class="cgs-vant__texto">Café colonial, almoço, jantar, chope e drinks ficam a poucos passos das piscinas e da natureza.</p></li>
+</ul>
+<div class="cgs-vant__botoes">
+<a class="cgs-btn cgs-btn--branco" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-cgs-cta="ver-datas" data-cgs-pos="hospedes">Ver Datas e Preços</a>
+<a class="cgs-btn cgs-btn--contorno" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20consultar%20datas%20e%20valores%20de%20hospedagem%20no%20Cassorova" target="_blank" rel="noopener" data-cgs-cta="whatsapp" data-cgs-pos="hospedes">Reservar pelo WhatsApp</a>
+</div>
+<p class="cgs-vant__nota">Check-in a partir das 16h e check-out até as 14h.</p>
+</div>
+</section>
+<!-- ================= 5. AVALIAÇÕES ================= -->
+<section class="cgs-sec" id="cgs-avaliacoes" aria-labelledby="cgs-aval-t">
+<div class="cgs-linha cgs-aval">
+<div class="cgs-aval__citacao">
+<h2 id="cgs-aval-t" class="cgs-titulo">O que dizem os hóspedes</h2>
+<blockquote><p>Lindo local, excelente para relaxar com a pessoa amada ou a família toda.</p></blockquote>
+<p class="cgs-aval__quem">Digo F., avaliação no Google em junho de 2026</p>
+</div>
+<div class="cgs-aval__trip">
+<img src="/images/2026/07/cassorova-tripadvisor.png" width="200" height="262" alt="Selo Travelers' Choice 2026 do Tripadvisor" loading="lazy" decoding="async">
+<p class="cgs-aval__nota"><strong>4,9</strong> de 5</p>
+<p class="cgs-aval__fonte">Nota geral do Cassorova em 275 avaliações no Tripadvisor, com o Travelers' Choice 2026. Consulta em novembro de 2026.</p>
+<a class="cgs-btn cgs-btn--terracota" href="https://www.tripadvisor.com.br/Hotel_Review-g793338-d21389571-Reviews-Cassorova_Hotel_Boutique-Brotas_State_of_Sao_Paulo.html" target="_blank" rel="noopener" data-cgs-cta="avaliacoes-tripadvisor" data-cgs-pos="avaliacoes">Ler Avaliações no Tripadvisor</a>
+</div>
+</div>
+</section>
+<!-- ================= 6. PERGUNTAS FREQUENTES ================= -->
+<section class="cgs-sec cgs-sec--linho" id="cgs-faq" aria-labelledby="cgs-faq-t">
+<div class="cgs-linha cgs-faq__grade">
+<div class="cgs-faq__lado">
+<h2 id="cgs-faq-t" class="cgs-titulo">Perguntas sobre a gastronomia</h2>
+<p class="cgs-chamada">Não encontrou sua dúvida? A recepção responde pelo WhatsApp.</p>
+<a class="cgs-btn cgs-btn--musgo" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20gastronomia%20do%20Cassorova" target="_blank" rel="noopener" data-cgs-cta="whatsapp" data-cgs-pos="faq">Falar no WhatsApp</a>
+</div>
+<div class="cgs-faq__lista">
+<details class="cgs-qa" name="cgs-faq" open><summary><h3 class="cgs-qa__q">O Cassorova tem café da manhã colonial?</h3><span class="cgs-qa__icon" aria-hidden="true"></span></summary><div class="cgs-qa__a"><p>Tem. O café da manhã é um farto buffet com grande variedade de pães, bolos, geleias, frutas e sucos, servido no restaurante Colonial, ao lado do fogão a lenha.</p></div></details>
+<details class="cgs-qa" name="cgs-faq"><summary><h3 class="cgs-qa__q">Quais são os itens quentes do café da manhã?</h3><span class="cgs-qa__icon" aria-hidden="true"></span></summary><div class="cgs-qa__a"><p>Do fogão a lenha saem itens quentes, e as omeletes e as tapiocas são feitas na hora, sob o seu pedido. Também há self service de cafés Nestlé preparados na hora, com café, café com leite, capuccino e chocolate.</p></div></details>
+<details class="cgs-qa" name="cgs-faq"><summary><h3 class="cgs-qa__q">O restaurante serve almoço e jantar?</h3><span class="cgs-qa__icon" aria-hidden="true"></span></summary><div class="cgs-qa__a"><p>Serve. O Restaurante Colonial trabalha com pratos à la carte no almoço e no jantar.</p></div></details>
+<details class="cgs-qa" name="cgs-faq"><summary><h3 class="cgs-qa__q">Posso pedir o cardápio na varanda do bangalô?</h3><span class="cgs-qa__icon" aria-hidden="true"></span></summary><div class="cgs-qa__a"><p>Pode. Se preferir, é só pedir que o cardápio à la carte também é servido na varanda do seu bangalô.</p></div></details>
+<details class="cgs-qa" name="cgs-faq"><summary><h3 class="cgs-qa__q">Que chope a choperia serve?</h3><span class="cgs-qa__icon" aria-hidden="true"></span></summary><div class="cgs-qa__a"><p>A Choperia da Piscina serve chopes gelados Brotas Beer, cervejaria local com mais de 70 prêmios ao redor do mundo, com uma seleção de petiscos para curtir a vista da piscina.</p></div></details>
+<details class="cgs-qa" name="cgs-faq"><summary><h3 class="cgs-qa__q">O que é o Bar Molhado?</h3><span class="cgs-qa__icon" aria-hidden="true"></span></summary><div class="cgs-qa__a"><p>É o bar da piscina, com uma seleção de drinks e petiscos para curtir no deck ou, literalmente, dentro da piscina, com toda a vista do horizonte.</p></div></details>
+<details class="cgs-qa" name="cgs-faq"><summary><h3 class="cgs-qa__q">Quem se hospeda paga o day use?</h3><span class="cgs-qa__icon" aria-hidden="true"></span></summary><div class="cgs-qa__a"><p>Não. Ao se hospedar no Cassorova, você economiza as taxas de day use da sua família e aproveita todo o conforto e a estrutura do resort.</p></div></details>
+<details class="cgs-qa" name="cgs-faq"><summary><h3 class="cgs-qa__q">Qual o horário de check-in e de check-out?</h3><span class="cgs-qa__icon" aria-hidden="true"></span></summary><div class="cgs-qa__a"><p>O check-in é a partir das 16h e o check-out vai até as 14h.</p></div></details>
+<details class="cgs-qa" name="cgs-faq"><summary><h3 class="cgs-qa__q">A que distância o Cassorova fica de São Paulo?</h3><span class="cgs-qa__icon" aria-hidden="true"></span></summary><div class="cgs-qa__a"><p>O Cassorova fica a 217 km de São Paulo, 173 km de Ribeirão Preto e 278 km de São José do Rio Preto.</p></div></details>
+</div>
+</div>
+</section>
+<!-- ================= 7. CHAMADA FINAL ================= -->
+<section class="cgs-sec cgs-final" aria-labelledby="cgs-final-t">
+<div class="cgs-linha cgs-final__grade">
+<figure class="cgs-final__foto"><img src="/images/2026/11/cassorova-gastronomia-petisco-de-queijos-e-azeitonas-01-scaled.jpg" srcset="/images/2026/11/cassorova-gastronomia-petisco-de-queijos-e-azeitonas-01-scaled.jpg 768w, /images/2026/11/cassorova-gastronomia-petisco-de-queijos-e-azeitonas-01-scaled.jpg 1024w, /images/2026/11/cassorova-gastronomia-petisco-de-queijos-e-azeitonas-01-scaled.jpg 1536w, /images/2026/11/cassorova-gastronomia-petisco-de-queijos-e-azeitonas-01-scaled.jpg 2048w" sizes="(min-width: 900px) 560px, 86vw" width="1280" height="853" alt="Petisco de queijos, azeitonas e tomates com molho verde, e um copo de chope ao fundo" loading="lazy" style="object-position:50% 50%"></figure>
+<div>
+<h2 id="cgs-final-t" class="cgs-titulo">Venha provar a gastronomia do Cassorova</h2>
+<p class="cgs-final__frase">Café colonial, restaurante, choperia e bar molhado, a 217 km de São Paulo.</p>
+<p class="cgs-chamada">Veja as datas disponíveis e reserve online, ou fale com a recepção pelo WhatsApp.</p>
+<div class="cgs-final__botoes">
+<a class="cgs-btn cgs-btn--oliva" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-cgs-cta="ver-datas" data-cgs-pos="chamada-final">Ver Datas e Preços</a>
+<a class="cgs-btn cgs-btn--texto" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20consultar%20datas%20e%20valores%20de%20hospedagem%20no%20Cassorova" target="_blank" rel="noopener" data-cgs-cta="whatsapp" data-cgs-pos="chamada-final">Reservar pelo WhatsApp</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= BARRA FIXA ================= -->
+<div class="cgs-fixa">
+<p class="cgs-fixa__txt">Gastronomia do Cassorova</p>
+<a class="cgs-btn cgs-btn--branco" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-cgs-cta="ver-datas" data-cgs-pos="barra-fixa">Ver Datas</a>
+<a class="cgs-btn cgs-btn--terracota" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20consultar%20datas%20e%20valores%20de%20hospedagem%20no%20Cassorova" target="_blank" rel="noopener" data-cgs-cta="whatsapp" data-cgs-pos="barra-fixa">WhatsApp</a>
+</div>
+<span class="cgs-fim" aria-hidden="true"></span>
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Resort","@id":"https://cassorova.com.br/#resort","name":"Cassorova Resort e Ecoturismo","url":"https://cassorova.com.br/","amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Café da manhã colonial","value":true},{"@type":"LocationFeatureSpecification","name":"Restaurante Colonial com cardápio à la carte","value":true},{"@type":"LocationFeatureSpecification","name":"Choperia da Piscina com chope Brotas Beer","value":true},{"@type":"LocationFeatureSpecification","name":"Bar Molhado","value":true},{"@type":"LocationFeatureSpecification","name":"Cardápio servido na varanda do bangalô","value":true}]},{"@type":"FAQPage","@id":"https://cassorova.com.br/gastronomia/#faq","mainEntity":[{"@type":"Question","name":"O Cassorova tem café da manhã colonial?","acceptedAnswer":{"@type":"Answer","text":"Tem. O café da manhã é um farto buffet com grande variedade de pães, bolos, geleias, frutas e sucos, servido no restaurante Colonial, ao lado do fogão a lenha."}},{"@type":"Question","name":"Quais são os itens quentes do café da manhã?","acceptedAnswer":{"@type":"Answer","text":"Do fogão a lenha saem itens quentes, e as omeletes e as tapiocas são feitas na hora, sob o seu pedido. Também há self service de cafés Nestlé preparados na hora, com café, café com leite, capuccino e chocolate."}},{"@type":"Question","name":"O restaurante serve almoço e jantar?","acceptedAnswer":{"@type":"Answer","text":"Serve. O Restaurante Colonial trabalha com pratos à la carte no almoço e no jantar."}},{"@type":"Question","name":"Posso pedir o cardápio na varanda do bangalô?","acceptedAnswer":{"@type":"Answer","text":"Pode. Se preferir, é só pedir que o cardápio à la carte também é servido na varanda do seu bangalô."}},{"@type":"Question","name":"Que chope a choperia serve?","acceptedAnswer":{"@type":"Answer","text":"A Choperia da Piscina serve chopes gelados Brotas Beer, cervejaria local com mais de 70 prêmios ao redor do mundo, com uma seleção de petiscos para curtir a vista da piscina."}},{"@type":"Question","name":"O que é o Bar Molhado?","acceptedAnswer":{"@type":"Answer","text":"É o bar da piscina, com uma seleção de drinks e petiscos para curtir no deck ou, literalmente, dentro da piscina, com toda a vista do horizonte."}},{"@type":"Question","name":"Quem se hospeda paga o day use?","acceptedAnswer":{"@type":"Answer","text":"Não. Ao se hospedar no Cassorova, você economiza as taxas de day use da sua família e aproveita todo o conforto e a estrutura do resort."}},{"@type":"Question","name":"Qual o horário de check-in e de check-out?","acceptedAnswer":{"@type":"Answer","text":"O check-in é a partir das 16h e o check-out vai até as 14h."}},{"@type":"Question","name":"A que distância o Cassorova fica de São Paulo?","acceptedAnswer":{"@type":"Answer","text":"O Cassorova fica a 217 km de São Paulo, 173 km de Ribeirão Preto e 278 km de São José do Rio Preto."}}]}]}
+</script>
+<script>
+(function () {
+var root = document.getElementById('cgs');
+if (!root) { return; }
+var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
+var push = function (data) { window.dataLayer = window.dataLayer || []; window.dataLayer.push(data); };
+var topo = root.querySelector('.cgs-topo');
+var caixa = root.querySelector('.cgs-busca');
+/* O topo ocupa a altura da tela menos o menu do site acima dele */
+var setTop = function () {
+if (!topo) { return; }
+var y = topo.getBoundingClientRect().top + (window.pageYOffset || 0);
+if (y > 280) { y = 0; }
+if (0 > y) { y = 0; }
+root.style.setProperty('--cgs-top', Math.round(y) + 'px');
+};
+setTop();
+window.addEventListener('load', setTop);
+var rt = 0;
+window.addEventListener('resize', function () { window.clearTimeout(rt); rt = window.setTimeout(setTop, 150); });
+var novoBtn = function (cls, rotulo) { var b = document.createElement('button'); b.type = 'button'; b.className = cls; b.setAttribute('aria-label', rotulo); return b; };
+/* Carrossel: uma foto por vez, passa sozinho a cada 5 segundos, com setas, contador e botão de pausa */
+var reduz = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
+each(root.querySelectorAll('.cgs-galeria'), function (g) {
+var lista = g.querySelector('.cgs-galeria__lista');
+var fotos = g.querySelectorAll('.cgs-galeria__item');
+if (!lista) { return; }
+var total = fotos.length;
+each(fotos, function (a) {
+var im = a.querySelector('img');
+var fundo = function () { a.style.setProperty('--bg', 'url("' + (im.currentSrc || im.src) + '")'); };
+if (im.complete) { fundo(); } else { im.addEventListener('load', fundo); }
+});
+var ant = novoBtn('cgs-galeria__nav cgs-galeria__nav--ant', 'Foto anterior');
+var prox = novoBtn('cgs-galeria__nav cgs-galeria__nav--prox', 'Próxima foto');
+var pausa = novoBtn('cgs-galeria__pausa', 'Pausar a troca automática das fotos');
+pausa.setAttribute('aria-pressed', 'false');
+var cont = document.createElement('span');
+cont.className = 'cgs-galeria__cont';
+cont.setAttribute('aria-hidden', 'true');
+g.appendChild(ant);
+g.appendChild(prox);
+g.appendChild(cont);
+g.appendChild(pausa);
+var atual = function () { return Math.max(0, Math.min(total - 1, Math.round(lista.scrollLeft / Math.max(1, lista.clientWidth)))); };
+var atualizar = function () { cont.textContent = (atual() + 1) + ' de ' + total; };
+var cur = 0;
+var sync = 0;
+var ir = function (n) {
+var alvo = (n + total) % total;
+cur = alvo;
+var x = alvo * lista.clientWidth;
+lista.scrollTo({ left: x, behavior: reduz ? 'auto' : 'smooth' });
+window.setTimeout(function () { if (Math.abs(lista.scrollLeft - x) > 3) { lista.style.scrollSnapType = 'none'; lista.scrollLeft = x; window.setTimeout(function () { lista.style.scrollSnapType = ''; }, 60); } }, 700);
+};
+ant.addEventListener('click', function () { ir(cur - 1); });
+prox.addEventListener('click', function () { ir(cur + 1); });
+lista.addEventListener('scroll', function () { window.requestAnimationFrame(atualizar); window.clearTimeout(sync); sync = window.setTimeout(function () { cur = atual(); }, 200); }, { passive: true });
+window.addEventListener('resize', function () { lista.scrollLeft = atual() * lista.clientWidth; atualizar(); });
+var parado = reduz;
+var visivel = true;
+var sobre = false;
+var timer = null;
+var parar = function () { parado = true; pausa.setAttribute('aria-pressed', 'true'); pausa.setAttribute('aria-label', 'Retomar a troca automática das fotos'); };
+pausa.addEventListener('click', function () {
+if (parado) { parado = false; pausa.setAttribute('aria-pressed', 'false'); pausa.setAttribute('aria-label', 'Pausar a troca automática das fotos'); } else { parar(); }
+});
+if (reduz) { pausa.setAttribute('aria-pressed', 'true'); pausa.setAttribute('aria-label', 'Retomar a troca automática das fotos'); }
+g.addEventListener('mouseenter', function () { sobre = true; });
+g.addEventListener('mouseleave', function () { sobre = false; });
+g.addEventListener('focusin', function () { sobre = true; });
+g.addEventListener('focusout', function () { sobre = false; });
+g.addEventListener('touchstart', function () { sobre = true; }, { passive: true });
+g.addEventListener('touchend', function () { window.setTimeout(function () { sobre = false; }, 4000); }, { passive: true });
+if (window.IntersectionObserver) {
+new IntersectionObserver(function (es) { visivel = es[0].isIntersecting; }, { threshold: 0.4 }).observe(g);
+}
+timer = window.setInterval(function () {
+if (parado) { return; }
+if (sobre) { return; }
+if (!visivel) { return; }
+if (document.hidden) { return; }
+if (document.documentElement.classList.contains('cgs-travado')) { return; }
+ir(cur + 1);
+}, 5000);
+g.classList.add('cgs-galeria--pronta');
+atualizar();
+});
+/* Fotos ampliadas: a janela é criada aqui (fora do editor) e abre a galeria em tela cheia, com setas, teclado e deslize */
+var novo = function (tag, cls, txt) { var e = document.createElement(tag); if (cls) { e.className = cls; } if (txt) { e.textContent = txt; } return e; };
+var lb = novo('dialog', 'cgs-lb');
+if (typeof lb.showModal === 'function') {
+lb.setAttribute('aria-label', 'Fotos ampliadas da gastronomia');
+var lbTopo = novo('div', 'cgs-lb__topo');
+var lbP = novo('p');
+var lbTit = novo('span', 'cgs-lb__titulo');
+var lbCont = novo('span', 'cgs-lb__cont');
+lbP.appendChild(lbTit);
+lbP.appendChild(lbCont);
+var lbFechar = novo('button', 'cgs-lb__fechar', 'Fechar');
+lbFechar.type = 'button';
+lbTopo.appendChild(lbP);
+lbTopo.appendChild(lbFechar);
+var lbFig = novo('figure', 'cgs-lb__fig');
+var lbAnt = novo('button', 'cgs-lb__ant');
+lbAnt.type = 'button';
+lbAnt.setAttribute('aria-label', 'Foto anterior');
+var lbImg = novo('img');
+lbImg.alt = '';
+var lbProx = novo('button', 'cgs-lb__prox');
+lbProx.type = 'button';
+lbProx.setAttribute('aria-label', 'Próxima foto');
+lbFig.appendChild(lbAnt);
+lbFig.appendChild(lbImg);
+lbFig.appendChild(lbProx);
+var lbLeg = novo('p', 'cgs-lb__legenda');
+lbLeg.setAttribute('aria-live', 'polite');
+lb.appendChild(lbTopo);
+lb.appendChild(lbFig);
+lb.appendChild(lbLeg);
+root.appendChild(lb);
+var atual = { itens: [], i: 0, origem: null };
+var mostrar = function (i) {
+var n = atual.itens.length;
+if (!n) { return; }
+atual.i = (i + n) % n;
+var a = atual.itens[atual.i];
+var im = a.querySelector('img');
+var alt = im ? im.getAttribute('alt') : '';
+lbImg.src = a.getAttribute('href');
+lbImg.alt = alt;
+lbLeg.textContent = alt;
+lbCont.textContent = (atual.i + 1) + ' de ' + n;
+var seguinte = new Image();
+seguinte.src = atual.itens[(atual.i + 1) % n].getAttribute('href');
+};
+var abrir = function (g, i, origem) {
+atual.itens = Array.prototype.slice.call(g.querySelectorAll('.cgs-galeria__item'));
+atual.origem = origem;
+lbTit.textContent = g.getAttribute('data-cgs-galeria-nome') || '';
+mostrar(i);
+document.documentElement.classList.add('cgs-travado');
+lb.showModal();
+push({ event: 'cgs_galeria_abrir', cgs_area: g.getAttribute('data-cgs-galeria') || '', cgs_foto: i + 1 });
+};
+each(root.querySelectorAll('.cgs-galeria'), function (g) {
+each(g.querySelectorAll('.cgs-galeria__item'), function (a, i) {
+a.addEventListener('click', function (ev) { ev.preventDefault(); abrir(g, i, a); });
+});
+var todas = g.querySelector('.cgs-galeria__todas');
+if (todas) {
+todas.hidden = false;
+todas.addEventListener('click', function () { abrir(g, 0, todas); });
+}
+});
+lbAnt.addEventListener('click', function () { mostrar(atual.i - 1); });
+lbProx.addEventListener('click', function () { mostrar(atual.i + 1); });
+lbFechar.addEventListener('click', function () { lb.close(); });
+lb.addEventListener('close', function () {
+document.documentElement.classList.remove('cgs-travado');
+if (atual.origem) { atual.origem.focus({ preventScroll: true }); }
+});
+lb.addEventListener('keydown', function (ev) {
+if (ev.key === 'ArrowRight') { mostrar(atual.i + 1); }
+if (ev.key === 'ArrowLeft') { mostrar(atual.i - 1); }
+});
+lb.addEventListener('click', function (ev) { if (ev.target === lb) { lb.close(); } });
+var x0 = null;
+lb.addEventListener('touchstart', function (ev) { x0 = ev.changedTouches[0].clientX; }, { passive: true });
+lb.addEventListener('touchend', function (ev) {
+if (x0 === null) { return; }
+var dx = ev.changedTouches[0].clientX - x0;
+x0 = null;
+if (dx > 50) { mostrar(atual.i - 1); } else if (-50 > dx) { mostrar(atual.i + 1); }
+});
+}
+/* Buscador: monta o link do motor HBook com as datas e a mensagem do WhatsApp com o bangalô escolhido */
+var AMP = String.fromCharCode(38);
+var MOTOR = 'https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee';
+var FONE = '5514991068097';
+var NOITES_PADRAO = 2;
+var MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+var NOMES = { 'villa-romance': 'Villa Romance', 'villa-aconchego': 'Villa Aconchego', 'villa-aconchego-familia': 'Villa Aconchego Família' };
+var bang = root.querySelector('#cgs-bangalo');
+var ent = root.querySelector('#cgs-entrada');
+var sai = root.querySelector('#cgs-saida');
+var adu = root.querySelector('#cgs-adultos');
+var cri = root.querySelector('#cgs-criancas');
+var linkMotor = root.querySelector('[data-cgs-busca="motor"]');
+var linkWhats = root.querySelector('[data-cgs-busca="whatsapp"]');
+var aviso = root.querySelector('.cgs-reserva__aviso');
+var pad = function (n) { return (n > 9 ? '' : '0') + n; };
+var iso = function (d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); };
+var parse = function (s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2], 12); };
+var somaDias = function (s, n) { var d = parse(s); d.setDate(d.getDate() + n); return iso(d); };
+var extenso = function (s) { var d = parse(s); return d.getDate() + ' de ' + MESES[d.getMonth()] + ' de ' + d.getFullYear(); };
+var temDatas = function () { if (!ent.value) { return false; } return !!sai.value; };
+var noites = function () { if (!temDatas()) { return 0; } return Math.round((parse(sai.value) - parse(ent.value)) / 86400000); };
+var avisoTexto = function (b, a, c) {
+var total = (+a) + (+c);
+if (total > 2) { if (b === 'villa-romance') { return 'A Villa Romance recebe até 2 pessoas. Para 3 ou 4, escolha a Villa Aconchego Família.'; } }
+if (total > 4) { return 'Cada bangalô recebe até 4 pessoas. No motor de reservas, escolha a quantidade de bangalôs para o grupo.'; }
+if (c !== '0') { return 'Com crianças, o motor de reservas pede a idade de cada uma antes de mostrar os preços.'; }
+return '';
+};
+var atualizar = function () {
+var hoje = iso(new Date());
+ent.min = hoje;
+if (ent.value) {
+var minSaida = somaDias(ent.value, 1);
+sai.min = minSaida;
+if (!(sai.value >= minSaida)) { sai.value = somaDias(ent.value, NOITES_PADRAO); }
+} else {
+sai.min = somaDias(hoje, 1);
+}
+var b = bang ? bang.value : '';
+var a = adu.value || '2';
+var c = cri.value || '0';
+var txt = avisoTexto(b, a, c);
+if (aviso) { aviso.textContent = txt; aviso.hidden = !txt; }
+var partes = [MOTOR];
+if (temDatas()) { partes.push('checkin=' + ent.value, 'checkout=' + sai.value); }
+partes.push('adults=' + a, 'children=' + c);
+linkMotor.href = partes.join(AMP);
+var msg = 'Olá vim pelo site e quero consultar ' + (NOMES[b] ? 'a ' + NOMES[b] : 'um bangalô') + ' no Cassorova';
+if (temDatas()) { msg += ' com entrada em ' + extenso(ent.value) + ' e saída em ' + extenso(sai.value); }
+msg += ' para ' + a + (a === '1' ? ' adulto' : ' adultos');
+if (c !== '0') { msg += ' e ' + c + (c === '1' ? ' criança' : ' crianças'); }
+linkWhats.href = 'https://wa.me/' + FONE + '?text=' + encodeURIComponent(msg);
+};
+if (ent) { if (sai) { if (linkMotor) { if (linkWhats) {
+each([bang, ent, sai, adu, cri], function (el) { if (el) { el.addEventListener('change', atualizar); } });
+atualizar();
+each([linkMotor, linkWhats], function (link) {
+link.addEventListener('click', function () {
+atualizar();
+push({ event: 'cgs_busca_hospedagem', cgs_metodo: link.getAttribute('data-cgs-busca'), cgs_bangalo: bang ? bang.value : '', cgs_entrada: ent.value || '', cgs_saida: sai.value || '', cgs_noites: noites(), cgs_adultos: +(adu.value || 2), cgs_criancas: +(cri.value || 0), link_url: link.href });
+});
+});
+}}}}
+/* Barra fixa: aparece depois do topo e some no fim da página.
+A posição é medida a cada rolagem, então a barra acerta mesmo depois de um salto por link. */
+var fixa = root.querySelector('.cgs-fixa');
+var fim = root.querySelector('.cgs-fim');
+var calcBarra = function () {
+if (!fixa) { return; }
+var ih = window.innerHeight;
+var show = true;
+if (topo) { if (topo.getBoundingClientRect().bottom > ih * 0.3) { show = false; } }
+if (fim) { if (ih > fim.getBoundingClientRect().top) { show = false; } }
+if (caixa) { var rc = caixa.getBoundingClientRect(); if (ih > rc.top) { if (rc.bottom > 0) { show = false; } } }
+fixa.classList.toggle('is-on', show);
+};
+var pendente = false;
+var agendarBarra = function () {
+if (pendente) { return; }
+pendente = true;
+window.requestAnimationFrame(function () { pendente = false; calcBarra(); });
+};
+window.addEventListener('scroll', agendarBarra, { passive: true });
+window.addEventListener('resize', agendarBarra);
+calcBarra();
+/* Pergunta aberta pelo visitante (a primeira já vem aberta e não conta) */
+each(root.querySelectorAll('details.cgs-qa'), function (d) {
+var s = d.querySelector('summary');
+if (!s) { return; }
+s.addEventListener('click', function () {
+if (d.open) { return; }
+var q = d.querySelector('.cgs-qa__q');
+push({ event: 'cgs_faq_abrir', cgs_pergunta: q ? q.textContent.trim() : '' });
+});
+});
+root.addEventListener('click', function (ev) {
+var t = ev.target;
+var el = t.closest ? t.closest('[data-cgs-cta]') : null;
+if (!el) { return; }
+push({ event: 'cgs_cta_click', cgs_cta: el.getAttribute('data-cgs-cta') || '', cgs_posicao: el.getAttribute('data-cgs-pos') || '', link_url: el.href || '' });
+});
+})();
+</script>

@@ -1,0 +1,693 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&amp;family=Trirong:ital,wght@0,300;0,400;1,400;1,700&amp;display=swap">
+<style>
+/* ---------- Ajustes do Divi, aplicados só onde existe #cex ---------- */
+.et_pb_section:has(#cex){padding:0!important;margin:0!important;background:transparent!important}
+.et_pb_row:has(#cex){width:100%!important;max-width:none!important;padding:0!important;margin:0!important}
+.et_pb_column:has(#cex){width:100%!important;margin:0!important;padding:0!important}
+.et_pb_code:has(#cex),.et_pb_code_inner:has(#cex),.et_pb_fullwidth_code:has(#cex){margin:0!important;padding:0!important;max-width:none!important;width:100%!important}
+html.cex-travado{overflow:hidden}
+/* ---------- Base com os tokens do site ---------- */
+#cex{--mata:#303323;--musgo:#858666;--musgo-esc:#6b6c50;--musgo-hover:#5c5d44;--cinza:#c5c5b9;--nevoa:#cfd0c3;--linho:#f3f2ee;--pedra:#564944;--oliva:#756a48;--oliva-hover:#635a3c;--cobre-claro:#d4957a;--terracota:#a65635;--terracota-hover:#8f4a2d;--branco:#fff;--gilda:"Gilda Display",Georgia,"Times New Roman",serif;--trirong:"Trirong",Georgia,"Times New Roman",serif;--albert:"Albert Sans",Helvetica,Arial,sans-serif;--marcellus:"Marcellus",Georgia,"Times New Roman",serif;--linha:80%;--max:1200px;--foco:var(--terracota);position:relative;background:var(--branco);color:var(--pedra);font-family:var(--albert);font-size:18px;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+@media (max-width:980px){#cex{--linha:86%}}
+#cex *,#cex *::before,#cex *::after{box-sizing:border-box}
+#cex h1,#cex h2,#cex h3,#cex h4,#cex p,#cex ul,#cex ol,#cex figure,#cex blockquote{margin:0;padding:0;font-style:normal}
+#cex ul,#cex ol{list-style:none}
+#cex blockquote{border:0;quotes:none}
+#cex blockquote::before,#cex blockquote::after{content:none}
+#cex li{padding:0;margin:0;line-height:inherit}
+#cex h1,#cex h2,#cex h3,#cex h4{color:var(--mata);font-weight:400;letter-spacing:normal;text-transform:none;text-wrap:balance}
+#cex p{text-wrap:pretty}
+#cex a{color:inherit;text-decoration:none}
+#cex img{display:block;max-width:100%;height:auto;border:0}
+/* O WordPress insere quebras de linha automáticas no Módulo de Código: ficam ocultas */
+#cex br{display:none}
+#cex strong,#cex b{font-weight:700}
+#cex button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;text-transform:none;letter-spacing:inherit}
+#cex :focus-visible{outline:2px solid var(--foco);outline-offset:3px}
+#cex [id]{scroll-margin-top:16px}
+#cex .cex-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#cex .cex-linha{width:var(--linha);max-width:var(--max);margin-inline:auto}
+#cex .cex-sec{padding-block:clamp(64px,7vw,104px)}
+#cex .cex-sec--linho{background:var(--linho)}
+#cex .cex-sec--nevoa{background:var(--nevoa)}
+#cex .cex-sec--mata{background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+/* ---------- Títulos no padrão do site ---------- */
+#cex .cex-titulo{font-family:var(--gilda);font-weight:400;font-size:clamp(33px,1.9vw + 22px,50px);line-height:1.05;color:var(--mata)}
+#cex .cex-titulo--trirong{font-family:var(--trirong);font-weight:300;font-size:clamp(33px,1.4vw + 24px,45px);line-height:1.05}
+#cex .cex-sec--mata .cex-titulo{color:#fff}
+#cex .cex-chamada{margin-top:14px;max-width:62ch;font-family:var(--albert);font-weight:300;font-size:clamp(17px,.4vw + 15px,20px);line-height:1.55;color:var(--pedra)}
+#cex .cex-sec--mata .cex-chamada{color:#fff}
+#cex .cex-cabeca{margin-bottom:clamp(36px,4vw,52px)}
+@media (min-width:1024px){#cex .cex-cabeca--lado{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:end}#cex .cex-cabeca--lado .cex-chamada{margin-top:0}}
+/* ---------- Botões no padrão do site (Marcellus, quadrados, com seta) ---------- */
+#cex .cex-btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;padding:8px 22px 8px 18px;border:0;border-radius:0;font-family:var(--marcellus);font-size:clamp(18px,.4vw + 16px,21px);font-weight:400;line-height:1.3;text-align:left;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+#cex .cex-btn::after{content:"";flex:none;width:8px;height:8px;margin-left:2px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
+#cex .cex-btn--branco{background:#fff;color:var(--mata)}
+#cex .cex-btn--branco:hover{background:var(--linho)}
+#cex .cex-btn--terracota{background:var(--terracota);color:#fff}
+#cex .cex-btn--terracota:hover{background:var(--terracota-hover)}
+#cex .cex-btn--oliva{background:var(--oliva);color:#fff}
+#cex .cex-btn--oliva:hover{background:var(--oliva-hover)}
+#cex .cex-btn--musgo{background:var(--musgo-esc);color:#fff}
+#cex .cex-btn--musgo:hover{background:var(--musgo-hover)}
+#cex .cex-btn--contorno{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.75)}
+#cex .cex-btn--contorno:hover{background:rgba(255,255,255,.1)}
+#cex .cex-btn--texto{min-height:0;padding:8px 0;background:none;color:inherit}
+#cex .cex-btn--texto:hover{text-decoration:underline;text-underline-offset:5px}
+/* ---------- Topo: foto e texto empilhados no celular, no tablet em pé e em telas estreitas; nas telas largas e deitadas, foto de fundo com o texto à esquerda e o casal inteiro à direita ---------- */
+#cex .cex-topo{position:relative;isolation:isolate;background:var(--mata);color:#fff}
+#cex .cex-topo__midia{position:relative;aspect-ratio:16 / 10;overflow:hidden;background:var(--musgo-esc)}
+#cex .cex-topo__midia picture,#cex .cex-topo__foto{display:block;width:100%;height:100%}
+#cex .cex-topo__foto{object-fit:cover;object-position:70% 55%;max-width:none}
+#cex .cex-topo__sombra{display:none}
+#cex .cex-topo__conteudo{position:relative;z-index:2;width:var(--linha);max-width:var(--max);margin-inline:auto;padding:28px 0 40px}
+#cex .cex-topo__sobre{display:flex;align-items:center;gap:12px;font-family:var(--trirong);font-size:clamp(18px,.3vw + 16px,22px);line-height:1.1;color:#fff}
+#cex .cex-topo__sobre::before{content:"";flex:none;width:34px;height:1px;background:currentColor}
+#cex .cex-topo__titulo{margin-top:14px;max-width:14ch;font-family:var(--gilda);font-weight:400;font-size:clamp(40px,3.4vw + 20px,74px);line-height:1.02;color:#fff}
+#cex .cex-topo__frase{margin-top:16px;max-width:46ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(19px,.5vw + 16px,25px);line-height:1.25;color:#fff}
+#cex .cex-topo__acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:26px}
+#cex .cex-topo__prova{display:inline-flex;align-items:center;gap:14px;margin-top:26px;padding:12px 18px 12px 12px;background:#fff;color:var(--mata);box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
+#cex .cex-topo__prova img{width:60px;height:auto;flex:none}
+#cex .cex-topo__prova-txt{display:grid;gap:3px;line-height:1.25}
+#cex .cex-topo__prova-premio{font-family:var(--marcellus);font-size:17px;color:var(--mata)}
+#cex .cex-topo__prova-nota{font-size:15px;color:var(--pedra)}
+#cex .cex-topo__prova-nota strong{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:27px;line-height:1;color:var(--mata)}
+#cex .cex-topo__prova-qtd{font-size:14px;color:var(--pedra)}
+#cex .cex-topo__prova:hover .cex-topo__prova-premio{text-decoration:underline;text-underline-offset:4px}
+@media (max-width:600px){#cex .cex-topo__acoes .cex-btn--branco{flex:1 1 100%}}
+@media (min-width:960px) and (min-aspect-ratio:13/10){#cex .cex-topo{display:flex;align-items:flex-end;min-height:clamp(560px,calc(100vh - var(--cex-top,0px)),900px);min-height:clamp(560px,calc(100svh - var(--cex-top,0px)),900px);overflow:hidden}#cex .cex-topo__midia{position:absolute;inset:0;aspect-ratio:auto}#cex .cex-topo__foto{object-position:58% 75%}#cex .cex-topo__sombra{display:block;position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(48,51,35,.82) 0%,rgba(48,51,35,.6) 30%,rgba(48,51,35,.22) 44%,rgba(48,51,35,0) 52%),linear-gradient(180deg,rgba(48,51,35,.3) 0%,rgba(48,51,35,0) 24%,rgba(48,51,35,0) 70%,rgba(48,51,35,.62) 100%)}#cex .cex-topo__conteudo{padding:48px 0 clamp(40px,6vh,64px)}#cex .cex-topo__titulo{max-width:min(14ch,calc(50% - 4vw))}#cex .cex-topo__frase,#cex .cex-topo__acoes{max-width:min(46ch,calc(50% - 4vw))}#cex .cex-topo__sobre,#cex .cex-topo__titulo,#cex .cex-topo__frase{text-shadow:0 1px 14px rgba(0,0,0,.3)}}
+@media (min-width:981px) and (min-aspect-ratio:13/10){#cex .cex-topo__conteudo{padding:48px 0 calc(clamp(40px,6vh,72px) + 64px)}#cex .cex-topo__prova{gap:16px;padding:12px 22px 12px 12px}#cex .cex-topo__prova img{width:64px}}
+/* ---------- Reserva da experiência ---------- */
+#cex .cex-reserva{position:relative;z-index:3}
+#cex .cex-reserva__caixa{width:var(--linha);max-width:var(--max);margin-inline:auto;padding:28px 32px 30px;background:var(--mata);color:#fff;--foco:var(--cobre-claro);transition:box-shadow .4s ease}
+#cex .cex-reserva__caixa.is-destaque{box-shadow:0 0 0 3px var(--cobre-claro),0 22px 44px -26px rgba(0,0,0,.65)}
+@media (min-width:981px) and (min-aspect-ratio:13/10){#cex .cex-reserva__caixa{margin-top:-64px;box-shadow:0 22px 44px -26px rgba(0,0,0,.65)}}
+@media (max-width:980px),not all and (min-aspect-ratio:13/10){#cex .cex-reserva__caixa{width:100%;padding:28px 7% 32px;border-top:1px solid rgba(255,255,255,.16)}}
+#cex .cex-reserva__topo{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 24px}
+#cex .cex-reserva__titulo{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(27px,.8vw + 21px,34px);line-height:1.1;color:#fff}
+#cex .cex-reserva__sub{font-family:var(--marcellus);font-size:16px;line-height:1.3;color:var(--cobre-claro)}
+#cex .cex-reserva__campos{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) auto;gap:14px;align-items:end;margin-top:20px}
+#cex .cex-campo label{display:block;margin-bottom:6px;font-family:var(--marcellus);font-size:15px;line-height:1.2;color:#fff}
+#cex .cex-campo input,#cex .cex-campo select{display:block;width:100%;height:50px;min-height:50px;padding:0 12px;border:0;border-radius:0;background:#fff;color:var(--mata);font-family:var(--albert);font-size:17px;font-weight:400;line-height:50px;text-align:left;-webkit-appearance:none;appearance:none}
+#cex .cex-campo input::-webkit-date-and-time-value{text-align:left}
+#cex .cex-campo select{padding-right:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23303323' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px}
+#cex .cex-reserva__aviso{margin-top:14px;font-size:15px;line-height:1.45;color:var(--cobre-claro)}
+#cex .cex-reserva__aviso[hidden]{display:none}
+#cex .cex-reserva__rodape{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 28px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.18)}
+#cex .cex-reserva__hospedagem{display:flex;flex-wrap:wrap;align-items:center;gap:2px 14px;font-size:15px;line-height:1.4;color:#fff}
+#cex .cex-reserva__hospedagem .cex-btn--texto{font-size:17px;color:#fff}
+#cex .cex-reserva__nota{flex:1 1 320px;max-width:60ch;font-size:14px;line-height:1.45;color:#fff}
+@media (max-width:980px){#cex .cex-reserva__campos{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}#cex .cex-campo--exp{grid-column:1 / -1}#cex .cex-reserva__campos .cex-btn{grid-column:1 / -1;justify-content:space-between}}
+@media (max-width:599px){#cex .cex-reserva__campos{grid-template-columns:minmax(0,1fr)}}
+/* ---------- Picnics: galeria com foto grande e duas miniaturas, todas na proporção original da foto (5 x 2), sem cortar o casal ---------- */
+#cex .cex-picnics{display:grid;grid-template-columns:minmax(0,1fr);gap:64px}
+@media (min-width:900px){#cex .cex-picnics{grid-template-columns:repeat(2,minmax(0,1fr));gap:44px;align-items:start}}
+#cex .cex-galeria{position:relative}
+#cex .cex-galeria__lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+#cex .cex-galeria__item{position:relative;display:block;overflow:hidden;background:var(--nevoa);cursor:zoom-in}
+#cex .cex-galeria__item:first-child{grid-column:1 / -1}
+#cex .cex-galeria__item:nth-child(n+4){display:none}
+#cex .cex-galeria__item img{display:block;width:100%;height:auto;aspect-ratio:5 / 2;object-fit:contain}
+#cex .cex-galeria__todas{display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-top:12px;padding:8px 16px;border:1px solid rgba(48,51,35,.28);background:#fff;color:var(--mata);font-family:var(--marcellus);font-size:16px}
+#cex .cex-galeria__todas::before{content:"";flex:none;width:16px;height:16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23303323' stroke-width='1.6'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3Crect x='14' y='14' width='7' height='7'/%3E%3C/svg%3E") center / 16px 16px no-repeat}
+#cex .cex-galeria__todas[hidden]{display:none}
+#cex .cex-galeria__todas:hover{background:var(--linho)}
+@media (max-width:699px){#cex .cex-galeria__lista{display:flex;gap:6px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin-inline:-7vw;padding-inline:7vw;scroll-padding-inline:7vw;scrollbar-width:none}#cex .cex-galeria__lista::-webkit-scrollbar{display:none}#cex .cex-galeria__item,#cex .cex-galeria__item:first-child,#cex .cex-galeria__item:nth-child(n+4){display:block;flex:none;width:84vw;scroll-snap-align:start}}
+#cex .cex-picnic__corpo{margin-top:24px}
+#cex .cex-picnic__onde{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:21px;line-height:1.2;color:var(--terracota)}
+#cex .cex-picnic__nome{margin-top:6px;font-family:var(--gilda);font-size:clamp(32px,1.2vw + 24px,44px);line-height:1.04;color:var(--mata)}
+#cex .cex-picnic__texto{margin-top:12px;max-width:52ch;font-size:18px;line-height:1.6;color:var(--pedra)}
+#cex .cex-picnic__preco{margin-top:14px;font-family:var(--trirong);font-style:italic;font-weight:300;font-size:21px;line-height:1.25;color:var(--mata)}
+#cex .cex-picnic__preco strong{font-weight:400;font-size:30px}
+#cex .cex-picnic__corpo .cex-btn{margin-top:20px}
+@media (max-width:600px){#cex .cex-picnic__corpo .cex-btn{display:flex;width:100%;justify-content:space-between}}
+/* ---------- A cesta: cartão de cardápio com borda dupla ---------- */
+#cex .cex-cesta{max-width:820px;margin:clamp(56px,6vw,84px) auto 0;padding:clamp(34px,4vw,50px) clamp(22px,5vw,64px) clamp(30px,3.5vw,44px);background:var(--linho);text-align:center;box-shadow:inset 0 0 0 1px rgba(48,51,35,.22),inset 0 0 0 8px var(--linho),inset 0 0 0 9px rgba(48,51,35,.22)}
+#cex .cex-cesta__titulo{font-family:var(--gilda);font-size:clamp(30px,1vw + 24px,40px);line-height:1.05;color:var(--mata)}
+#cex .cex-cesta__sub{margin-top:8px;font-family:var(--marcellus);font-size:16px;line-height:1.3;color:var(--oliva)}
+#cex .cex-cesta__itens{display:grid;gap:10px;margin-top:26px}
+#cex .cex-cesta__itens li{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(21px,.6vw + 18px,26px);line-height:1.3;color:var(--pedra)}
+#cex .cex-cesta__nota{max-width:46ch;margin:28px auto 0;padding-top:18px;border-top:1px solid rgba(48,51,35,.18);font-size:16px;line-height:1.5;color:var(--pedra)}
+/* ---------- Outras experiências (desativadas até o Cassorova confirmar) ---------- */
+#cex .cex-mais__grade{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+@media (min-width:900px){#cex .cex-mais__grade{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}}
+#cex .cex-mais__card{display:flex;flex-direction:column;background:#fff}
+#cex .cex-mais__foto{aspect-ratio:16 / 10;overflow:hidden;background:var(--nevoa)}
+#cex .cex-mais__foto img{width:100%;height:100%;object-fit:cover}
+#cex .cex-mais__corpo{display:flex;flex:1;flex-direction:column;align-items:flex-start;padding:26px 28px 28px}
+#cex .cex-lista{display:grid;gap:8px;margin-top:16px;font-family:var(--marcellus);font-size:16px;line-height:1.5;color:var(--oliva)}
+#cex .cex-lista li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px}
+#cex .cex-lista li::before{content:"";width:18px;height:18px;margin-top:3px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23756a48' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l4.5 4.5L19.5 7'/%3E%3C/svg%3E") center / 18px 18px no-repeat}
+#cex .cex-mais__corpo .cex-picnic__preco{margin-top:auto;padding-top:18px}
+/* ---------- Como reservar: três passos ---------- */
+#cex .cex-passos{display:grid;gap:36px}
+@media (min-width:900px){#cex .cex-passos{grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}}
+#cex .cex-passo{padding-top:22px;border-top:1px solid rgba(255,255,255,.26)}
+#cex .cex-passo__num{display:block;font-family:var(--trirong);font-style:italic;font-weight:300;font-size:clamp(46px,2vw + 32px,62px);line-height:.9;color:var(--cobre-claro)}
+#cex .cex-passo__titulo{margin-top:16px;font-family:var(--marcellus);font-size:22px;line-height:1.25;color:#fff}
+#cex .cex-passo__texto{margin-top:8px;max-width:40ch;font-size:17px;line-height:1.55;color:#fff}
+#cex .cex-passo .cex-btn--texto{margin-top:8px;font-size:18px;color:#fff}
+#cex .cex-como__nota{margin-top:clamp(40px,4vw,56px);padding-top:20px;border-top:1px solid rgba(255,255,255,.18);font-size:15px;line-height:1.5;color:#fff}
+/* ---------- Ocasiões ---------- */
+#cex .cex-ocasioes{display:grid;gap:20px}
+@media (min-width:900px){#cex .cex-ocasioes{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}}
+#cex .cex-ocasiao{display:flex;flex-direction:column;align-items:flex-start;padding:28px 28px 26px;background:var(--linho)}
+#cex .cex-ocasiao__titulo{font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(23px,.4vw + 21px,27px);line-height:1.15;color:var(--terracota)}
+#cex .cex-ocasiao__texto{margin-top:12px;font-size:17px;line-height:1.6;color:var(--pedra)}
+#cex .cex-ocasiao .cex-btn--texto{margin-top:auto;padding-top:14px;font-size:18px;color:var(--mata)}
+/* ---------- Momentos inclusos na diária ---------- */
+#cex .cex-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+#cex .cex-card{display:flex;flex-direction:column;background:#fff}
+#cex .cex-card__foto{aspect-ratio:16 / 10;overflow:hidden;background:var(--cinza)}
+#cex .cex-card__foto img{width:100%;height:100%;object-fit:cover}
+#cex .cex-card__corpo{padding:18px 18px 22px}
+#cex .cex-card__titulo{font-family:var(--gilda);font-size:24px;line-height:1.1;color:var(--mata)}
+#cex .cex-card__texto{margin-top:8px;font-family:var(--marcellus);font-size:16px;line-height:1.55;color:var(--oliva)}
+@media (max-width:1023px){#cex .cex-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:699px){#cex .cex-cards{display:flex;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin-inline:-7vw;padding-inline:7vw;scroll-padding-inline:7vw;scrollbar-width:none}#cex .cex-cards::-webkit-scrollbar{display:none}#cex .cex-card{flex:none;width:78vw;scroll-snap-align:start}}
+#cex .cex-inclusos__link{margin-top:24px}
+#cex .cex-inclusos__link .cex-btn--texto{color:var(--mata)}
+/* ---------- Avaliações ---------- */
+#cex .cex-aval{display:grid;gap:36px}
+@media (min-width:1024px){#cex .cex-aval{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:72px;align-items:center}}
+#cex .cex-aval__citacao blockquote{margin-top:28px}
+#cex .cex-aval__citacao blockquote p{max-width:30ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(26px,1.3vw + 20px,40px);line-height:1.28;color:var(--pedra)}
+#cex .cex-aval__quem{margin-top:18px;font-family:var(--marcellus);font-size:16px;color:var(--oliva)}
+#cex .cex-aval__trip{display:grid;justify-items:start;gap:12px;padding:30px 30px 28px;background:var(--linho)}
+#cex .cex-aval__trip img{width:64px;height:auto}
+#cex .cex-aval__nota{font-family:var(--trirong);font-style:italic;font-weight:300;font-size:22px;line-height:1.1;color:var(--mata)}
+#cex .cex-aval__nota strong{font-weight:300;font-size:clamp(50px,2vw + 36px,64px);line-height:.9}
+#cex .cex-aval__fonte{font-size:15px;line-height:1.5;color:var(--pedra)}
+#cex .cex-aval__trip .cex-btn{margin-top:6px}
+/* ---------- Perguntas frequentes ---------- */
+#cex .cex-faq__grade{display:grid;gap:40px}
+@media (min-width:1024px){#cex .cex-faq__grade{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:80px;align-items:start}#cex .cex-faq__lado{position:sticky;top:32px}}
+#cex .cex-faq__lado .cex-btn{margin-top:26px}
+#cex .cex-qa{border-top:1px solid rgba(48,51,35,.22)}
+#cex .cex-qa:last-child{border-bottom:1px solid rgba(48,51,35,.22)}
+#cex .cex-qa summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;list-style:none;cursor:pointer}
+#cex .cex-qa summary::-webkit-details-marker{display:none}
+#cex .cex-qa__q{font-family:var(--trirong);font-weight:400;font-size:clamp(20px,.4vw + 17px,23px);line-height:1.25;color:var(--mata)}
+#cex .cex-qa__icon{position:relative;flex:none;width:28px;height:28px;border:1px solid var(--musgo);border-radius:50%}
+#cex .cex-qa__icon::before,#cex .cex-qa__icon::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--mata);transform:translate(-50%,-50%)}
+#cex .cex-qa__icon::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .25s ease}
+#cex .cex-qa[open] .cex-qa__icon::after{transform:translate(-50%,-50%) rotate(0deg)}
+#cex .cex-qa__a{max-width:66ch;padding:0 48px 26px 0;font-size:18px;line-height:1.6;color:var(--pedra)}
+@media (max-width:600px){#cex .cex-qa__a{padding-right:0}}
+#cex .cex-qa__a a{color:var(--terracota);text-decoration:underline;text-underline-offset:3px}
+/* ---------- Fotos ampliadas ---------- */
+#cex .cex-lb{width:100vw;max-width:100vw;height:100vh;height:100dvh;max-height:none;margin:0;padding:0;border:0;background:#1b1d14;color:#fff;overflow:hidden}
+#cex .cex-lb::backdrop{background:rgba(0,0,0,.7)}
+#cex .cex-lb[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+#cex .cex-lb__topo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(14px,3vw,28px)}
+#cex .cex-lb__titulo{font-family:var(--marcellus);font-size:17px;color:#fff}
+#cex .cex-lb__cont{margin-left:12px;font-size:15px;color:var(--cobre-claro)}
+#cex .cex-lb__fechar{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:8px 14px;border:1px solid rgba(255,255,255,.45);font-family:var(--marcellus);font-size:16px;color:#fff}
+#cex .cex-lb__fechar::after{content:"+";font-family:var(--albert);font-size:26px;font-weight:300;line-height:.7;transform:rotate(45deg)}
+#cex .cex-lb__fig{position:relative;display:flex;align-items:center;justify-content:center;min-height:0;margin:0;padding:0 clamp(8px,6vw,84px)}
+#cex .cex-lb__fig img{width:auto;height:auto;max-width:100%;max-height:calc(100vh - 150px);max-height:calc(100dvh - 150px);object-fit:contain}
+#cex .cex-lb__ant,#cex .cex-lb__prox{position:absolute;top:50%;z-index:2;display:grid;place-items:center;width:52px;height:52px;margin-top:-26px;border-radius:50%;background:rgba(48,51,35,.72);border:1px solid rgba(255,255,255,.5);color:#fff}
+#cex .cex-lb__ant{left:clamp(8px,2vw,22px)}
+#cex .cex-lb__prox{right:clamp(8px,2vw,22px)}
+#cex .cex-lb__ant::before,#cex .cex-lb__prox::before{content:"";width:11px;height:11px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor}
+#cex .cex-lb__ant::before{margin-left:5px;transform:rotate(-135deg)}
+#cex .cex-lb__prox::before{margin-right:5px;transform:rotate(45deg)}
+#cex .cex-lb__ant:hover,#cex .cex-lb__prox:hover{background:var(--terracota)}
+#cex .cex-lb__legenda{max-width:70ch;margin:0 auto;padding:12px 18px 18px;text-align:center;font-size:15px;line-height:1.4;color:#fff}
+@media (max-width:699px){#cex .cex-lb__ant,#cex .cex-lb__prox{top:auto;bottom:14px;margin-top:0}#cex .cex-lb__legenda{padding:12px 76px 22px}#cex .cex-lb__fig img{max-height:calc(100vh - 190px);max-height:calc(100dvh - 190px)}}
+/* ---------- Chamada final ---------- */
+#cex .cex-final{background:var(--nevoa) url("/images/2025/03/cassorova-folha-bg.png") right 6% center / min(520px,45%) no-repeat}
+#cex .cex-final__grade{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){#cex .cex-final__grade{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px}}
+#cex .cex-final__foto{overflow:hidden;aspect-ratio:3 / 2}
+#cex .cex-final__foto img{width:100%;height:100%;object-fit:cover}
+#cex .cex-final__frase{margin-top:16px;max-width:34ch;font-family:var(--trirong);font-style:italic;font-weight:400;font-size:clamp(21px,.6vw + 17px,28px);line-height:1.15;color:var(--pedra)}
+#cex .cex-final .cex-chamada{max-width:42ch}
+#cex .cex-final__botoes{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:28px}
+#cex .cex-final .cex-btn--texto{color:var(--mata)}
+/* ---------- Barra fixa ---------- */
+#cex .cex-fixa{position:fixed;z-index:9990;left:12px;right:96px;bottom:16px;display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:6px;background:var(--mata);color:#fff;box-shadow:0 12px 30px -12px rgba(0,0,0,.55);opacity:0;visibility:hidden;transform:translateY(130%);transition:transform .35s ease,opacity .35s ease,visibility 0s linear .35s;--foco:var(--cobre-claro)}
+#cex .cex-fixa.is-on{opacity:1;visibility:visible;transform:none;transition:transform .35s ease,opacity .35s ease}
+#cex .cex-fixa__txt{margin-right:auto;padding-left:10px;font-family:var(--marcellus);font-size:15px;line-height:1.2}
+#cex .cex-fixa .cex-btn{min-height:44px;padding:8px 14px;font-size:17px;white-space:nowrap}
+#cex .cex-fixa .cex-btn::after{display:none}
+@media (max-width:719px){#cex .cex-fixa__txt{display:none}#cex .cex-fixa .cex-btn{flex:1 1 auto;padding:8px 10px;font-size:16px}}
+@media (min-width:720px){#cex .cex-fixa{right:auto;left:24px;bottom:24px;max-width:560px;gap:10px}}
+#cex .cex-fim{display:block;height:1px}
+/* ---------- Movimento reduzido ---------- */
+@media (prefers-reduced-motion:reduce){#cex .cex-fixa,#cex .cex-qa__icon::after,#cex .cex-btn,#cex .cex-reserva__caixa{transition:none}}
+</style>
+<div id="cex" class="cex">
+<!-- ================= 1. TOPO ================= -->
+<section class="cex-topo" aria-labelledby="cex-titulo">
+<div class="cex-topo__midia">
+<picture>
+<source media="(max-width: 719px)" srcset="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 400w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 1080w" sizes="100vw">
+<img class="cex-topo__foto" src="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg" srcset="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 480w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 768w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 1024w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 1536w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 1600w" sizes="160vw" width="1600" height="640" alt="Casal abraçado em um picnic à beira do lago ao pôr do sol, no Cassorova" loading="eager" fetchpriority="high" decoding="async">
+</picture>
+</div>
+<div class="cex-topo__sombra" aria-hidden="true"></div>
+<div class="cex-topo__conteudo">
+<p class="cex-topo__sobre">Para hóspedes do Cassorova</p>
+<h1 id="cex-titulo" class="cex-topo__titulo">Experiências românticas em Brotas</h1>
+<p class="cex-topo__frase">Um picnic à beira do lago ou na varanda do seu bangalô, com cesta de queijos, pães, bolos caseiros e vinho. A equipe monta tudo e vocês só aproveitam.</p>
+<div class="cex-topo__acoes">
+<a class="cex-btn cex-btn--branco" href="#cex-reserva" data-cex-cta="reservar" data-cex-pos="topo">Reservar uma Experiência</a>
+<a class="cex-btn cex-btn--texto" href="#cex-picnics" data-cex-cta="ver-picnics" data-cex-pos="topo">Ver os Picnics</a>
+</div>
+<a class="cex-topo__prova" href="https://www.tripadvisor.com.br/Hotel_Review-g793338-d21389571-Reviews-Cassorova_Hotel_Boutique-Brotas_State_of_Sao_Paulo.html" target="_blank" rel="noopener" data-cex-cta="avaliacoes-tripadvisor" data-cex-pos="topo">
+<img src="/images/2026/07/cassorova-tripadvisor.png" width="200" height="262" alt="Selo Travelers' Choice 2026 do Tripadvisor" loading="eager" decoding="async">
+<span class="cex-topo__prova-txt"><span class="cex-topo__prova-premio">Travelers' Choice 2026</span><span class="cex-topo__prova-nota"><strong>4,9</strong> de 5 em 275 avaliações</span><span class="cex-topo__prova-qtd">no Tripadvisor</span></span>
+</a>
+</div>
+</section>
+<!-- ================= 2. RESERVA DA EXPERIÊNCIA ================= -->
+<section class="cex-reserva" id="cex-reserva" aria-labelledby="cex-reserva-t">
+<div class="cex-reserva__caixa cex-busca">
+<div class="cex-reserva__topo">
+<h2 id="cex-reserva-t" class="cex-reserva__titulo">Reserve sua experiência</h2>
+<p class="cex-reserva__sub">Pelo WhatsApp, com pelo menos 72 horas de antecedência</p>
+</div>
+<div class="cex-reserva__campos">
+<div class="cex-campo cex-campo--exp"><label for="cex-experiencia">Experiência</label><select id="cex-experiencia" name="cex-experiencia"><option value="picnic-na-natureza" selected>Picnic na Natureza</option><option value="picnic-na-varanda">Picnic na Varanda</option></select></div>
+<div class="cex-campo"><label for="cex-data">Data da experiência</label><input type="date" id="cex-data" name="cex-data" autocomplete="off"></div>
+<a class="cex-btn cex-btn--terracota" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20reservar%20o%20Picnic%20na%20Natureza%20no%20Cassorova" target="_blank" rel="noopener" data-cex-busca="whatsapp">Reservar pelo WhatsApp</a>
+</div>
+<p class="cex-reserva__aviso" hidden></p>
+<div class="cex-reserva__rodape">
+<p class="cex-reserva__hospedagem"><span>Ainda não reservou a hospedagem?</span><a class="cex-btn cex-btn--texto" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-cex-busca="motor">Ver Datas e Preços</a></p>
+<p class="cex-reserva__nota">As experiências são adicionais à diária e não são reembolsáveis. Faça o check-in antes das 22h para recebê-las como planejado.</p>
+</div>
+</div>
+</section>
+<!-- ================= 3. OS PICNICS ================= -->
+<section class="cex-sec" id="cex-picnics" aria-labelledby="cex-picnics-t">
+<div class="cex-linha">
+<div class="cex-cabeca cex-cabeca--lado">
+<h2 id="cex-picnics-t" class="cex-titulo">Picnic na natureza ou na varanda</h2>
+<p class="cex-chamada">A cesta é a mesma nos dois. O que muda é o cenário: um canto da natureza escolhido por vocês ou a varanda do bangalô, ao lado do ofurô.</p>
+</div>
+<div class="cex-picnics">
+<article class="cex-picnic" id="cex-natureza" data-cex-exp="picnic-na-natureza" data-cex-exp-nome="Picnic na Natureza" data-cex-exp-artigo="o" aria-labelledby="cex-natureza-t">
+<div class="cex-galeria" data-cex-galeria="picnic-na-natureza" data-cex-galeria-nome="Picnic na Natureza"><div class="cex-galeria__lista" tabindex="0" aria-label="Fotos do Picnic na Natureza"><a class="cex-galeria__item" href="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Casal abraçado em um picnic à beira do lago ao pôr do sol, no Cassorova"><img src="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg" srcset="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 480w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 768w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 1024w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 1536w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg 1600w" sizes="(min-width: 1200px) 580px, (min-width: 900px) 40vw, 86vw" width="1600" height="640" alt="Casal abraçado em um picnic à beira do lago ao pôr do sol, no Cassorova" loading="lazy" decoding="async"></a><a class="cex-galeria__item" href="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-3.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Casal de chapéu sentado em uma toalha xadrez no gramado, com a cesta de picnic"><img src="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-3.jpg" srcset="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-3.jpg 480w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-3.jpg 768w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-3.jpg 1024w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-3.jpg 1536w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-3.jpg 1600w" sizes="(min-width: 1200px) 290px, (min-width: 900px) 20vw, (min-width: 700px) 43vw, 84vw" width="1600" height="640" alt="Casal de chapéu sentado em uma toalha xadrez no gramado, com a cesta de picnic" loading="lazy" decoding="async"></a><a class="cex-galeria__item" href="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-2.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Casal brindando com taças de vinho durante o picnic, com o lago ao fundo"><img src="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-2.jpg" srcset="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-2.jpg 480w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-2.jpg 768w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-2.jpg 1024w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-2.jpg 1536w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-2.jpg 1600w" sizes="(min-width: 1200px) 290px, (min-width: 900px) 20vw, (min-width: 700px) 43vw, 84vw" width="1600" height="640" alt="Casal brindando com taças de vinho durante o picnic, com o lago ao fundo" loading="lazy" decoding="async"></a><a class="cex-galeria__item" href="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-6.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Casal no picnic à beira do lago no fim da tarde"><img src="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-6.jpg" srcset="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-6.jpg 480w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-6.jpg 768w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-6.jpg 1024w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-6.jpg 1536w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-6.jpg 1600w" sizes="(min-width: 1200px) 290px, (min-width: 900px) 20vw, (min-width: 700px) 43vw, 84vw" width="1600" height="640" alt="Casal no picnic à beira do lago no fim da tarde" loading="lazy" decoding="async"></a><a class="cex-galeria__item" href="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-5.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Casal de chapéu sentado na toalha xadrez na prainha do lago, com a cesta de picnic"><img src="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-5.jpg" srcset="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-5.jpg 480w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-5.jpg 768w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-5.jpg 1024w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-5.jpg 1536w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-5.jpg 1600w" sizes="(min-width: 1200px) 290px, (min-width: 900px) 20vw, (min-width: 700px) 43vw, 84vw" width="1600" height="640" alt="Casal de chapéu sentado na toalha xadrez na prainha do lago, com a cesta de picnic" loading="lazy" decoding="async"></a><a class="cex-galeria__item" href="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-4.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Picnic montado na prainha do lago, com toalha xadrez, cesta, almofadas e balde com vinho"><img src="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-4.jpg" srcset="/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-4.jpg 480w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-4.jpg 768w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-4.jpg 1024w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-4.jpg 1536w, /images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-4.jpg 1600w" sizes="(min-width: 1200px) 290px, (min-width: 900px) 20vw, (min-width: 700px) 43vw, 84vw" width="1600" height="640" alt="Picnic montado na prainha do lago, com toalha xadrez, cesta, almofadas e balde com vinho" loading="lazy" decoding="async"></a></div><button class="cex-galeria__todas" type="button" hidden>Ver as 6 fotos</button></div>
+<div class="cex-picnic__corpo">
+<p class="cex-picnic__onde">À beira do lago ou no gramado</p>
+<h3 id="cex-natureza-t" class="cex-picnic__nome">Picnic na Natureza</h3>
+<p class="cex-picnic__texto">Escolham um canto da natureza e a equipe monta o picnic ali, com a cesta de petiscos e o vinho.</p>
+<p class="cex-picnic__preco"><strong>R$&nbsp;525</strong> por experiência</p>
+<a class="cex-btn cex-btn--terracota" href="#cex-reserva" data-cex-escolher="picnic-na-natureza" data-cex-cta="reservar" data-cex-pos="picnic-natureza">Reservar o Picnic na Natureza</a>
+</div>
+</article>
+<article class="cex-picnic" id="cex-varanda" data-cex-exp="picnic-na-varanda" data-cex-exp-nome="Picnic na Varanda" data-cex-exp-artigo="o" aria-labelledby="cex-varanda-t">
+<div class="cex-galeria" data-cex-galeria="picnic-na-varanda" data-cex-galeria-nome="Picnic na Varanda"><div class="cex-galeria__lista" tabindex="0" aria-label="Fotos do Picnic na Varanda"><a class="cex-galeria__item" href="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Casal de roupão brindando ao pôr do sol na varanda do bangalô"><img src="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg" srcset="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 480w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 768w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 1024w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 1536w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 1600w" sizes="(min-width: 1200px) 580px, (min-width: 900px) 40vw, 86vw" width="1600" height="640" alt="Casal de roupão brindando ao pôr do sol na varanda do bangalô" loading="lazy" decoding="async"></a><a class="cex-galeria__item" href="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-2.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Casal de roupão com taças de vinho e cesta de picnic diante da lareira"><img src="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-2.jpg" srcset="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-2.jpg 480w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-2.jpg 768w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-2.jpg 1024w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-2.jpg 1536w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-2.jpg 1600w" sizes="(min-width: 1200px) 290px, (min-width: 900px) 20vw, (min-width: 700px) 43vw, 84vw" width="1600" height="640" alt="Casal de roupão com taças de vinho e cesta de picnic diante da lareira" loading="lazy" decoding="async"></a><a class="cex-galeria__item" href="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-3.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Varanda do bangalô com duas espreguiçadeiras e parede vermelha"><img src="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-3.jpg" srcset="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-3.jpg 480w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-3.jpg 768w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-3.jpg 1024w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-3.jpg 1536w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-3.jpg 1600w" sizes="(min-width: 1200px) 290px, (min-width: 900px) 20vw, (min-width: 700px) 43vw, 84vw" width="1600" height="640" alt="Varanda do bangalô com duas espreguiçadeiras e parede vermelha" loading="lazy" decoding="async"></a><a class="cex-galeria__item" href="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-1.jpg" target="_blank" rel="noopener" aria-label="Ampliar foto: Bangalôs do Cassorova vistos do gramado em um dia de céu azul"><img src="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-1.jpg" srcset="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-1.jpg 480w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-1.jpg 768w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-1.jpg 1024w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-1.jpg 1536w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-1.jpg 1600w" sizes="(min-width: 1200px) 290px, (min-width: 900px) 20vw, (min-width: 700px) 43vw, 84vw" width="1600" height="640" alt="Bangalôs do Cassorova vistos do gramado em um dia de céu azul" loading="lazy" decoding="async"></a></div><button class="cex-galeria__todas" type="button" hidden>Ver as 4 fotos</button></div>
+<div class="cex-picnic__corpo">
+<p class="cex-picnic__onde">Na varanda do seu bangalô</p>
+<h3 id="cex-varanda-t" class="cex-picnic__nome">Picnic na Varanda</h3>
+<p class="cex-picnic__texto">Montado na varanda do seu bangalô, ao lado do ofurô, com vista para o horizonte.</p>
+<p class="cex-picnic__preco"><strong>R$&nbsp;525</strong> por experiência</p>
+<a class="cex-btn cex-btn--terracota" href="#cex-reserva" data-cex-escolher="picnic-na-varanda" data-cex-cta="reservar" data-cex-pos="picnic-varanda">Reservar o Picnic na Varanda</a>
+</div>
+</article>
+</div>
+<div class="cex-cesta">
+<h3 class="cex-cesta__titulo">O que vem na cesta</h3>
+<p class="cex-cesta__sub">Nos dois picnics</p>
+<ul class="cex-cesta__itens"><li>Queijos e frios</li><li>Seleção de pães</li><li>Dois tipos de bolos caseiros</li><li>Uma garrafa de vinho tinto ou branco</li></ul>
+<p class="cex-cesta__nota">R$ 525 por experiência, adicionais à diária, em até 5x sem juros no cartão de crédito.</p>
+</div>
+</div>
+</section>
+<!-- EXPERIÊNCIAS DESATIVADAS: Ofurô de Rosas e Decoração Romântica. Para ativar, apague esta linha inteira e a linha FIM DAS EXPERIÊNCIAS DESATIVADAS, mais abaixo. Para ativar só uma, apague também o bloco da outra, do article até o fim do article.
+<section class="cex-sec cex-sec--linho" id="cex-mais" aria-labelledby="cex-mais-t">
+<div class="cex-linha">
+<div class="cex-cabeca cex-cabeca--lado">
+<h2 id="cex-mais-t" class="cex-titulo">Mais experiências românticas</h2>
+<p class="cex-chamada">Para quem quer pétalas de rosas, espumante ou a lareira acesa esperando no bangalô.</p>
+</div>
+<div class="cex-mais__grade">
+<article class="cex-mais__card" id="cex-ofuro" data-cex-exp="ofuro-de-rosas" data-cex-exp-nome="Ofurô de Rosas" data-cex-exp-artigo="o" aria-labelledby="cex-ofuro-t">
+<figure class="cex-mais__foto"><img src="/images/2025/05/experiencias-ofuro-cassorova-resort-ecoturismo-brotas-1.jpg" srcset="/images/2025/05/experiencias-ofuro-cassorova-resort-ecoturismo-brotas-1.jpg 480w, /images/2025/05/experiencias-ofuro-cassorova-resort-ecoturismo-brotas-1.jpg 768w, /images/2025/05/experiencias-ofuro-cassorova-resort-ecoturismo-brotas-1.jpg 1024w, /images/2025/05/experiencias-ofuro-cassorova-resort-ecoturismo-brotas-1.jpg 1536w, /images/2025/05/experiencias-ofuro-cassorova-resort-ecoturismo-brotas-1.jpg 1600w" sizes="(min-width: 1200px) 910px, (min-width: 900px) 64vw, 135vw" width="1600" height="640" alt="Casal no ofurô da varanda coberto com pétalas de rosas, com espumante no balde de gelo" loading="lazy" decoding="async" style="object-position:17% 50%"></figure>
+<div class="cex-mais__corpo">
+<p class="cex-picnic__onde">No ofurô da sua varanda</p>
+<h3 id="cex-ofuro-t" class="cex-picnic__nome">Ofurô de Rosas</h3>
+<p class="cex-picnic__texto">O ofurô privativo do bangalô coberto com pétalas de rosas, com espumante Chandon e uma seleção de queijos e frutas.</p>
+<ul class="cex-lista"><li>Harmonização de queijos, frios e frutas da estação</li><li>Espumante Chandon</li><li>Ofurô coberto com pétalas de rosas</li></ul>
+<p class="cex-picnic__preco"><strong>R$&nbsp;998</strong> por experiência</p>
+<a class="cex-btn cex-btn--terracota" href="#cex-reserva" data-cex-escolher="ofuro-de-rosas" data-cex-cta="reservar" data-cex-pos="ofuro-de-rosas">Reservar o Ofurô de Rosas</a>
+</div>
+</article>
+<article class="cex-mais__card" id="cex-decoracao" data-cex-exp="decoracao-romantica" data-cex-exp-nome="Decoração Romântica" data-cex-exp-artigo="a" aria-labelledby="cex-decoracao-t">
+<figure class="cex-mais__foto"><img src="/images/2025/05/experiencias-decoracao-romantica-cassorova-resort-ecoturismo-brotas-1.jpg" srcset="/images/2025/05/experiencias-decoracao-romantica-cassorova-resort-ecoturismo-brotas-1.jpg 400w, /images/2025/05/experiencias-decoracao-romantica-cassorova-resort-ecoturismo-brotas-1.jpg 1080w" sizes="(min-width: 900px) 580px, 86vw" width="1080" height="675" alt="Lareira acesa no bangalô, com mesa, frutas e balde de gelo" loading="lazy" decoding="async"></figure>
+<div class="cex-mais__corpo">
+<p class="cex-picnic__onde">No seu bangalô</p>
+<h3 id="cex-decoracao-t" class="cex-picnic__nome">Decoração Romântica</h3>
+<p class="cex-picnic__texto">Pétalas de rosas pelo bangalô, vinho tinto, lareira acesa e uma seleção de queijos, nuts e frutas.</p>
+<ul class="cex-lista"><li>Decoração com pétalas pelo bangalô</li><li>Uma garrafa de vinho tinto</li><li>Kit lareira, com lenha e acendimento</li><li>Seleção de queijos, nuts e frutas</li></ul>
+<p class="cex-picnic__preco"><strong>R$&nbsp;540</strong> por experiência</p>
+<a class="cex-btn cex-btn--terracota" href="#cex-reserva" data-cex-escolher="decoracao-romantica" data-cex-cta="reservar" data-cex-pos="decoracao-romantica">Reservar a Decoração Romântica</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+FIM DAS EXPERIÊNCIAS DESATIVADAS -->
+<!-- ================= 4. COMO RESERVAR ================= -->
+<section class="cex-sec cex-sec--mata" id="cex-como" aria-labelledby="cex-como-t">
+<div class="cex-linha">
+<div class="cex-cabeca cex-cabeca--lado">
+<h2 id="cex-como-t" class="cex-titulo cex-titulo--trirong">Como reservar uma experiência</h2>
+<p class="cex-chamada">As experiências são um adicional à hospedagem. São três passos, da reserva do bangalô à cesta pronta.</p>
+</div>
+<ol class="cex-passos">
+<li class="cex-passo"><span class="cex-passo__num" aria-hidden="true">1</span><h3 class="cex-passo__titulo">Reserve a hospedagem</h3><p class="cex-passo__texto">Escolha o bangalô e as datas no motor de reservas. As experiências são para quem está hospedado no Cassorova.</p><a class="cex-btn cex-btn--texto" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-cex-cta="ver-datas" data-cex-pos="como-reservar">Ver Datas e Preços</a></li>
+<li class="cex-passo"><span class="cex-passo__num" aria-hidden="true">2</span><h3 class="cex-passo__titulo">Peça a experiência com 72 horas de antecedência</h3><p class="cex-passo__texto">Pelo WhatsApp da recepção, com a experiência e a data. O pagamento pode ser feito em até 5x sem juros no cartão de crédito.</p><a class="cex-btn cex-btn--texto" href="#cex-reserva" data-cex-cta="reservar" data-cex-pos="como-reservar">Escolher a Experiência</a></li>
+<li class="cex-passo"><span class="cex-passo__num" aria-hidden="true">3</span><h3 class="cex-passo__titulo">Faça o check-in antes das 22h</h3><p class="cex-passo__texto">Assim a equipe consegue entregar a experiência da melhor forma, no bangalô ou no canto da natureza que vocês escolheram.</p></li>
+</ol>
+<p class="cex-como__nota">Os valores das experiências são adicionais aos valores das diárias e não são reembolsáveis.</p>
+</div>
+</section>
+<!-- ================= 5. OCASIÕES ================= -->
+<section class="cex-sec" id="cex-ocasioes" aria-labelledby="cex-ocasioes-t">
+<div class="cex-linha">
+<div class="cex-cabeca cex-cabeca--lado">
+<h2 id="cex-ocasioes-t" class="cex-titulo">Para lua de mel, bodas ou um pedido de casamento</h2>
+<p class="cex-chamada">Combinações de bangalô e experiência que funcionam bem para datas especiais.</p>
+</div>
+<ul class="cex-ocasioes">
+<li class="cex-ocasiao"><h3 class="cex-ocasiao__titulo">Lua de mel</h3><p class="cex-ocasiao__texto">A Villa Romance tem banheira de hidromassagem e lareira no quarto e ofurô aquecido na varanda. Com o Picnic na Varanda, a noite a dois fica completa sem sair do bangalô.</p><a class="cex-btn cex-btn--texto" href="/bangalos/#cbg-romance" data-cex-cta="ver-villa-romance" data-cex-pos="ocasioes">Ver a Villa Romance</a></li>
+<li class="cex-ocasiao"><h3 class="cex-ocasiao__titulo">Aniversário de casamento ou de namoro</h3><p class="cex-ocasiao__texto">O Picnic na Natureza à beira do lago no fim da tarde e, à noite, o jantar no restaurante à la carte do resort.</p><a class="cex-btn cex-btn--texto" href="/gastronomia/" data-cex-cta="gastronomia" data-cex-pos="ocasioes">Ver a Gastronomia</a></li>
+<li class="cex-ocasiao"><h3 class="cex-ocasiao__titulo">Pedido de casamento</h3><p class="cex-ocasiao__texto">Escolha o canto mais bonito da propriedade para o Picnic na Natureza e conte o seu plano para a equipe na hora de reservar pelo WhatsApp.</p><a class="cex-btn cex-btn--texto" href="#cex-reserva" data-cex-escolher="picnic-na-natureza" data-cex-cta="reservar" data-cex-pos="ocasioes">Reservar o Picnic</a></li>
+</ul>
+</div>
+</section>
+<!-- ================= 6. MOMENTOS INCLUSOS NA DIÁRIA ================= -->
+<section class="cex-sec cex-sec--nevoa" id="cex-inclusos" aria-labelledby="cex-inclusos-t">
+<div class="cex-linha">
+<div class="cex-cabeca cex-cabeca--lado">
+<h2 id="cex-inclusos-t" class="cex-titulo">Outros momentos a dois, já na diária</h2>
+<p class="cex-chamada">Para completar a viagem, sem custo extra para quem está hospedado.</p>
+</div>
+<ul class="cex-cards" tabindex="0" aria-label="Momentos inclusos na hospedagem">
+<li class="cex-card"><figure class="cex-card__foto"><img src="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-9.jpg" srcset="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-9.jpg 400w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-9.jpg 1080w" sizes="(min-width: 1024px) 290px, (min-width: 700px) 42vw, 78vw" width="1080" height="675" alt="Piscina de borda infinita com vista para o vale em um dia de sol" loading="lazy" decoding="async"></figure><div class="cex-card__corpo"><h3 class="cex-card__titulo">Borda infinita só para hóspedes</h3><p class="cex-card__texto">Depois das 17h, quando o day use termina, a piscina de borda infinita fica só para os hóspedes até as 19h, na hora do pôr do sol.</p></div></li>
+<li class="cex-card"><figure class="cex-card__foto"><img src="/images/2025/05/experiencias-ofuro-cassorova-resort-ecoturismo-brotas-2.jpg" srcset="/images/2025/05/experiencias-ofuro-cassorova-resort-ecoturismo-brotas-2.jpg 480w, /images/2025/05/experiencias-ofuro-cassorova-resort-ecoturismo-brotas-2.jpg 768w, /images/2025/05/experiencias-ofuro-cassorova-resort-ecoturismo-brotas-2.jpg 1024w, /images/2025/05/experiencias-ofuro-cassorova-resort-ecoturismo-brotas-2.jpg 1536w, /images/2025/05/experiencias-ofuro-cassorova-resort-ecoturismo-brotas-2.jpg 1600w" sizes="(min-width: 1024px) 460px, (min-width: 700px) 66vw, 122vw" width="1600" height="640" alt="Casal no ofurô aquecido da varanda do bangalô, com espumante e taças na borda" loading="lazy" decoding="async" style="object-position:96% 50%"></figure><div class="cex-card__corpo"><h3 class="cex-card__titulo">Ofurô aquecido na varanda</h3><p class="cex-card__texto">Todos os 22 bangalôs têm ofurô privativo com água aquecida na varanda, para ver o céu estrelado sem sair do bangalô.</p></div></li>
+<li class="cex-card"><figure class="cex-card__foto"><img src="/images/2025/05/cassorova-resort-ecoturismo-brotas-1.jpg" srcset="/images/2025/05/cassorova-resort-ecoturismo-brotas-1.jpg 400w, /images/2025/05/cassorova-resort-ecoturismo-brotas-1.jpg 1080w" sizes="(min-width: 1024px) 290px, (min-width: 700px) 42vw, 78vw" width="1080" height="675" alt="Visitante se banhando na queda da cachoeira no Cassorova" loading="lazy" decoding="async"></figure><div class="cex-card__corpo"><h3 class="cex-card__titulo">Duas cachoeiras</h3><p class="cex-card__texto">Acesso livre às cachoeiras Cassorova e dos Quatis, às trilhas e à ponte pênsil durante toda a estadia.</p></div></li>
+<li class="cex-card"><figure class="cex-card__foto"><img src="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-5.jpg" srcset="/images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-5.jpg 400w, /images/2025/05/lazer-cassorova-resort-ecoturismo-brotas-5.jpg 1080w" sizes="(min-width: 1024px) 290px, (min-width: 700px) 42vw, 78vw" width="1080" height="675" alt="Fogueira acesa à noite na área de convivência do Cassorova" loading="lazy" decoding="async"></figure><div class="cex-card__corpo"><h3 class="cex-card__titulo">Fogueira e céu estrelado</h3><p class="cex-card__texto">A área da fogueira reúne os hóspedes no fim do dia, longe das luzes da cidade.</p></div></li>
+</ul>
+<p class="cex-inclusos__link"><a class="cex-btn cex-btn--texto" href="/lazer/" data-cex-cta="lazer" data-cex-pos="inclusos">Ver o Lazer do Resort</a></p>
+</div>
+</section>
+<!-- ================= 7. AVALIAÇÕES ================= -->
+<section class="cex-sec" id="cex-avaliacoes" aria-labelledby="cex-aval-t">
+<div class="cex-linha cex-aval">
+<div class="cex-aval__citacao">
+<h2 id="cex-aval-t" class="cex-titulo">O que dizem os hóspedes</h2>
+<blockquote><p>Lindo local, excelente para relaxar com a pessoa amada ou a família toda.</p></blockquote>
+<p class="cex-aval__quem">Digo F., avaliação no Google em junho de 2026</p>
+</div>
+<div class="cex-aval__trip">
+<img src="/images/2026/07/cassorova-tripadvisor.png" width="200" height="262" alt="Selo Travelers' Choice 2026 do Tripadvisor" loading="lazy" decoding="async">
+<p class="cex-aval__nota"><strong>4,9</strong> de 5</p>
+<p class="cex-aval__fonte">Nota geral do Cassorova em 275 avaliações no Tripadvisor, com o Travelers' Choice 2026. Consulta em novembro de 2026.</p>
+<a class="cex-btn cex-btn--terracota" href="https://www.tripadvisor.com.br/Hotel_Review-g793338-d21389571-Reviews-Cassorova_Hotel_Boutique-Brotas_State_of_Sao_Paulo.html" target="_blank" rel="noopener" data-cex-cta="avaliacoes-tripadvisor" data-cex-pos="avaliacoes">Ler Avaliações no Tripadvisor</a>
+</div>
+</div>
+</section>
+<!-- ================= 8. PERGUNTAS FREQUENTES ================= -->
+<section class="cex-sec cex-sec--linho" id="cex-faq" aria-labelledby="cex-faq-t">
+<div class="cex-linha cex-faq__grade">
+<div class="cex-faq__lado">
+<h2 id="cex-faq-t" class="cex-titulo">Perguntas sobre as experiências</h2>
+<p class="cex-chamada">Não encontrou sua dúvida? A recepção responde pelo WhatsApp.</p>
+<a class="cex-btn cex-btn--musgo" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20as%20experi%C3%AAncias%20do%20Cassorova" target="_blank" rel="noopener" data-cex-cta="whatsapp" data-cex-pos="faq">Falar no WhatsApp</a>
+</div>
+<div class="cex-faq__lista">
+<details class="cex-qa" name="cex-faq" open><summary><h3 class="cex-qa__q">Quanto custa o picnic no Cassorova?</h3><span class="cex-qa__icon" aria-hidden="true"></span></summary><div class="cex-qa__a"><p>O Picnic na Natureza e o Picnic na Varanda custam R$ 525 cada, por experiência. O valor é adicional à diária da hospedagem e pode ser pago em até 5x sem juros no cartão de crédito.</p></div></details>
+<details class="cex-qa" name="cex-faq"><summary><h3 class="cex-qa__q">O que vem na cesta do picnic?</h3><span class="cex-qa__icon" aria-hidden="true"></span></summary><div class="cex-qa__a"><p>Queijos e frios, uma seleção de pães, dois tipos de bolos caseiros e uma garrafa de vinho, que pode ser tinto ou branco. A cesta é a mesma nos dois picnics.</p></div></details>
+<details class="cex-qa" name="cex-faq"><summary><h3 class="cex-qa__q">Qual a diferença entre o Picnic na Natureza e o Picnic na Varanda?</h3><span class="cex-qa__icon" aria-hidden="true"></span></summary><div class="cex-qa__a"><p>O lugar. No Picnic na Natureza, vocês escolhem um canto da propriedade, como a beira do lago ou o gramado, e a equipe monta o picnic ali. No Picnic na Varanda, ele é montado na varanda do seu bangalô, ao lado do ofurô, com vista para o horizonte.</p></div></details>
+<details class="cex-qa" name="cex-faq"><summary><h3 class="cex-qa__q">Com quanto tempo de antecedência preciso reservar?</h3><span class="cex-qa__icon" aria-hidden="true"></span></summary><div class="cex-qa__a"><p>Com pelo menos 72 horas de antecedência, pelo WhatsApp da recepção.</p></div></details>
+<details class="cex-qa" name="cex-faq"><summary><h3 class="cex-qa__q">Como faço para reservar uma experiência?</h3><span class="cex-qa__icon" aria-hidden="true"></span></summary><div class="cex-qa__a"><p>Primeiro reserve a hospedagem. Depois, escolha a experiência e a data no <a href="#cex-reserva">formulário desta página</a> e envie o pedido pelo WhatsApp da recepção, com pelo menos 72 horas de antecedência.</p></div></details>
+<details class="cex-qa" name="cex-faq"><summary><h3 class="cex-qa__q">Quem não está hospedado pode contratar uma experiência?</h3><span class="cex-qa__icon" aria-hidden="true"></span></summary><div class="cex-qa__a"><p>As experiências são para hóspedes do Cassorova. O valor é cobrado à parte da diária, e é preciso fazer o check-in antes das 22h para receber a experiência.</p></div></details>
+<details class="cex-qa" name="cex-faq"><summary><h3 class="cex-qa__q">Posso cancelar a experiência depois de reservar?</h3><span class="cex-qa__icon" aria-hidden="true"></span></summary><div class="cex-qa__a"><p>Os valores das experiências não são reembolsáveis. Antes de reservar, confira a data com calma.</p></div></details>
+<details class="cex-qa" name="cex-faq"><summary><h3 class="cex-qa__q">Até que horas preciso chegar para receber a experiência?</h3><span class="cex-qa__icon" aria-hidden="true"></span></summary><div class="cex-qa__a"><p>Faça o check-in antes das 22h. Assim a equipe consegue entregar a experiência da melhor forma.</p></div></details>
+<details class="cex-qa" name="cex-faq"><summary><h3 class="cex-qa__q">Qual bangalô combina com uma experiência romântica?</h3><span class="cex-qa__icon" aria-hidden="true"></span></summary><div class="cex-qa__a"><p>Os dois têm ofurô aquecido na varanda e lareira. Para casais, a <a href="/bangalos/">Villa Romance</a> tem 60 m², banheira de hidromassagem com cromoterapia no quarto e duchas duplas. A Villa Aconchego tem 40 m² e ducha com vista para o horizonte.</p></div></details>
+<details class="cex-qa" name="cex-faq"><summary><h3 class="cex-qa__q">O que fazer em Brotas a dois?</h3><span class="cex-qa__icon" aria-hidden="true"></span></summary><div class="cex-qa__a"><p>Dentro do Cassorova, dá para fazer o picnic à beira do lago ou na varanda, ver o pôr do sol na piscina de borda infinita, que fica só para hóspedes depois das 17h, usar o ofurô aquecido na varanda do bangalô, conhecer as cachoeiras Cassorova e dos Quatis, atravessar a ponte pênsil sobre o cânion e terminar o dia na fogueira.</p></div></details>
+</div>
+</div>
+</section>
+<!-- ================= 9. CHAMADA FINAL ================= -->
+<section class="cex-sec cex-final" aria-labelledby="cex-final-t">
+<div class="cex-linha cex-final__grade">
+<figure class="cex-final__foto"><img src="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg" srcset="/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 480w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 768w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 1024w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 1536w, /images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg 1600w" sizes="(min-width: 1200px) 1040px, (min-width: 900px) 73vw, 144vw" width="1600" height="640" alt="Casal de roupão brindando ao pôr do sol na varanda do bangalô" loading="lazy" decoding="async" style="object-position:72% 50%"></figure>
+<div>
+<h2 id="cex-final-t" class="cex-titulo">Reserve a sua data a dois</h2>
+<p class="cex-final__frase">Bangalô com ofurô aquecido na varanda, picnic com vinho e duas cachoeiras, a 217 km de São Paulo.</p>
+<p class="cex-chamada">Reserve a hospedagem online e peça a sua experiência pelo WhatsApp, com 72 horas de antecedência.</p>
+<div class="cex-final__botoes">
+<a class="cex-btn cex-btn--oliva" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-cex-cta="ver-datas" data-cex-pos="chamada-final">Ver Datas e Preços</a>
+<a class="cex-btn cex-btn--texto" href="#cex-reserva" data-cex-cta="reservar" data-cex-pos="chamada-final">Reservar uma Experiência</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= BARRA FIXA ================= -->
+<div class="cex-fixa">
+<p class="cex-fixa__txt">Experiências românticas</p>
+<a class="cex-btn cex-btn--branco" href="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" data-cex-cta="ver-datas" data-cex-pos="barra-fixa">Ver Datas</a>
+<a class="cex-btn cex-btn--terracota" href="#cex-reserva" data-cex-cta="reservar" data-cex-pos="barra-fixa">Reservar Experiência</a>
+</div>
+<span class="cex-fim" aria-hidden="true"></span>
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Resort","@id":"https://cassorova.com.br/#resort","name":"Cassorova Resort e Ecoturismo","url":"https://cassorova.com.br/"},{"@type":"Service","@id":"https://cassorova.com.br/experiencias/#picnic-na-natureza","name":"Picnic na Natureza","serviceType":"Experiência romântica","description":"Picnic montado em um canto da natureza escolhido pelo casal, como a beira do lago ou o gramado, com cesta com queijos e frios, seleção de pães, dois tipos de bolos caseiros e uma garrafa de vinho tinto ou branco. Adicional à diária, para hóspedes do Cassorova.","url":"https://cassorova.com.br/experiencias/#cex-natureza","image":["https://cassorova.com.br/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-1.jpg","https://cassorova.com.br/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-3.jpg","https://cassorova.com.br/images/2025/05/experiencias-picnic-natureza-cassorova-resort-ecoturismo-brotas-2.jpg"],"provider":{"@id":"https://cassorova.com.br/#resort"},"areaServed":{"@type":"City","name":"Brotas"},"offers":{"@type":"Offer","price":"525.00","priceCurrency":"BRL","availability":"https://schema.org/InStock","url":"https://cassorova.com.br/experiencias/#cex-reserva"}},{"@type":"Service","@id":"https://cassorova.com.br/experiencias/#picnic-na-varanda","name":"Picnic na Varanda","serviceType":"Experiência romântica","description":"Picnic montado na varanda do bangalô, ao lado do ofurô, com vista para o horizonte, com cesta com queijos e frios, seleção de pães, dois tipos de bolos caseiros e uma garrafa de vinho tinto ou branco. Adicional à diária, para hóspedes do Cassorova.","url":"https://cassorova.com.br/experiencias/#cex-varanda","image":["https://cassorova.com.br/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-4.jpg","https://cassorova.com.br/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-2.jpg","https://cassorova.com.br/images/2025/05/experiencias-picnic-varanda-cassorova-resort-ecoturismo-brotas-3.jpg"],"provider":{"@id":"https://cassorova.com.br/#resort"},"areaServed":{"@type":"City","name":"Brotas"},"offers":{"@type":"Offer","price":"525.00","priceCurrency":"BRL","availability":"https://schema.org/InStock","url":"https://cassorova.com.br/experiencias/#cex-reserva"}},{"@type":"FAQPage","@id":"https://cassorova.com.br/experiencias/#faq","mainEntity":[{"@type":"Question","name":"Quanto custa o picnic no Cassorova?","acceptedAnswer":{"@type":"Answer","text":"O Picnic na Natureza e o Picnic na Varanda custam R$ 525 cada, por experiência. O valor é adicional à diária da hospedagem e pode ser pago em até 5x sem juros no cartão de crédito."}},{"@type":"Question","name":"O que vem na cesta do picnic?","acceptedAnswer":{"@type":"Answer","text":"Queijos e frios, uma seleção de pães, dois tipos de bolos caseiros e uma garrafa de vinho, que pode ser tinto ou branco. A cesta é a mesma nos dois picnics."}},{"@type":"Question","name":"Qual a diferença entre o Picnic na Natureza e o Picnic na Varanda?","acceptedAnswer":{"@type":"Answer","text":"O lugar. No Picnic na Natureza, vocês escolhem um canto da propriedade, como a beira do lago ou o gramado, e a equipe monta o picnic ali. No Picnic na Varanda, ele é montado na varanda do seu bangalô, ao lado do ofurô, com vista para o horizonte."}},{"@type":"Question","name":"Com quanto tempo de antecedência preciso reservar?","acceptedAnswer":{"@type":"Answer","text":"Com pelo menos 72 horas de antecedência, pelo WhatsApp da recepção."}},{"@type":"Question","name":"Como faço para reservar uma experiência?","acceptedAnswer":{"@type":"Answer","text":"Primeiro reserve a hospedagem. Depois, escolha a experiência e a data no formulário desta página e envie o pedido pelo WhatsApp da recepção, com pelo menos 72 horas de antecedência."}},{"@type":"Question","name":"Quem não está hospedado pode contratar uma experiência?","acceptedAnswer":{"@type":"Answer","text":"As experiências são para hóspedes do Cassorova. O valor é cobrado à parte da diária, e é preciso fazer o check-in antes das 22h para receber a experiência."}},{"@type":"Question","name":"Posso cancelar a experiência depois de reservar?","acceptedAnswer":{"@type":"Answer","text":"Os valores das experiências não são reembolsáveis. Antes de reservar, confira a data com calma."}},{"@type":"Question","name":"Até que horas preciso chegar para receber a experiência?","acceptedAnswer":{"@type":"Answer","text":"Faça o check-in antes das 22h. Assim a equipe consegue entregar a experiência da melhor forma."}},{"@type":"Question","name":"Qual bangalô combina com uma experiência romântica?","acceptedAnswer":{"@type":"Answer","text":"Os dois têm ofurô aquecido na varanda e lareira. Para casais, a Villa Romance tem 60 m², banheira de hidromassagem com cromoterapia no quarto e duchas duplas. A Villa Aconchego tem 40 m² e ducha com vista para o horizonte."}},{"@type":"Question","name":"O que fazer em Brotas a dois?","acceptedAnswer":{"@type":"Answer","text":"Dentro do Cassorova, dá para fazer o picnic à beira do lago ou na varanda, ver o pôr do sol na piscina de borda infinita, que fica só para hóspedes depois das 17h, usar o ofurô aquecido na varanda do bangalô, conhecer as cachoeiras Cassorova e dos Quatis, atravessar a ponte pênsil sobre o cânion e terminar o dia na fogueira."}}]}]}
+</script>
+<script>
+(function () {
+var root = document.getElementById('cex');
+if (!root) { return; }
+var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
+var push = function (data) { window.dataLayer = window.dataLayer || []; window.dataLayer.push(data); };
+var AMP = String.fromCharCode(38);
+var topo = root.querySelector('.cex-topo');
+/* O topo ocupa a altura da tela menos o menu do site acima dele */
+var setTop = function () {
+if (!topo) { return; }
+var y = topo.getBoundingClientRect().top + (window.pageYOffset || 0);
+if (y > 280) { y = 0; }
+if (0 > y) { y = 0; }
+root.style.setProperty('--cex-top', Math.round(y) + 'px');
+};
+setTop();
+window.addEventListener('load', setTop);
+var rt = 0;
+window.addEventListener('resize', function () { window.clearTimeout(rt); rt = window.setTimeout(setTop, 150); });
+/* Reserva: monta a mensagem do WhatsApp com a experiência e a data, e o link do motor HBook com a data como entrada */
+var MOTOR = 'https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee';
+var FONE = '5514991068097';
+var NOITES_PADRAO = 2;
+var ANTECEDENCIA_DIAS = 3;
+var MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+var caixa = root.querySelector('.cex-reserva__caixa');
+var exp = root.querySelector('#cex-experiencia');
+var data = root.querySelector('#cex-data');
+var linkWhats = root.querySelector('[data-cex-busca="whatsapp"]');
+var linkMotor = root.querySelector('[data-cex-busca="motor"]');
+var aviso = root.querySelector('.cex-reserva__aviso');
+var pad = function (n) { return (n > 9 ? '' : '0') + n; };
+var iso = function (d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); };
+var parse = function (s) { var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2], 12); };
+var somaDias = function (s, n) { var d = parse(s); d.setDate(d.getDate() + n); return iso(d); };
+var extenso = function (s) { var d = parse(s); return d.getDate() + ' de ' + MESES[d.getMonth()] + ' de ' + d.getFullYear(); };
+var diasAte = function (s) { return Math.round((parse(s) - parse(iso(new Date()))) / 86400000); };
+/* Cada experiência da página (inclusive as que forem ativadas depois) entra sozinha no formulário */
+var nomes = {};
+var artigos = {};
+each(root.querySelectorAll('[data-cex-exp]'), function (el) {
+var v = el.getAttribute('data-cex-exp');
+nomes[v] = el.getAttribute('data-cex-exp-nome') || v;
+artigos[v] = el.getAttribute('data-cex-exp-artigo') || 'o';
+if (exp) {
+if (!exp.querySelector('option[value="' + v + '"]')) {
+var op = document.createElement('option');
+op.value = v;
+op.textContent = nomes[v];
+exp.appendChild(op);
+}
+}
+});
+var atualizar = function () {
+if (!data) { return; }
+data.min = iso(new Date());
+var v = exp ? exp.value : '';
+var nome = nomes[v] ? artigos[v] + ' ' + nomes[v] : 'uma experiência romântica';
+var msg = 'Olá vim pelo site e quero reservar ' + nome + ' no Cassorova';
+var txt = '';
+var partes = [MOTOR];
+if (data.value) {
+var d = diasAte(data.value);
+if (0 > d) {
+txt = 'Escolha uma data a partir de hoje.';
+} else {
+if (ANTECEDENCIA_DIAS > d) { txt = 'As experiências precisam ser reservadas com pelo menos 72 horas de antecedência. Para essa data, confirme com a recepção se ainda é possível.'; }
+msg += ' para o dia ' + extenso(data.value);
+partes.push('checkin=' + data.value, 'checkout=' + somaDias(data.value, NOITES_PADRAO));
+}
+}
+partes.push('adults=2', 'children=0');
+if (aviso) { aviso.textContent = txt; aviso.hidden = !txt; }
+if (linkWhats) { linkWhats.href = 'https://wa.me/' + FONE + '?text=' + encodeURIComponent(msg); }
+if (linkMotor) { linkMotor.href = partes.join(AMP); }
+};
+if (data) {
+each([exp, data], function (el) { if (el) { el.addEventListener('change', atualizar); } });
+atualizar();
+each([linkWhats, linkMotor], function (link) {
+if (!link) { return; }
+link.addEventListener('click', function () {
+atualizar();
+push({ event: 'cex_reserva_experiencia', cex_metodo: link.getAttribute('data-cex-busca'), cex_experiencia: exp ? exp.value : '', cex_data: data.value || '', cex_antecedencia_dias: data.value ? diasAte(data.value) : '', link_url: link.href });
+});
+});
+}
+/* Botões das experiências: já deixam a experiência escolhida no formulário e destacam a caixa */
+var dt = 0;
+each(root.querySelectorAll('[data-cex-escolher]'), function (el) {
+el.addEventListener('click', function () {
+var v = el.getAttribute('data-cex-escolher');
+if (exp) { exp.value = v; }
+atualizar();
+if (caixa) {
+caixa.classList.add('is-destaque');
+window.clearTimeout(dt);
+dt = window.setTimeout(function () { caixa.classList.remove('is-destaque'); }, 1800);
+}
+});
+});
+/* Fotos ampliadas: a janela é criada aqui (fora do editor) e abre a galeria em tela cheia, com setas, teclado e deslize */
+var novo = function (tag, cls, txt) { var e = document.createElement(tag); if (cls) { e.className = cls; } if (txt) { e.textContent = txt; } return e; };
+var lb = novo('dialog', 'cex-lb');
+if (typeof lb.showModal === 'function') {
+lb.setAttribute('aria-label', 'Fotos ampliadas da experiência');
+var lbTopo = novo('div', 'cex-lb__topo');
+var lbP = novo('p');
+var lbTit = novo('span', 'cex-lb__titulo');
+var lbCont = novo('span', 'cex-lb__cont');
+lbP.appendChild(lbTit);
+lbP.appendChild(lbCont);
+var lbFechar = novo('button', 'cex-lb__fechar', 'Fechar');
+lbFechar.type = 'button';
+lbTopo.appendChild(lbP);
+lbTopo.appendChild(lbFechar);
+var lbFig = novo('figure', 'cex-lb__fig');
+var lbAnt = novo('button', 'cex-lb__ant');
+lbAnt.type = 'button';
+lbAnt.setAttribute('aria-label', 'Foto anterior');
+var lbImg = novo('img');
+lbImg.alt = '';
+var lbProx = novo('button', 'cex-lb__prox');
+lbProx.type = 'button';
+lbProx.setAttribute('aria-label', 'Próxima foto');
+lbFig.appendChild(lbAnt);
+lbFig.appendChild(lbImg);
+lbFig.appendChild(lbProx);
+var lbLeg = novo('p', 'cex-lb__legenda');
+lbLeg.setAttribute('aria-live', 'polite');
+lb.appendChild(lbTopo);
+lb.appendChild(lbFig);
+lb.appendChild(lbLeg);
+root.appendChild(lb);
+var atual = { itens: [], i: 0, origem: null };
+var mostrar = function (i) {
+var n = atual.itens.length;
+if (!n) { return; }
+atual.i = (i + n) % n;
+var a = atual.itens[atual.i];
+var im = a.querySelector('img');
+var alt = im ? im.getAttribute('alt') : '';
+lbImg.src = a.getAttribute('href');
+lbImg.alt = alt;
+lbLeg.textContent = alt;
+lbCont.textContent = (atual.i + 1) + ' de ' + n;
+var seguinte = new Image();
+seguinte.src = atual.itens[(atual.i + 1) % n].getAttribute('href');
+};
+var abrir = function (g, i, origem) {
+atual.itens = Array.prototype.slice.call(g.querySelectorAll('.cex-galeria__item'));
+atual.origem = origem;
+lbTit.textContent = g.getAttribute('data-cex-galeria-nome') || '';
+mostrar(i);
+document.documentElement.classList.add('cex-travado');
+lb.showModal();
+push({ event: 'cex_galeria_abrir', cex_experiencia: g.getAttribute('data-cex-galeria') || '', cex_foto: i + 1 });
+};
+each(root.querySelectorAll('.cex-galeria'), function (g) {
+each(g.querySelectorAll('.cex-galeria__item'), function (a, i) {
+a.addEventListener('click', function (ev) { ev.preventDefault(); abrir(g, i, a); });
+});
+var todas = g.querySelector('.cex-galeria__todas');
+if (todas) {
+todas.hidden = false;
+todas.addEventListener('click', function () { abrir(g, 0, todas); });
+}
+});
+lbAnt.addEventListener('click', function () { mostrar(atual.i - 1); });
+lbProx.addEventListener('click', function () { mostrar(atual.i + 1); });
+lbFechar.addEventListener('click', function () { lb.close(); });
+lb.addEventListener('close', function () {
+document.documentElement.classList.remove('cex-travado');
+if (atual.origem) { atual.origem.focus({ preventScroll: true }); }
+});
+lb.addEventListener('keydown', function (ev) {
+if (ev.key === 'ArrowRight') { mostrar(atual.i + 1); }
+if (ev.key === 'ArrowLeft') { mostrar(atual.i - 1); }
+});
+lb.addEventListener('click', function (ev) { if (ev.target === lb) { lb.close(); } });
+var x0 = null;
+lb.addEventListener('touchstart', function (ev) { x0 = ev.changedTouches[0].clientX; }, { passive: true });
+lb.addEventListener('touchend', function (ev) {
+if (x0 === null) { return; }
+var dx = ev.changedTouches[0].clientX - x0;
+x0 = null;
+if (dx > 50) { mostrar(atual.i - 1); } else if (-50 > dx) { mostrar(atual.i + 1); }
+});
+}
+/* Barra fixa: aparece depois do topo e some no formulário de reserva e no fim da página.
+A posição é medida a cada rolagem, então a barra acerta mesmo depois de um salto por link. */
+var fixa = root.querySelector('.cex-fixa');
+var busca = root.querySelector('.cex-busca');
+var fim = root.querySelector('.cex-fim');
+var calcBarra = function () {
+if (!fixa) { return; }
+var ih = window.innerHeight;
+var show = true;
+if (topo) { if (topo.getBoundingClientRect().bottom > ih * 0.3) { show = false; } }
+if (busca) { var rb = busca.getBoundingClientRect(); if (rb.bottom > 0) { if (ih > rb.top) { show = false; } } }
+if (fim) { if (ih > fim.getBoundingClientRect().top) { show = false; } }
+fixa.classList.toggle('is-on', show);
+};
+var pendente = false;
+var agendarBarra = function () {
+if (pendente) { return; }
+pendente = true;
+window.requestAnimationFrame(function () { pendente = false; calcBarra(); });
+};
+window.addEventListener('scroll', agendarBarra, { passive: true });
+window.addEventListener('resize', agendarBarra);
+calcBarra();
+/* Pergunta aberta pelo visitante (a primeira já vem aberta e não conta) */
+each(root.querySelectorAll('details.cex-qa'), function (d) {
+var s = d.querySelector('summary');
+if (!s) { return; }
+s.addEventListener('click', function () {
+if (d.open) { return; }
+var q = d.querySelector('.cex-qa__q');
+push({ event: 'cex_faq_abrir', cex_pergunta: q ? q.textContent.trim() : '' });
+});
+});
+root.addEventListener('click', function (ev) {
+var t = ev.target;
+var el = t.closest ? t.closest('[data-cex-cta]') : null;
+if (!el) { return; }
+push({ event: 'cex_cta_click', cex_cta: el.getAttribute('data-cex-cta') || '', cex_experiencia: el.getAttribute('data-cex-escolher') || '', cex_posicao: el.getAttribute('data-cex-pos') || '', link_url: el.href || '' });
+});
+})();
+</script>

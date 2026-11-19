@@ -1,0 +1,19 @@
+{
+  "name": "cassorova-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Site do Cassorova Resort e Ecoturismo (Brotas-SP), feito em Astro. Agência BWM.",
+  "scripts": {
+    "dev": "astro dev",
+    "prebuild": "node scripts/gerar-htaccess.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "verificar": "node scripts/verificar-site.mjs"
+  },
+  "engines": { "node": ">=18.20.8" },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "@astrojs/sitemap": "^3.2.0"
+  }
+}

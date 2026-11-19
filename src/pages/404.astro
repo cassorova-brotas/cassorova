@@ -1,0 +1,7 @@
+---
+import Base from '../layouts/Base.astro';
+import html from '../fragments/404.html?raw';
+---
+<Base title="Página não encontrada | Cassorova Resort e Ecoturismo" description="Esta página não existe mais ou mudou de endereço. Veja os caminhos mais procurados no Cassorova, em Brotas." path="/404/" noindex={true}>
+  <Fragment set:html={html} />
+</Base>

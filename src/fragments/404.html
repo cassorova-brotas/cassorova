@@ -1,0 +1,277 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&amp;family=Trirong:ital,wght@0,300;0,400;1,300;1,400&amp;display=swap">
+<style>
+/* ---------- Ajustes do Divi, aplicados só onde existe #cnv ---------- */
+.et_pb_section:has(#cnv){padding:0!important;margin:0!important;background:transparent!important}
+.et_pb_row:has(#cnv){width:100%!important;max-width:none!important;padding:0!important;margin:0!important}
+.et_pb_column:has(#cnv){width:100%!important;margin:0!important;padding:0!important}
+.et_pb_code:has(#cnv),.et_pb_code_inner:has(#cnv),.et_pb_fullwidth_code:has(#cnv){margin:0!important;padding:0!important;max-width:none!important;width:100%!important}
+/* ---------- Base com os tokens do site ---------- */
+#cnv{--mata:#303323;--musgo:#858666;--musgo-esc:#6b6c50;--musgo-hover:#5c5d44;--cinza:#c5c5b9;--nevoa:#cfd0c3;--linho:#f3f2ee;--pedra:#564944;--oliva:#756a48;--oliva-hover:#635a3c;--cobre-claro:#d4957a;--terracota:#a65635;--terracota-hover:#8f4a2d;--branco:#fff;--gilda:"Gilda Display",Georgia,"Times New Roman",serif;--trirong:"Trirong",Georgia,"Times New Roman",serif;--albert:"Albert Sans",Helvetica,Arial,sans-serif;--marcellus:"Marcellus",Georgia,"Times New Roman",serif;--linha:80%;--max:1200px;--foco:var(--terracota);position:relative;background:var(--branco);color:var(--pedra);font-family:var(--albert);font-size:18px;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+@media (max-width:980px){#cnv{--linha:86%}}
+#cnv *,#cnv *::before,#cnv *::after{box-sizing:border-box}
+#cnv h1,#cnv h2,#cnv h3,#cnv h4,#cnv p,#cnv ul,#cnv ol,#cnv figure,#cnv blockquote{margin:0;padding:0;font-style:normal}
+#cnv ul,#cnv ol{list-style:none}
+#cnv blockquote{border:0;quotes:none}
+#cnv blockquote::before,#cnv blockquote::after{content:none}
+#cnv li{padding:0;margin:0;line-height:inherit}
+#cnv h1,#cnv h2,#cnv h3,#cnv h4{color:var(--mata);font-weight:400;letter-spacing:normal;text-transform:none;text-wrap:balance}
+#cnv p{text-wrap:pretty}
+#cnv a{color:inherit;text-decoration:none}
+#cnv img{display:block;max-width:100%;height:auto;border:0}
+/* O WordPress insere quebras de linha automáticas no Módulo de Código: ficam ocultas */
+#cnv br{display:none}
+#cnv strong,#cnv b{font-weight:700}
+#cnv button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;text-transform:none;letter-spacing:inherit}
+#cnv :focus-visible{outline:2px solid var(--foco);outline-offset:3px}
+#cnv [id]{scroll-margin-top:16px}
+#cnv .cnv-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#cnv .cnv-linha{width:var(--linha);max-width:var(--max);margin-inline:auto}
+#cnv .cnv-sec{padding-block:clamp(64px,7vw,104px)}
+#cnv .cnv-sec--linho{background:var(--linho)}
+#cnv .cnv-sec--nevoa{background:var(--nevoa)}
+#cnv .cnv-sec--mata{background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+/* ---------- Títulos no padrão do site ---------- */
+#cnv .cnv-titulo{font-family:var(--gilda);font-weight:400;font-size:clamp(33px,1.9vw + 22px,50px);line-height:1.05;color:var(--mata)}
+#cnv .cnv-titulo--trirong{font-family:var(--trirong);font-weight:300;font-size:clamp(33px,1.4vw + 24px,45px);line-height:1.05}
+#cnv .cnv-sec--mata .cnv-titulo{color:#fff}
+#cnv .cnv-chamada{margin-top:14px;max-width:62ch;font-family:var(--albert);font-weight:300;font-size:clamp(17px,.4vw + 15px,20px);line-height:1.55;color:var(--pedra)}
+#cnv .cnv-sec--mata .cnv-chamada{color:#fff}
+#cnv .cnv-cabeca{margin-bottom:clamp(36px,4vw,52px)}
+@media (min-width:1024px){#cnv .cnv-cabeca--lado{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:end}#cnv .cnv-cabeca--lado .cnv-chamada{margin-top:0}}
+/* ---------- Botões no padrão do site (Marcellus, quadrados, com seta) ---------- */
+#cnv .cnv-btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;padding:8px 22px 8px 18px;border:0;border-radius:0;font-family:var(--marcellus);font-size:clamp(18px,.4vw + 16px,21px);font-weight:400;line-height:1.3;text-align:left;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+#cnv .cnv-btn::after{content:"";flex:none;width:8px;height:8px;margin-left:2px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg)}
+#cnv .cnv-btn--branco{background:#fff;color:var(--mata)}
+#cnv .cnv-btn--branco:hover{background:var(--linho)}
+#cnv .cnv-btn--terracota{background:var(--terracota);color:#fff}
+#cnv .cnv-btn--terracota:hover{background:var(--terracota-hover)}
+#cnv .cnv-btn--oliva{background:var(--oliva);color:#fff}
+#cnv .cnv-btn--oliva:hover{background:var(--oliva-hover)}
+#cnv .cnv-btn--musgo{background:var(--musgo-esc);color:#fff}
+#cnv .cnv-btn--musgo:hover{background:var(--musgo-hover)}
+#cnv .cnv-btn--contorno{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.75)}
+#cnv .cnv-btn--contorno:hover{background:rgba(255,255,255,.1)}
+#cnv .cnv-btn--texto{min-height:0;padding:8px 0;background:none;color:inherit}
+#cnv .cnv-btn--texto:hover{text-decoration:underline;text-underline-offset:5px}
+#cnv .cnv-form{margin-top:24px;max-width:520px;padding:18px 18px 16px;background:#fff;color:var(--mata);box-shadow:0 18px 40px -22px rgba(0,0,0,.55);text-shadow:none;--foco:var(--terracota)}
+#cnv .cnv-form__t{font-family:var(--marcellus);font-size:20px;line-height:1.25;color:var(--mata)}
+#cnv .cnv-form__campos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 92px;gap:10px;margin-top:12px}
+#cnv .cnv-campo{display:grid;gap:4px;min-width:0}
+#cnv .cnv-campo label{font-family:var(--albert);font-size:14px;font-weight:700;line-height:1.2;color:var(--pedra)}
+#cnv .cnv-campo input,#cnv .cnv-campo select{width:100%;min-width:0;max-width:100%;-webkit-appearance:none;appearance:none;min-height:50px;margin:0;padding:8px 10px;border:1px solid rgba(48,51,35,.4);border-radius:0;background:#fff;font-family:var(--albert);font-size:17px;font-weight:400;line-height:1.2;color:var(--mata);box-shadow:none}
+#cnv .cnv-form .cnv-btn{width:100%;margin-top:12px;justify-content:space-between}
+#cnv .cnv-form__aviso{margin-top:10px;font-size:14px;line-height:1.45;color:var(--pedra)}
+#cnv .cnv-form__erro{margin-top:8px;font-size:14px;line-height:1.4;font-weight:700;color:var(--terracota)}
+@media (max-width:459px){#cnv .cnv-form__campos{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}#cnv .cnv-campo--ad{grid-column:1 / -1}}
+/* ---------- 404: a trilha perdida ---------- */
+#cnv .cnv-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+#cnv .cnv-hero__foto{position:absolute;inset:0;z-index:-2}
+#cnv .cnv-hero__foto img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:60% 55%}
+#cnv .cnv-hero__sombra{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(48,51,35,.94) 0%,rgba(48,51,35,.78) 48%,rgba(48,51,35,.5) 100%)}
+#cnv .cnv-hero__grade{width:var(--linha);max-width:var(--max);margin-inline:auto;padding-block:clamp(44px,6vw,92px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,72px);align-items:center;min-height:clamp(540px,84vh,820px)}
+#cnv .cnv-hero__num{font-family:var(--gilda);font-size:clamp(112px,15vw,214px);line-height:.78;letter-spacing:.02em;color:rgba(212,149,122,.14);-webkit-text-stroke:2px var(--cobre-claro);margin-left:-4px;user-select:none}
+#cnv .cnv-hero__titulo{margin-top:clamp(14px,2vw,26px);font-family:var(--gilda);font-weight:400;font-size:clamp(38px,2.6vw + 22px,66px);line-height:1.04;color:#fff}
+#cnv .cnv-hero__texto{margin-top:18px;max-width:46ch;font-family:var(--trirong);font-style:italic;font-weight:300;font-size:clamp(18px,.5vw + 16px,23px);line-height:1.5;color:#fff}
+#cnv .cnv-sug{display:block;margin-top:22px;max-width:520px;padding:12px 16px;border-left:4px solid var(--terracota);background:rgba(255,255,255,.1);font-family:var(--albert);font-size:18px;line-height:1.35;color:#fff}
+#cnv .cnv-sug[hidden]{display:none}
+#cnv .cnv-sug a{margin-left:6px;font-family:var(--marcellus);font-size:20px;color:#fff;text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--cobre-claro)}
+#cnv .cnv-sug a:hover{text-decoration-color:#fff}
+#cnv .cnv-busca{display:flex;gap:0;margin-top:22px;max-width:520px}
+#cnv .cnv-busca input{flex:1 1 auto;min-width:0;min-height:52px;margin:0;padding:8px 14px;border:0;border-radius:0;background:#fff;color:var(--mata);font-family:var(--albert);font-size:17px;line-height:1.2;box-shadow:none}
+#cnv .cnv-busca input::placeholder{color:var(--pedra);opacity:.8}
+#cnv .cnv-busca .cnv-btn{flex:none;min-height:52px}
+#cnv .cnv-hero__ajuda{margin-top:16px;font-family:var(--albert);font-size:16px;line-height:1.5;color:var(--nevoa)}
+#cnv .cnv-hero__ajuda a{color:#fff;text-decoration:underline;text-underline-offset:4px}
+/* Placas da trilha */
+#cnv .cnv-trilha{position:relative;width:100%;max-width:440px;margin-inline:auto;padding:26px 0 56px}
+#cnv .cnv-trilha__poste{position:absolute;left:50%;top:0;bottom:0;width:26px;margin-left:-13px;border-radius:13px 13px 0 0;background:linear-gradient(90deg,#4a3320,#6b4a2e 45%,#3c2918);box-shadow:0 20px 40px -20px rgba(0,0,0,.8)}
+#cnv .cnv-trilha__placas{position:relative;display:grid;gap:12px}
+#cnv .cnv-trilha__placas li{display:block;transform-origin:50% 50%;transition:transform .25s ease}
+#cnv .cnv-trilha__placas li:nth-child(1){transform:rotate(-1.6deg)}
+#cnv .cnv-trilha__placas li:nth-child(2){transform:rotate(1.2deg)}
+#cnv .cnv-trilha__placas li:nth-child(3){transform:rotate(-.8deg)}
+#cnv .cnv-trilha__placas li:nth-child(4){transform:rotate(1.7deg)}
+#cnv .cnv-trilha__placas li:nth-child(5){transform:rotate(-1.3deg)}
+#cnv .cnv-trilha__placas li:nth-child(6){transform:rotate(.9deg)}
+#cnv .cnv-trilha__placas li:hover,#cnv .cnv-trilha__placas li:focus-within{transform:rotate(0) translateY(-2px)}
+#cnv .cnv-placa{position:relative;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:13px 40px 13px 22px;background:linear-gradient(180deg,#9a7048 0%,#80583a 100%);color:#fbefd9;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),inset 0 -3px 0 rgba(0,0,0,.28),0 10px 18px -10px rgba(0,0,0,.7);clip-path:polygon(0 0,calc(100% - 26px) 0,100% 50%,calc(100% - 26px) 100%,0 100%);transition:background .2s ease}
+#cnv .cnv-placa--e{padding:13px 22px 13px 40px;clip-path:polygon(26px 0,100% 0,100% 100%,26px 100%,0 50%)}
+#cnv .cnv-placa:hover{background:linear-gradient(180deg,#b0845a 0%,#94673f 100%)}
+#cnv .cnv-placa__nome{font-family:var(--marcellus);font-size:clamp(20px,.5vw + 17px,24px);line-height:1.15;color:#fff}
+#cnv .cnv-placa__nota{font-family:var(--albert);font-size:15px;line-height:1.2;color:#f1dfc3}
+@media (prefers-reduced-motion:reduce){#cnv .cnv-trilha__placas li{transition:none}}
+/* Reserva e contato */
+#cnv .cnv-ajuda{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+#cnv .cnv-ajuda .cnv-form{margin-top:26px;max-width:540px;padding:18px 18px 16px;background:#fff;color:var(--mata);box-shadow:0 18px 40px -26px rgba(48,51,35,.55);--foco:var(--terracota)}
+#cnv .cnv-contato{padding:clamp(24px,3vw,36px);background:var(--mata);color:#fff;--foco:var(--cobre-claro)}
+#cnv .cnv-contato__t{font-family:var(--gilda);font-size:clamp(27px,1vw + 21px,36px);line-height:1.1;color:#fff}
+#cnv .cnv-contato__x{margin-top:10px;font-family:var(--albert);font-weight:300;font-size:18px;line-height:1.5;color:#fff}
+#cnv .cnv-contato .cnv-btn{margin-top:20px}
+#cnv .cnv-contato__lista{display:grid;gap:8px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.25);font-family:var(--albert);font-size:17px;line-height:1.4;color:var(--nevoa)}
+#cnv .cnv-contato__lista a{color:#fff;text-decoration:underline;text-underline-offset:4px}
+/* Outros caminhos */
+#cnv .cnv-outros{padding-block:34px;background:var(--linho);border-top:1px solid rgba(48,51,35,.15)}
+#cnv .cnv-outros__lista{display:flex;flex-wrap:wrap;align-items:center;gap:10px 30px}
+#cnv .cnv-outros__t{font-family:var(--marcellus);font-size:20px;color:var(--mata)}
+#cnv .cnv-outros__lista a{font-family:var(--albert);font-size:17px;line-height:1.3;color:var(--pedra);text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(86,73,68,.4)}
+#cnv .cnv-outros__lista a:hover{color:var(--terracota);text-decoration-color:var(--terracota)}
+@media (max-width:980px){#cnv .cnv-hero__grade{grid-template-columns:minmax(0,1fr);min-height:0}#cnv .cnv-hero__sombra{background:linear-gradient(180deg,rgba(48,51,35,.9) 0%,rgba(48,51,35,.82) 100%)}#cnv .cnv-ajuda{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){#cnv .cnv-busca{flex-direction:column;gap:8px}#cnv .cnv-busca .cnv-btn{width:100%;justify-content:space-between}#cnv .cnv-hero__num{-webkit-text-stroke-width:1.5px}#cnv .cnv-placa{padding-right:34px}#cnv .cnv-placa--e{padding-left:34px}}
+</style>
+<div id="cnv" class="cnv" data-mes="404">
+<!-- ================= 1. TRILHA PERDIDA ================= -->
+<section class="cnv-hero" aria-labelledby="cnv-titulo">
+<div class="cnv-hero__foto">
+<img src="/images/2026/11/cassorova-cachoeira-cassorova-pessoa-no-poco-da-queda-02-scaled.jpg" srcset="/images/2026/11/cassorova-cachoeira-cassorova-pessoa-no-poco-da-queda-02-scaled.jpg 768w, /images/2026/11/cassorova-cachoeira-cassorova-pessoa-no-poco-da-queda-02-scaled.jpg 1024w, /images/2026/11/cassorova-cachoeira-cassorova-pessoa-no-poco-da-queda-02-scaled.jpg 1536w, /images/2026/11/cassorova-cachoeira-cassorova-pessoa-no-poco-da-queda-02-scaled.jpg 2048w" sizes="100vw" width="2048" height="1365" alt="Pessoa de braços abertos no poço de água natural sob a queda da Cachoeira Cassorova, cercada de mata" loading="eager" fetchpriority="high" decoding="async">
+</div>
+<div class="cnv-hero__sombra" aria-hidden="true"></div>
+<div class="cnv-hero__grade">
+<div class="cnv-hero__txt">
+<p class="cnv-hero__num" aria-hidden="true">404</p>
+<h1 id="cnv-titulo" class="cnv-hero__titulo">Você saiu da trilha</h1>
+<p class="cnv-hero__texto">Esta página não existe mais ou o endereço foi digitado errado. Escolha uma das placas e volte ao caminho certo.</p>
+<p class="cnv-sug" id="cnv-sug" hidden><span>Você procurava</span><a id="cnv-sug-a" href="/" data-cnv-cta="sugestao-404" data-cnv-pos="topo"></a><span>?</span></p>
+<form class="cnv-busca" role="search" action="https://cassorova.com.br/" method="get" data-cnv-pos="busca">
+<label class="cnv-sr" for="cnv-q">Buscar no site</label>
+<input id="cnv-q" type="search" name="s" placeholder="Buscar no site" autocomplete="off" required>
+<button type="submit" class="cnv-btn cnv-btn--terracota" data-cnv-cta="busca-site" data-cnv-pos="404">Buscar</button>
+</form>
+<p class="cnv-hero__ajuda">Prefere ajuda de uma pessoa? <a href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20n%C3%A3o%20encontrei%20a%20p%C3%A1gina%20que%20eu%20procurava%20quero%20falar%20com%20a%20recep%C3%A7%C3%A3o%20do%20Cassorova" target="_blank" rel="noopener" data-cnv-cta="whatsapp" data-cnv-pos="topo">Chame a recepção no WhatsApp</a>.</p>
+</div>
+<nav class="cnv-trilha" aria-label="Caminhos do Cassorova">
+<div class="cnv-trilha__poste" aria-hidden="true"></div>
+<ul class="cnv-trilha__placas">
+<li><a class="cnv-placa" href="/bangalos/" data-cnv-cta="placa-bangalôs" data-cnv-pos="trilha-404"><span class="cnv-placa__nome">Bangalôs</span><span class="cnv-placa__nota">onde dormir</span></a></li>
+<li><a class="cnv-placa cnv-placa--e" href="/lazer/" data-cnv-cta="placa-lazer" data-cnv-pos="trilha-404"><span class="cnv-placa__nome">Lazer</span><span class="cnv-placa__nota">cachoeiras e trilhas</span></a></li>
+<li><a class="cnv-placa" href="/gastronomia/" data-cnv-cta="placa-gastronomia" data-cnv-pos="trilha-404"><span class="cnv-placa__nome">Gastronomia</span><span class="cnv-placa__nota">à mesa</span></a></li>
+<li><a class="cnv-placa cnv-placa--e" href="/experiencias/" data-cnv-cta="placa-experiências" data-cnv-pos="trilha-404"><span class="cnv-placa__nome">Experiências</span><span class="cnv-placa__nota">aventura</span></a></li>
+<li><a class="cnv-placa" href="/pacotes/" data-cnv-cta="placa-pacotes" data-cnv-pos="trilha-404"><span class="cnv-placa__nome">Pacotes</span><span class="cnv-placa__nota">datas especiais</span></a></li>
+<li><a class="cnv-placa cnv-placa--e" href="/day-use/" data-cnv-cta="placa-day-use" data-cnv-pos="trilha-404"><span class="cnv-placa__nome">Day use</span><span class="cnv-placa__nota">passe o dia</span></a></li>
+</ul>
+</nav>
+</div>
+</section>
+<!-- ================= 2. RESERVA E CONTATO ================= -->
+<section class="cnv-sec cnv-sec--linho" id="cnv-ajuda" aria-labelledby="cnv-ajuda-t">
+<div class="cnv-linha cnv-ajuda">
+<div>
+<h2 id="cnv-ajuda-t" class="cnv-titulo">Já que você está por aqui, veja as datas livres</h2>
+<p class="cnv-chamada">Escolha entrada, saída e número de adultos. O motor de reservas abre com a busca pronta e mostra os bangalôs livres e o valor na hora.</p>
+<form class="cnv-form" data-cnv-pos="form-404" action="https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee" method="get" novalidate><p class="cnv-form__t">Veja os bangalôs livres nas suas datas</p><div class="cnv-form__campos"><div class="cnv-campo"><label for="cnv-in">Entrada</label><input type="date" id="cnv-in" data-campo="entrada" required></div><div class="cnv-campo"><label for="cnv-out">Saída</label><input type="date" id="cnv-out" data-campo="saida" required></div><div class="cnv-campo cnv-campo--ad"><label for="cnv-ad">Adultos</label><select id="cnv-ad" data-campo="adultos"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></div></div><p class="cnv-form__erro" role="alert" hidden></p><button type="submit" class="cnv-btn cnv-btn--terracota" data-cnv-cta="buscar-datas" data-cnv-pos="form-404">Ver Disponibilidade e Preços</button><p class="cnv-form__aviso">Algumas datas têm estadia mínima: se for o caso, o motor avisa.</p></form>
+</div>
+<div class="cnv-contato">
+<h2 class="cnv-contato__t">Fale com a recepção</h2>
+<p class="cnv-contato__x">Não achou o que procurava? A equipe responde dúvidas sobre datas, bangalôs, atividades e gastronomia.</p>
+<a class="cnv-btn cnv-btn--terracota" href="https://wa.me/5514991068097?text=Ol%C3%A1%20vim%20pelo%20site%20e%20n%C3%A3o%20encontrei%20a%20p%C3%A1gina%20que%20eu%20procurava%20quero%20falar%20com%20a%20recep%C3%A7%C3%A3o%20do%20Cassorova" target="_blank" rel="noopener" data-cnv-cta="whatsapp" data-cnv-pos="contato-404">Chamar no WhatsApp</a>
+<ul class="cnv-contato__lista">
+<li>Reservas: (14) 99106-8097</li>
+<li><a href="mailto:resort@cassorova.com.br" data-cnv-cta="email" data-cnv-pos="contato-404">resort@cassorova.com.br</a></li>
+<li>Check-in a partir das 16h e check-out até as 14h</li>
+<li>Brotas, São Paulo, a 217 km da capital</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- ================= 3. OUTROS CAMINHOS ================= -->
+<section class="cnv-outros" aria-label="Outros caminhos">
+<div class="cnv-linha cnv-outros__lista">
+<span class="cnv-outros__t">Outros caminhos</span>
+<a href="/" data-cnv-cta="outros-caminhos" data-cnv-pos="404">Página inicial</a>
+<a href="/reservas/" data-cnv-cta="outros-caminhos" data-cnv-pos="404">Reservas online</a>
+<a href="/cachoeiras/" data-cnv-cta="outros-caminhos" data-cnv-pos="404">Cachoeiras</a>
+<a href="/pacotes/" data-cnv-cta="outros-caminhos" data-cnv-pos="404">Feriados</a>
+<a href="/termos-e-condicoes/" data-cnv-cta="outros-caminhos" data-cnv-pos="404">Termos e condições</a>
+</div>
+</section>
+</div>
+<script>
+(function () {
+var root = document.getElementById('cnv');
+if (!root) { return; }
+var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
+var push = function (data) { data.cnv_mes = '404'; window.dataLayer = window.dataLayer || []; window.dataLayer.push(data); };
+var pad = function (n) { return (n > 9 ? '' : '0') + n; };
+var iso = function (d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); };
+var br = function (s) { var p = s.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; };
+var daqui = function (s, n) { var p = s.split('-'); var d = new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]) + n); return iso(d); };
+var hoje = iso(new Date());
+var motor = 'https://hbook.hsystem.com.br/Booking?companyId=5fecdb7cab41d438f48d3cee';
+var caminho = window.location.pathname || '';
+try { caminho = decodeURIComponent(caminho); } catch (e) { caminho = window.location.pathname || ''; }
+caminho = caminho.toLowerCase();
+/* Aviso para a análise: endereços quebrados aparecem no GA4 e no GTM */
+push({ event: 'pagina_404', cnv_caminho: caminho, cnv_origem: document.referrer || '' });
+/* Sugestão pelo endereço digitado: a primeira palavra que combinar vence, então as mais específicas vêm antes */
+var rotas = [["Carnaval 2027","https://cassorova.com.br/carnaval/","carnaval"],["Réveillon 2027","https://cassorova.com.br/reveillon/","reveillon,réveillon,ano-novo,virada"],["Férias de janeiro","https://cassorova.com.br/pacotes/ferias-janeiro/","ferias,férias,janeiro"],["Consciência Negra","https://cassorova.com.br/pacotes/consciencia-negra/","consciencia,consciência,negra"],["Day use","https://cassorova.com.br/day-use/","day-use,dayuse,day_use,ecoturismo,ingresso"],["Bangalôs","https://cassorova.com.br/bangalos/","bangal,villa,suite,suíte,quarto,hospedagem,romance,aconchego,acomoda"],["Lazer e cachoeiras","https://cassorova.com.br/lazer/","lazer,cachoeira,trilha,atrativo,atracao,atração,piscina"],["Gastronomia","https://cassorova.com.br/gastronomia/","gastronom,restaurante,cardapio,cardápio,comida,chope,choperia,jantar,almoco,almoço"],["Experiências","https://cassorova.com.br/experiencias/","experi,tirolesa,arvorismo,canion,cânion,piquenique,passeio"],["Feriados","https://cassorova.com.br/feriados/","feriado"],["Pacotes","https://cassorova.com.br/pacotes/","pacote,promo,oferta,desconto,condicao,condição"],["Reservas online","https://cassorova.com.br/reservas/","reserva,reservar,booking,hbook,disponibilidade"],["Galeria de fotos","https://cassorova.com.br/galeria/","galeria,foto,imagem,video,vídeo"],["Termos e condições","https://cassorova.com.br/termos-e-condicoes/","termo,politica,política,cancelamento,privacidade,regulamento"]];
+var achou = null;
+each(rotas, function (r) {
+if (achou) { return; }
+each(r[2].split(','), function (k) {
+if (achou) { return; }
+if (caminho.indexOf(k) > -1) { achou = r; }
+});
+});
+var sug = document.getElementById('cnv-sug');
+var sugA = document.getElementById('cnv-sug-a');
+if (achou) {
+if (sug) {
+if (sugA) {
+sugA.textContent = achou[0];
+sugA.setAttribute('href', achou[1]);
+sug.hidden = false;
+push({ event: 'cnv_sugestao_404', cnv_sugestao: achou[0], cnv_caminho: caminho });
+}
+}
+}
+/* Cliques com rótulo para o GTM */
+root.addEventListener('click', function (ev) {
+var el = ev.target;
+while (el) {
+if (el === root) { return; }
+if (el.getAttribute) {
+var cta = el.getAttribute('data-cnv-cta');
+if (cta) {
+var pos = el.getAttribute('data-cnv-pos') || '';
+push({ event: 'cnv_cta', cnv_cta: cta, cnv_posicao: pos, link_url: el.getAttribute('href') || '' });
+return;
+}
+}
+el = el.parentNode;
+}
+});
+/* Formulário de datas: abre o motor de reservas já com a busca pronta */
+each(root.querySelectorAll('.cnv-form'), function (f) {
+var a = f.querySelector('[data-campo="entrada"]');
+var b = f.querySelector('[data-campo="saida"]');
+var ad = f.querySelector('[data-campo="adultos"]');
+var erro = f.querySelector('.cnv-form__erro');
+if (a) { a.min = hoje; }
+if (b) { b.min = daqui(hoje, 1); }
+if (a) {
+a.addEventListener('change', function () {
+if (a.value) {
+if (b) {
+b.min = daqui(a.value, 1);
+if (b.value === '') { b.value = daqui(a.value, 2); }
+if (a.value >= b.value) { b.value = daqui(a.value, 2); }
+}
+}
+});
+}
+f.addEventListener('submit', function (ev) {
+ev.preventDefault();
+var ent = a ? a.value : '';
+var sai = b ? b.value : '';
+if (erro) { erro.hidden = true; }
+if (ent === '' || sai === '' || ent >= sai || hoje > ent) {
+if (erro) { erro.textContent = 'Escolha a data de entrada e a de saída, com saída depois da entrada.'; erro.hidden = false; }
+return;
+}
+var adultos = ad ? ad.value : '2';
+var url = motor + String.fromCharCode(38) + 'checkin=' + br(ent) + String.fromCharCode(38) + 'checkout=' + br(sai) + String.fromCharCode(38) + 'adults=' + adultos;
+push({ event: 'cnv_busca', cnv_posicao: f.getAttribute('data-cnv-pos') || '', cnv_entrada: ent, cnv_saida: sai, cnv_adultos: adultos, link_url: url });
+window.location.href = url;
+});
+});
+})();
+</script>

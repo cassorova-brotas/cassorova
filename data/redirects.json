@@ -1,0 +1,9 @@
+{
+  "_ajuda": "Redirecionamentos 301 (endereço antigo do WordPress -> endereço novo). Para adicionar, inclua uma linha em 'paginas'. O arquivo public/.htaccess é gerado a partir daqui a cada build.",
+  "paginas": [
+    { "de": "/feriados/", "para": "/pacotes/" },
+    { "de": "/condicao-especial/", "para": "/ofertas-hospedagem-brotas/" },
+    { "de": "/ecoturismo/", "para": "/day-use/" },
+    { "de": "/galeria/", "para": "/lazer/" }
+  ]
+}
