@@ -3,6 +3,7 @@
 // Dois negócios, duas ações sempre à vista: Reservar hospedagem (resort) e Comprar day use.
 import { linkWhatsapp } from '../data/site';
 const wa = linkWhatsapp(Astro.url.pathname);
+import { vigente } from '../../scripts/validade.mjs';
 ---
 <header class="csr-hd" id="csr-hd">
 <a class="csr-skip" href="#conteudo">Pular para o conteúdo</a>
@@ -28,10 +29,10 @@ const wa = linkWhatsapp(Astro.url.pathname);
 <p class="csr-mega__t">Pacotes</p>
 <ul>
 <li><a href="/ofertas-hospedagem-brotas/" data-cnv-cta="menu-ofertas" data-cnv-pos="menu"><b>Ofertas do mês</b><span>Datas livres com condições especiais</span></a></li>
-<li><a href="/pacotes/consciencia-negra/" data-cnv-cta="menu-consciencia-negra" data-cnv-pos="menu"><b>Consciência Negra</b><span>De 19 a 22 de novembro</span></a></li>
-<li><a href="/reveillon/" data-cnv-cta="menu-reveillon" data-cnv-pos="menu"><b>Réveillon</b><span>Ceia, festa e fogos silenciosos</span></a></li>
-<li><a href="/pacotes/ferias-janeiro/" data-cnv-cta="menu-janeiro" data-cnv-pos="menu"><b>Férias de janeiro</b><span>Cachoeiras, piscina e Praia Resort</span></a></li>
-<li><a href="/carnaval/" data-cnv-cta="menu-carnaval" data-cnv-pos="menu"><b>Carnaval</b><span>De 5 a 10 de fevereiro de 2027</span></a></li>
+{vigente('/pacotes/consciencia-negra/') && <li><a href="/pacotes/consciencia-negra/" data-cnv-cta="menu-consciencia-negra" data-cnv-pos="menu"><b>Consciência Negra</b><span>De 19 a 22 de novembro</span></a></li>}
+{vigente('/reveillon/') && <li><a href="/reveillon/" data-cnv-cta="menu-reveillon" data-cnv-pos="menu"><b>Réveillon</b><span>Ceia, festa e fogos silenciosos</span></a></li>}
+{vigente('/pacotes/ferias-janeiro/') && <li><a href="/pacotes/ferias-janeiro/" data-cnv-cta="menu-janeiro" data-cnv-pos="menu"><b>Férias de janeiro</b><span>Cachoeiras, piscina e Praia Resort</span></a></li>}
+{vigente('/carnaval/') && <li><a href="/carnaval/" data-cnv-cta="menu-carnaval" data-cnv-pos="menu"><b>Carnaval</b><span>De 5 a 10 de fevereiro de 2027</span></a></li>}
 <li><a href="/pacotes/" data-cnv-cta="menu-pacotes" data-cnv-pos="menu"><b>Todos os pacotes</b><span>Veja todas as datas</span></a></li>
 </ul>
 </div>
@@ -66,10 +67,10 @@ const wa = linkWhatsapp(Astro.url.pathname);
 <h3 id="csr-d-pacotes">Pacotes</h3>
 <ul aria-labelledby="csr-d-pacotes">
 <li><a href="/ofertas-hospedagem-brotas/" data-cnv-cta="menu-ofertas" data-cnv-pos="menu-mobile">Ofertas do mês</a></li>
-<li><a href="/pacotes/consciencia-negra/" data-cnv-cta="menu-consciencia-negra" data-cnv-pos="menu-mobile">Consciência Negra</a></li>
-<li><a href="/reveillon/" data-cnv-cta="menu-reveillon" data-cnv-pos="menu-mobile">Réveillon</a></li>
-<li><a href="/pacotes/ferias-janeiro/" data-cnv-cta="menu-janeiro" data-cnv-pos="menu-mobile">Férias de janeiro</a></li>
-<li><a href="/carnaval/" data-cnv-cta="menu-carnaval" data-cnv-pos="menu-mobile">Carnaval</a></li>
+{vigente('/pacotes/consciencia-negra/') && <li><a href="/pacotes/consciencia-negra/" data-cnv-cta="menu-consciencia-negra" data-cnv-pos="menu-mobile">Consciência Negra</a></li>}
+{vigente('/reveillon/') && <li><a href="/reveillon/" data-cnv-cta="menu-reveillon" data-cnv-pos="menu-mobile">Réveillon</a></li>}
+{vigente('/pacotes/ferias-janeiro/') && <li><a href="/pacotes/ferias-janeiro/" data-cnv-cta="menu-janeiro" data-cnv-pos="menu-mobile">Férias de janeiro</a></li>}
+{vigente('/carnaval/') && <li><a href="/carnaval/" data-cnv-cta="menu-carnaval" data-cnv-pos="menu-mobile">Carnaval</a></li>}
 <li><a href="/pacotes/" data-cnv-cta="menu-pacotes" data-cnv-pos="menu-mobile">Todos os pacotes</a></li>
 </ul>
 </section>

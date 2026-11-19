@@ -4,7 +4,7 @@
 - GA4 (ID de métricas): G-81T3FDT83W
 - Google Ads: conta 771-172-8329
 - Meta Pixel "Cassorova Ads": 814372796152066
-- Conversão do Google Ads: AW-11049940360. Pixel do Parque: 2364929483712116. Clarity: xpflv6cfvs.
+- Conversão do Google Ads: AW-11049940360. Pixel do Parque: 2364929483712116. Clarity: não será usado no site novo.
 - Os três já estão configurados dentro do contêiner GTM-N5M2VBV. O site só carrega o GTM, então não repita esses IDs no código (contaria em dobro).
 - Antes de publicar, confira no GTM se as tags do GA4, do Ads e do Pixel exigem consentimento (passo 1 a 6 abaixo). Sem isso, elas disparam mesmo quando o visitante recusa os cookies.
 

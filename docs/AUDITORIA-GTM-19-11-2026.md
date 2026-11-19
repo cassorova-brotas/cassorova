@@ -6,7 +6,7 @@ Contêiner "cassorova.com.br": 34 tags, 25 acionadores, 9 variáveis, 3 pastas (
 - GA4: G-81T3FDT83W (tag de configuração e 20 tags de evento).
 - Google Ads: conversão AW-11049940360 (a conta 771-172-8329 é o número do cliente). Há 11 tags de conversão e 2 de remarketing, cada uma com rótulo próprio.
 - Meta Pixel: 814372796152066 (Cassorova Ads), usado só nas tags de Compra e Checkout do HSystem. Existe também o 2364929483712116 ("Pixel Facebook Parque"), em HTML personalizado, que só envia PageView.
-- Microsoft Clarity: projeto xpflv6cfvs.
+- Microsoft Clarity: projeto xpflv6cfvs. Decisão de 19/11: não será usado no site novo.
 
 ## O que precisa ser corrigido antes de trocar o site
 
@@ -17,7 +17,7 @@ Contêiner "cassorova.com.br": 34 tags, 25 acionadores, 9 variáveis, 3 pastas (
 5. **WhatsApp:** o gatilho 86 (qualquer clique em wa.me) alimenta "GA4 WhatsApp Hotel" e "Google Ads WhatsApp Hotel". Ele conta também os cliques do canionismo (99108-2601) e qualquer outro wa.me. Restrinja para `wa.me/5514991068097`. O gatilho 21 ("Click to Chat") vem do plugin do WordPress e deixa de existir no site novo. O 64 e o 49 usam o endereço api.whatsapp.com, que o site novo não usa (usa wa.me).
 6. **Gatilhos de WhatsApp do parque, chatbot e formulário.** 24 (wa.me/5514991951122), 61 (Chatwoot), 87 (id enviar-reserva-whatsapp) e 46 (id hbook-reservar) apontam para itens que não existem no site novo. O Chatwoot já está comentado no site atual. Pode manter, mas eles não vão disparar.
 7. **Eventos do site novo sem gatilho.** O site envia `cnv_cta` (cabeçalho, menu, rodapé), `cnv_cta_click`, `cnv_faq_abrir`, `cnv_busca`, `cbg_*`, `chm_*` etc., e o GTM não escuta nenhum. Falta criar o gatilho e a tag de evento do GA4 (ver RASTREAMENTO.md).
-8. **Clarity duplicado hoje.** O site atual tem o Clarity no código do tema e também na tag do GTM (mesmo projeto). No site novo ele só entra pelo GTM, o que é o certo.
+8. **Clarity duplicado hoje.** O site atual tem o Clarity no código do tema e também na tag do GTM (mesmo projeto). Decisão de 19/11: o Clarity não entra no site novo, nem no código nem no GTM.
 9. **Script de terceiro no site atual.** O tema carrega analytics.cod3rocket.com (website-id fbe3d758-2ba2-4c88-b8f0-4bc61f9abb2f), comentado como "Eduardo Teles". O site novo não carrega. Se ainda for usado, me diga e eu incluo atrás do consentimento.
 
 ## O que já está certo

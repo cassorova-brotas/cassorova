@@ -1,6 +1,7 @@
 // Gera public/.htaccess (Hostinger/Apache): HTTPS, 301 das URLs antigas, 404 e cache.
 // Rodado automaticamente antes do build (npm run build).
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { PACOTES, vencido, inicioDoRedirecionamento } from './validade.mjs';
 
 const redir = JSON.parse(readFileSync('data/redirects.json', 'utf8')).paginas;
 const imgs = JSON.parse(readFileSync('data/imagens-mapa-urls.json', 'utf8'));
@@ -22,6 +23,18 @@ if (!noindex) {
   l.push('RewriteRule ^(.*)$ https://cassorova.com.br/$1 [L,R=301]');
   l.push('');
 }
+l.push('# Pacotes com data de fim (data/pacotes-validade.json): depois do último dia vão para /pacotes/ sozinhos.');
+l.push('# Pacote já vencido no build: 301 definitivo. Ainda vigente: 302 que passa a valer à meia-noite (Brasília) seguinte ao fim.');
+for (const p of PACOTES) {
+  const de = p.path.replace(/^\/|\/$/g, '');
+  if (vencido(p.path)) {
+    l.push(`RewriteRule ^${esc(de)}/?$ /pacotes/ [R=301,L]`);
+  } else {
+    l.push(`RewriteCond %{TIME} >=${inicioDoRedirecionamento(p.fim)}`);
+    l.push(`RewriteRule ^${esc(de)}/?$ /pacotes/ [R=302,L]`);
+  }
+}
+l.push('');
 l.push('# Páginas antigas');
 for (const r of redir) {
   const de = r.de.replace(/^\/|\/$/g, '');
@@ -64,4 +77,4 @@ l.push('</IfModule>');
 
 mkdirSync('public', { recursive: true });
 writeFileSync('public/.htaccess', l.join('\n') + '\n');
-console.log(`public/.htaccess gerado: ${redir.length} páginas e ${vistos.size} imagens redirecionadas.`);
+console.log(`public/.htaccess gerado: ${PACOTES.length} pacotes com validade, ${redir.length} páginas e ${vistos.size} imagens redirecionadas.`);

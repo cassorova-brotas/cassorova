@@ -1,0 +1,9 @@
+{
+  "_ajuda": "Pacotes com data de fim. Depois do último dia (fuso de Brasília) a página sai do ar sozinha e vai para /pacotes/. Para um pacote novo, inclua uma linha com o endereço da página e o último dia (AAAA-MM-DD). A página mensal (/ofertas-hospedagem-brotas/) não entra aqui.",
+  "pacotes": [
+    { "path": "/pacotes/consciencia-negra/", "fim": "2026-11-22" },
+    { "path": "/reveillon/", "fim": "2027-01-03" },
+    { "path": "/pacotes/ferias-janeiro/", "fim": "2027-01-31" },
+    { "path": "/carnaval/", "fim": "2027-02-10" }
+  ]
+}

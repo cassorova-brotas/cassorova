@@ -3,9 +3,10 @@
 import Base from '../layouts/Base.astro';
 import { PAGINAS } from '../data/pages';
 import { linkWhatsapp, JS_MSG_RESORT } from '../data/site';
+import { vigente, removerVencidos } from '../../scripts/validade.mjs';
 
 export function getStaticPaths() {
-  return PAGINAS.map((p) => ({
+  return PAGINAS.filter((p) => vigente(p.path)).map((p) => ({
     params: { slug: p.path === '/' ? undefined : p.path.replace(/^\/|\/$/g, '') },
     props: { pagina: p },
   }));
@@ -15,7 +16,7 @@ const { pagina } = Astro.props;
 const arquivos = import.meta.glob('../fragments/*.html', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
 // Unifica as mensagens de WhatsApp: todo link fixo usa a mensagem do resort (ou a do day use em /day-use)
 // e os formulários usam a função de mensagem única (ver src/data/site.ts).
-const html = arquivos[`../fragments/${pagina.chave}.html`]
+const html = removerVencidos(arquivos[`../fragments/${pagina.chave}.html`])
   .replace(/https:\/\/wa\.me\/5514991068097\?text=[^"'\s<]*/g, linkWhatsapp(pagina.path))
   .replaceAll('__WA_MSG_RESORT__', JS_MSG_RESORT);
 ---

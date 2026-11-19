@@ -14,6 +14,7 @@ const imagem = SITE + og;
 const provisorio = import.meta.env.PUBLIC_NOINDEX === 'true';
 const robots = noindex || provisorio ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 const fontes = 'https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&family=Gilda+Display&family=Marcellus&family=Trirong:ital,wght@0,300;0,400;1,300;1,400;1,700&display=swap';
+import { FIM } from '../../scripts/validade.mjs';
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -56,5 +57,22 @@ const fontes = 'https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;40
 </main>
 <Footer />
 <CookieBanner />
+<script is:inline define:vars={{ FIM }}>
+/* Pacotes vencidos: se o site ainda não foi refeito depois do último dia, esconde os links e leva a página para /pacotes/ */
+(function () {
+try {
+var h = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date());
+var venceu = function (p) { return !!FIM[p] && h > FIM[p]; };
+if (venceu(location.pathname)) { location.replace('/pacotes/'); return; }
+var links = document.querySelectorAll('a[href]');
+for (var i = 0; i < links.length; i++) {
+var p = links[i].getAttribute('href');
+if (!venceu(p)) { continue; }
+var c = links[i].closest('li, article');
+if (c) { c.hidden = true; c.style.display = 'none'; } else { links[i].setAttribute('href', '/pacotes/'); }
+}
+} catch (e) {}
+})();
+</script>
 </body>
 </html>
