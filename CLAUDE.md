@@ -19,6 +19,7 @@ Instruções para o Claude (ou qualquer pessoa) que for atualizar este site. Res
 
 ## Regras do projeto
 - Menu: Resort (Bangalôs, Lazer, Cachoeiras, Gastronomia, Experiências e Pacotes por ordem de data), Day use, Como chegar, Contato. Dois negócios: resort (hospedagem, cor terracota) e day use (cor oliva).
+- Não criar barra fixa no rodapé dentro das páginas: o cabeçalho e a barra do celular (Hospedagem, Day use, WhatsApp) já cumprem esse papel.
 - Todo link e botão importante tem `data-cnv-cta` e `data-cnv-pos`. Eles disparam o evento `cnv_cta` no `dataLayer`. Mantenha ao criar botões novos.
 - Textos: simples e diretos, sem travessão como pontuação, sem exageros de marketing. Preços e regras só com confirmação do Cassorova.
 - Cookies e privacidade: nunca carregue GA4, Google Ads ou Meta Pixel fora do `Tracking.astro`/GTM, para respeitar o consentimento do visitante.
