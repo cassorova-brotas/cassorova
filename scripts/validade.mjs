@@ -1,8 +1,10 @@
 // Validade dos pacotes (data/pacotes-validade.json). Usado pelo build (páginas, menu, sitemap e .htaccess).
 // Depois do último dia (fuso de Brasília) o pacote deixa de existir: a página não é gerada e o endereço vai para /pacotes/.
 import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
-export const PACOTES = JSON.parse(readFileSync(new URL('../data/pacotes-validade.json', import.meta.url), 'utf8')).pacotes;
+// Lê pelo diretório do projeto (o build roda na raiz), pois o Astro reempacota este arquivo e import.meta.url deixa de apontar para scripts/.
+export const PACOTES = JSON.parse(readFileSync(join(process.cwd(), 'data', 'pacotes-validade.json'), 'utf8')).pacotes;
 export const FIM = Object.fromEntries(PACOTES.map((p) => [p.path, p.fim]));
 
 // Data de hoje em Brasília (AAAA-MM-DD). A variável HOJE permite simular uma data em testes.
