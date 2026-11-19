@@ -37,3 +37,6 @@ O contêiner será refeito depois da entrada no ar, só com o site novo e os mot
 ## O que falta
 - Conferir no GTM o consentimento de cada tag e os gatilhos dos eventos acima.
 - Acesso de edição ao contêiner GTM-N5M2VBV (ou eu entrego o passo a passo para quem tem).
+
+## Botões que vão direto ao HBook
+O botão "Reservar hospedagem" do cabeçalho (computador) e o "Hospedagem" da barra do celular abrem direto o HBook (hbook.hsystem.com.br), na mesma aba. Os dois disparam `cnv_cta` com `cnv_cta=reservar-hospedagem`, `cnv_posicao=cabecalho` ou `barra-mobile` e `link_url` do HBook. A atribuição passa pelo vinculador de domínios do GTM (hbook.hsystem.com.br precisa estar na lista de domínios do vinculador). Não colocar UTM nesses links: ele reiniciaria a origem da sessão no HBook.
