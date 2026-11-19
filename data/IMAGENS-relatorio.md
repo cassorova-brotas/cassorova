@@ -10,7 +10,7 @@ Para cada imagem baixei a maior versão disponível (primeiro o -scaled, depois 
 1. Vídeos (3 mp4, na home e no day use): cassorova-resort-e-ecoturismo-brotas-1.mp4 (6,4 MB), cassorova-piscina-borda-infinita-computador.mp4 (2,3 MB) e cassorova-piscina-borda-infinita-celular.mp4. Foram baixados; vale comprimir o primeiro.
 2. Logo do cabeçalho: PNG de 323x67 px. Fica macio em telas retina. Ideal: SVG ou PNG com pelo menos 700 px de largura.
 3. Selo Tripadvisor: 200x262 px, usado em 10 páginas. Ok no tamanho pequeno em que aparece.
-4. Fotos com menos de 1200 px de largura (limite do que existe no site): Ecoparque-Cassorova-64 (720x480, Cassorovinha), imagens .webp do day use (versões 640 e 1080), os bangalôs Aconchego e Romance (1080 px), Cassorova-239/270/30/48 (1080x720). Servem para cards, mas não para fotos de topo em tela cheia. Se houver originais maiores, subir no lugar.
+4. Fotos com menos de 1200 px de largura (limite do que existe no site): cassorova-cassorovinha-64 (720x480, Cassorovinha), imagens .webp do day use (versões 640 e 1080), os bangalôs Aconchego e Romance (1080 px), Cassorova-239/270/30/48 (1080x720). Servem para cards, mas não para fotos de topo em tela cheia. Se houver originais maiores, subir no lugar.
 5. mapa_site-2-scaled.png pesa 1,7 MB: converter para WebP.
-6. O arquivo Ecoparque-Cassorova-64.jpg carrega "ecoparque" no nome. Renomear na importação (por exemplo cassorova-cassorovinha.jpg) e atualizar o mapa.
+6. O arquivo Ecoparque-Cassorova-64.jpg foi renomeado para cassorova-cassorovinha-64.jpg e o mapa foi atualizado.
 7. Todos os caminhos de upload passam a apontar para /images. As páginas ainda citam https://cassorova.com.br/wp-content/uploads/...: a troca será feita no build das páginas em Astro.

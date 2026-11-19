@@ -29,7 +29,7 @@ Instruções para o Claude (ou qualquer pessoa) que for atualizar este site. Res
 
 ## Pendências conhecidas
 - Consciência Negra (19 a 22/11/2026): despublicar depois do feriado (ver acima).
-- Retirar a palavra "ecoparque" das páginas e do dado estruturado (schema) quando o Cassorova aprovar.
+- Não usar a palavra "ecoparque": o nome é Cassorova Ecoturismo.
 - Texto da Cassorovinha: aguarda descrição do lugar.
 - Logo com 323 px de largura: trocar por SVG ou PNG maior.
 - Fotos de baixa resolução e vídeo da home para comprimir (o do day use já foi reduzido de 6,4 MB para 0,6 MB).
