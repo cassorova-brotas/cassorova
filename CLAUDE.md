@@ -7,7 +7,7 @@ Instruções para o Claude (ou qualquer pessoa) que for atualizar este site. Res
 - Cabeçalho, rodapé e banner de cookies: `src/components/Header.astro`, `Footer.astro` e `CookieBanner.astro`. O layout comum (meta tags, rastreamento) é `src/layouts/Base.astro`.
 - Imagens em `public/images/AAAA/MM/arquivo`. Nas páginas, use sempre o caminho `/images/...` (nunca `wp-content`).
 - Redirecionamentos 301 das URLs antigas: `data/redirects.json`. O `.htaccess` é gerado sozinho no build.
-- Publicação: ao enviar para a branch `main`, o GitHub monta o site e envia para a Hostinger. Em Pull Request ele só confere.
+- Publicação: o repositório é cassorova-brotas/cassorova no GitHub. A Hostinger monta o site sozinha (npm run build, saída dist) a cada envio na branch `main`. Variáveis de ambiente ficam no painel da Hostinger (hoje só PUBLIC_NOINDEX=true). Provisório: complete-pink-panther-70.hostingersite.com.
 
 ## Como fazer as tarefas mais comuns
 - Mudar um texto, preço ou data: edite o `src/fragments/<chave>.html`. Mantenha os atributos `data-cnv-*` e `data-chm-*`/`data-cbg-*`, que alimentam o rastreamento.
@@ -30,7 +30,6 @@ Instruções para o Claude (ou qualquer pessoa) que for atualizar este site. Res
 ## Pendências conhecidas
 - Consciência Negra (19 a 22/11/2026): despublicar depois do feriado (ver acima).
 - Retirar a palavra "ecoparque" das páginas e do dado estruturado (schema) quando o Cassorova aprovar.
-- Tirar o mês do meta de Ofertas do mês.
 - Texto da Cassorovinha: aguarda descrição do lugar.
 - Logo com 323 px de largura: trocar por SVG ou PNG maior.
 - Fotos de baixa resolução e vídeo da home (6,4 MB) para comprimir.
