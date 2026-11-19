@@ -35,6 +35,10 @@ for (const p of PACOTES) {
   }
 }
 l.push('');
+l.push('RewriteCond %{TIME} >=20200101000000');
+l.push('RewriteRule ^__teste-passado/?$ /pacotes/ [R=302,L]');
+l.push('RewriteCond %{TIME} >=20990101000000');
+l.push('RewriteRule ^__teste-futuro/?$ /pacotes/ [R=302,L]');
 l.push('# Páginas antigas');
 for (const r of redir) {
   const de = r.de.replace(/^\/|\/$/g, '');
