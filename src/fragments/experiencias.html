@@ -513,7 +513,7 @@ if (!data) { return; }
 data.min = iso(new Date());
 var v = exp ? exp.value : '';
 var nome = nomes[v] ? artigos[v] + ' ' + nomes[v] : 'uma experiência romântica';
-var msg = 'Olá vim pelo site e quero reservar ' + nome + ' no Cassorova';
+var dataMsg = '';
 var txt = '';
 var partes = [MOTOR];
 if (data.value) {
@@ -522,12 +522,13 @@ if (0 > d) {
 txt = 'Escolha uma data a partir de hoje.';
 } else {
 if (ANTECEDENCIA_DIAS > d) { txt = 'As experiências precisam ser reservadas com pelo menos 72 horas de antecedência. Para essa data, confirme com a recepção se ainda é possível.'; }
-msg += ' para o dia ' + extenso(data.value);
+dataMsg = extenso(data.value);
 partes.push('checkin=' + data.value, 'checkout=' + somaDias(data.value, NOITES_PADRAO));
 }
 }
 partes.push('adults=2', 'children=0');
 if (aviso) { aviso.textContent = txt; aviso.hidden = !txt; }
+var msg = __WA_MSG_RESORT__(dataMsg, '');
 if (linkWhats) { linkWhats.href = 'https://wa.me/' + FONE + '?text=' + encodeURIComponent(msg); }
 if (linkMotor) { linkMotor.href = partes.join(AMP); }
 };

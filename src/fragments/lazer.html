@@ -630,10 +630,7 @@ var partes = [MOTOR];
 if (temDatas()) { partes.push('checkin=' + ent.value, 'checkout=' + sai.value); }
 partes.push('adults=' + a, 'children=' + c);
 linkMotor.href = partes.join(AMP);
-var msg = 'Olá vim pelo site e quero consultar ' + (NOMES[b] ? 'a ' + NOMES[b] : 'um bangalô') + ' no Cassorova';
-if (temDatas()) { msg += ' com entrada em ' + extenso(ent.value) + ' e saída em ' + extenso(sai.value); }
-msg += ' para ' + a + (a === '1' ? ' adulto' : ' adultos');
-if (c !== '0') { msg += ' e ' + c + (c === '1' ? ' criança' : ' crianças'); }
+var msg = __WA_MSG_RESORT__((temDatas() ? extenso(ent.value) + ' a ' + extenso(sai.value) : ''), (a + (a === '1' ? ' adulto' : ' adultos') + (c !== '0' ? ' e ' + c + (c === '1' ? ' criança' : ' crianças') : '')));
 linkWhats.href = 'https://wa.me/' + FONE + '?text=' + encodeURIComponent(msg);
 };
 if (ent) { if (sai) { if (linkMotor) { if (linkWhats) {

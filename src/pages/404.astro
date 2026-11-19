@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
-import html from '../fragments/404.html?raw';
+import bruto from '../fragments/404.html?raw';
+import { linkWhatsapp } from '../data/site';
+const html = bruto.replace(/https:\/\/wa\.me\/5514991068097\?text=[^"'\s<]*/g, linkWhatsapp('/404/'));
 ---
 <Base title="Página não encontrada | Cassorova Resort e Ecoturismo" description="Esta página não existe mais ou mudou de endereço. Veja os caminhos mais procurados no Cassorova, em Brotas." path="/404/" noindex={true}>
   <Fragment set:html={html} />
