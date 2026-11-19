@@ -32,4 +32,4 @@ Instruções para o Claude (ou qualquer pessoa) que for atualizar este site. Res
 - Retirar a palavra "ecoparque" das páginas e do dado estruturado (schema) quando o Cassorova aprovar.
 - Texto da Cassorovinha: aguarda descrição do lugar.
 - Logo com 323 px de largura: trocar por SVG ou PNG maior.
-- Fotos de baixa resolução e vídeo da home (6,4 MB) para comprimir.
+- Fotos de baixa resolução e vídeo da home para comprimir (o do day use já foi reduzido de 6,4 MB para 0,6 MB).
