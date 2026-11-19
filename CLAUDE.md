@@ -23,7 +23,7 @@ Instruções para o Claude (ou qualquer pessoa) que for atualizar este site. Res
 - Todo link e botão importante tem `data-cnv-cta` e `data-cnv-pos`. Eles disparam o evento `cnv_cta` no `dataLayer`. Mantenha ao criar botões novos.
 - Textos: simples e diretos, sem travessão como pontuação, sem exageros de marketing. Preços e regras só com confirmação do Cassorova.
 - Cookies e privacidade: nunca carregue GA4, Google Ads ou Meta Pixel fora do `Tracking.astro`/GTM, para respeitar o consentimento do visitante.
-- Telefone/WhatsApp único do site: (14) 99106-8097 (5514991068097), inclusive nos botões do canionismo. Não use nenhum outro número.
+- Telefone/WhatsApp único do site: (14) 99106-8097 (5514991068097), inclusive nos botões do canionismo. Não use nenhum outro número. As mensagens prontas do botão de WhatsApp do cabeçalho, da barra do celular e do rodapé ficam em `src/data/site.ts` (uma para o resort e outra para o day use, escolhida pelo caminho da página).
 - Rastreamento: depois que o site entrar no ar, o contêiner GTM será refeito do zero, só com o site novo e os motores de reserva (docs/RASTREAMENTO.md).
 - Endereço provisório: com `PUBLIC_NOINDEX=true` o site se esconde do Google. No endereço definitivo, mude a variável para `false`.
 
