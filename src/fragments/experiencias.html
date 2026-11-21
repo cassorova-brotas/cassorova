@@ -537,8 +537,9 @@ each([exp, data], function (el) { if (el) { el.addEventListener('change', atuali
 atualizar();
 each([linkWhats, linkMotor], function (link) {
 if (!link) { return; }
-link.addEventListener('click', function () {
+link.addEventListener('click', function (ev) {
 atualizar();
+if (!data.value) { ev.preventDefault(); if (aviso) { aviso.textContent = 'Escolha a data da experiência para ver preços e reservar.'; aviso.hidden = false; } data.focus(); return; }
 push({ event: 'cex_reserva_experiencia', cex_metodo: link.getAttribute('data-cex-busca'), cex_experiencia: exp ? exp.value : '', cex_data: data.value || '', cex_antecedencia_dias: data.value ? diasAte(data.value) : '', link_url: link.href });
 });
 });

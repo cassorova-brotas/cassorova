@@ -505,6 +505,7 @@ if (c !== '0') { return 'Com crianças, o motor de reservas pede a idade de cada
 return '';
 };
 var atualizar = function () {
+var av0 = root.querySelector('[data-aviso-datas]'); if (av0 && temDatas()) { av0.textContent = ''; }
 var hoje = iso(new Date());
 ent.min = hoje;
 if (ent.value) {
@@ -529,9 +530,25 @@ linkWhats.href = 'https://wa.me/' + FONE + '?text=' + encodeURIComponent(msg);
 if (ent) { if (sai) { if (linkMotor) { if (linkWhats) {
 each([bang, ent, sai, adu, cri], function (el) { if (el) { el.addEventListener('change', atualizar); } });
 atualizar();
+var avisoDatas = function () {
+var p = root.querySelector('[data-aviso-datas]');
+if (!p) {
+p = document.createElement('p');
+p.setAttribute('data-aviso-datas', '');
+p.setAttribute('role', 'alert');
+var ref = root.querySelector('[class*="__nota"]');
+var cor = ref ? getComputedStyle(ref).color : 'inherit';
+p.style.cssText = 'flex:1 1 100%;margin:10px 0 0;font-size:15px;line-height:1.45;font-weight:700;color:' + cor;
+linkMotor.parentNode.appendChild(p);
+}
+p.textContent = 'Escolha a entrada e a saída para ver preços e reservar. Para tirar dúvidas antes, use o botão de WhatsApp do topo ou do canto da tela.';
+ent.focus();
+};
 each([linkMotor, linkWhats], function (link) {
-link.addEventListener('click', function () {
+link.addEventListener('click', function (ev) {
 atualizar();
+if (!temDatas()) { ev.preventDefault(); avisoDatas(); return; }
+var av = root.querySelector('[data-aviso-datas]'); if (av) { av.textContent = ''; }
 push({ event: 'cpk_busca_hospedagem', cpk_metodo: link.getAttribute('data-cpk-busca'), cpk_bangalo: bang ? bang.value : '', cpk_entrada: ent.value || '', cpk_saida: sai.value || '', cpk_noites: noites(), cpk_adultos: +(adu.value || 2), cpk_criancas: +(cri.value || 0), link_url: link.href });
 });
 });
