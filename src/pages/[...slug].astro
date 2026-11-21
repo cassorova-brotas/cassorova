@@ -2,7 +2,7 @@
 // Gera as 15 páginas a partir de src/data/pages.ts (dados de SEO) e src/fragments/<chave>.html (conteúdo).
 import Base from '../layouts/Base.astro';
 import { PAGINAS } from '../data/pages';
-import { linkWhatsapp, JS_MSG_RESORT } from '../data/site';
+import { linkWhatsapp, jsMsgResort } from '../data/site';
 import { vigente, removerVencidos } from '../../scripts/validade.mjs';
 
 export function getStaticPaths() {
@@ -18,7 +18,7 @@ const arquivos = import.meta.glob('../fragments/*.html', { query: '?raw', import
 // e os formulários usam a função de mensagem única (ver src/data/site.ts).
 const html = removerVencidos(arquivos[`../fragments/${pagina.chave}.html`])
   .replace(/https:\/\/wa\.me\/5514991068097\?text=[^"'\s<]*/g, linkWhatsapp(pagina.path))
-  .replaceAll('__WA_MSG_RESORT__', JS_MSG_RESORT);
+  .replaceAll('__WA_MSG_RESORT__', jsMsgResort(pagina.path));
 ---
 <Base title={pagina.title} description={pagina.description} path={pagina.path} og={pagina.og} noindex={pagina.noindex}>
   <Fragment set:html={html} />
